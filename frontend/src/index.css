@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+/* Overrides */
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
+  border-inline: none;
+  min-height: 100vh;
+  display: block;
+}
+
+.container-wrap, .project-title {
+    padding-top: 0px !important;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Joost", sans-serif !important;
+}
+
+p {
+    font-family: "Comfortaa", sans-serif !important;
+}
+
+
+.nectar_icon_wrap[data-color="extra-color-3"] i { color: #ffffff !important; }
+
+.nectar_icon_wrap[data-color="extra-color-2"] i { color: #0d53c7 !important; margin-top: 14px; }
+
+.hero-welcome-pill {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 50px;
+    padding: 15px 40px;
+    text-align: center;
+    margin: 0 auto 30px auto;
+    width: fit-content;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.hero-welcome-text {
+    color: #0d53c7;
+    font-family: 'Joost', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+.hero-welcome-sub {
+    color: #333333;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+@media (max-width: 768px) {
+    .hero-welcome-text { font-size: 20px; }
+    .hero-welcome-sub { font-size: 13px; }
+    .hero-welcome-pill { padding: 10px 20px; border-radius: 30px; }
+}
+
+.flowchart-container {
+    width: 100%;
+    text-align: center;
+    padding: 40px 15px;
+    background: #fff;
+}
+.flowchart-desktop {
+    display: block;
+    max-width: 1000px;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: top;
+    height: 300px; /* Adjust to show only top half */
+}
+.flowchart-mobile {
+    display: none;
+    max-width: 100%;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: bottom;
+    height: 600px; /* Adjust to show only bottom half */
+}
+
+@media (max-width: 768px) {
+    .flowchart-desktop { display: none; }
+    .flowchart-mobile { display: block; }
+}
+
+.row-bg.using-image { background-size: cover !important; }
+
+.toggle.default {
+    margin-bottom: 14px !important;
+}
+.toggle-title a,
+.toggle-title div[role="button"] {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    padding: 18px 24px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+}
+.inner-toggle-wrap {
+    padding: 18px 24px !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-top: none !important;
+    border-radius: 0 0 8px 8px !important;
+}
+
+
+/* Ensure animated elements are visible without Salient jQuery */
+.has-animation,
+.col.has-animation,
+.wpb_column.has-animation,
+img.img-with-animation,
+.nectar-fancy-box.has-animation,
+.inner-wrap.animated {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Ensure uniform footer background edge-to-edge */
+#footer-outer,
+#footer-outer .main-footer,
+#footer-outer .row-bg-wrap,
+#footer-outer .row-bg,
+#footer-outer .inner-wrap {
+  background-color: #525252 !important;
+  background: #525252 !important;
+}

@@ -1,0 +1,560 @@
+{
+  "2025-11-04": {
+    "date": "2025-11-04",
+    "dayLabel": "Tuesday, 04 November 2025",
+    "sessions": [
+      {
+        "title": "Registration &amp; Networking",
+        "time": "4:00 pm – 4:30 pm",
+        "stage": "Registration Zone",
+        "dataTitle": "registration &amp; networking",
+        "dataSpeakers": "",
+        "tags": [
+          "fa8f6e38-75b3-4d14-9ad9-bdb9bcafb7c0",
+          "0eb36bd0-5c77-4788-bb34-dd6d5f4510a3"
+        ]
+      },
+      {
+        "title": "Karnataka Rajyotsava Sadagara",
+        "time": "4:30 pm – 5:00 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "karnataka rajyotsava sadagara",
+        "dataSpeakers": "manasa holla, ashwin sharma",
+        "tags": [
+          "fbe16948-8fef-4236-8e51-79a4fd673061",
+          "3c121a8e-b3bd-4297-847c-cb81834f65af"
+        ]
+      },
+      {
+        "title": "Inauguration by Sri Siddaramaiah, Hon. Chief Minister, Sri D.K. Shivakumar, Hon. Dy. Chief Minister, and Dr. Sharanaparakash Rudrappa Patil, Hon. Minister, Department of SDEL and ME",
+        "time": "5:00 pm – 7:00 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "inauguration by sri siddaramaiah, hon. chief minister, sri d.k. shivakumar, hon. dy. chief minister, and dr. sharanaparakash rudrappa patil, hon. minister, department of sdel and me",
+        "dataSpeakers": "sri siddaramaiah, sri d.k. shivakumar, dr. sharanaparakash rudrappa patil, hon. muhammad reza cassam uteem, dr. m. b. patil, shri priyank kharge, shri sharanabasappa darshanapur, shri santosh s. lad, dr. m.c. sudhakar, shri rizwan arshad, his excellency dr. phillipp ackermann, dr. e. v. ramana reddy, ias(r), shri ashutosh gupta",
+        "tags": [
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Networking Dinner",
+        "time": "7:00 pm – 8:00 pm",
+        "stage": "Poolside",
+        "dataTitle": "networking dinner",
+        "dataSpeakers": "",
+        "tags": [
+          "cb321c3d-e09b-4605-80c5-d14e9cf2da10"
+        ]
+      }
+    ]
+  },
+  "2025-11-05": {
+    "date": "2025-11-05",
+    "dayLabel": "Wednesday, 05 November 2025",
+    "sessions": [
+      {
+        "title": "Registration and Networking",
+        "time": "9:00 am – 10:00 am",
+        "stage": "Registration Zone",
+        "dataTitle": "registration and networking ",
+        "dataSpeakers": "",
+        "tags": [
+          "fa8f6e38-75b3-4d14-9ad9-bdb9bcafb7c0"
+        ]
+      },
+      {
+        "title": "Opening Remarks",
+        "time": "10:00 am – 10:10 am",
+        "stage": "Plenary Stage",
+        "dataTitle": "opening remarks",
+        "dataSpeakers": "dr. e. v. ramana reddy, ias(r)",
+        "tags": [
+          "b67852da-5a1c-4838-988b-db94759839b8",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Empowering Clusters: Karnataka’s Dialogue on Local Skills for Global Opportunities",
+        "time": "10:00 am – 11:00 am",
+        "stage": "Room 1",
+        "dataTitle": "empowering clusters: karnataka’s dialogue on local skills for global opportunities",
+        "dataSpeakers": "",
+        "tags": [
+          "af604c9c-fba7-4082-8969-190fdec2e145",
+          "7fe87f5a-34ea-43ce-a9bc-17df699451eb"
+        ]
+      },
+      {
+        "title": "Flourishing with AI: Shaping Karnataka’s Next Era through Innovation",
+        "time": "10:10 am – 10:40 am",
+        "stage": "Plenary Stage",
+        "dataTitle": "flourishing with ai: shaping karnataka’s next era through innovation",
+        "dataSpeakers": "ravi venkatesan",
+        "tags": [
+          "8cf247e8-d85d-4004-b40b-d42ed61a1a75",
+          "f35e06c9-7257-475b-8f66-4d4a28363041",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Catalysts of Change: Green Skills for a Sustainable Future",
+        "time": "10:40 am – 11:20 am",
+        "stage": "Plenary Stage",
+        "dataTitle": "catalysts of change: green skills for a sustainable future",
+        "dataSpeakers": "marisa talamonti, mohamed badran, murali arikara, sanjeev kumar singh, nav kishlay",
+        "tags": [
+          "f35e06c9-7257-475b-8f66-4d4a28363041",
+          "1b561193-50f7-47bc-9d89-f38357fcd89a",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Global Best Practices in Skilling",
+        "time": "11:00 am – 12:30 pm",
+        "stage": "Room 2",
+        "dataTitle": "global best practices in skilling",
+        "dataSpeakers": "",
+        "tags": [
+          "ec6bd81b-5c13-43cc-b223-bd298807e706",
+          "af604c9c-fba7-4082-8969-190fdec2e145"
+        ]
+      },
+      {
+        "title": "From Trends to Transformation: Building Tomorrow’s Skills Today",
+        "time": "11:20 am – 11:50 am",
+        "stage": "Plenary Stage",
+        "dataTitle": "from trends to transformation: building tomorrow’s skills today",
+        "dataSpeakers": "atul kumar tiwari, ias (r), jitendra chaddah, dishaa singhal",
+        "tags": [
+          "c6e1e6c4-fd15-49a6-9839-962e60db9d3b",
+          "f35e06c9-7257-475b-8f66-4d4a28363041",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Inclusive Skilling as the Next Growth Multiplier",
+        "time": "11:50 am – 12:30 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "inclusive skilling as the next growth multiplier",
+        "dataSpeakers": "dr. gayathri vasudevan, giorgia a. varisco, prateek madhav, veenu jaichand",
+        "tags": [
+          "1b561193-50f7-47bc-9d89-f38357fcd89a",
+          "a6e41bd1-6ded-456a-a7d3-56ca3f5940e7",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Reimagining Higher Education for a Skills-First Future",
+        "time": "12:00 pm ��� 1:30 pm",
+        "stage": "Room 1",
+        "dataTitle": "reimagining higher education for a skills-first future  ",
+        "dataSpeakers": "",
+        "tags": [
+          "7fe87f5a-34ea-43ce-a9bc-17df699451eb",
+          "af604c9c-fba7-4082-8969-190fdec2e145"
+        ]
+      },
+      {
+        "title": "Convergence of Education, Skills &amp; Industry for a trillion USD Economy by 2032",
+        "time": "12:30 pm – 1:10 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "convergence of education, skills &amp; industry for a trillion usd economy by 2032",
+        "dataSpeakers": "dr. sharanaparakash rudrappa patil, dr. m. b. patil, shri priyank kharge, dr. m.c. sudhakar, madan padaki",
+        "tags": [
+          "fbe16948-8fef-4236-8e51-79a4fd673061",
+          "1b561193-50f7-47bc-9d89-f38357fcd89a",
+          "5cbf7582-cb84-435c-811b-e146f57cc421"
+        ]
+      },
+      {
+        "title": "Networking Luncheon",
+        "time": "1:10 pm – 2:00 pm",
+        "stage": "Poolside",
+        "dataTitle": " networking luncheon",
+        "dataSpeakers": "",
+        "tags": [
+          "cb321c3d-e09b-4605-80c5-d14e9cf2da10"
+        ]
+      },
+      {
+        "title": "Ecosystem Synergy – Driving Skills Innovation through Collaboration",
+        "time": "2:00 pm – 2:30 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "ecosystem synergy – driving skills innovation through collaboration",
+        "dataSpeakers": "dr. abhilasha gaur, dr. pb kotur, dr. madhuri dubey",
+        "tags": [
+          "c6e1e6c4-fd15-49a6-9839-962e60db9d3b",
+          "31b4da88-626d-42c6-bb21-7fa5031f4a4d",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Keynote Address by Mr. B.V.R. Subrahmanyam",
+        "time": "2:30 pm – 3:00 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "keynote address by mr. b.v.r. subrahmanyam",
+        "dataSpeakers": "b.v.r. subrahmanyam ias (r)",
+        "tags": [
+          "31b4da88-626d-42c6-bb21-7fa5031f4a4d",
+          "8cf247e8-d85d-4004-b40b-d42ed61a1a75",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Empowering MSMEs through Skills, Technology, and Collaboration",
+        "time": "2:30 pm – 4:00 pm",
+        "stage": "Room 1",
+        "dataTitle": "empowering msmes through skills, technology, and collaboration",
+        "dataSpeakers": "",
+        "tags": [
+          "af604c9c-fba7-4082-8969-190fdec2e145",
+          "7fe87f5a-34ea-43ce-a9bc-17df699451eb"
+        ]
+      },
+      {
+        "title": "Building India and Karnataka as the Global Hub for Future-Ready Talent",
+        "time": "3:00 pm – 4:30 pm",
+        "stage": "Room 2",
+        "dataTitle": "building india and karnataka as the global hub for future-ready talent",
+        "dataSpeakers": "",
+        "tags": [
+          "ec6bd81b-5c13-43cc-b223-bd298807e706",
+          "af604c9c-fba7-4082-8969-190fdec2e145"
+        ]
+      },
+      {
+        "title": "Global Perspectives: Skilling for Dignity, Equity and Empowerment",
+        "time": "3:00 pm – 3:30 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "global perspectives: skilling for dignity, equity and empowerment",
+        "dataSpeakers": "achim burkart, gi soon song, deepak prabhu matti",
+        "tags": [
+          "c6e1e6c4-fd15-49a6-9839-962e60db9d3b",
+          "a6e41bd1-6ded-456a-a7d3-56ca3f5940e7",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Leveraging Technology to Scale Skills",
+        "time": "3:30 pm – 4:10 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "leveraging technology to scale skills",
+        "dataSpeakers": "arvind vaishnav, ishvinder singh, nikita bengani, prof. venkappayya r desai, madan padaki",
+        "tags": [
+          "31b4da88-626d-42c6-bb21-7fa5031f4a4d",
+          "1b561193-50f7-47bc-9d89-f38357fcd89a",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "5 Skills to Become Unstoppable in the Age of AI",
+        "time": "4:10 pm – 4:40 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "5 skills to become unstoppable in the age of ai",
+        "dataSpeakers": "ishan sharma",
+        "tags": [
+          "21f2956d-852a-48a7-bfc7-5090f65a1776",
+          "fbe16948-8fef-4236-8e51-79a4fd673061",
+          "5cbf7582-cb84-435c-811b-e146f57cc421"
+        ]
+      },
+      {
+        "title": "Champions of Skills: Stories of Transformation and Triumph",
+        "time": "4:40 pm – 5:20 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "champions of skills: stories of transformation and triumph",
+        "dataSpeakers": "likith kumar y p, nandita saxena, steven harris ramdev, varun hanumanth gowda, shashidhara hirematada n",
+        "tags": [
+          "fbe16948-8fef-4236-8e51-79a4fd673061",
+          "1b561193-50f7-47bc-9d89-f38357fcd89a",
+          "5cbf7582-cb84-435c-811b-e146f57cc421"
+        ]
+      },
+      {
+        "title": "Skillathon Finals",
+        "time": "5:20 pm – 6:00 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "skillathon finals",
+        "dataSpeakers": "dr. sharanaparakash rudrappa patil, atul kumar tiwari, ias (r), smt. shivakantamma (kanta) naik",
+        "tags": [
+          "72ce1901-861b-40b9-a351-d9444473c8c8",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Karnataka Vaibhava - A Grand Visual Dance Drama Production",
+        "time": "6:00 pm – 6:40 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "karnataka vaibhava - a grand visual dance drama production",
+        "dataSpeakers": "kala arathi rathna dr. sanjay shantaram, kalathilakam guru iswarya bharadwaj",
+        "tags": [
+          "3c121a8e-b3bd-4297-847c-cb81834f65af",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      }
+    ]
+  },
+  "2025-11-06": {
+    "date": "2025-11-06",
+    "dayLabel": "Thursday, 06 November 2025",
+    "sessions": [
+      {
+        "title": "Registration and Networking",
+        "time": "9:00 am – 10:00 am",
+        "stage": "Registration Zone",
+        "dataTitle": "registration and networking",
+        "dataSpeakers": "",
+        "tags": [
+          "fa8f6e38-75b3-4d14-9ad9-bdb9bcafb7c0"
+        ]
+      },
+      {
+        "title": "Opening Remarks",
+        "time": "10:00 am – 10:10 am",
+        "stage": "Plenary Stage",
+        "dataTitle": "opening remarks",
+        "dataSpeakers": "nagaraja n.m, i.a.s",
+        "tags": [
+          "b67852da-5a1c-4838-988b-db94759839b8",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Opening Keynote",
+        "time": "10:10 am – 10:20 pm",
+        "stage": "",
+        "dataTitle": "opening keynote",
+        "dataSpeakers": "hon. muhammad reza cassam uteem",
+        "tags": []
+      },
+      {
+        "title": "Country Partner Session by German Missions in India | Global Opportunities: Pathways to Germany",
+        "time": "10:20 am – 10:50 am",
+        "stage": "Plenary Stage",
+        "dataTitle": "country partner session by german missions in india | global opportunities: pathways to germany",
+        "dataSpeakers": "annett baessler, denise eichhorn, dr. michael heinst",
+        "tags": [
+          "a2d60233-e379-4fe3-8435-e7f24cf0c6ee",
+          "fbe16948-8fef-4236-8e51-79a4fd673061",
+          "a826a1b9-c5a8-4798-b299-0c0c2b4f2ccb"
+        ]
+      },
+      {
+        "title": "The Fusion Factor: Converging Technologies and the Skills They Demand",
+        "time": "10:50 am – 11:30 am",
+        "stage": "Plenary Stage",
+        "dataTitle": "the fusion factor: converging technologies and the skills they demand",
+        "dataSpeakers": "dr. augustus g s azariah, dr  basaralu  sudharshan, shyamala jhaveri, surya prakash mohapatra, animesh rai",
+        "tags": [
+          "1b561193-50f7-47bc-9d89-f38357fcd89a",
+          "f35e06c9-7257-475b-8f66-4d4a28363041",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Advancing Automation for Industry 4.0",
+        "time": "11:00 am – 12:30 pm",
+        "stage": "Room 4",
+        "dataTitle": "advancing automation for industry 4.0",
+        "dataSpeakers": "",
+        "tags": [
+          "bbcadf07-de26-4f2e-92fb-0482be506b04",
+          "af604c9c-fba7-4082-8969-190fdec2e145"
+        ]
+      },
+      {
+        "title": "Public–Private Partnership for Enhancing the Skilling and Placement Ecosystem in Karnataka",
+        "time": "11:00 am – 12:30 pm",
+        "stage": "Room 3",
+        "dataTitle": "public–private partnership for enhancing the skilling and placement ecosystem in karnataka",
+        "dataSpeakers": "",
+        "tags": [
+          "42b7ebd4-ce98-475d-8523-c4360c170654",
+          "af604c9c-fba7-4082-8969-190fdec2e145"
+        ]
+      },
+      {
+        "title": "Industry Voices: Why Inclusion Matters for Business",
+        "time": "11:30 am – 12:00 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "industry voices: why inclusion matters for business",
+        "dataSpeakers": "saraswathi ramachandra, dr. padmini ram",
+        "tags": [
+          "a6e41bd1-6ded-456a-a7d3-56ca3f5940e7",
+          "c6e1e6c4-fd15-49a6-9839-962e60db9d3b",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Karnataka as the Skills Gateway to the World",
+        "time": "12:00 pm – 12:40 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "karnataka as the skills gateway to the world",
+        "dataSpeakers": "ferdinand schlechta, neeti sharma bhagat, sheenam ohrie, thorsten kiefer, jose jacob k",
+        "tags": [
+          "1b561193-50f7-47bc-9d89-f38357fcd89a",
+          "a2d60233-e379-4fe3-8435-e7f24cf0c6ee",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Gen AI for Academia",
+        "time": "12:00 pm – 1:30 pm",
+        "stage": "Room 1",
+        "dataTitle": "gen ai for academia",
+        "dataSpeakers": "",
+        "tags": [
+          "7fe87f5a-34ea-43ce-a9bc-17df699451eb",
+          "af604c9c-fba7-4082-8969-190fdec2e145"
+        ]
+      },
+      {
+        "title": "Blue Dots in Practice: Verifiable Talent, Credible Jobs, Faster Matches",
+        "time": "12:00 pm – 1:30 pm",
+        "stage": "Room 2",
+        "dataTitle": "blue dots in practice: verifiable talent, credible jobs, faster matches",
+        "dataSpeakers": "",
+        "tags": [
+          "ec6bd81b-5c13-43cc-b223-bd298807e706",
+          "af604c9c-fba7-4082-8969-190fdec2e145"
+        ]
+      },
+      {
+        "title": "Navigating Global Talent Expectations",
+        "time": "12:40 pm – 1:10 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "navigating global talent expectations",
+        "dataSpeakers": "dattatri salagame, swati sharma, sanjeev gupta",
+        "tags": [
+          "a2d60233-e379-4fe3-8435-e7f24cf0c6ee",
+          "c6e1e6c4-fd15-49a6-9839-962e60db9d3b",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Networking Luncheon",
+        "time": "1:10 pm – 2:00 pm",
+        "stage": "Poolside",
+        "dataTitle": "networking luncheon",
+        "dataSpeakers": "",
+        "tags": [
+          "cb321c3d-e09b-4605-80c5-d14e9cf2da10"
+        ]
+      },
+      {
+        "title": "The Human-AI Workforce of the Future",
+        "time": "2:00 pm – 2:40 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "the human-ai workforce of the future",
+        "dataSpeakers": "alokesh das, rajeev khushu, sandeep magavi, saurav jha, nitika goel",
+        "tags": [
+          "1b561193-50f7-47bc-9d89-f38357fcd89a",
+          "5cbf7582-cb84-435c-811b-e146f57cc421",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "CHRO's Vision: Karnataka Skill Blueprint",
+        "time": "2:30 pm – 4:00 pm",
+        "stage": "Room 2",
+        "dataTitle": "chro's vision: karnataka skill blueprint",
+        "dataSpeakers": "",
+        "tags": [
+          "ec6bd81b-5c13-43cc-b223-bd298807e706",
+          "af604c9c-fba7-4082-8969-190fdec2e145"
+        ]
+      },
+      {
+        "title": "Unlocking the Future of Civil Engineering through Emerging Skills",
+        "time": "2:30 pm – 4:00 pm",
+        "stage": "Room 3",
+        "dataTitle": "unlocking the future of civil engineering through emerging skills",
+        "dataSpeakers": "",
+        "tags": [
+          "42b7ebd4-ce98-475d-8523-c4360c170654",
+          "af604c9c-fba7-4082-8969-190fdec2e145"
+        ]
+      },
+      {
+        "title": "Unlocking Global Careers – Essential Skills &amp; Certifications",
+        "time": "2:30 pm – 4:00 pm",
+        "stage": "Room 4",
+        "dataTitle": "unlocking global careers – essential skills &amp; certifications",
+        "dataSpeakers": "",
+        "tags": [
+          "bbcadf07-de26-4f2e-92fb-0482be506b04",
+          "af604c9c-fba7-4082-8969-190fdec2e145"
+        ]
+      },
+      {
+        "title": "AI as an enabler for Skilling and as a Co-Worker/Assistant",
+        "time": "2:30 pm – 4:00 pm",
+        "stage": "Room 1",
+        "dataTitle": "ai as an enabler for skilling and as a co-worker/assistant",
+        "dataSpeakers": "",
+        "tags": [
+          "7fe87f5a-34ea-43ce-a9bc-17df699451eb",
+          "af604c9c-fba7-4082-8969-190fdec2e145"
+        ]
+      },
+      {
+        "title": "Keynote Address by Mr. Subroto Bagchi",
+        "time": "2:40 pm – 3:10 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "keynote address by mr. subroto bagchi",
+        "dataSpeakers": "subroto bagchi",
+        "tags": [
+          "8cf247e8-d85d-4004-b40b-d42ed61a1a75",
+          "5cbf7582-cb84-435c-811b-e146f57cc421",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Learning in Times of Disruption",
+        "time": "3:10 pm – 3:50 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "learning in times of disruption",
+        "dataSpeakers": "dr. jatin n. trivedi, dr. sunil abrol, mahesh shetty, vikram.n, dr. sowmya n s",
+        "tags": [
+          "5cbf7582-cb84-435c-811b-e146f57cc421",
+          "1b561193-50f7-47bc-9d89-f38357fcd89a",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "From Jobs to Journeys: The Evolution of Skills for the Future of Work",
+        "time": "3:50 pm – 4:20 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "from jobs to journeys: the evolution of skills for the future of work",
+        "dataSpeakers": "mish eastman, roopashri yadrami, dr. basavaraju r shreshta",
+        "tags": [
+          "c6e1e6c4-fd15-49a6-9839-962e60db9d3b",
+          "5cbf7582-cb84-435c-811b-e146f57cc421",
+          "fbe16948-8fef-4236-8e51-79a4fd673061"
+        ]
+      },
+      {
+        "title": "Kaushalya Karnataka Awards",
+        "time": "4:20 pm – 5:20 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "kaushalya karnataka awards",
+        "dataSpeakers": "dr. sharanaparakash rudrappa patil, smt. shivakantamma (kanta) naik, shri bv naidu",
+        "tags": [
+          "941cbd00-d07b-4a14-85c6-0699d5e20f0d",
+          "fbe16948-8fef-4236-8e51-79a4fd673061",
+          "31d5d5a2-e74f-4e95-9463-a503abcdc385"
+        ]
+      },
+      {
+        "title": "Bharata Sambhrama",
+        "time": "5:20 pm – 6:00 pm",
+        "stage": "Plenary Stage",
+        "dataTitle": "bharata sambhrama",
+        "dataSpeakers": "ashwin sharma, manasa holla",
+        "tags": [
+          "fbe16948-8fef-4236-8e51-79a4fd673061",
+          "3c121a8e-b3bd-4297-847c-cb81834f65af"
+        ]
+      }
+    ]
+  }
+}

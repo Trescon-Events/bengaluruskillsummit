@@ -1,0 +1,342 @@
+[
+  {
+    "category": "Organisers",
+    "partners": [
+      {
+        "name": "Karnataka Skill Development Corporation",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761657880630-f478d84f-5b12-48bc-a843-f4aca48cb8e7.png",
+        "website": null
+      },
+      {
+        "name": "Karnataka Skill Development Authority",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761657858040-c3bb352d-e291-407d-825d-c579b1d22946.png",
+        "website": null
+      },
+      {
+        "name": "Karnataka Digital Economy Mission",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761657834585-92ed59fe-75e1-44f6-a709-afc843a27ef3.png",
+        "website": null
+      }
+    ]
+  },
+  {
+    "category": "Event Managed by",
+    "partners": [
+      {
+        "name": "Trescon",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761657297531-b2c1de77-bc21-4a91-a73b-0af338549559.png",
+        "website": "https://tresconglobal.com/"
+      }
+    ]
+  },
+  {
+    "category": "Country Partner",
+    "partners": [
+      {
+        "name": "Consulate General of Federal Republic of Germany, New Delhi",
+        "logo": "https://media.konfhub.com/partners/2025/October/30/1761817554108-e006abea-987c-430d-a13f-6ef130559bda.png",
+        "website": "https://india.diplo.de/in-en"
+      }
+    ]
+  },
+  {
+    "category": "Technical Partner",
+    "partners": [
+      {
+        "name": "UNDP INDIA",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761646266216-6c47540e-6bf6-41a3-be37-f66790458a82.png",
+        "website": null
+      }
+    ]
+  },
+  {
+    "category": "Skillathon Partners",
+    "partners": [
+      {
+        "name": "Melton Foundation",
+        "logo": "https://media.konfhub.com/partners/2025/October/13/1760334274578-2f4c3fc3-f072-4277-a5e7-3f6e9d305752.png",
+        "website": "https://meltonfoundation.org/"
+      },
+      {
+        "name": "IEEE",
+        "logo": "https://media.konfhub.com/partners/2025/October/13/1760334310299-0e8370e6-42aa-4a1d-b116-3e87458eba2e.png",
+        "website": "https://sps.ieeebangalore.org/"
+      }
+    ]
+  },
+  {
+    "category": "Corporate Awards Partners",
+    "partners": [
+      {
+        "name": "Zyoin Group",
+        "logo": "https://media.konfhub.com/partners/2025/October/13/1760334384549-9e7893ca-fa9d-4de2-af16-0139bb7a39c2.png",
+        "website": "https://zyoin.com/"
+      },
+      {
+        "name": "Workplace Awards",
+        "logo": "https://media.konfhub.com/partners/2025/October/13/1760334410215-42afcb57-2bb7-4bb3-9efd-5858c8339821.png",
+        "website": "https://workplaceawards.in/"
+      }
+    ]
+  },
+  {
+    "category": "Digital Skilling Partner",
+    "partners": [
+      {
+        "name": "Infosys Springboard",
+        "logo": "https://media.konfhub.com/partners/2025/October/30/1761828427309-f9582d58-005c-463a-ae25-c8e7a609b126.png",
+        "website": "https://infyspringboard.onwingspan.com/web/en/page/home"
+      }
+    ]
+  },
+  {
+    "category": "Conference Partners",
+    "partners": [
+      {
+        "name": "Assocham",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761644739283-6eec8f6c-def1-47c1-a285-ced00e9813c3.png",
+        "website": null
+      },
+      {
+        "name": "Advanced Credentials",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761644644974-58dea4ff-f357-4730-9ef9-6477ea5817ad.png",
+        "website": null
+      },
+      {
+        "name": "Chrmp",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761644797603-4d81e844-fa77-44e6-9ac7-d2f2bf363508.png",
+        "website": null
+      },
+      {
+        "name": "Clear Water Dynamic",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761644969834-925d8711-6502-4937-9e62-805eacaf371b.png",
+        "website": null
+      },
+      {
+        "name": "German Cooperation",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761645061109-802850b3-37d0-4a6e-897d-50870c242a1a.png",
+        "website": null
+      },
+      {
+        "name": "Head Held High",
+        "logo": "https://media.konfhub.com/partners/2025/October/27/1761578620439-e08de336-b7c4-4f87-a98b-9c876cf52858.png",
+        "website": null
+      },
+      {
+        "name": "INTELITEK",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761645253581-08a04c00-8ec0-483c-8c07-be0285988a4b.png",
+        "website": null
+      },
+      {
+        "name": "EkStep",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761645023073-33c08b86-c6c8-4b75-9ead-7548567a76c4.png",
+        "website": null
+      },
+      {
+        "name": "Labournet Foundation",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761645302826-72e00cc5-6f19-4930-b64a-9d025c7acf6d.png",
+        "website": null
+      },
+      {
+        "name": "National Skills Network",
+        "logo": "https://media.konfhub.com/partners/2025/October/27/1761578958405-cbbae7f8-b1a5-4b1e-bba1-6344977e2ae9.png",
+        "website": null
+      },
+      {
+        "name": "National Human Resource Development - Bangalore Chapter",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761645421624-427e1d3c-d2b1-4e9d-a78f-5f09e732974a.png",
+        "website": null
+      },
+      {
+        "name": "oNEST",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761645469073-0277cf20-7e18-4ab0-8777-70d358644194.png",
+        "website": null
+      },
+      {
+        "name": "PI - SQUARE",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761645758785-12bdcba8-97f6-461c-a21c-678bfec1e1f2.png",
+        "website": null
+      },
+      {
+        "name": "Ripples",
+        "logo": "https://media.konfhub.com/partners/2025/October/27/1761578759070-248ec8e0-dabc-453a-baa8-64170f60155e.png",
+        "website": null
+      },
+      {
+        "name": "Sambhav Foundation",
+        "logo": "https://media.konfhub.com/partners/2025/October/27/1761581656001-46c566b3-3dce-4154-bb4d-4a94e2b6e28b.png",
+        "website": null
+      },
+      {
+        "name": "Seventh Sense",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761645519635-c70d326a-dae5-4623-852b-efae42405a85.png",
+        "website": null
+      },
+      {
+        "name": "TIE BANGALORE",
+        "logo": "https://media.konfhub.com/partners/2025/October/27/1761579199865-ca8bb6f7-a108-4db8-870c-63f326fca46a.png",
+        "website": null
+      },
+      {
+        "name": "ZYOIN GROUP",
+        "logo": "https://media.konfhub.com/partners/2025/October/28/1761645583258-36e234e0-c85f-4d3a-b7a9-5b26fa136371.png",
+        "website": null
+      }
+    ]
+  },
+  {
+    "category": "Diversity & Inclusion Partner",
+    "partners": [
+      {
+        "name": "SHG",
+        "logo": "https://media.konfhub.com/partners/2025/November/04/1762229082306-f9d8bb7c-992f-4db6-acd7-9c45a46087f3.png",
+        "website": null
+      },
+      {
+        "name": "SHG",
+        "logo": "https://media.konfhub.com/partners/2025/November/04/1762229138428-c8f4fbc5-1483-4d2f-a416-3cbd1ebee9ae.png",
+        "website": null
+      },
+      {
+        "name": "SHG",
+        "logo": "https://media.konfhub.com/partners/2025/November/04/1762229192544-21362796-d0a6-4cee-9288-98991a3523a7.png",
+        "website": null
+      },
+      {
+        "name": "SHG",
+        "logo": "https://media.konfhub.com/partners/2025/November/04/1762229264837-ba61b4d8-1e90-40de-b197-bcbd7e3f150a.png",
+        "website": null
+      },
+      {
+        "name": "SHG",
+        "logo": "https://media.konfhub.com/partners/2025/November/04/1762229309049-36b8a593-6098-4306-abbd-15601d225111.png",
+        "website": null
+      },
+      {
+        "name": "SHG",
+        "logo": "https://media.konfhub.com/partners/2025/November/04/1762232453270-9848093c-1866-4b42-8bb4-5de6b5a65b91.png",
+        "website": null
+      },
+      {
+        "name": "SHG",
+        "logo": "https://media.konfhub.com/partners/2025/November/04/1762232514650-fa549ac3-37a8-4006-9e34-3c6ff7825353.png",
+        "website": null
+      }
+    ]
+  },
+  {
+    "category": "Association Partners",
+    "partners": [
+      {
+        "name": "Aerospace & Aviation Sector Skill Council",
+        "logo": "https://media.konfhub.com/partners/2025/October/16/1760592845762-281ed558-47d6-4ae3-bc1a-2792471a81f0.png",
+        "website": "https://www.aassc.in/"
+      },
+      {
+        "name": "aiesec",
+        "logo": "https://media.konfhub.com/partners/2025/October/16/1760592984327-b276cf73-2a6e-4a81-93d5-d4f57d887dca.png",
+        "website": "https://aiesec.org/"
+      },
+      {
+        "name": "Ambuja Foundation",
+        "logo": "https://media.konfhub.com/partners/2025/October/24/1761301675311-fdf2ca29-0242-4778-9790-9fe3729cc749.png",
+        "website": "https://www.ambujafoundation.org/"
+      },
+      {
+        "name": "Apparel Made-UPS & Home Furnishing Sector Skill Council",
+        "logo": "https://media.konfhub.com/partners/2025/October/27/1761563736227-af47ad0a-c4ea-4e5a-acde-f5ed01d51ce6.png",
+        "website": "https://www.sscamh.com/"
+      },
+      {
+        "name": "Bal Raksha Bharat",
+        "logo": "https://media.konfhub.com/partners/2025/October/27/1761579458617-de52e732-d87f-4721-87e6-8f05a35b8d07.png",
+        "website": "https://balrakshabharat.org/"
+      },
+      {
+        "name": "Electronic Sector Skills Council of India",
+        "logo": "https://media.konfhub.com/partners/2025/October/14/1760426390500-c846e94a-7ab9-434e-87f7-4842c860b541.png",
+        "website": "https://www.essc-india.org/"
+      },
+      {
+        "name": "F.K.C.C.I",
+        "logo": "https://media.konfhub.com/partners/2025/October/29/1761718370389-fe2b73e9-76ea-400e-b278-4d3570be147d.png",
+        "website": null
+      },
+      {
+        "name": "HR Association India",
+        "logo": "https://media.konfhub.com/partners/2025/October/17/1760707030520-a926eb27-8358-4a22-b6b9-be422ccfdf1b.png",
+        "website": "https://hrassociationindia.com/"
+      },
+      {
+        "name": "Indo -American Chamber of Commerce",
+        "logo": "https://media.konfhub.com/partners/2025/October/23/1761227132412-cf3b053e-5fb5-498c-aba8-e77d987d2b2c.png",
+        "website": "https://www.iaccindia.com/"
+      },
+      {
+        "name": "Indian Chamber of International Business",
+        "logo": "https://media.konfhub.com/partners/2025/October/16/1760600363167-fccfc881-283c-46f9-8dd0-5b15fce3daad.png",
+        "website": "http://www.icib.org.in/"
+      },
+      {
+        "name": "IFIA BHARAT",
+        "logo": "https://media.konfhub.com/partners/2025/November/03/1762174966178-119a5ee0-ac8a-41bc-9cea-a059dfca494b.png",
+        "website": "https://ifiabharat.com/"
+      },
+      {
+        "name": "ISACA Bangalore Chapter",
+        "logo": "https://media.konfhub.com/partners/2025/October/21/1761031443179-a7fb127e-eece-4476-88c6-e2ffeafee0ed.png",
+        "website": "https://engage.isaca.org/bangalorechapter/home"
+      },
+      {
+        "name": "Kannada Paatashale, Dubai",
+        "logo": "https://media.konfhub.com/partners/2025/October/27/1761561385270-bebfaf32-9403-462e-94f6-5d7f29e0c157.png",
+        "website": "https://www.kannadashaale.com"
+      },
+      {
+        "name": "Magic Bus",
+        "logo": "https://media.konfhub.com/partners/2025/October/24/1761303741572-dab0beeb-4ac5-4a2d-9680-30751c3d9aad.png",
+        "website": "https://www.magicbus.org/"
+      },
+      {
+        "name": "Future skills prime",
+        "logo": "https://media.konfhub.com/partners/2025/October/30/1761831939613-8330a990-941d-44bd-a1fa-a82b8da6ef54.png",
+        "website": null
+      },
+      {
+        "name": "Visvesvaraya Research & Innovation Foundation",
+        "logo": "https://media.konfhub.com/partners/2025/October/16/1760600432408-bbd99866-ed8d-45f6-8f83-283ccaca17d1.png",
+        "website": "https://vtu.ac.in/en/"
+      },
+      {
+        "name": "Youth 4 jobs",
+        "logo": "https://media.konfhub.com/partners/2025/November/03/1762167253952-d1833a6c-4d72-4dfa-b689-87bf9e640bf0.png",
+        "website": null
+      }
+    ]
+  },
+  {
+    "category": "Cultural Partners",
+    "partners": [
+      {
+        "name": "Shivapriya School of Dance",
+        "logo": "https://media.konfhub.com/partners/2025/October/31/1761889641220-8e8940c4-80dd-4186-bf11-81062f942682.png",
+        "website": null
+      },
+      {
+        "name": "NANDA Performing Arts, Dubai",
+        "logo": "https://media.konfhub.com/partners/2025/October/30/1761846006413-88ffb963-9c05-4f88-b814-60a8398ae89a.png",
+        "website": null
+      }
+    ]
+  },
+  {
+    "category": "Experiential Partner",
+    "partners": [
+      {
+        "name": "Digital Jalebi",
+        "logo": "https://media.konfhub.com/partners/2025/October/31/1761916691266-e7132b05-b011-49cc-9627-2261e2898bc3.png",
+        "website": null
+      }
+    ]
+  }
+]

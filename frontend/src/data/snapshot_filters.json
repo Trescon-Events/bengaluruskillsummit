@@ -1,0 +1,132 @@
+{
+  "theme": [
+    {
+      "value": "",
+      "label": "All Themes"
+    },
+    {
+      "value": "31d5d5a2-e74f-4e95-9463-a503abcdc385",
+      "label": "Awards Presented By"
+    },
+    {
+      "value": "a826a1b9-c5a8-4798-b299-0c0c2b4f2ccb",
+      "label": "Country Partner Session"
+    },
+    {
+      "value": "5cbf7582-cb84-435c-811b-e146f57cc421",
+      "label": "Cross Track"
+    },
+    {
+      "value": "f35e06c9-7257-475b-8f66-4d4a28363041",
+      "label": "Emerging Skills"
+    },
+    {
+      "value": "a2d60233-e379-4fe3-8435-e7f24cf0c6ee",
+      "label": "Global Skills"
+    },
+    {
+      "value": "31b4da88-626d-42c6-bb21-7fa5031f4a4d",
+      "label": "Innovation"
+    },
+    {
+      "value": "a6e41bd1-6ded-456a-a7d3-56ca3f5940e7",
+      "label": "Skills for All"
+    }
+  ],
+  "stage": [
+    {
+      "value": "",
+      "label": "All Stages"
+    },
+    {
+      "value": "fa8f6e38-75b3-4d14-9ad9-bdb9bcafb7c0",
+      "label": "Registration Zone"
+    },
+    {
+      "value": "fbe16948-8fef-4236-8e51-79a4fd673061",
+      "label": "Plenary Stage"
+    },
+    {
+      "value": "7fe87f5a-34ea-43ce-a9bc-17df699451eb",
+      "label": "Room 1"
+    },
+    {
+      "value": "ec6bd81b-5c13-43cc-b223-bd298807e706",
+      "label": "Room 2"
+    },
+    {
+      "value": "42b7ebd4-ce98-475d-8523-c4360c170654",
+      "label": "Room 3"
+    },
+    {
+      "value": "bbcadf07-de26-4f2e-92fb-0482be506b04",
+      "label": "Room 4"
+    },
+    {
+      "value": "4a5bd53b-fc43-46c6-ab76-fcfdf6a74b86",
+      "label": "Networking Zone"
+    },
+    {
+      "value": "cb321c3d-e09b-4605-80c5-d14e9cf2da10",
+      "label": "Poolside"
+    }
+  ],
+  "sessionType": [
+    {
+      "value": "",
+      "label": "All Session Types"
+    },
+    {
+      "value": "0eb36bd0-5c77-4788-bb34-dd6d5f4510a3",
+      "label": "Registration & Networking"
+    },
+    {
+      "value": "b67852da-5a1c-4838-988b-db94759839b8",
+      "label": "Opening Remarks"
+    },
+    {
+      "value": "f59d5212-a6a4-4aff-b99d-52d3abf5a77f",
+      "label": "Welcome Address"
+    },
+    {
+      "value": "8cf247e8-d85d-4004-b40b-d42ed61a1a75",
+      "label": "Keynote"
+    },
+    {
+      "value": "c6e1e6c4-fd15-49a6-9839-962e60db9d3b",
+      "label": "Fireside Chat"
+    },
+    {
+      "value": "1b561193-50f7-47bc-9d89-f38357fcd89a",
+      "label": "Panel Discussion"
+    },
+    {
+      "value": "84e29b6b-4e87-406c-8621-2a8e83d16404",
+      "label": "Masterclass"
+    },
+    {
+      "value": "941cbd00-d07b-4a14-85c6-0699d5e20f0d",
+      "label": "Kaushalya Karnataka Awards"
+    },
+    {
+      "value": "3c121a8e-b3bd-4297-847c-cb81834f65af",
+      "label": "Cultural Performance"
+    },
+    {
+      "value": "77b80eda-039d-4a56-9460-a15e1f3c26f4",
+      "label": "Networking Luncheon"
+    },
+    {
+      "value": "21f2956d-852a-48a7-bfc7-5090f65a1776",
+      "label": "Influencer Address"
+    },
+    {
+      "value": "72ce1901-861b-40b9-a351-d9444473c8c8",
+      "label": "Skillathon"
+    },
+    {
+      "value": "af604c9c-fba7-4082-8969-190fdec2e145",
+      "label": "Roundtables"
+    }
+  ]
+}
