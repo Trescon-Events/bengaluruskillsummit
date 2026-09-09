@@ -138,3 +138,14 @@ img.img-with-animation,
   background-color: #525252 !important;
   background: #525252 !important;
 }
+
+/* Remove underline from contact cards and footer email links */
+.contact-info-card a,
+.contact-email a,
+#contact-info a,
+#footer-outer a[href^="mailto:"] {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
