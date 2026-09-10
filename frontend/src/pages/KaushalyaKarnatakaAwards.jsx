@@ -798,9 +798,7 @@ export default function KaushalyaKarnatakaAwards() {
           white-space: nowrap !important;
           display: inline-block !important;
         }
-        #contact-info .contact-email a:hover {
-          text-decoration: underline !important;
-        }
+        #contact-info .contact-email a:hover { text-decoration: none !important; color: #ffd766 !important; }
 
         /* Responsive Breakpoints */
         @media (max-width: 1024px) {

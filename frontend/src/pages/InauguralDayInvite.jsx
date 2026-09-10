@@ -283,7 +283,7 @@ export default function InauguralDayInvite() {
           font-weight: 500;
         }
 
-        #contact-info .contact-email a:hover { text-decoration: underline !important; color: #ffdb6e !important; cursor: pointer !important; }
+        #contact-info .contact-email a:hover { text-decoration: none !important; color: #ffd766 !important; }
 
         /* ---------------- RESPONSIVE BREAKPOINTS ---------------- */
         @media (max-width: 1100px) {

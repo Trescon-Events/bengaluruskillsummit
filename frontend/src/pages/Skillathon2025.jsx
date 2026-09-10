@@ -765,7 +765,7 @@ export default function Skillathon2025() {
           white-space: nowrap ;
           display: inline-block;
         }
-        #contact-info .contact-email a:hover { text-decoration: underline !important; color: #ffdb6e !important; cursor: pointer !important; }
+        #contact-info .contact-email a:hover { text-decoration: none !important; color: #ffd766 !important; }
 
         /* Mobile adjustments */
         @media (max-width: 768px) {

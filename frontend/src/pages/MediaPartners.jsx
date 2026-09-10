@@ -258,9 +258,7 @@ export default function MediaPartners() {
           white-space: nowrap !important;
           display: inline-block !important;
         }
-        #contact-info .contact-email a:hover {
-          text-decoration: underline !important;
-        }
+        #contact-info .contact-email a:hover { text-decoration: none !important; color: #ffd766 !important; }
       `}</style>
 
       {/* ======== HERO BANNER ======== */}

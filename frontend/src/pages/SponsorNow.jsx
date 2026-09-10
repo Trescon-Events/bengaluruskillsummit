@@ -373,7 +373,7 @@ export default function SponsorNow() {
           display: inline-block;
         }
 
-        #contact-info .contact-email a:hover { text-decoration: underline !important; color: #ffdb6e !important; cursor: pointer !important; }
+        #contact-info .contact-email a:hover { text-decoration: none !important; color: #ffd766 !important; }
       `}</style>
 
       {/* Hero Banner */}
