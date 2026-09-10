@@ -63,6 +63,52 @@ export default function Layout() {
     return () => document.removeEventListener('click', handleAnchorClick);
   }, [navigate]);
 
+  // Hydrate lazy images and background images on route change or dynamic DOM update
+  useEffect(() => {
+    const hydrateImages = () => {
+      // 1. Convert any data-nectar-img-src to real src if still blank SVG or empty
+      const lazyImgs = document.querySelectorAll('img[data-nectar-img-src]');
+      lazyImgs.forEach((img) => {
+        const realSrc = img.getAttribute('data-nectar-img-src');
+        if (realSrc && (!img.src || img.src.includes('data:image/svg+xml') || !img.src.includes(realSrc))) {
+          img.src = realSrc;
+        }
+      });
+
+      // 2. Hydrate elements with data-nectar-img-src on divs/elements as background-image
+      const lazyBgs = document.querySelectorAll('[data-nectar-img-src]:not(img)');
+      lazyBgs.forEach((el) => {
+        const bg = el.getAttribute('data-nectar-img-src');
+        if (bg && (!el.style.backgroundImage || !el.style.backgroundImage.includes(bg))) {
+          el.style.backgroundImage = 'url("' + bg + '")';
+        }
+      });
+
+      // 3. Trigger Salient / standard scroll/resize events so any Salient listeners recalculate
+      window.dispatchEvent(new Event('resize'));
+      window.dispatchEvent(new Event('scroll'));
+    };
+
+    // Run immediately and after small delays for any nested component mount
+    hydrateImages();
+    const t1 = setTimeout(hydrateImages, 50);
+    const t2 = setTimeout(hydrateImages, 200);
+    const t3 = setTimeout(hydrateImages, 600);
+
+    // Also observe DOM additions in the current page
+    const observer = new MutationObserver(() => {
+      hydrateImages();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      observer.disconnect();
+    };
+  }, [location.pathname]);
+
   if (isStandalone) {
     return <Outlet />;
   }
