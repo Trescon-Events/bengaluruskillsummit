@@ -322,13 +322,13 @@ export default function ExhibitNow() {
           flex-wrap: wrap;
           justify-content: center;
           gap: 15px;
-          max-width: 1200px;
+          max-width: 1440px;
           margin: 0 auto;
         }
 
         #contact-info .contact-info-card {
           flex: 1 1 calc(20% - 15px);
-          min-width: 200px;
+          min-width: 240px;
           background-color: #525252;
           border-radius: 10px;
           padding: 25px 14px;
@@ -367,9 +367,9 @@ export default function ExhibitNow() {
           line-height: 1.3;
           color: #ffc933;
           text-decoration: none;
-          overflow-wrap: anywhere;
-          word-break: break-all;
-          white-space: normal;
+          overflow-wrap: normal ;
+          word-break: normal ; white-space: nowrap ;
+          white-space: nowrap ;
           display: inline-block;
         }
 

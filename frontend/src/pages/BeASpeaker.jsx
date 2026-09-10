@@ -406,8 +406,8 @@ export default function BeASpeaker() {
           color: #ffc933 !important;
           font-size: 11px;
           text-decoration: none !important;
-          word-break: break-all;
-          overflow-wrap: anywhere;
+          word-break: normal ; white-space: nowrap ;
+          overflow-wrap: normal ;
         }
 
         @media (max-width: 1100px) {

@@ -179,13 +179,13 @@ export default function Contact() {
     flex-wrap: wrap !important;
     justify-content: center !important;
     gap: 15px !important;
-    max-width: 1200px !important;
+    max-width: 1440px !important;
     margin: 0 auto !important;
   }
 
   #contact-info .contact-info-card {
     flex: 1 1 calc(20% - 15px) !important;
-    min-width: 200px !important;
+    min-width: 240px !important;
     background-color: #525252 !important;
     border-radius: 10px !important;
     padding: 25px 15px !important;
@@ -199,10 +199,10 @@ export default function Contact() {
   #contact-info .contact-info-card a,
   #contact-info .contact-info-card .word-break,
   #contact-info .contact-info-card p {
-    overflow-wrap: anywhere !important;
+    overflow-wrap: normal !important;
     word-break: break-word !important;
-    word-break: break-all !important;
-    white-space: normal !important;
+    word-break: normal !important; white-space: nowrap !important;
+    white-space: nowrap !important;
   }
 
   #contact-info .contact-info-card a {

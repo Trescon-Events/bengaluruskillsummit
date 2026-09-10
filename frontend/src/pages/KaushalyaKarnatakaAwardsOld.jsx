@@ -387,9 +387,9 @@ export default function KaushalyaKarnatakaAwardsOld() {
           line-height: 1.3;
           color: #ffc933;
           text-decoration: none;
-          overflow-wrap: anywhere;
-          word-break: break-all;
-          white-space: normal;
+          overflow-wrap: normal ;
+          word-break: normal ; white-space: nowrap ;
+          white-space: nowrap ;
           display: inline-block;
           font-weight: 500;
         }
