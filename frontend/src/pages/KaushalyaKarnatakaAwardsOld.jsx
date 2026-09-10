@@ -348,7 +348,7 @@ export default function KaushalyaKarnatakaAwardsOld() {
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          justify-content: flex-start;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -394,9 +394,7 @@ export default function KaushalyaKarnatakaAwardsOld() {
           font-weight: 500;
         }
 
-        #contact-info .contact-email a:hover {
-          text-decoration: underline;
-        }
+        #contact-info .contact-email a:hover { text-decoration: underline !important; color: #ffdb6e !important; cursor: pointer !important; }
 
         @media (max-width: 1100px) {
           #contact-info .contact-info-card {

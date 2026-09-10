@@ -737,7 +737,7 @@ export default function Skillathon2025() {
           font-size: 15px;
           line-height: 1.3;
           color: #eaeaea;
-          margin-bottom: 25px;
+          margin-bottom: 10px;
           min-height: 40px;
           font-weight: 500;
         }
@@ -765,9 +765,7 @@ export default function Skillathon2025() {
           white-space: nowrap ;
           display: inline-block;
         }
-        #contact-info .contact-email a:hover {
-          text-decoration: underline;
-        }
+        #contact-info .contact-email a:hover { text-decoration: underline !important; color: #ffdb6e !important; cursor: pointer !important; }
 
         /* Mobile adjustments */
         @media (max-width: 768px) {

@@ -360,7 +360,7 @@ export default function SkillathonRegistration() {
           font-size: 15px;
           line-height: 1.3;
           color: #eaeaea;
-          margin-bottom: 25px;
+          margin-bottom: 10px;
           min-height: 40px;
           font-weight: 500;
         }
@@ -392,9 +392,7 @@ export default function SkillathonRegistration() {
           display: inline-block;
         }
 
-        #contact-info .contact-email a:hover {
-          text-decoration: underline;
-        }
+        #contact-info .contact-email a:hover { text-decoration: underline !important; color: #ffdb6e !important; cursor: pointer !important; }
       `}</style>
 
       {/* Hero Banner */}

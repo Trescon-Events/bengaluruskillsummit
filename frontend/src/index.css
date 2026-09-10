@@ -289,7 +289,7 @@ img.img-with-animation,
 
 
 /* ==========================================================================
-   Contact Info Query Cards (Expanded Card Size & 1-Line Email)
+   Contact Info Query Cards (Expanded Card Size, Compact Gap, 1-Line Email & Hover)
    ========================================================================== */
 #contact-info {
   width: 100vw !important;
@@ -299,7 +299,7 @@ img.img-with-animation,
   margin-left: -50vw !important;
   margin-right: -50vw !important;
   box-sizing: border-box !important;
-  padding: 70px 20px 50px 20px !important;
+  padding: 60px 20px 45px 20px !important;
   background: #525252 url('/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg') center center no-repeat !important;
   background-size: cover !important;
 }
@@ -332,13 +332,13 @@ img.img-with-animation,
   max-width: 275px !important;
   background-color: #525252 !important;
   border-radius: 10px !important;
-  padding: 28px 14px !important;
+  padding: 24px 14px 22px 14px !important;
   box-sizing: border-box !important;
   text-align: left !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: space-between !important;
+  justify-content: flex-start !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
   width: auto !important;
   float: none !important;
@@ -351,13 +351,15 @@ img.img-with-animation,
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25) !important;
 }
 
+/* Reduced gap between heading and name */
 #contact-info .contact-title,
 .contact-info-card .contact-title,
 #contact-info .contact-info-card .nectar-responsive-text:first-child p {
   font-size: 15px !important;
   line-height: 1.3 !important;
   color: #eaeaea !important;
-  margin-bottom: 25px !important;
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
   min-height: 40px !important;
   font-weight: 500 !important;
   word-break: normal !important;
@@ -365,27 +367,36 @@ img.img-with-animation,
   white-space: normal !important;
 }
 
+/* Remove tall redundant dividers between title and name */
+#contact-info .contact-info-card .divider-wrap {
+  display: none !important;
+}
+
 #contact-info .contact-name,
-.contact-info-card .contact-name {
+.contact-info-card .contact-name,
+#contact-info .contact-info-card .nectar-responsive-text:nth-child(3) p {
   font-size: 13px !important;
   line-height: 1.2 !important;
   color: #ffffff !important;
   font-weight: 600 !important;
-  margin-bottom: 6px !important;
+  margin-top: 0 !important;
+  margin-bottom: 4px !important;
   word-break: normal !important;
 }
 
 #contact-info .contact-designation,
-.contact-info-card .contact-designation {
+.contact-info-card .contact-designation,
+#contact-info .contact-info-card .nectar-responsive-text:nth-child(5) p {
   font-size: 10px !important;
   line-height: 1.3 !important;
   color: rgba(255, 255, 255, 0.8) !important;
+  margin-top: 0 !important;
   margin-bottom: 12px !important;
-  min-height: 26px !important;
+  min-height: 24px !important;
   word-break: normal !important;
 }
 
-/* Guarantee email is strictly on 1 line and never wraps */
+/* Guarantee email is strictly on 1 line with clean cursor and transition */
 #contact-info a[href^="mailto:"],
 #contact-info .contact-email a,
 .contact-info-card .contact-email a,
@@ -405,6 +416,19 @@ img.img-with-animation,
   font-size: 11px !important;
   line-height: 1.3 !important;
   text-decoration: none !important;
+  cursor: pointer !important;
+  transition: color 0.2s ease, text-decoration 0.2s ease, opacity 0.2s ease !important;
+}
+
+/* Interactive hover effect for email */
+#contact-info a[href^="mailto:"]:hover,
+#contact-info .contact-email a:hover,
+.contact-info-card .contact-email a:hover,
+.contact-info-card a[href^="mailto:"]:hover,
+#contact-info .contact-info-card p a[href^="mailto:"]:hover {
+  text-decoration: underline !important;
+  color: #ffdb6e !important;
+  opacity: 1 !important;
 }
 
 @media (max-width: 1400px) {
@@ -457,7 +481,6 @@ img.img-with-animation,
     max-width: 100% !important;
   }
 }
-
 
 /* ==========================================================================
    Testimonial / Insights Shared Section (Logo Icons & Layout)
