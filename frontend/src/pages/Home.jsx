@@ -217,8 +217,10 @@ export default function Home() {
                         alignItems: "center",
                         padding: isOpen ? "18px 24px 10px 24px" : "18px 24px",
                         color: "#0e1220",
-                        fontSize: "17px",
-                        fontWeight: "500",
+                        fontFamily: "'Comfortaa', sans-serif",
+                        fontSize: "20px",
+                        fontWeight: "700",
+                        lineHeight: "38px",
                         cursor: "pointer",
                         userSelect: "none",
                         gap: "16px",
@@ -226,7 +228,7 @@ export default function Home() {
                         boxSizing: "border-box"
                       }}
                     >
-                      <span style={{ flex: 1, textAlign: "left", lineHeight: "1.4" }}>{item.question}</span>
+                      <span style={{ flex: 1, textAlign: "left", fontFamily: "'Comfortaa', sans-serif", fontSize: "20px", fontWeight: "700", lineHeight: "38px", color: "#000000" }}>{item.question}</span>
                       <span style={{ flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
                         {isOpen ? (
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -246,10 +248,12 @@ export default function Home() {
                       <div style={{
                         padding: "0 24px 20px 24px",
                         color: "#374151",
-                        fontSize: "15.5px",
-                        lineHeight: "1.6"
+                        fontFamily: "'Comfortaa', sans-serif",
+                        fontSize: "16px",
+                        fontWeight: "500",
+                        lineHeight: "23px"
                       }}>
-                        <p style={{ margin: 0 }}>{item.answer}</p>
+                        <p style={{ margin: 0, color: "#000000", fontFamily: "'Comfortaa', sans-serif", fontSize: "16px", fontWeight: "500", lineHeight: "23px" }}>{item.answer}</p>
                       </div>
                     )}
                   </div>

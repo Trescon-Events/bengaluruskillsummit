@@ -675,8 +675,11 @@ export default function Skillathon2025() {
           align-items: center;
           justify-content: space-between;
           gap: 16px;
-          font-size: 19px;
-          font-weight: 600;
+          font-family: 'Comfortaa', sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 38px;
+          color: #000000;
           color: #0e1220;
           cursor: pointer;
           user-select: none;

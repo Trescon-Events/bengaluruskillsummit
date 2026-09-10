@@ -499,3 +499,59 @@ img.img-with-animation,
   line-height: 1.4 !important;
   opacity: 0.9 !important;
 }
+
+
+/* ==========================================================================
+   FAQ Section Styling (Comfortaa 700 / 20px / 38px & Comfortaa 500 / 16px / 23px)
+   ========================================================================== */
+.home-faq-container .home-faq-item [role="button"],
+.home-faq-container .home-faq-item [role="button"] span:first-child,
+.faq-question,
+.kka-faq-question {
+  font-family: 'Comfortaa', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+  line-height: 38px !important;
+  color: #000000 !important;
+  font-style: normal !important;
+}
+
+.home-faq-container .home-faq-item div,
+.home-faq-container .home-faq-item p,
+.faq-answer,
+.faq-answer p,
+.kka-faq-answer,
+.kka-faq-answer p {
+  font-family: 'Comfortaa', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 23px !important;
+  color: #000000 !important;
+  font-style: normal !important;
+}
+
+.home-faq-container .home-faq-item a,
+.faq-answer a,
+.kka-faq-answer a {
+  font-family: 'Comfortaa', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 23px !important;
+  color: #ff6257 !important;
+}
+
+@media (max-width: 600px) {
+  .home-faq-container .home-faq-item [role="button"],
+  .home-faq-container .home-faq-item [role="button"] span:first-child,
+  .faq-question,
+  .kka-faq-question {
+    font-size: 17px !important;
+    line-height: 28px !important;
+  }
+  .home-faq-container .home-faq-item p,
+  .faq-answer p,
+  .kka-faq-answer p {
+    font-size: 15px !important;
+    line-height: 22px !important;
+  }
+}
