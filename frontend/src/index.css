@@ -457,3 +457,45 @@ img.img-with-animation,
     max-width: 100% !important;
   }
 }
+
+
+/* ==========================================================================
+   Testimonial / Insights Shared Section (Logo Icons & Layout)
+   ========================================================================== */
+.nectar_single_testimonial .image-icon {
+  display: block !important;
+  width: 120px !important;
+  height: 52px !important;
+  margin: 20px auto 14px auto !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.nectar_single_testimonial .wrap {
+  display: block !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+.nectar_single_testimonial .wrap span:first-child {
+  display: block !important;
+  font-family: 'Comfortaa', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #0E1220 !important;
+  margin-bottom: 4px !important;
+  line-height: 1.3 !important;
+}
+
+.nectar_single_testimonial .wrap .title {
+  display: block !important;
+  font-family: 'Comfortaa', sans-serif !important;
+  font-size: 12px !important;
+  color: #555555 !important;
+  line-height: 1.4 !important;
+  opacity: 0.9 !important;
+}
