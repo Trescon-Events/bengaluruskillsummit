@@ -152,139 +152,137 @@ img.img-with-animation,
 
 
 /* ==========================================================================
-   Industry Verticals Represented Section - Centered Layout & Responsive Grid
+   Industry Verticals Represented Section - Exact 5-Column Grid Layout
    ========================================================================== */
-.industry-verticles-represented {
-  width: 100% !important;
-  max-width: 100% !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  margin: 0 auto !important;
-  padding: 20px 0 !important;
-}
-
-.industry-verticles-represented .row_col_wrap_12,
-.industry-verticles-represented .vc_col-sm-12,
-.industry-verticles-represented .vc_column-inner {
-  width: 100% !important;
-  max-width: 1240px !important;
-  margin: 0 auto !important;
-  display: flex !important;
-  justify-content: center !important;
-}
-
 .industry-verticles-represented .wpb_wrapper {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 25px !important;
   align-items: stretch !important;
-  gap: 20px !important;
-  max-width: 1200px !important;
   width: 100% !important;
-  margin: 0 auto !important;
-  padding: 0 15px !important;
   box-sizing: border-box !important;
 }
 
+/* Card 16 (Retail & E-Commerce) starts at column 2 so last 3 cards sit at cols 2, 3, 4 */
+.industry-verticles-represented .wpb_wrapper > .iwithtext:nth-last-child(3) {
+  grid-column-start: 2 !important;
+}
+
+/* Each Card */
 .industry-verticles-represented .iwithtext {
-  flex: 0 0 calc(20% - 16px) !important;
-  width: calc(20% - 16px) !important;
-  max-width: calc(20% - 16px) !important;
-  box-sizing: border-box !important;
   display: flex !important;
   flex-direction: column !important;
-  align-items: center !important;
   justify-content: center !important;
-  text-align: center !important;
+  align-items: center !important;
+  border-radius: 10px !important;
   background: #ffffff !important;
-  border-radius: 12px !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
-  padding: 26px 16px !important;
-  min-height: 160px !important;
-  grid-column: auto !important;
-  grid-column-start: auto !important;
+  box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.03) !important;
+  padding: 25px 15px !important;
+  text-align: center !important;
+  height: 100% !important;
+  width: 100% !important;
+  min-height: 180px !important;
+  box-sizing: border-box !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 .industry-verticles-represented .iwithtext:hover {
   transform: translateY(-5px) !important;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
 }
 
-.industry-verticles-represented .iwt-icon {
-  float: none !important;
+.industry-verticles-represented .iwithtext .iwt-icon {
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
+  margin-bottom: 15px !important;
   width: 100% !important;
-  margin-bottom: 14px !important;
-  padding: 0 !important;
 }
 
 .industry-verticles-represented .iwt-icon img {
-  max-height: 50px !important;
-  width: auto !important;
-  margin: 0 auto !important;
+  width: 70px !important;
+  height: 70px !important;
+  max-height: 70px !important;
+  object-fit: contain !important;
   display: block !important;
+  margin: 0 auto !important;
 }
 
-.industry-verticles-represented .iwt-text {
-  float: none !important;
-  width: 100% !important;
+.industry-verticles-represented .iwithtext .iwt-text {
+  padding-left: 0px !important;
   text-align: center !important;
-  padding: 0 !important;
-  margin: 0 !important;
   font-family: 'Comfortaa', sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  line-height: 1.35 !important;
-  color: #333333 !important;
+  font-size: 15px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  color: #0E1220 !important;
+  margin: 0 !important;
 }
 
 .industry-verticles-represented .clear {
   display: none !important;
 }
 
-@media (min-width: 992px) and (max-width: 1200px) {
-  .industry-verticles-represented .iwithtext {
-    flex: 0 0 calc(25% - 15px) !important;
-    width: calc(25% - 15px) !important;
-    max-width: calc(25% - 15px) !important;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .industry-verticles-represented .iwithtext {
-    flex: 0 0 calc(33.333% - 14px) !important;
-    width: calc(33.333% - 14px) !important;
-    max-width: calc(33.333% - 14px) !important;
-  }
-}
-
-@media (min-width: 480px) and (max-width: 767px) {
+@media (max-width: 1280px) {
   .industry-verticles-represented .wpb_wrapper {
-    gap: 15px !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 25px !important;
+  }
+  .industry-verticles-represented .wpb_wrapper > .iwithtext:nth-last-child(3) {
+    grid-column-start: auto !important;
+  }
+  .industry-verticles-represented .wpb_wrapper > .iwithtext:nth-last-child(2) {
+    grid-column-start: 2 !important;
+  }
+}
+
+@media (max-width: 999px) {
+  .industry-verticles-represented .wpb_wrapper {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+  }
+  .industry-verticles-represented .wpb_wrapper > .iwithtext:nth-last-child(3),
+  .industry-verticles-represented .wpb_wrapper > .iwithtext:nth-last-child(2) {
+    grid-column-start: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .industry-verticles-represented .wpb_wrapper {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  .industry-verticles-represented .iwt-icon img {
+    width: 50px !important;
+    height: 50px !important;
   }
   .industry-verticles-represented .iwithtext {
-    flex: 0 0 calc(50% - 10px) !important;
-    width: calc(50% - 10px) !important;
-    max-width: calc(50% - 10px) !important;
-    padding: 18px 10px !important;
+    padding: 15px 10px !important;
     min-height: 140px !important;
   }
+  .industry-verticles-represented .iwithtext .iwt-text {
+    font-size: 13px !important;
+  }
+  .industry-verticles-represented .wpb_wrapper > .iwithtext:nth-last-child(3),
+  .industry-verticles-represented .wpb_wrapper > .iwithtext:nth-last-child(2) {
+    grid-column-start: auto !important;
+  }
 }
 
-@media (max-width: 479px) {
+@media (max-width: 400px) {
   .industry-verticles-represented .wpb_wrapper {
-    gap: 12px !important;
+    grid-template-columns: repeat(1, 1fr) !important;
+    gap: 10px !important;
+  }
+  .industry-verticles-represented .iwt-icon img {
+    width: 50px !important;
+    height: 50px !important;
   }
   .industry-verticles-represented .iwithtext {
-    flex: 0 0 100% !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 16px 12px !important;
-    min-height: 120px !important;
+    padding: 15px 10px !important;
   }
 }
-
