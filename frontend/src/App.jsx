@@ -14,6 +14,8 @@ const GetInvolved = lazy(() => import('./pages/GetInvolved'));
 const ThankYou = lazy(() => import('./pages/ThankYou'));
 const ThankYouGuestRegistration = lazy(() => import('./pages/ThankYouGuestRegistration'));
 const Speakers = lazy(() => import('./pages/Speakers'));
+const Agenda2026 = lazy(() => import('./pages/Agenda2026'));
+const Speakers2026 = lazy(() => import('./pages/Speakers2026'));
 const Agenda = lazy(() => import('./pages/Agenda'));
 const SnapshotAgenda = lazy(() => import('./pages/SnapshotAgenda'));
 const Exhibitors = lazy(() => import('./pages/Exhibitors'));
@@ -73,7 +75,13 @@ export default function App() {
             <Route path="thank-you-guest-registration" element={<ThankYouGuestRegistration />} />
             <Route path="thank-you-guest-registration/" element={<ThankYouGuestRegistration />} />
 
-            {/* Speakers */}
+            {/* 2026 Agenda & Speakers */}
+          <Route path="agenda-2026" element={<Agenda2026 />} />
+          <Route path="agenda-2026/" element={<Agenda2026 />} />
+          <Route path="speakers-2026" element={<Speakers2026 />} />
+          <Route path="speakers-2026/" element={<Speakers2026 />} />
+
+          {/* Speakers */}
             <Route path="speakers-2025" element={<Speakers />} />
             <Route path="speakers-2025/" element={<Speakers />} />
             <Route path="speakers" element={<Speakers />} />
