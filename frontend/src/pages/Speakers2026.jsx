@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import initialSpeakers from '../data/speakers.json';
+import React, { useState, useEffect, useRef } from 'react';
+import initialSpeakers2026 from '../data/speakers_2026.json';
 
 export default function Speakers2026() {
-  const [speakers, setSpeakers] = useState(initialSpeakers || []);
-  const [selectedSpeaker, setSelectedSpeaker] = useState(null);
+  const [speakers, setSpeakers] = useState(initialSpeakers2026 || []);
+  const [activePopupIndex, setActivePopupIndex] = useState(null);
+  const popupRefs = useRef({});
 
   useEffect(() => {
-    // Fetch latest live speakers from KonfHub in background
-    fetch('https://api.konfhub.com/event/public/bengaluru-skill-summit-2025/speakers', {
-      headers: { 'Accept': 'application/json' }
+    // 1. Fetch live data from KonfHub API for 2026
+    fetch('https://api.konfhub.com/event/public/bengaluru-skill-summit-2026/speakers', {
+      headers: {
+        Accept: 'application/json',
+      },
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         let list = [];
         if (data && data.uncategorized && Array.isArray(data.uncategorized)) {
           list = list.concat(data.uncategorized);
         }
         if (data && data.categorized && typeof data.categorized === 'object') {
-          Object.values(data.categorized).forEach(arr => {
+          Object.values(data.categorized).forEach((arr) => {
             if (Array.isArray(arr)) list = list.concat(arr);
           });
         }
@@ -25,7 +28,7 @@ export default function Speakers2026() {
         if (list.length > 0) {
           const seen = new Set();
           const unique = [];
-          list.forEach(s => {
+          list.forEach((s) => {
             if (!s || !s.name) return;
             const key = s.name.trim().toLowerCase();
             if (!seen.has(key)) {
@@ -36,43 +39,70 @@ export default function Speakers2026() {
           setSpeakers(unique);
         }
       })
-      .catch(err => {
-        console.warn('KonfHub speakers API fetch warning, using static data:', err);
+      .catch((err) => {
+        console.warn('KonfHub 2026 speakers API fetch warning, using static fallback:', err);
       });
   }, []);
 
-  // Lock body scroll when modal is open
+  // Close popup on Escape key or outside click
   useEffect(() => {
-    if (selectedSpeaker) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setActivePopupIndex(null);
+      }
     };
-  }, [selectedSpeaker]);
+
+    const handleClickOutside = (e) => {
+      if (activePopupIndex !== null) {
+        const currentPopup = popupRefs.current[activePopupIndex];
+        if (currentPopup && !currentPopup.contains(e.target) && !e.target.closest('.speaker-card')) {
+          setActivePopupIndex(null);
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [activePopupIndex]);
+
+  const togglePopup = (index, e) => {
+    e.stopPropagation();
+    if (activePopupIndex === index) {
+      setActivePopupIndex(null);
+    } else {
+      setActivePopupIndex(index);
+    }
+  };
+
+  const closePopup = (e) => {
+    if (e) e.stopPropagation();
+    setActivePopupIndex(null);
+  };
 
   const formatSessionTime = (startTimestamp, endTimestamp) => {
     try {
       const start = new Date(startTimestamp);
       const end = new Date(endTimestamp);
-      const dateStr = start.toLocaleDateString('en-GB', {
+      const formatOptsDate = {
+        timeZone: 'Asia/Kolkata',
         day: '2-digit',
         month: 'short',
-        year: 'numeric'
-      });
-      const timeStart = start.toLocaleTimeString('en-US', {
+        year: 'numeric',
+      };
+      const formatOptsTime = {
+        timeZone: 'Asia/Kolkata',
         hour: 'numeric',
         minute: '2-digit',
-        hour12: true
-      });
-      const timeEnd = end.toLocaleTimeString('en-US', {
-        hour: 'numeric',
-        minute: '2-digit',
-        hour12: true
-      });
-      return `${dateStr}, ${timeStart} to ${timeEnd}`;
+        hour12: true,
+      };
+      const dateStr = start.toLocaleDateString('en-GB', formatOptsDate);
+      const startStr = start.toLocaleTimeString('en-US', formatOptsTime);
+      const endStr = end.toLocaleTimeString('en-US', formatOptsTime);
+      return `${dateStr}, ${startStr} to ${endStr}`;
     } catch {
       return '';
     }
@@ -82,22 +112,17 @@ export default function Speakers2026() {
     <>
       <div id="ajax-content-wrap">
         <style>{`
-          /* Hero Banner */
+          /* ==========================================
+             Banner Section
+             ========================================== */
           #Skillathon-Banner {
-            width: 100vw !important;
-            position: relative !important;
-            left: 50% !important;
-            right: 50% !important;
-            margin-left: -50vw !important;
-            margin-right: -50vw !important;
-            box-sizing: border-box !important;
-            padding-top: 100px !important;
-            padding-bottom: 100px !important;
-            min-height: 420px !important;
             background-image: url('https://bengaluruskillsummit.com/wp-content/uploads/2025/09/banner-skillathon-05.png') !important;
             background-position: center center !important;
             background-repeat: no-repeat !important;
             background-size: cover !important;
+            padding-top: 100px !important;
+            padding-bottom: 100px !important;
+            min-height: 380px !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
@@ -150,71 +175,54 @@ export default function Speakers2026() {
             }
           }
 
-          /* User's Exact N-Speakers Styles */
-          .N-Speakers {
-            padding: 60px 0 60px 0;
-          }
-          .N-Speakers .container {
-            max-width: 1240px;
+          /* ==========================================
+             Speakers Grid Layout (User's Exact Design)
+             ========================================== */
+          .speakers-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
-          }
-          .N-Speakers .speakers-grid {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -15px;
-          }
-          .N-Speakers .speaker-col {
-            flex: 0 0 25%;
-            max-width: 25%;
-            padding: 0 15px;
+            padding: 50px 15px 70px;
             box-sizing: border-box;
-            margin-bottom: 35px;
-          }
-          @media (max-width: 992px) {
-            .N-Speakers .speaker-col {
-              flex: 0 0 33.333%;
-              max-width: 33.333%;
-            }
-          }
-          @media (max-width: 768px) {
-            .N-Speakers .speaker-col {
-              flex: 0 0 50%;
-              max-width: 50%;
-            }
-          }
-          @media (max-width: 480px) {
-            .N-Speakers .speaker-col {
-              flex: 0 0 100%;
-              max-width: 100%;
-            }
           }
 
-          .N-Speakers .Outer-Box {
-            margin-bottom: 40px;
-            text-align: center;
+          .speakers-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px 20px !important;
+            padding: 0px !important;
+            margin: 0px !important;
+            align-items: stretch;
           }
-          .N-Speakers .Outer-Box .SKR-Img-Div {
+
+          .speaker-card-wrapper {
             position: relative;
-            cursor: pointer;
-            overflow: hidden;
-            border-radius: 4px;
-            aspect-ratio: 1 / 1;
-            background: #f0f0f0;
           }
-          .N-Speakers .Outer-Box .SKR-IMG {
-            display: block;
-            width: 100%;
+
+          .speaker-card {
+            padding: 0px !important;
             height: 100%;
+            border: none !important;
+            cursor: pointer;
+            text-align: left;
+          }
+
+          .speaker-photo-wrapper {
+            position: relative;
+            overflow: hidden;
+          }
+
+          .speaker-photo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
             object-fit: cover;
-            border-radius: 4px;
-            transition: transform 0.4s ease;
+            display: block;
+            border-radius: 0px !important;
+            margin-bottom: 0px !important;
           }
-          .N-Speakers .Outer-Box .SKR-Img-Div:hover .SKR-IMG {
-            transform: scale(1.05);
-          }
-          .N-Speakers .Outer-Box .overlay {
-            border-radius: 4px;
+
+          .speaker-photo-wrapper .overlay {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -223,291 +231,237 @@ export default function Speakers2026() {
             height: 100%;
             width: 100%;
             opacity: 0;
-            transition: .3s ease;
-            background-color: rgba(13, 45, 60, 0.65);
+            transition: .4s ease;
+            background-color: rgba(13, 45, 60, 0.45);
             display: flex;
             align-items: center;
             justify-content: center;
           }
-          .N-Speakers .Outer-Box .SKR-Img-Div:hover .overlay {
+
+          .speaker-photo-wrapper:hover .overlay {
             opacity: 1;
           }
-          .N-Speakers .Outer-Box .text {
-            color: white;
+
+          .speaker-photo-wrapper .overlay span {
+            color: #fff;
             font-size: 28px;
-            text-align: center;
+            font-weight: bold;
           }
-          .N-Speakers .Outer-Box .Speaker-Name {
-            color: #000;
+
+          .speaker-name {
+            margin-top: 15px !important;
+            margin-bottom: 0px !important;
+            line-height: 1.2 !important;
+            padding-bottom: 8px;
+            font-size: 20px !important;
             text-transform: uppercase;
             font-weight: bold;
-            font-size: 18px;
-            margin-top: 17px;
-            text-align: center;
-            margin-bottom: 5px;
-            font-family: 'Joost', sans-serif;
-          }
-          .N-Speakers .Outer-Box .Designation,
-          .N-Speakers .Outer-Box .Company {
             color: #000;
+            font-family: 'Joost', sans-serif !important;
+          }
+
+          .speaker-title, 
+          .speaker-org,
+          .speaker-country {
+            line-height: 140%;
+            color: #000 !important;
+            padding-bottom: 4px;
             font-size: 14px;
-            text-align: center;
-            margin-top: 0px;
-            font-weight: 600;
-            margin-bottom: 3px;
-            line-height: 1.35;
-            font-family: 'Jost', sans-serif;
-          }
-          .N-Speakers .Outer-Box .Company {
-            font-weight: 400;
-            margin-bottom: 3px;
-          }
-          .N-Speakers .Outer-Box .Country {
-            color: #000;
-            font-style: italic;
-            font-size: 14px;
-            text-align: center;
-            margin-top: 0px;
-            margin-bottom: 10px;
-            font-weight: 600;
-            font-family: 'Jost', sans-serif;
-          }
-
-          /* Modal Styling */
-          .speaker-modal-backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.75);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 99999;
-            padding: 20px;
-            animation: fadeIn 0.2s ease-in-out;
-          }
-
-          @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-          }
-
-          .Speaker-Modal-Container {
-            width: 100%;
-            max-width: 650px;
-            background: #ffffff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            max-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            animation: slideUp 0.25s ease-out;
-          }
-
-          @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-          }
-
-          .Speaker-Modal .close-Modal {
-            position: absolute;
-            top: 12px;
-            right: 15px;
-            font-size: 2.2rem;
-            font-weight: 300;
-            line-height: 1;
-            background: transparent;
-            border: none;
-            color: #ffffff;
-            cursor: pointer;
-            z-index: 10;
-            transition: color 0.2s;
-          }
-          .Speaker-Modal .close-Modal:hover {
-            color: #ffc933;
-          }
-
-          .Speaker-Modal .Speak-Det {
-            width: 100%;
-            background: #1b9ad6;
-            padding: 25px 20px;
-            box-sizing: border-box;
-          }
-
-          .Speaker-Modal .modal-header-row {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-          }
-
-          .Speaker-Modal .Left-Img {
-            width: 110px;
-            height: 110px;
-            flex-shrink: 0;
-          }
-
-          .Speaker-Modal .Left-Img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 6px;
-            border: 2px solid rgba(255, 255, 255, 0.4);
-          }
-
-          .Speaker-Modal .Right-Content {
-            flex: 1;
-            padding-right: 25px;
-          }
-
-          .Speaker-Modal .Speaker-Detile {
-            color: #ffffff;
-          }
-
-          .Speaker-Modal .Speak-Modal-Name {
-            font-size: 22px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin: 0 0 6px 0;
-            color: #ffffff;
-            font-family: 'Joost', sans-serif;
-            letter-spacing: 0.5px;
-          }
-
-          .Speaker-Modal .Speak-Modal-Designation,
-          .Speaker-Modal .Speak-Modal-Company,
-          .Speaker-Modal .Speak-Modal-Country {
-            font-size: 15px;
-            line-height: 1.35;
-            margin: 0 0 3px 0;
-            color: rgba(255, 255, 255, 0.95);
-            font-family: 'Jost', sans-serif;
-          }
-
-          .Speaker-Modal .Speak-Modal-Country {
-            font-style: italic;
-            font-weight: 500;
-          }
-
-          .Speaker-Modal .Speaker-Liner {
-            padding: 25px;
-            overflow-y: auto;
-            max-height: calc(85vh - 160px);
-            box-sizing: border-box;
-          }
-
-          .Speaker-Modal .Speaker-Description {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333333;
-            margin: 0 0 20px 0;
-            font-family: 'Jost', sans-serif;
-            white-space: pre-line;
-          }
-
-          .sessions-heading {
-            font-size: 20px;
-            font-weight: 700;
-            color: #0e1220;
-            margin: 25px 0 15px 0;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-family: 'Joost', sans-serif;
-          }
-
-          .speaker-session-box {
-            border: 1px solid rgba(27, 154, 214, 0.4);
-            background: #f8fbfe;
-            border-radius: 6px;
-            padding: 14px 16px;
-            margin-bottom: 12px;
-          }
-
-          .S-Name {
-            font-size: 16px;
-            font-weight: 600;
-            color: #106cff;
-            margin: 0 0 6px 0;
-            line-height: 1.4;
-            font-family: 'Jost', sans-serif;
-          }
-
-          .Session-Time {
-            display: flex;
-            align-items: center;
-            font-size: 14px;
-            color: #4b5563;
             margin: 0;
-            font-weight: 500;
-            font-family: 'Jost', sans-serif;
+            font-family: 'Comfortaa', sans-serif !important;
           }
 
-          /* ---------------- CONTACT INFO CARDS ---------------- */
-          #contact-info {
-            width: 100vw !important;
-            position: relative !important;
-            left: 50% !important;
-            right: 50% !important;
-            margin-left: -50vw !important;
-            margin-right: -50vw !important;
-            box-sizing: border-box !important;
-            padding: 60px 20px !important;
+          .speaker-title {
+            font-weight: bold;
           }
 
-          #contact-info .row_col_wrap_12 {
-            display: flex !important;
-            flex-wrap: wrap !important;
-            justify-content: center !important;
-            gap: 15px !important;
-            max-width: 1440px !important;
-            margin: 0 auto !important;
+          .speaker-country {
+            font-style: italic;
           }
 
-          #contact-info .contact-info-card {
-            flex: 1 1 calc(20% - 15px) !important;
-            min-width: 240px !important;
-            background-color: #525252 !important;
-            border-radius: 10px !important;
-            padding: 25px 14px !important;
-            box-sizing: border-box !important;
-            text-align: left !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
-            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-          }
-
-          #contact-info .contact-info-card a,
-          #contact-info .contact-info-card .word-break,
-          #contact-info .contact-info-card p {
-            overflow-wrap: normal !important;
-            word-break: normal !important; white-space: nowrap !important;
-            white-space: nowrap !important;
-          }
-
-          #contact-info .contact-info-card a {
-            display: inline-block !important;
-            max-width: 100% !important;
-            line-height: 1.35 !important;
-          }
-
-          #contact-info .contact-info-card:hover {
-            transform: translateY(-5px) !important;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
-          }
-
-          @media (max-width: 1024px) {
-            #contact-info .contact-info-card {
-              flex: 1 1 calc(33.333% - 15px) !important;
+          /* Responsive Grid Breakpoints */
+          @media (min-width: 1025px) {
+            .speaker-card-wrapper {
+              flex: 1 1 calc(20% - 20px) !important;
+              max-width: calc(20% - 20px) !important;
             }
           }
 
-          @media (max-width: 600px) {
-            #contact-info .contact-info-card {
-              flex: 1 1 100% !important;
+          @media (max-width: 1024px) and (min-width: 768px) {
+            .speaker-card-wrapper {
+              flex: 1 1 calc(33.333% - 20px) !important;
+              max-width: calc(33.333% - 20px) !important;
+            }
+          }
+
+          /* 1 Speaker per row on mobile */
+          @media (max-width: 767px) {
+            .speakers-grid {
+              gap: 40px 0px !important;
+            }
+            .speaker-card-wrapper {
+              flex: 0 0 100% !important;
+              max-width: 100% !important;
+              width: 100% !important;
+            }
+            .speaker-card {
+              max-width: 320px;
+              margin: 0 auto;
+            }
+          }
+
+          /* ==========================================
+             Anchored Floating Modal (No Background Dim)
+             ========================================== */
+          .inline-speaker-popup {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 580px;
+            max-width: 90vw;
+            z-index: 9999;
+            background: #ffffff;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+            border-radius: 4px;
+            overflow: hidden;
+            text-align: left;
+          }
+
+          .inline-speaker-popup.active {
+            display: block;
+            animation: popIn 0.2s ease-out;
+          }
+
+          @keyframes popIn {
+            from { opacity: 0; transform: translate(-50%, -10px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+          }
+
+          .popup-header {
+            background: #106cff;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            gap: 15px;
+          }
+
+          .popup-image {
+            flex: 0 0 110px;
+            max-width: 110px;
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 2px;
+          }
+
+          .popup-header-info {
+            flex: 1;
+            color: #fff;
+            padding-right: 25px;
+          }
+
+          .popup-name {
+            margin: 0 0 5px 0;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            line-height: 1.2;
+            font-family: 'Joost', sans-serif !important;
+          }
+
+          .popup-role {
+            color: #fff;
+            font-weight: 600;
+            font-size: 13px;
+            margin: 0 0 2px 0;
+            font-family: 'Comfortaa', sans-serif !important;
+          }
+
+          .popup-org, .popup-country {
+            color: #e8f0fe;
+            font-size: 13px;
+            margin: 0 0 2px 0;
+            font-family: 'Comfortaa', sans-serif !important;
+          }
+
+          .popup-country {
+            font-style: italic;
+          }
+
+          .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 28px;
+            cursor: pointer;
+            line-height: 1;
+            opacity: 0.85;
+          }
+
+          .popup-close:hover {
+            opacity: 1;
+          }
+
+          .popup-body {
+            max-height: 380px;
+            overflow-y: auto;
+            padding: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333333;
+            font-family: 'Comfortaa', sans-serif !important;
+          }
+
+          .popup-sessions-heading {
+            font-size: 16px;
+            font-weight: bold;
+            color: #106cff;
+            margin: 15px 0 10px 0;
+            font-family: 'Joost', sans-serif !important;
+          }
+
+          .popup-sessions {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+          }
+
+          .popup-sessions li {
+            background: #f6faff;
+            border: 1px solid #d4ebf8;
+            padding: 10px 14px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            font-size: 13px;
+          }
+
+          /* Mobile adjustments for 1-column layout */
+          @media (max-width: 767px) {
+            .inline-speaker-popup {
+              width: 100%;
+              max-width: 320px;
+              left: 50% !important;
+              right: auto !important;
+              transform: translateX(-50%) !important;
+            }
+            .popup-header {
+              flex-direction: column;
+              text-align: center;
+              padding: 18px 14px;
+            }
+            .popup-header-info {
+              padding-right: 0;
+            }
+            .popup-body {
+              padding: 16px 14px;
+              font-size: 13px;
             }
           }
         `}</style>
@@ -527,243 +481,113 @@ export default function Speakers2026() {
             </div>
 
             {/* Speakers Grid */}
-            <div className="N-Speakers">
-              <div className="container">
+            <div className="speakers-container">
+              {speakers.length === 0 ? (
+                <h3 style={{ textAlign: 'center', margin: '50px 0', color: '#666' }}>No speaker data found.</h3>
+              ) : (
                 <div className="speakers-grid">
                   {speakers.map((speaker, index) => {
                     if (!speaker.name) return null;
+                    const isPopupOpen = activePopupIndex === index;
+
                     return (
-                      <div key={speaker.speaker_id || index} className="speaker-col">
-                        <div className="Outer-Box">
-                          <div
-                            className="SKR-Img-Div"
-                            onClick={() => setSelectedSpeaker(speaker)}
-                            role="button"
-                            tabIndex={0}
-                          >
+                      <div key={speaker.speaker_id || index} className="speaker-card-wrapper">
+                        <div
+                          className="speaker-card"
+                          onClick={(e) => togglePopup(index, e)}
+                          role="button"
+                          tabIndex={0}
+                        >
+                          <div className="speaker-photo-wrapper">
                             {speaker.image_url ? (
                               <img
                                 src={speaker.image_url}
-                                className="SKR-IMG"
+                                className="speaker-photo"
                                 alt={speaker.name}
                                 loading="lazy"
                               />
                             ) : (
-                              <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#e2e8f0', color: '#64748b' }}>
-                                No Image
+                              <div style={{ width: '100%', paddingTop: '100%', background: '#eee', position: 'relative' }}>
+                                <span style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: '#888', fontSize: '13px' }}>
+                                  No Image
+                                </span>
                               </div>
                             )}
                             <div className="overlay">
-                              <div className="text">
-                                <span style={{ fontSize: '28px', fontWeight: 'bold' }}>+</span>
-                              </div>
+                              <span>+</span>
                             </div>
                           </div>
 
-                          <h4 className="Speaker-Name" onClick={() => setSelectedSpeaker(speaker)} style={{ cursor: 'pointer' }}>
-                            {speaker.name}
-                          </h4>
-                          {speaker.designation && <p className="Designation">{speaker.designation}</p>}
-                          {speaker.organisation && <p className="Company">{speaker.organisation}</p>}
-                          {speaker.location && <p className="Country">{speaker.location}</p>}
+                          <h4 className="speaker-name">{speaker.name}</h4>
+                          {speaker.designation && <p className="speaker-title">{speaker.designation}</p>}
+                          {speaker.organisation && <p className="speaker-org">{speaker.organisation}</p>}
+                          {speaker.location && <p className="speaker-country">{speaker.location}</p>}
                         </div>
+
+                        {/* Floating Popup Box */}
+                        {isPopupOpen && (
+                          <div
+                            ref={(el) => (popupRefs.current[index] = el)}
+                            className="inline-speaker-popup active"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <div className="popup-header">
+                              <button
+                                type="button"
+                                className="popup-close"
+                                onClick={closePopup}
+                                aria-label="Close"
+                              >
+                                &times;
+                              </button>
+
+                              {speaker.image_url && (
+                                <img
+                                  src={speaker.image_url}
+                                  className="popup-image"
+                                  alt={speaker.name}
+                                />
+                              )}
+
+                              <div className="popup-header-info">
+                                <h4 className="popup-name">{speaker.name}</h4>
+                                {speaker.designation && <p className="popup-role">{speaker.designation}</p>}
+                                {speaker.organisation && <p className="popup-org">{speaker.organisation}</p>}
+                                {speaker.location && <p className="popup-country">{speaker.location}</p>}
+                              </div>
+                            </div>
+
+                            <div className="popup-body">
+                              {speaker.about ? (
+                                <div dangerouslySetInnerHTML={{ __html: speaker.about }} />
+                              ) : (
+                                <p>No bio available.</p>
+                              )}
+
+                              {speaker.sessions && Array.isArray(speaker.sessions) && speaker.sessions.length > 0 && (
+                                <>
+                                  <h5 className="popup-sessions-heading">Sessions</h5>
+                                  <ul className="popup-sessions">
+                                    {[...speaker.sessions]
+                                      .sort((a, b) => new Date(a.start_timestamp) - new Date(b.start_timestamp))
+                                      .map((session, sIdx) => (
+                                        <li key={session.session_id || sIdx}>
+                                          <strong>{session.session_title}</strong>
+                                          <br />
+                                          <span>🕒 {formatSessionTime(session.start_timestamp, session.end_timestamp)}</span>
+                                        </li>
+                                      ))}
+                                  </ul>
+                                </>
+                              )}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     );
                   })}
                 </div>
-              </div>
-            </div>
-
-            {/* Modal Popup */}
-            {selectedSpeaker && (
-              <div
-                className="speaker-modal-backdrop"
-                onClick={(e) => {
-                  if (e.target === e.currentTarget) setSelectedSpeaker(null);
-                }}
-              >
-                <div className="Speaker-Modal-Container Speaker-Modal" role="dialog" aria-modal="true">
-                  <button
-                    type="button"
-                    className="close-Modal"
-                    onClick={() => setSelectedSpeaker(null)}
-                    aria-label="Close"
-                  >
-                    &times;
-                  </button>
-
-                  <div className="Speak-Det">
-                    <div className="modal-header-row">
-                      {selectedSpeaker.image_url && (
-                        <div className="Left-Img">
-                          <img src={selectedSpeaker.image_url} alt={selectedSpeaker.name} />
-                        </div>
-                      )}
-                      <div className="Right-Content">
-                        <div className="Speaker-Detile">
-                          <h4 className="Speak-Modal-Name">{selectedSpeaker.name}</h4>
-                          {selectedSpeaker.designation && (
-                            <p className="Speak-Modal-Designation">{selectedSpeaker.designation}</p>
-                          )}
-                          {selectedSpeaker.organisation && (
-                            <p className="Speak-Modal-Company">{selectedSpeaker.organisation}</p>
-                          )}
-                          {selectedSpeaker.location && (
-                            <p className="Speak-Modal-Country">{selectedSpeaker.location}</p>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="Speaker-Liner">
-                    {selectedSpeaker.about && (
-                      <p className="Speaker-Description">{selectedSpeaker.about}</p>
-                    )}
-
-                    {selectedSpeaker.sessions && Array.isArray(selectedSpeaker.sessions) && selectedSpeaker.sessions.length > 0 && (
-                      <>
-                        <h5 className="sessions-heading">Sessions</h5>
-                        <div className="Speaker-session">
-                          {selectedSpeaker.sessions
-                            .slice()
-                            .sort((a, b) => new Date(a.start_timestamp) - new Date(b.start_timestamp))
-                            .map((session, sIdx) => (
-                              <div key={session.session_id || sIdx} className="speaker-session-box">
-                                <p className="S-Name">{session.session_title}</p>
-                                {session.start_timestamp && session.end_timestamp && (
-                                  <p className="Session-Time">
-                                    <span style={{ marginRight: '6px' }}>🕒</span>
-                                    {formatSessionTime(session.start_timestamp, session.end_timestamp)}
-                                  </p>
-                                )}
-                              </div>
-                            ))}
-                        </div>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Contact Query Cards */}
-            <div className="nectar-global-section before-footer">
-              <div className="container normal-container row">
-                <div id="contact-info" data-midnight="dark" className="wpb_row vc_row-fluid vc_row full-width-content">
-                  <div className="row_col_wrap_12 col span_12 dark left">
-                    <div className="vc_col-sm-1/5 contact-info-card wpb_column column_container vc_column_container col left_padding_desktop_14px top_padding_desktop_25px right_padding_desktop_14px bottom_padding_desktop_25px">
-                      <div className="vc_column-inner">
-                        <div className="wpb_wrapper">
-                          <div className="nectar-responsive-text font_size_desktop_15px font_size_tablet_15px font_size_phone_14px font_line_height_130pct" style={{ color: '#eaeaea' }}>
-                            <p>Sponsor and Exhibitor<br /> Queries</p>
-                          </div>
-                          <div className="divider-wrap"><div style={{ height: '30px' }} className="divider"></div></div>
-                          <div className="nectar-responsive-text font_size_desktop_13px font_line_height_100pct" style={{ color: '#ffffff' }}>
-                            <p>Vinay Martin</p>
-                          </div>
-                          <div className="divider-wrap"><div style={{ height: '5px' }} className="divider"></div></div>
-                          <div className="nectar-responsive-text font_size_desktop_10px font_line_height_100pct" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                            <p>Commercial Director &#8211; India &amp; Middle East</p>
-                          </div>
-                          <div className="divider-wrap"><div style={{ height: '10px' }} className="divider"></div></div>
-                          <div className="nectar-responsive-text word-break font_size_desktop_11px font_line_height_100pct" style={{ color: '#ffc933' }}>
-                            <p><a href="mailto:vinay.martin@bengaluruskillsummit.com" style={{ color: '#ffc933', textDecoration: 'none' }}>vinay.martin@bengaluruskillsummit.com</a></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="vc_col-sm-1/5 contact-info-card wpb_column column_container vc_column_container col left_padding_desktop_14px top_padding_desktop_25px right_padding_desktop_14px bottom_padding_desktop_25px">
-                      <div className="vc_column-inner">
-                        <div className="wpb_wrapper">
-                          <div className="nectar-responsive-text font_size_desktop_15px font_size_tablet_15px font_size_phone_14px font_line_height_130pct" style={{ color: '#eaeaea' }}>
-                            <p>Speaking and Partner<br /> Queries</p>
-                          </div>
-                          <div className="divider-wrap"><div style={{ height: '30px' }} className="divider"></div></div>
-                          <div className="nectar-responsive-text font_size_desktop_13px font_line_height_100pct" style={{ color: '#ffffff' }}>
-                            <p>Simran Arora</p>
-                          </div>
-                          <div className="divider-wrap"><div style={{ height: '5px' }} className="divider"></div></div>
-                          <div className="nectar-responsive-text font_size_desktop_10px font_line_height_100pct" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                            <p>Sr. Conference Producer</p>
-                          </div>
-                          <div className="divider-wrap"><div style={{ height: '10px' }} className="divider"></div></div>
-                          <div className="nectar-responsive-text word-break font_size_desktop_11px font_line_height_100pct" style={{ color: '#ffc933' }}>
-                            <p><a href="mailto:simran.arora@bengaluruskillsummit.com" style={{ color: '#ffc933', textDecoration: 'none' }}>simran.arora@bengaluruskillsummit.com</a></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="vc_col-sm-1/5 contact-info-card wpb_column column_container vc_column_container col left_padding_desktop_14px top_padding_desktop_25px right_padding_desktop_14px bottom_padding_desktop_25px">
-                      <div className="vc_column-inner">
-                        <div className="wpb_wrapper">
-                          <div className="nectar-responsive-text font_size_desktop_15px font_size_tablet_15px font_size_phone_14px font_line_height_130pct" style={{ color: '#eaeaea' }}>
-                            <p>Marketing and Media<br /> Queries</p>
-                          </div>
-                          <div className="divider-wrap"><div style={{ height: '30px' }} className="divider"></div></div>
-                          <div className="nectar-responsive-text font_size_desktop_13px font_line_height_100pct" style={{ color: '#ffffff' }}>
-                            <p>Thulasi S</p>
-                          </div>
-                          <div className="divider-wrap"><div style={{ height: '5px' }} className="divider"></div></div>
-                          <div className="nectar-responsive-text font_size_desktop_10px font_line_height_100pct" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                            <p>Marketing Director</p>
-                          </div>
-                          <div className="divider-wrap"><div style={{ height: '10px' }} className="divider"></div></div>
-                          <div className="nectar-responsive-text word-break font_size_desktop_11px font_line_height_100pct" style={{ color: '#ffc933' }}>
-                            <p><a href="mailto:thulasi.s@bengaluruskillsummit.com" style={{ color: '#ffc933', textDecoration: 'none' }}>thulasi.s@bengaluruskillsummit.com</a></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="vc_col-sm-1/5 contact-info-card wpb_column column_container vc_column_container col left_padding_desktop_14px top_padding_desktop_25px right_padding_desktop_14px bottom_padding_desktop_25px">
-                      <div className="vc_column-inner">
-                        <div className="wpb_wrapper">
-                          <div className="nectar-responsive-text font_size_desktop_15px font_size_tablet_15px font_size_phone_14px font_line_height_130pct" style={{ color: '#eaeaea' }}>
-                            <p>Delegate Registration<br /> Queries</p>
-                          </div>
-                          <div className="divider-wrap"><div style={{ height: '30px' }} className="divider"></div></div>
-                          <div className="nectar-responsive-text font_size_desktop_13px font_line_height_100pct" style={{ color: '#ffffff' }}>
-                            <p>Suraj Shetty</p>
-                          </div>
-                          <div className="divider-wrap"><div style={{ height: '5px' }} className="divider"></div></div>
-                          <div className="nectar-responsive-text font_size_desktop_10px font_line_height_100pct" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                            <p>Director &#8211; Delegate Acquisition</p>
-                          </div>
-                          <div className="divider-wrap"><div style={{ height: '10px' }} className="divider"></div></div>
-                          <div className="nectar-responsive-text word-break font_size_desktop_11px font_line_height_100pct" style={{ color: '#ffc933' }}>
-                            <p><a href="mailto:suraj.shetty@bengaluruskillsummit.com" style={{ color: '#ffc933', textDecoration: 'none' }}>suraj.shetty@bengaluruskillsummit.com</a></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="vc_col-sm-1/5 contact-info-card wpb_column column_container vc_column_container col left_padding_desktop_14px top_padding_desktop_25px right_padding_desktop_14px bottom_padding_desktop_25px">
-                      <div className="vc_column-inner">
-                        <div className="wpb_wrapper">
-                          <div className="nectar-responsive-text font_size_desktop_15px font_size_tablet_15px font_size_phone_14px font_line_height_130pct" style={{ color: '#eaeaea' }}>
-                            <p>Partnership<br /> Queries</p>
-                          </div>
-                          <div className="divider-wrap"><div style={{ height: '30px' }} className="divider"></div></div>
-                          <div className="nectar-responsive-text font_size_desktop_13px font_line_height_100pct" style={{ color: '#ffffff' }}>
-                            <p>Praveen Kumar</p>
-                          </div>
-                          <div className="divider-wrap"><div style={{ height: '5px' }} className="divider"></div></div>
-                          <div className="nectar-responsive-text font_size_desktop_10px font_line_height_100pct" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                            <p>Partnership Director</p>
-                          </div>
-                          <div className="divider-wrap"><div style={{ height: '10px' }} className="divider"></div></div>
-                          <div className="nectar-responsive-text word-break font_size_desktop_11px font_line_height_100pct" style={{ color: '#ffc933' }}>
-                            <p><a href="mailto:praveen.kumar@bengaluruskillsummit.com" style={{ color: '#ffc933', textDecoration: 'none' }}>praveen.kumar@bengaluruskillsummit.com</a></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
