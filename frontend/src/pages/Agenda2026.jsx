@@ -1,53 +1,39 @@
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import ScreenHeader from '../components/ScreenHeader';
-import React, { useState, useEffect, useMemo } from 'react';
-import initialFilters from '../data/agenda_filters.json';
-import initialSessions from '../data/agenda_sessions.json';
+import initialFilters2026 from '../data/agenda_2026_filters.json';
+import initialSessions2026 from '../data/agenda_2026_sessions.json';
 
-const EVENT_ID = 'b1faf887-972e-4a9a-bd97-2229fd1395fa';
+const EVENT_ID_2026 = 'ab653814-9e72-4ba7-aa84-837e164a1735';
 
-export default function Agenda20262026({ isScreen = false }) {
-  const [filtersData, setFiltersData] = useState(initialFilters || []);
-  const [sessionsData, setSessionsData] = useState(initialSessions || []);
-  
-  // Selected date tab
-  const [activeDate, setActiveDate] = useState('2025-11-04');
-  
-  // Filters state
+export default function Agenda2026({ isScreen = false }) {
+  const [filtersData, setFiltersData] = useState(initialFilters2026 || []);
+  const [sessionsData, setSessionsData] = useState(initialSessions2026 || []);
+  const [activeDate, setActiveDate] = useState('2026-11-04');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTheme, setSelectedTheme] = useState('');
   const [selectedStage, setSelectedStage] = useState('');
   const [selectedType, setSelectedType] = useState('');
-  
-  // Modal state
-  const [modalSession, setModalSession] = useState(null);
+  const [activePopupId, setActivePopupId] = useState(null);
+  const popupRefs = useRef({});
 
-  // Background live sync
+  // Background live sync with 2026 KonfHub API
   useEffect(() => {
     const headers = { Accept: 'application/json' };
     Promise.all([
-      fetch(`https://api.konfhub.com/event/${EVENT_ID}/public/filters`, { headers }).then(r => r.json()).catch(() => null),
-      fetch(`https://api.konfhub.com/event/${EVENT_ID}/sessions?sessions_to_return=all`, { headers }).then(r => r.json()).catch(() => null)
+      fetch(`https://api.konfhub.com/event/${EVENT_ID_2026}/public/filters`, { headers }).then(r => r.json()).catch(() => null),
+      fetch(`https://api.konfhub.com/event/${EVENT_ID_2026}/sessions?sessions_to_return=all`, { headers }).then(r => r.json()).catch(() => null)
     ]).then(([liveFilters, liveSessions]) => {
       if (liveFilters && Array.isArray(liveFilters)) setFiltersData(liveFilters);
       if (liveSessions && Array.isArray(liveSessions)) setSessionsData(liveSessions);
+    }).catch(err => {
+      console.warn('KonfHub 2026 agenda sync warning:', err);
     });
-  }, [isScreen]);
+  }, []);
 
-  // Lock body scroll when modal is open
-  useEffect(() => {
-    if (modalSession) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [modalSession]);
-
-  // Extract filter tag groups exactly matching user's PHP logic
-  const { sessionTypes, stages, themes, stageTagIds, sessionTypeTagIds, themeTagIds } = useMemo(() => {
-    let sTypes = [], stg = [], sTypeIds = [], stgIds = [];
+  // Parse filters exactly as in PHP
+  const { sessionTypes, stages, themes, stageTagIds, themeTagIds, sessionTypeTagIds } = useMemo(() => {
+    let sTypes = [], stgs = [], thms = [];
+    let sTypeIds = [], stgIds = [], thmIds = [];
 
     if (Array.isArray(filtersData)) {
       filtersData.forEach(filter => {
@@ -56,39 +42,44 @@ export default function Agenda20262026({ isScreen = false }) {
           sTypes = filter.tags || [];
           sTypeIds = sTypes.map(t => t.id);
         } else if (name === 'Stage') {
-          stg = filter.tags || [];
-          stgIds = stg.map(t => t.id);
+          stgs = filter.tags || [];
+          stgIds = stgs.map(t => t.id);
+        } else if (name === 'Theme') {
+          thms = filter.tags || [];
+          thmIds = thms.map(t => t.id);
         }
       });
     }
 
+    // Theme map from sessions (as in PHP)
     const themeMap = {};
     if (Array.isArray(sessionsData)) {
       sessionsData.forEach(session => {
         if (!session.tags) return;
         session.tags.forEach(tag => {
-          if (sTypeIds.includes(tag.id) || stgIds.includes(tag.id)) return;
-          if (!themeMap[tag.id]) themeMap[tag.id] = tag.name;
+          const tagId = tag.id;
+          if (sTypeIds.includes(tagId) || stgIds.includes(tagId)) return;
+          if (!themeMap[tagId]) themeMap[tagId] = tag.name;
         });
       });
     }
 
-    const thms = Object.keys(themeMap).map(id => ({ id, name: themeMap[id] }));
-    thms.sort((a, b) => a.name.localeCompare(b.name));
-    const thmIds = thms.map(t => t.id);
+    const derivedThemes = Object.keys(themeMap)
+      .sort((a, b) => themeMap[a].localeCompare(themeMap[b]))
+      .map(id => ({ id, name: themeMap[id] }));
 
     return {
       sessionTypes: sTypes,
-      stages: stg,
-      themes: thms,
+      stages: stgs,
+      themes: derivedThemes.length > 0 ? derivedThemes : thms,
       stageTagIds: stgIds,
-      sessionTypeTagIds: sTypeIds,
-      themeTagIds: thmIds
+      themeTagIds: thmIds.concat(derivedThemes.map(t => t.id)),
+      sessionTypeTagIds: sTypeIds
     };
   }, [filtersData, sessionsData]);
 
   // Group sessions by date
-  const groupedSessions = useMemo(() => {
+  const { groupedSessions, dates } = useMemo(() => {
     const groups = {};
     if (Array.isArray(sessionsData)) {
       sessionsData.forEach(session => {
@@ -99,34 +90,43 @@ export default function Agenda20262026({ isScreen = false }) {
         }
       });
     }
-    // Sort keys
-    const sorted = {};
-    Object.keys(groups).sort().forEach(k => {
-      sorted[k] = groups[k];
-    });
-    return sorted;
+    const sortedDates = Object.keys(groups).sort();
+    return { groupedSessions: groups, dates: sortedDates };
   }, [sessionsData]);
 
-  const dates = Object.keys(groupedSessions);
-
-  // Set active date to first available if not set
+  // Default to first date if available
   useEffect(() => {
     if (dates.length > 0 && !dates.includes(activeDate)) {
       setActiveDate(dates[0]);
     }
   }, [dates, activeDate]);
 
-  // Time formatting helper in Asia/Kolkata
+  // Escape key & outside click handlers for inline popup
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setActivePopupId(null);
+    };
+    const handleClickOutside = (e) => {
+      if (activePopupId !== null) {
+        const popup = popupRefs.current[activePopupId];
+        if (popup && !popup.contains(e.target) && !e.target.closest('.session-desc-link')) {
+          setActivePopupId(null);
+        }
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [activePopupId]);
+
   const formatTimeRange = (startTimestamp, endTimestamp) => {
     try {
       const start = new Date(startTimestamp);
       const end = new Date(endTimestamp);
-      const formatOpts = {
-        timeZone: 'Asia/Kolkata',
-        hour: 'numeric',
-        minute: '2-digit',
-        hour12: true
-      };
+      const formatOpts = { timeZone: 'Asia/Kolkata', hour: 'numeric', minute: '2-digit', hour12: true };
       const sStr = start.toLocaleTimeString('en-US', formatOpts).toLowerCase();
       const eStr = end.toLocaleTimeString('en-US', formatOpts).toLowerCase();
       return `${sStr} – ${eStr}`;
@@ -135,16 +135,10 @@ export default function Agenda20262026({ isScreen = false }) {
     }
   };
 
-  // Day label helper
   const formatDayLabel = (dateKey) => {
     try {
       const d = new Date(dateKey + 'T00:00:00');
-      return d.toLocaleDateString('en-US', {
-        weekday: 'long',
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric'
-      });
+      return d.toLocaleDateString('en-US', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
     } catch {
       return dateKey;
     }
@@ -153,10 +147,7 @@ export default function Agenda20262026({ isScreen = false }) {
   const formatTabLabel = (dateKey) => {
     try {
       const d = new Date(dateKey + 'T00:00:00');
-      return d.toLocaleDateString('en-GB', {
-        day: '2-digit',
-        month: 'short'
-      });
+      return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' });
     } catch {
       return dateKey;
     }
@@ -169,19 +160,17 @@ export default function Agenda20262026({ isScreen = false }) {
     setSelectedType('');
   };
 
-  // Filter sessions for current active date
+  // Filter sessions for active date
   const currentSessions = groupedSessions[activeDate] || [];
   const filteredSessions = currentSessions.filter(session => {
     const title = (session.session_title || '').toLowerCase();
     const speakerNames = (session.session_speakers || []).map(sp => (sp.name || '').toLowerCase()).join(' ');
     const tagIds = (session.tags || []).map(t => t.id);
-
     const q = searchQuery.toLowerCase().trim();
     const matchSearch = !q || title.includes(q) || speakerNames.includes(q);
     const matchTheme = !selectedTheme || tagIds.includes(selectedTheme);
     const matchStage = !selectedStage || tagIds.includes(selectedStage);
     const matchType = !selectedType || tagIds.includes(selectedType);
-
     return matchSearch && matchTheme && matchStage && matchType;
   });
 
@@ -189,11 +178,10 @@ export default function Agenda20262026({ isScreen = false }) {
     <>
       <div id="ajax-content-wrap">
         <style>{`
-          /* =============================================
-             BSS AGENDA — White theme
+          /* ============================================
+             BSS 2026 AGENDA — Comfortaa Theme
              Palette: #fff bg | #ff6257 accent | #111 text
-             Font: Comfortaa
-             ============================================= */
+             ============================================ */
           .agenda-page-wrap {
             font-family: 'Comfortaa', sans-serif !important;
             background: #ffffff;
@@ -202,29 +190,23 @@ export default function Agenda20262026({ isScreen = false }) {
             overflow-wrap: break-word;
           }
 
-          /* ---------- HERO BANNER ---------- */
+          /* HERO BANNER */
           .agenda-hero {
             position: relative;
-            background-image: linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(6,45,64,0.68) 100%), url('https://bengaluruskillsummit.com/wp-content/uploads/2025/09/agenda-banner.png');
-            background-position: center center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            padding: 130px 15px 70px;
+            background: url('https://bengaluruskillsummit.com/wp-content/uploads/2025/09/agenda-banner.png') center center / cover no-repeat #0a2533;
+            padding: 100px 15px 45px;
             text-align: center;
             overflow: hidden;
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
+            width: 100%;
             box-sizing: border-box;
           }
-
-          .agenda-hero__inner {
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 0 15px;
+          .agenda-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(6,45,64,0.72) 100%);
           }
-
+          .agenda-hero__inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; padding: 0 15px; }
           .agenda-hero__eyebrow {
             display: inline-block;
             font-size: 12px;
@@ -234,640 +216,270 @@ export default function Agenda20262026({ isScreen = false }) {
             color: #ff6257;
             background: rgba(255,98,87,0.12);
             border: 1px solid rgba(255,98,87,0.40);
-            padding: 6px 16px;
+            padding: 5px 14px;
             border-radius: 2px;
-            margin-bottom: 18px;
-            font-family: 'Comfortaa', sans-serif;
+            margin-bottom: 15px;
           }
+          .agenda-hero h1 { font-size: 42px; font-weight: 700; line-height: 1.15; color: #fff; margin: 0 0 10px; font-family: 'Joost', sans-serif !important; }
+          .agenda-hero h1 span { color: #ff6257; }
+          .agenda-hero__sub { font-size: 15px; font-weight: 400; color: rgba(255,255,255,0.75); margin: 0; }
+          .agenda-hero__accent-bar { width: 50px; height: 3px; background: #ff6257; margin: 18px auto 0; border-radius: 2px; }
 
-          .agenda-hero h1 {
-            font-size: 50px;
-            font-weight: 700;
-            line-height: 1.15;
-            color: #ffffff;
-            margin: 0 0 14px;
-            font-family: 'Comfortaa', sans-serif;
-          }
+          /* SECTION & CONTAINER */
+          .agenda-section { background: #fff; padding: 35px 0 80px; width: 100%; box-sizing: border-box; }
+          .agenda-section .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
 
-          .agenda-hero h1 span {
-            color: #ff6257;
-          }
-
-          .agenda-hero__sub {
-            font-size: 16px;
-            font-weight: 400;
-            color: rgba(255,255,255,0.75);
-            margin: 0;
-            font-family: 'Comfortaa', sans-serif;
-          }
-
-          .agenda-hero__accent-bar {
-            width: 50px;
-            height: 3px;
-            background: #ff6257;
-            margin: 20px auto 0;
-            border-radius: 2px;
-          }
-
-          /* ---------- MAIN SECTION ---------- */
-          .agenda-section {
-            background: #ffffff;
-            padding: 50px 0 70px;
-            width: 100%;
-          }
-
-          .agenda-section .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            box-sizing: border-box;
-          }
-
-          /* ---------- DATE TABS ---------- */
-          .date-tabs-wrap {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            padding: 0 5px;
-          }
-
+          /* TABS */
+          .date-tabs-wrap { display: flex; justify-content: center; gap: 10px; margin-bottom: 25px; flex-wrap: wrap; }
           .date-tab {
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 13px;
+            font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-            color: rgba(17,17,17,0.65);
-            background: transparent;
-            border: 1px solid rgba(17,17,17,0.18);
-            padding: 10px 26px;
-            border-radius: 2px;
+            color: rgba(17,17,17,0.55);
+            background: #fff;
+            border: 1px solid rgba(17,17,17,0.2);
+            padding: 9px 24px;
+            border-radius: 3px;
             cursor: pointer;
-            transition: all 0.25s ease;
+            transition: all 0.2s ease;
             white-space: nowrap;
             font-family: 'Comfortaa', sans-serif;
           }
+          .date-tab:hover { color: #111; border-color: rgba(255,98,87,0.6); background: rgba(255,98,87,0.06); }
+          .date-tab.active { color: #fff; background: #ff6257; border-color: #ff6257; }
 
-          .date-tab:hover {
-            color: #111;
-            border-color: rgba(255,98,87,0.6);
-            background: rgba(255,98,87,0.06);
-          }
-
-          .date-tab.active {
-            color: #fff !important;
-            background: #ff6257 !important;
-            border-color: #ff6257 !important;
-          }
-
-          /* ---------- FILTERS ---------- */
+          /* FILTERS BAR */
           .filters-bar {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
             align-items: center;
             justify-content: center;
-            margin-bottom: 44px;
+            margin-bottom: 30px;
             width: 100%;
           }
-
-          .filter-search {
-            position: relative;
-            flex: 1 1 200px;
-            min-width: 0;
-            max-width: 260px;
-          }
-
+          .filter-search { position: relative; flex: 1 1 200px; min-width: 0; max-width: 250px; margin: 0; }
           .filter-search input {
             width: 100%;
-            padding: 11px 38px 11px 14px;
+            height: 44px;
+            padding: 10px 38px 10px 14px;
             background: #f7f8fa;
             border: 1px solid #dde1e7;
-            border-radius: 2px;
+            border-radius: 4px;
             color: #111;
-            font-size: 14px;
+            font-size: 13px;
             font-family: 'Comfortaa', sans-serif;
-            transition: border-color 0.2s;
             outline: none;
+            line-height: normal;
             box-sizing: border-box;
           }
+          .filter-search input:focus { border-color: #ff6257; background: #fff; }
+          .filter-search i { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: rgba(17,17,17,0.35); font-size: 13px; pointer-events: none; }
 
-          .filter-search input::placeholder {
-            color: rgba(17,17,17,0.4);
-          }
-
-          .filter-search input:focus {
-            border-color: #ff6257;
-            background: #fff;
-          }
-
-          .filter-search i {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: rgba(17,17,17,0.4);
-            font-size: 13px;
-            pointer-events: none;
-          }
-
-          .filter-select-wrap {
-            position: relative;
-            flex: 1 1 160px;
-            min-width: 0;
-            max-width: 210px;
-          }
-
+          .filter-select-wrap { position: relative; flex: 1 1 160px; min-width: 0; max-width: 210px; margin: 0; }
           .filter-select-wrap select {
+            -webkit-appearance: none;
+            appearance: none;
             width: 100%;
-            padding: 11px 34px 11px 14px;
+            height: 44px;
+            padding: 10px 34px 10px 14px;
             background: #f7f8fa;
             border: 1px solid #dde1e7;
-            border-radius: 2px;
+            border-radius: 4px;
             color: #111;
-            font-size: 14px;
+            font-size: 13px;
             font-family: 'Comfortaa', sans-serif;
             cursor: pointer;
             outline: none;
-            transition: border-color 0.2s;
+            line-height: normal;
             box-sizing: border-box;
           }
-
-          .filter-select-wrap select:focus {
-            border-color: #ff6257;
-            background: #fff;
-          }
+          .filter-select-wrap select:focus { border-color: #ff6257; background: #fff; }
 
           .filter-clear-btn {
-            flex: 0 0 auto;
-            padding: 11px 22px;
-            background: transparent;
+            height: 44px;
+            padding: 0 20px;
+            background: #fff;
             border: 1px solid #dde1e7;
-            border-radius: 2px;
-            color: rgba(17,17,17,0.65);
-            font-size: 14px;
+            border-radius: 4px;
+            color: rgba(17,17,17,0.6);
+            font-size: 13px;
             font-family: 'Comfortaa', sans-serif;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
             white-space: nowrap;
-          }
-
-          .filter-clear-btn:hover {
-            background: #f7f8fa;
-            color: #111;
-            border-color: #aaa;
-          }
-
-          /* ---------- DAY DIVIDER ---------- */
-          .day-divider {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 14px;
-            margin-bottom: 36px;
-          }
-
-          .day-divider__line {
-            flex: 1;
-            height: 1px;
-            background: rgba(255,98,87,0.25);
-            min-width: 0;
-          }
-
-          .day-divider__label {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #ff6257;
-            white-space: nowrap;
-            flex-shrink: 0;
-          }
-
-          /* ---------- SESSION CARD ---------- */
-          .session-card {
-            display: flex;
-            flex-direction: row;
-            gap: 0;
-            border-bottom: 1px solid #eaedf1;
-            padding: 30px 0;
-            transition: background 0.2s;
-            width: 100%;
-            min-width: 0;
-          }
-
-          .session-card:hover {
-            background: rgba(255,98,87,0.02);
-          }
-
-          .session-card:last-child {
-            border-bottom: none;
-          }
-
-          /* LEFT META */
-          .session-meta {
-            flex: 0 0 200px;
-            width: 200px;
-            min-width: 0;
-            padding-right: 24px;
-            padding-top: 3px;
+            justify-content: center;
+            transition: all 0.2s ease;
+            margin: 0;
             box-sizing: border-box;
           }
+          .filter-clear-btn:hover { background: #f7f8fa; color: #111; }
 
-          .session-meta__time {
+          /* DAY DIVIDER */
+          .day-divider { display: flex; align-items: center; gap: 14px; margin-bottom: 25px; }
+          .day-divider__line { flex: 1; height: 1px; background: rgba(255,98,87,0.25); }
+          .day-divider__label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #ff6257; white-space: nowrap; }
+
+          /* SESSION CARDS */
+          .session-card {
+            position: relative;
             display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #111;
-            margin-bottom: 8px;
+            flex-direction: row;
+            border-bottom: 1px solid #eaedf1;
+            padding: 24px 0;
+            width: 100%;
+            text-align: left;
           }
+          .session-card:last-child { border-bottom: none; }
 
-          .meta-icon {
-            color: #ff6257;
-            font-size: 13px;
-            flex-shrink: 0;
-            margin-top: 2px;
-          }
+          .session-meta { flex: 0 0 200px; width: 200px; padding-right: 20px; padding-top: 3px; }
+          .session-meta__time { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; font-weight: 700; color: #111; margin-bottom: 6px; }
+          .meta-icon { color: #ff6257; font-size: 13px; margin-top: 2px; }
+          .session-meta__stage { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; font-weight: 500; color: rgba(17,17,17,0.55); }
 
-          .session-meta__stage {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            font-size: 13px;
-            font-weight: 500;
-            color: rgba(17,17,17,0.55);
-            line-height: 1.4;
-          }
-
-          /* RIGHT CONTENT */
-          .session-body {
-            flex: 1;
-            min-width: 0;
-          }
-
-          .session-title {
-            font-size: 20px;
-            font-weight: 700;
-            line-height: 1.4;
-            color: #111;
-            margin-bottom: 12px;
-          }
+          .session-body { flex: 1; min-width: 0; }
+          .session-title { font-size: 18px; font-weight: 700; line-height: 1.35; color: #111; margin: 0 0 10px 0; font-family: 'Joost', sans-serif !important; }
 
           .session-desc-link {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
             color: #ff6257;
-            background: none;
-            border: none;
-            padding: 0;
+            text-decoration: none;
+            margin-bottom: 12px;
             cursor: pointer;
-            margin-bottom: 16px;
-            transition: color 0.2s;
-            font-family: 'Comfortaa', sans-serif;
           }
+          .session-desc-link:hover { text-decoration: underline; }
 
-          .session-desc-link:hover {
-            color: #d94f45;
-            text-decoration: underline;
-          }
-
-          .session-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 20px;
-          }
-
+          .session-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
           .session-tag {
-            display: inline-block;
             font-size: 10px;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-            padding: 4px 10px;
+            padding: 3px 8px;
             border-radius: 2px;
             background: rgba(255,98,87,0.08);
             border: 1px solid rgba(255,98,87,0.28);
             color: #ff6257;
-            line-height: 1.5;
-            white-space: nowrap;
           }
 
-          /* ---------- SPEAKER GRID ---------- */
-          .agenda-speakers-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            width: 100%;
-          }
-
-          .agenda-speaker-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            flex: 0 0 calc(50% - 8px);
-            min-width: 0;
-            box-sizing: border-box;
-          }
-
-          .agenda-speaker-card__img {
-            width: 60px;
-            height: 60px;
-            min-width: 60px;
+          /* SPEAKERS MINI GRID */
+          .session-speakers-grid { display: flex; flex-wrap: wrap; gap: 14px; width: 100%; margin-top: 10px; }
+          .session-speaker-card { display: flex; align-items: flex-start; gap: 10px; flex: 0 0 calc(50% - 7px); }
+          .session-speaker-card__img, .session-speaker-card__img-placeholder {
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
             border-radius: 3px;
             object-fit: cover;
             flex-shrink: 0;
             border: 2px solid rgba(255,98,87,0.20);
           }
-
-          .agenda-speaker-card__img-placeholder {
-            width: 60px;
-            height: 60px;
-            min-width: 60px;
-            border-radius: 3px;
+          .session-speaker-card__img-placeholder {
             background: #fff0ef;
-            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             color: rgba(255,98,87,0.40);
-            font-size: 20px;
+            font-size: 18px;
           }
+          .session-speaker-card__role { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #ff6257; }
+          .session-speaker-card__name { font-size: 13px; font-weight: 700; color: #111; line-height: 1.25; margin-bottom: 2px; }
+          .session-speaker-card__designation, .session-speaker-card__org { font-size: 11px; line-height: 1.35; }
+          .session-speaker-card__designation { color: rgba(17,17,17,0.50); }
+          .session-speaker-card__org { color: rgba(17,17,17,0.70); font-weight: 600; }
 
-          .agenda-speaker-card__info {
-            min-width: 0;
-          }
-
-          .agenda-speaker-card__role {
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #ff6257;
-            margin-bottom: 2px;
-          }
-
-          .agenda-speaker-card__name {
-            font-size: 14px;
-            font-weight: 700;
-            color: #111;
-            line-height: 1.25;
-            margin-bottom: 2px;
-          }
-
-          .agenda-speaker-card__designation {
-            font-size: 11px;
-            color: rgba(17,17,17,0.55);
-            line-height: 1.4;
-            margin-bottom: 2px;
-          }
-
-          .agenda-speaker-card__org {
-            font-size: 11px;
-            color: rgba(17,17,17,0.75);
-            font-weight: 600;
-            line-height: 1.4;
-          }
-
-          /* ---------- NO RESULTS ---------- */
-          .no-results {
-            text-align: center;
-            padding: 60px 20px;
-            color: rgba(17,17,17,0.40);
-            font-size: 16px;
-          }
-
-          .no-results i {
-            font-size: 34px;
-            display: block;
-            margin-bottom: 14px;
-            color: rgba(255,98,87,0.3);
-          }
-
-          /* ---------- MODAL ---------- */
-          .bss-modal-overlay {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            z-index: 99999;
-            background: rgba(0,0,0,0.55);
-            padding: 30px 15px;
-            overflow-y: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.2s ease-in-out;
-          }
-
-          .bss-modal {
+          /* INLINE POPUP */
+          .inline-session-popup {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 650px;
+            max-width: 95%;
             background: #fff;
-            border: 1px solid #dde1e7;
-            border-top: 3px solid #ff6257;
+            border-top: 4px solid #ff6257;
             border-radius: 4px;
-            width: 100%;
-            max-width: 660px;
-            padding: 36px 30px;
-            position: relative;
-            box-shadow: 0 16px 50px rgba(0,0,0,0.18);
+            box-shadow: 0 14px 45px rgba(0, 0, 0, 0.25);
+            z-index: 1000;
+            padding: 24px;
+            text-align: left;
+            animation: popIn 0.2s ease-out;
             box-sizing: border-box;
           }
 
-          .bss-modal__close {
+          @keyframes popIn {
+            from { opacity: 0; transform: translate(-50%, -8px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+          }
+
+          .inline-session-popup__close {
             position: absolute;
-            top: 14px;
-            right: 16px;
+            top: 10px;
+            right: 12px;
             background: none;
             border: none;
-            color: rgba(17,17,17,0.4);
+            color: #888;
             font-size: 26px;
-            cursor: pointer;
             line-height: 1;
-            transition: color 0.2s;
-            padding: 4px 8px;
+            cursor: pointer;
           }
+          .inline-session-popup__close:hover { color: #ff6257; }
+          .inline-session-popup__eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #ff6257; margin-bottom: 6px; }
+          .inline-session-popup__title { font-size: 17px; font-weight: 700; color: #111; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #eaedf1; padding-right: 25px; line-height: 1.35; font-family: 'Joost', sans-serif !important; }
+          .inline-session-popup__body { font-size: 13px; line-height: 1.65; color: rgba(17,17,17,0.75); max-height: 280px; overflow-y: auto; white-space: pre-line; }
 
-          .bss-modal__close:hover {
-            color: #ff6257;
-          }
+          .no-results { text-align: center; padding: 40px 15px; color: rgba(17,17,17,0.35); font-size: 14px; }
+          .no-results i { font-size: 30px; display: block; margin-bottom: 10px; color: rgba(255,98,87,0.25); }
 
-          .bss-modal__eyebrow {
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #ff6257;
-            margin-bottom: 12px;
-          }
-
-          .bss-modal__title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #111;
-            line-height: 1.4;
-            margin-bottom: 18px;
-            padding-bottom: 18px;
-            border-bottom: 1px solid #eaedf1;
-            padding-right: 30px;
-          }
-
-          .bss-modal__body {
-            font-size: 15px;
-            line-height: 1.8;
-            color: rgba(17,17,17,0.75);
-            white-space: pre-line;
-            max-height: 60vh;
-            overflow-y: auto;
-          }
-
-          /* ---------- RESPONSIVE BREAKPOINTS ---------- */
-          @media (max-width: 991px) {
-            .session-card {
-              flex-direction: column;
-            }
-            .session-meta {
-              flex: none;
-              width: 100%;
-              padding-right: 0;
-              padding-bottom: 12px;
-              display: flex;
-              flex-wrap: wrap;
-              gap: 6px 20px;
-              align-items: flex-start;
-            }
-            .session-meta__time,
-            .session-meta__stage {
-              margin-bottom: 0;
-            }
-            .agenda-speaker-card {
-              flex: 0 0 calc(50% - 8px);
-            }
-          }
-
+          /* MOBILE OVERRIDES */
           @media (max-width: 767px) {
-            .agenda-hero {
-              padding: 100px 15px 50px;
-            }
-            .agenda-hero h1 {
-              font-size: 30px;
-              line-height: 1.2;
-            }
-            .agenda-hero__sub {
-              font-size: 14px;
-            }
-            .date-tabs-wrap {
-              gap: 6px;
-              margin-bottom: 28px;
-            }
-            .date-tab {
-              font-size: 12px;
-              padding: 9px 16px;
-            }
+            .agenda-hero { padding: 80px 15px 35px; }
+            .agenda-hero h1 { font-size: 26px; }
+            .agenda-section { padding: 25px 0 90px; }
+            .agenda-section .container { padding: 0 15px; }
             .filters-bar {
+              display: flex;
               flex-direction: column;
               align-items: stretch;
               gap: 8px;
+              margin-bottom: 25px;
             }
-            .filter-search,
-            .filter-select-wrap {
+            .filter-search, .filter-select-wrap, .filter-clear-btn {
               flex: none;
               width: 100%;
               max-width: 100%;
-            }
-            .filter-clear-btn {
-              width: 100%;
-              text-align: center;
+              margin: 0 !important;
             }
             .session-card {
-              padding: 22px 0;
+              flex-direction: column !important;
+              display: block;
+              padding: 20px 0;
             }
-            .session-title {
-              font-size: 16px;
+            .session-meta {
+              width: 100%;
+              padding-right: 0;
+              padding-bottom: 10px;
+              display: flex;
+              flex-wrap: wrap;
+              gap: 6px 16px;
             }
-            .agenda-speakers-grid {
-              gap: 12px;
-            }
-            .agenda-speaker-card {
-              flex: 0 0 100%;
-            }
-            .bss-modal {
-              padding: 24px 16px;
-            }
-            .bss-modal__title {
-              font-size: 16px;
-            }
-          }
-
-          /* ---------------- CONTACT INFO CARDS ---------------- */
-          #contact-info {
-            width: 100vw !important;
-            position: relative !important;
-            left: 50% !important;
-            right: 50% !important;
-            margin-left: -50vw !important;
-            margin-right: -50vw !important;
-            box-sizing: border-box !important;
-            padding: 60px 20px !important;
-          }
-
-          #contact-info .row_col_wrap_12 {
-            display: flex !important;
-            flex-wrap: wrap !important;
-            justify-content: center !important;
-            gap: 15px !important;
-            max-width: 1440px !important;
-            margin: 0 auto !important;
-          }
-
-          #contact-info .contact-info-card {
-            flex: 1 1 calc(20% - 15px) !important;
-            min-width: 240px !important;
-            background-color: #525252 !important;
-            border-radius: 10px !important;
-            padding: 25px 14px !important;
-            box-sizing: border-box !important;
-            text-align: left !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
-            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-          }
-
-          #contact-info .contact-info-card a,
-          #contact-info .contact-info-card .word-break,
-          #contact-info .contact-info-card p {
-            overflow-wrap: normal !important;
-            word-break: normal !important; white-space: nowrap !important;
-            white-space: nowrap !important;
-          }
-
-          #contact-info .contact-info-card a {
-            display: inline-block !important;
-            max-width: 100% !important;
-            line-height: 1.35 !important;
-          }
-
-          #contact-info .contact-info-card:hover {
-            transform: translateY(-5px) !important;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
-          }
-
-          @media (max-width: 1024px) {
-            #contact-info .contact-info-card {
-              flex: 1 1 calc(33.333% - 15px) !important;
-            }
-          }
-
-          @media (max-width: 600px) {
-            #contact-info .contact-info-card {
-              flex: 1 1 100% !important;
+            .session-title { font-size: 16px; }
+            .session-speakers-grid { gap: 10px; }
+            .session-speaker-card { flex: 0 0 100%; }
+            .inline-session-popup {
+              width: 95%;
+              left: 2.5%;
+              transform: none;
+              padding: 18px 14px;
             }
           }
         `}</style>
@@ -876,347 +488,214 @@ export default function Agenda20262026({ isScreen = false }) {
           {isScreen ? (
             <ScreenHeader active="AGENDA" />
           ) : (
-            /* ======== HERO ======== */
+            /* HERO BANNER */
             <div className="agenda-hero">
               <div className="container">
                 <div className="agenda-hero__inner">
                   <div className="agenda-hero__eyebrow">Bengaluru Skill Summit 2026</div>
                   <h1>Full <span>Agenda</span></h1>
-                  <p className="agenda-hero__sub">3 - 5 November 2026 &nbsp;·&nbsp; The Lalit Ashok, Bengaluru</p>
+                  <p className="agenda-hero__sub">Voices Shaping the Future of Skills &nbsp;·&nbsp; Bengaluru</p>
                   <div className="agenda-hero__accent-bar"></div>
                 </div>
               </div>
             </div>
           )}
 
-          {/* ======== AGENDA SECTION ======== */}
+          {/* MAIN AGENDA */}
           <div className="agenda-section">
             <div className="container">
-
-              {/* DATE TABS */}
-              <div className="date-tabs-wrap">
-                {dates.map(dateKey => (
-                  <button
-                    key={dateKey}
-                    type="button"
-                    className={`date-tab ${activeDate === dateKey ? 'active' : ''}`}
-                    onClick={() => setActiveDate(dateKey)}
-                  >
-                    {formatTabLabel(dateKey)}
-                  </button>
-                ))}
-              </div>
-
-              {/* FILTERS */}
-              <div className="filters-bar">
-                <div className="filter-search">
-                  <input
-                    type="text"
-                    placeholder="Search sessions or speakers…"
-                    value={searchQuery}
-                    onChange={e => setSearchQuery(e.target.value)}
-                  />
-                  <i className="fa-solid fa-magnifying-glass"></i>
-                </div>
-
-                <div className="filter-select-wrap">
-                  <select value={selectedTheme} onChange={e => setSelectedTheme(e.target.value)}>
-                    <option value="">All Themes</option>
-                    {themes.map(t => (
-                      <option key={t.id} value={t.id}>{t.name}</option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="filter-select-wrap">
-                  <select value={selectedStage} onChange={e => setSelectedStage(e.target.value)}>
-                    <option value="">All Stages</option>
-                    {stages.map(st => (
-                      <option key={st.id} value={st.id}>{st.name}</option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="filter-select-wrap">
-                  <select value={selectedType} onChange={e => setSelectedType(e.target.value)}>
-                    <option value="">All Session Types</option>
-                    {sessionTypes.map(ty => (
-                      <option key={ty.id} value={ty.id}>{ty.name}</option>
-                    ))}
-                  </select>
-                </div>
-
-                <button type="button" className="filter-clear-btn" onClick={clearFilters}>
-                  <i className="fa-solid fa-xmark" style={{ marginRight: '6px' }}></i>Clear
-                </button>
-              </div>
-
-              {/* DATE DIVIDER */}
-              <div className="day-divider">
-                <div className="day-divider__line"></div>
-                <div className="day-divider__label">{formatDayLabel(activeDate)}</div>
-                <div className="day-divider__line"></div>
-              </div>
-
-              {/* SESSIONS LIST */}
-              {filteredSessions.length > 0 ? (
-                <div className="session-list">
-                  {filteredSessions.map(session => {
-                    // Find stage title
-                    let stageTitle = '';
-                    if (session.tags) {
-                      const stg = session.tags.find(t => stageTagIds.includes(t.id));
-                      if (stg) stageTitle = stg.name;
-                    }
-
-                    // Order speakers: regular first, moderators last
-                    const allSpeakers = session.session_speakers || [];
-                    const regularSpeakers = [];
-                    const moderators = [];
-                    allSpeakers.forEach(sp => {
-                      const isMod = (sp.tags || []).some(t => (t.name || '').toLowerCase().trim() === 'moderator');
-                      if (isMod) moderators.push(sp);
-                      else regularSpeakers.push(sp);
-                    });
-                    const orderedSpeakers = [...regularSpeakers, ...moderators];
-
-                    return (
-                      <div key={session.session_id} className="session-card">
-                        {/* LEFT META */}
-                        <div className="session-meta">
-                          <div className="session-meta__time">
-                            <i className="fa-regular fa-clock meta-icon"></i>
-                            {formatTimeRange(session.start_timestamp, session.end_timestamp)}
-                          </div>
-                          {stageTitle && (
-                            <div className="session-meta__stage">
-                              <i className="fa-solid fa-location-dot meta-icon"></i>
-                              {stageTitle}
-                            </div>
-                          )}
-                        </div>
-
-                        {/* RIGHT BODY */}
-                        <div className="session-body">
-                          <div className="session-title">{session.session_title}</div>
-
-                          {session.session_description && (
-                            <button
-                              type="button"
-                              className="session-desc-link"
-                              onClick={() => setModalSession(session)}
-                            >
-                              <i className="fa-solid fa-arrow-right"></i> View Description
-                            </button>
-                          )}
-
-                          {/* TAGS */}
-                          {session.tags && session.tags.length > 0 && (
-                            <div className="session-tags">
-                              {session.tags
-                                .filter(t => themeTagIds.includes(t.id) || sessionTypeTagIds.includes(t.id))
-                                .map(tag => (
-                                  <span key={tag.id} className="session-tag">{tag.name}</span>
-                                ))}
-                            </div>
-                          )}
-
-                          {/* SPEAKERS */}
-                          {orderedSpeakers.length > 0 && (
-                            <div className="agenda-speakers-grid">
-                              {orderedSpeakers.map((sp, idx) => {
-                                const isMod = (sp.tags || []).some(t => (t.name || '').toLowerCase().trim() === 'moderator');
-                                return (
-                                  <div key={sp.speaker_id || idx} className="agenda-speaker-card">
-                                    {sp.image_url ? (
-                                      <img
-                                        className="agenda-speaker-card__img"
-                                        src={sp.image_url}
-                                        alt={sp.name || ''}
-                                        loading="lazy"
-                                      />
-                                    ) : (
-                                      <div className="agenda-speaker-card__img-placeholder">
-                                        <i className="fa-solid fa-user"></i>
-                                      </div>
-                                    )}
-                                    <div className="agenda-speaker-card__info">
-                                      <div className="agenda-speaker-card__role">{isMod ? 'Moderator' : 'Speaker'}</div>
-                                      <div className="agenda-speaker-card__name">{sp.name}</div>
-                                      {sp.designation && (
-                                        <div className="agenda-speaker-card__designation">{sp.designation}</div>
-                                      )}
-                                      {sp.organisation && (
-                                        <div className="agenda-speaker-card__org">{sp.organisation}</div>
-                                      )}
-                                    </div>
-                                  </div>
-                                );
-                              })}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    );
-                  })}
+              {dates.length === 0 ? (
+                <div style={{ textAlign: 'center', padding: '60px 15px', color: '#555' }}>
+                  <i className="fa fa-calendar-days" style={{ fontSize: '36px', color: '#ff6257', marginBottom: '15px', display: 'block' }}></i>
+                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#111', marginBottom: '8px' }}>Agenda Coming Soon</h3>
+                  <p style={{ fontSize: '13px', maxWidth: '500px', margin: '0 auto', lineHeight: 1.6 }}>
+                    The sessions for Bengaluru Skill Summit 2026 will appear here once the schedule is toggled to <strong>Show</strong> in the portal.
+                  </p>
                 </div>
               ) : (
-                <div className="no-results">
-                  <i className="fa-regular fa-calendar-xmark"></i>
-                  No sessions match your current filters.
-                </div>
+                <>
+                  {/* DATE TABS */}
+                  <div className="date-tabs-wrap">
+                    {dates.map(dateKey => (
+                      <button
+                        key={dateKey}
+                        type="button"
+                        className={`date-tab ${activeDate === dateKey ? 'active' : ''}`}
+                        onClick={() => setActiveDate(dateKey)}
+                      >
+                        {formatTabLabel(dateKey)}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* FILTERS BAR */}
+                  <div className="filters-bar">
+                    <div className="filter-search">
+                      <input
+                        type="text"
+                        placeholder="Search sessions or speakers…"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                      />
+                      <i className="fa fa-magnifying-glass"></i>
+                    </div>
+
+                    <div className="filter-select-wrap">
+                      <select
+                        value={selectedTheme}
+                        onChange={(e) => setSelectedTheme(e.target.value)}
+                      >
+                        <option value="">All Themes</option>
+                        {themes.map(t => (
+                          <option key={t.id} value={t.id}>{t.name}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div className="filter-select-wrap">
+                      <select
+                        value={selectedStage}
+                        onChange={(e) => setSelectedStage(e.target.value)}
+                      >
+                        <option value="">All Stages</option>
+                        {stages.map(st => (
+                          <option key={st.id} value={st.id}>{st.name}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div className="filter-select-wrap">
+                      <select
+                        value={selectedType}
+                        onChange={(e) => setSelectedType(e.target.value)}
+                      >
+                        <option value="">All Session Types</option>
+                        {sessionTypes.map(st => (
+                          <option key={st.id} value={st.id}>{st.name}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <button type="button" className="filter-clear-btn" onClick={clearFilters}>
+                      <i className="fa fa-xmark" style={{ marginRight: '6px' }}></i>Clear
+                    </button>
+                  </div>
+
+                  {/* ACTIVE DATE SESSIONS */}
+                  <div className="day-divider">
+                    <div className="day-divider__line"></div>
+                    <div className="day-divider__label">{formatDayLabel(activeDate)}</div>
+                    <div className="day-divider__line"></div>
+                  </div>
+
+                  <div className="session-list">
+                    {filteredSessions.length === 0 ? (
+                      <div className="no-results">
+                        <i className="fa fa-calendar-xmark"></i>
+                        No sessions match your current filters.
+                      </div>
+                    ) : (
+                      filteredSessions.map((session, sIdx) => {
+                        const popupId = `agendaPopup_${activeDate}_${sIdx}`;
+                        const isPopupOpen = activePopupId === popupId;
+                        const speakers = session.session_speakers || [];
+                        const stageTag = (session.tags || []).find(t => stageTagIds.includes(t.id));
+
+                        return (
+                          <div key={session.session_id || sIdx} className="session-card">
+                            <div className="session-meta">
+                              <div className="session-meta__time">
+                                <i className="fa fa-clock meta-icon"></i>
+                                {formatTimeRange(session.start_timestamp, session.end_timestamp)}
+                              </div>
+                              {stageTag && (
+                                <div className="session-meta__stage">
+                                  <i className="fa fa-location-dot meta-icon"></i>
+                                  {stageTag.name}
+                                </div>
+                              )}
+                            </div>
+
+                            <div className="session-body">
+                              <div className="session-title">{session.session_title}</div>
+
+                              {session.session_description && (
+                                <>
+                                  <a
+                                    className="session-desc-link"
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setActivePopupId(isPopupOpen ? null : popupId);
+                                    }}
+                                  >
+                                    <i className="fa fa-arrow-right"></i> View Description
+                                  </a>
+
+                                  {isPopupOpen && (
+                                    <div
+                                      ref={(el) => (popupRefs.current[popupId] = el)}
+                                      className="inline-session-popup"
+                                      onClick={(e) => e.stopPropagation()}
+                                    >
+                                      <button
+                                        type="button"
+                                        className="inline-session-popup__close"
+                                        onClick={() => setActivePopupId(null)}
+                                      >
+                                        &times;
+                                      </button>
+                                      <div className="inline-session-popup__eyebrow">Session Description</div>
+                                      <div className="inline-session-popup__title">{session.session_title}</div>
+                                      <div className="inline-session-popup__body">{session.session_description}</div>
+                                    </div>
+                                  )}
+                                </>
+                              )}
+
+                              <div className="session-tags">
+                                {(session.tags || []).map(t => (
+                                  <span key={t.id} className="session-tag">{t.name}</span>
+                                ))}
+                              </div>
+
+                              {speakers.length > 0 && (
+                                <div className="session-speakers-grid">
+                                  {speakers.map((sp, spIdx) => {
+                                    const isMod = (sp.tags || []).some(t => (t.name || '').toLowerCase() === 'moderator');
+                                    return (
+                                      <div key={sp.speaker_id || spIdx} className="session-speaker-card">
+                                        {sp.image_url ? (
+                                          <img
+                                            className="session-speaker-card__img"
+                                            src={sp.image_url}
+                                            alt={sp.name}
+                                          />
+                                        ) : (
+                                          <div className="session-speaker-card__img-placeholder">
+                                            <i className="fa fa-user"></i>
+                                          </div>
+                                        )}
+                                        <div className="session-speaker-card__info">
+                                          <div className="session-speaker-card__role">{isMod ? 'Moderator' : 'Speaker'}</div>
+                                          <div className="session-speaker-card__name">{sp.name}</div>
+                                          {sp.designation && <div className="session-speaker-card__designation">{sp.designation}</div>}
+                                          {sp.organisation && <div className="session-speaker-card__org">{sp.organisation}</div>}
+                                        </div>
+                                      </div>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })
+                    )}
+                  </div>
+                </>
               )}
-
             </div>
           </div>
-
-          {/* ======== DESCRIPTION MODAL ======== */}
-          {modalSession && (
-            <div
-              className="bss-modal-overlay"
-              onClick={e => {
-                if (e.target === e.currentTarget) setModalSession(null);
-              }}
-            >
-              <div className="bss-modal" role="dialog" aria-modal="true">
-                <button
-                  type="button"
-                  className="bss-modal__close"
-                  onClick={() => setModalSession(null)}
-                  aria-label="Close"
-                >
-                  &times;
-                </button>
-                <div className="bss-modal__eyebrow">Session Description</div>
-                <div className="bss-modal__title">{modalSession.session_title}</div>
-                <div className="bss-modal__body">
-                  {modalSession.session_description.replace(/<[^>]+>/g, '')}
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Contact Query Cards */}
-          {!isScreen && (
-            <div className="nectar-global-section before-footer">
-            <div className="container normal-container row">
-              <div id="contact-info" data-midnight="dark" className="wpb_row vc_row-fluid vc_row full-width-content">
-                <div className="row_col_wrap_12 col span_12 dark left">
-                  <div className="vc_col-sm-1/5 contact-info-card wpb_column column_container vc_column_container col left_padding_desktop_14px top_padding_desktop_25px right_padding_desktop_14px bottom_padding_desktop_25px">
-                    <div className="vc_column-inner">
-                      <div className="wpb_wrapper">
-                        <div className="nectar-responsive-text font_size_desktop_15px font_size_tablet_15px font_size_phone_14px font_line_height_130pct" style={{ color: '#eaeaea' }}>
-                          <p>Sponsor and Exhibitor<br /> Queries</p>
-                        </div>
-                        <div className="divider-wrap"><div style={{ height: '30px' }} className="divider"></div></div>
-                        <div className="nectar-responsive-text font_size_desktop_13px font_line_height_100pct" style={{ color: '#ffffff' }}>
-                          <p>Vinay Martin</p>
-                        </div>
-                        <div className="divider-wrap"><div style={{ height: '5px' }} className="divider"></div></div>
-                        <div className="nectar-responsive-text font_size_desktop_10px font_line_height_100pct" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                          <p>Commercial Director &#8211; India &amp; Middle East</p>
-                        </div>
-                        <div className="divider-wrap"><div style={{ height: '10px' }} className="divider"></div></div>
-                        <div className="nectar-responsive-text word-break font_size_desktop_11px font_line_height_100pct" style={{ color: '#ffc933' }}>
-                          <p><a href="mailto:vinay.martin@bengaluruskillsummit.com" style={{ color: '#ffc933', textDecoration: 'none' }}>vinay.martin@bengaluruskillsummit.com</a></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="vc_col-sm-1/5 contact-info-card wpb_column column_container vc_column_container col left_padding_desktop_14px top_padding_desktop_25px right_padding_desktop_14px bottom_padding_desktop_25px">
-                    <div className="vc_column-inner">
-                      <div className="wpb_wrapper">
-                        <div className="nectar-responsive-text font_size_desktop_15px font_size_tablet_15px font_size_phone_14px font_line_height_130pct" style={{ color: '#eaeaea' }}>
-                          <p>Speaking and Partner<br /> Queries</p>
-                        </div>
-                        <div className="divider-wrap"><div style={{ height: '30px' }} className="divider"></div></div>
-                        <div className="nectar-responsive-text font_size_desktop_13px font_line_height_100pct" style={{ color: '#ffffff' }}>
-                          <p>Simran Arora</p>
-                        </div>
-                        <div className="divider-wrap"><div style={{ height: '5px' }} className="divider"></div></div>
-                        <div className="nectar-responsive-text font_size_desktop_10px font_line_height_100pct" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                          <p>Sr. Conference Producer</p>
-                        </div>
-                        <div className="divider-wrap"><div style={{ height: '10px' }} className="divider"></div></div>
-                        <div className="nectar-responsive-text word-break font_size_desktop_11px font_line_height_100pct" style={{ color: '#ffc933' }}>
-                          <p><a href="mailto:simran.arora@bengaluruskillsummit.com" style={{ color: '#ffc933', textDecoration: 'none' }}>simran.arora@bengaluruskillsummit.com</a></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="vc_col-sm-1/5 contact-info-card wpb_column column_container vc_column_container col left_padding_desktop_14px top_padding_desktop_25px right_padding_desktop_14px bottom_padding_desktop_25px">
-                    <div className="vc_column-inner">
-                      <div className="wpb_wrapper">
-                        <div className="nectar-responsive-text font_size_desktop_15px font_size_tablet_15px font_size_phone_14px font_line_height_130pct" style={{ color: '#eaeaea' }}>
-                          <p>Marketing and Media<br /> Queries</p>
-                        </div>
-                        <div className="divider-wrap"><div style={{ height: '30px' }} className="divider"></div></div>
-                        <div className="nectar-responsive-text font_size_desktop_13px font_line_height_100pct" style={{ color: '#ffffff' }}>
-                          <p>Thulasi S</p>
-                        </div>
-                        <div className="divider-wrap"><div style={{ height: '5px' }} className="divider"></div></div>
-                        <div className="nectar-responsive-text font_size_desktop_10px font_line_height_100pct" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                          <p>Marketing Director</p>
-                        </div>
-                        <div className="divider-wrap"><div style={{ height: '10px' }} className="divider"></div></div>
-                        <div className="nectar-responsive-text word-break font_size_desktop_11px font_line_height_100pct" style={{ color: '#ffc933' }}>
-                          <p><a href="mailto:thulasi.s@bengaluruskillsummit.com" style={{ color: '#ffc933', textDecoration: 'none' }}>thulasi.s@bengaluruskillsummit.com</a></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="vc_col-sm-1/5 contact-info-card wpb_column column_container vc_column_container col left_padding_desktop_14px top_padding_desktop_25px right_padding_desktop_14px bottom_padding_desktop_25px">
-                    <div className="vc_column-inner">
-                      <div className="wpb_wrapper">
-                        <div className="nectar-responsive-text font_size_desktop_15px font_size_tablet_15px font_size_phone_14px font_line_height_130pct" style={{ color: '#eaeaea' }}>
-                          <p>Delegate Registration<br /> Queries</p>
-                        </div>
-                        <div className="divider-wrap"><div style={{ height: '30px' }} className="divider"></div></div>
-                        <div className="nectar-responsive-text font_size_desktop_13px font_line_height_100pct" style={{ color: '#ffffff' }}>
-                          <p>Suraj Shetty</p>
-                        </div>
-                        <div className="divider-wrap"><div style={{ height: '5px' }} className="divider"></div></div>
-                        <div className="nectar-responsive-text font_size_desktop_10px font_line_height_100pct" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                          <p>Director &#8211; Delegate Acquisition</p>
-                        </div>
-                        <div className="divider-wrap"><div style={{ height: '10px' }} className="divider"></div></div>
-                        <div className="nectar-responsive-text word-break font_size_desktop_11px font_line_height_100pct" style={{ color: '#ffc933' }}>
-                          <p><a href="mailto:suraj.shetty@bengaluruskillsummit.com" style={{ color: '#ffc933', textDecoration: 'none' }}>suraj.shetty@bengaluruskillsummit.com</a></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="vc_col-sm-1/5 contact-info-card wpb_column column_container vc_column_container col left_padding_desktop_14px top_padding_desktop_25px right_padding_desktop_14px bottom_padding_desktop_25px">
-                    <div className="vc_column-inner">
-                      <div className="wpb_wrapper">
-                        <div className="nectar-responsive-text font_size_desktop_15px font_size_tablet_15px font_size_phone_14px font_line_height_130pct" style={{ color: '#eaeaea' }}>
-                          <p>Partnership<br /> Queries</p>
-                        </div>
-                        <div className="divider-wrap"><div style={{ height: '30px' }} className="divider"></div></div>
-                        <div className="nectar-responsive-text font_size_desktop_13px font_line_height_100pct" style={{ color: '#ffffff' }}>
-                          <p>Praveen Kumar</p>
-                        </div>
-                        <div className="divider-wrap"><div style={{ height: '5px' }} className="divider"></div></div>
-                        <div className="nectar-responsive-text font_size_desktop_10px font_line_height_100pct" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                          <p>Partnership Director</p>
-                        </div>
-                        <div className="divider-wrap"><div style={{ height: '10px' }} className="divider"></div></div>
-                        <div className="nectar-responsive-text word-break font_size_desktop_11px font_line_height_100pct" style={{ color: '#ffc933' }}>
-                          <p><a href="mailto:praveen.kumar@bengaluruskillsummit.com" style={{ color: '#ffc933', textDecoration: 'none' }}>praveen.kumar@bengaluruskillsummit.com</a></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          )}
-
         </div>
       </div>
     </>

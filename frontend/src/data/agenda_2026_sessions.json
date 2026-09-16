@@ -1,0 +1,726 @@
+[
+  {
+    "session_id": 15767,
+    "session_type": 1,
+    "session_title": "Registration and Networking",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-05 03:30:00",
+    "end_timestamp": "2026-11-05 04:30:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": true,
+    "session_order": 1,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:28:00.450213",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": "2026-09-11 09:33:25",
+    "updated_by": "04fccd95-a1c1-4e3a-9df1-bc4ff0508614",
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "28d11d02-c20e-44ec-b744-c6a49c1f8430",
+        "name": "Registration Zone"
+      },
+      {
+        "id": "675e9cfe-e7d1-4133-a07d-13b9b809443c",
+        "name": "Registration and Networking"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15756,
+    "session_type": 1,
+    "session_title": "Registration and Networking",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-04 03:30:00",
+    "end_timestamp": "2026-11-04 04:30:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": false,
+    "session_order": 1,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 11:43:59.187093",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": null,
+    "updated_by": null,
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "28d11d02-c20e-44ec-b744-c6a49c1f8430",
+        "name": "Registration Zone"
+      },
+      {
+        "id": "675e9cfe-e7d1-4133-a07d-13b9b809443c",
+        "name": "Registration and Networking"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15768,
+    "session_type": 1,
+    "session_title": "Opening Remarks",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-05 04:30:00",
+    "end_timestamp": "2026-11-05 04:40:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": true,
+    "session_order": 2,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:29:29.748668",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": "2026-09-11 09:33:26",
+    "updated_by": "04fccd95-a1c1-4e3a-9df1-bc4ff0508614",
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "6b359841-ed86-4d84-8740-1ba6d1c80984",
+        "name": "Opening Remarks"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15757,
+    "session_type": 1,
+    "session_title": "Opening Remarks",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-04 04:30:00",
+    "end_timestamp": "2026-11-04 04:40:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": false,
+    "session_order": 2,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 11:45:17.557691",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": null,
+    "updated_by": null,
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "6b359841-ed86-4d84-8740-1ba6d1c80984",
+        "name": "Opening Remarks"
+      },
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15769,
+    "session_type": 1,
+    "session_title": "\"Blue-Collar Economy: The Next Growth Story for Skilled Employment OR The Rise of Hands-On Careers: New Opportunities in Skilled Employment\"",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-05 05:10:00",
+    "end_timestamp": "2026-11-05 05:50:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": true,
+    "session_order": 3,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:30:36.724859",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": "2026-09-11 09:33:26",
+    "updated_by": "04fccd95-a1c1-4e3a-9df1-bc4ff0508614",
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "d5d48eb6-f49a-4b4f-a365-6387f77035a0",
+        "name": "Panel Discussion"
+      },
+      {
+        "id": "87813019-7f02-4d96-8c7d-dc90316f059d",
+        "name": "Emerging Skills"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15758,
+    "session_type": 1,
+    "session_title": "Upskilling, Reskilling and Lifelong Learning: Keeping the Workforce Future Ready",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-04 05:10:00",
+    "end_timestamp": "2026-11-04 05:50:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": false,
+    "session_order": 3,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 11:48:22.075113",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": null,
+    "updated_by": null,
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "d5d48eb6-f49a-4b4f-a365-6387f77035a0",
+        "name": "Panel Discussion"
+      },
+      {
+        "id": "87813019-7f02-4d96-8c7d-dc90316f059d",
+        "name": "Emerging Skills"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15770,
+    "session_type": 1,
+    "session_title": "The Care Economy: Preparing Talent for Global Opportunities",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-05 05:50:00",
+    "end_timestamp": "2026-11-05 06:20:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": true,
+    "session_order": 4,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:32:54.852148",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": "2026-09-11 09:33:26",
+    "updated_by": "04fccd95-a1c1-4e3a-9df1-bc4ff0508614",
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "f5b43552-747c-4749-a9cc-2aa86f000fbf",
+        "name": "Fireside Chat"
+      },
+      {
+        "id": "901eeeca-c848-4845-8221-1487f34cfbfb",
+        "name": "Global Skills"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15759,
+    "session_type": 1,
+    "session_title": "The Future of Work: What Jobs Will Survive, Transform and Disappear?",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-04 05:50:00",
+    "end_timestamp": "2026-11-04 06:20:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": false,
+    "session_order": 4,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 11:49:25.716163",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": null,
+    "updated_by": null,
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "f5b43552-747c-4749-a9cc-2aa86f000fbf",
+        "name": "Fireside Chat"
+      },
+      {
+        "id": "87813019-7f02-4d96-8c7d-dc90316f059d",
+        "name": "Emerging Skills"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15771,
+    "session_type": 1,
+    "session_title": "(State Secretaries' Panel) - Learning from India's Leading Skills Ecosystems",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-05 06:50:00",
+    "end_timestamp": "2026-11-05 07:30:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": true,
+    "session_order": 5,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:33:59.507448",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": "2026-09-11 09:33:26",
+    "updated_by": "04fccd95-a1c1-4e3a-9df1-bc4ff0508614",
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "d5d48eb6-f49a-4b4f-a365-6387f77035a0",
+        "name": "Panel Discussion"
+      },
+      {
+        "id": "872d57fc-6028-4fa4-a14d-4a49d70f4c9c",
+        "name": "Cross Track"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15760,
+    "session_type": 1,
+    "session_title": "Inclusive Skilling: Closing the Gap in Workforce Participation",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-04 06:20:00",
+    "end_timestamp": "2026-11-04 07:00:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": false,
+    "session_order": 5,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:12:47.849572",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": null,
+    "updated_by": null,
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "d5d48eb6-f49a-4b4f-a365-6387f77035a0",
+        "name": "Panel Discussion"
+      },
+      {
+        "id": "8349985d-70ba-452e-a02d-00948d190a05",
+        "name": "Skills for All"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15772,
+    "session_type": 1,
+    "session_title": "How will AI Augment Skillsets?",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-05 08:30:00",
+    "end_timestamp": "2026-11-05 09:00:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": true,
+    "session_order": 6,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:35:13.752482",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": "2026-09-11 09:33:26",
+    "updated_by": "04fccd95-a1c1-4e3a-9df1-bc4ff0508614",
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "f5b43552-747c-4749-a9cc-2aa86f000fbf",
+        "name": "Fireside Chat"
+      },
+      {
+        "id": "f286431c-e03c-4527-af18-4fc77f4902a2",
+        "name": "Innovation"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15761,
+    "session_type": 1,
+    "session_title": "Global Best Practices in Skilling",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-04 07:00:00",
+    "end_timestamp": "2026-11-04 07:30:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": false,
+    "session_order": 6,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:14:42.251931",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": null,
+    "updated_by": null,
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "f5b43552-747c-4749-a9cc-2aa86f000fbf",
+        "name": "Fireside Chat"
+      },
+      {
+        "id": "901eeeca-c848-4845-8221-1487f34cfbfb",
+        "name": "Global Skills"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15773,
+    "session_type": 1,
+    "session_title": "Turning Skills into Global Careers",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-05 09:30:00",
+    "end_timestamp": "2026-11-05 10:10:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": true,
+    "session_order": 7,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:36:50.346680",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": "2026-09-11 09:33:25",
+    "updated_by": "04fccd95-a1c1-4e3a-9df1-bc4ff0508614",
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "d5d48eb6-f49a-4b4f-a365-6387f77035a0",
+        "name": "Panel Discussion"
+      },
+      {
+        "id": "901eeeca-c848-4845-8221-1487f34cfbfb",
+        "name": "Global Skills"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15762,
+    "session_type": 1,
+    "session_title": "\"(Hon.ble Ministers' Panel)  Workforce 2030: Karnataka's Roadmap from Policy to Execution\"",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-04 08:30:00",
+    "end_timestamp": "2026-11-04 09:10:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": false,
+    "session_order": 7,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:16:31.602342",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": null,
+    "updated_by": null,
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "d5d48eb6-f49a-4b4f-a365-6387f77035a0",
+        "name": "Panel Discussion"
+      },
+      {
+        "id": "872d57fc-6028-4fa4-a14d-4a49d70f4c9c",
+        "name": "Cross Track"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15774,
+    "session_type": 1,
+    "session_title": "Traditional Skills in Karnataka: Can Heritage Become the Next Generation of Enterprise?",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-05 10:10:00",
+    "end_timestamp": "2026-11-05 10:40:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": true,
+    "session_order": 8,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:38:21.211047",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": "2026-09-11 09:33:25",
+    "updated_by": "04fccd95-a1c1-4e3a-9df1-bc4ff0508614",
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "f5b43552-747c-4749-a9cc-2aa86f000fbf",
+        "name": "Fireside Chat"
+      },
+      {
+        "id": "8349985d-70ba-452e-a02d-00948d190a05",
+        "name": "Skills for All"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15763,
+    "session_type": 1,
+    "session_title": "Innovative Financing Models in Skills Delivery",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-04 09:40:00",
+    "end_timestamp": "2026-11-04 10:10:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": false,
+    "session_order": 8,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:18:54.791248",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": null,
+    "updated_by": null,
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "f5b43552-747c-4749-a9cc-2aa86f000fbf",
+        "name": "Fireside Chat"
+      },
+      {
+        "id": "f286431c-e03c-4527-af18-4fc77f4902a2",
+        "name": "Innovation"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15775,
+    "session_type": 1,
+    "session_title": "Skill Champions Session (TA1KSDA)",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-05 10:40:00",
+    "end_timestamp": "2026-11-05 11:10:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": true,
+    "session_order": 9,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:39:42.687231",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": "2026-09-11 09:33:26",
+    "updated_by": "04fccd95-a1c1-4e3a-9df1-bc4ff0508614",
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "d5d48eb6-f49a-4b4f-a365-6387f77035a0",
+        "name": "Panel Discussion"
+      },
+      {
+        "id": "872d57fc-6028-4fa4-a14d-4a49d70f4c9c",
+        "name": "Cross Track"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15764,
+    "session_type": 1,
+    "session_title": "Degrees, Skills and Employability: Finding the Right Balance",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-04 10:10:00",
+    "end_timestamp": "2026-11-04 10:50:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": false,
+    "session_order": 9,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:20:13.713449",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": "2026-09-02 12:20:52",
+    "updated_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "d5d48eb6-f49a-4b4f-a365-6387f77035a0",
+        "name": "Panel Discussion"
+      },
+      {
+        "id": "87813019-7f02-4d96-8c7d-dc90316f059d",
+        "name": "Emerging Skills"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15765,
+    "session_type": 1,
+    "session_title": "Skills Development Through CSR: Models That Delivered Real Impact",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-04 10:50:00",
+    "end_timestamp": "2026-11-04 11:30:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": false,
+    "session_order": 10,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:22:55.734058",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": null,
+    "updated_by": null,
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "d5d48eb6-f49a-4b4f-a365-6387f77035a0",
+        "name": "Panel Discussion"
+      },
+      {
+        "id": "f286431c-e03c-4527-af18-4fc77f4902a2",
+        "name": "Innovation"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  },
+  {
+    "session_id": 15766,
+    "session_type": 1,
+    "session_title": "Assessing Skills Beyond the Certificate",
+    "session_description": "",
+    "session_speakers": [],
+    "start_timestamp": "2026-11-04 11:30:00",
+    "end_timestamp": "2026-11-04 12:10:00",
+    "session_location": "",
+    "session_colour": "#FFECD3",
+    "track_assigned": false,
+    "session_order": 11,
+    "event_id": "ab653814-9e72-4ba7-aa84-837e164a1735",
+    "created_at": "2026-09-02 12:23:57.346398",
+    "created_by": "4e23073b-67f4-4e8e-9916-2c8219774a40",
+    "updated_at": null,
+    "updated_by": null,
+    "grid_layout": null,
+    "session_image_url": null,
+    "tags": [
+      {
+        "id": "44ee84e8-bcb2-44b9-b534-fcf42dc31c8a",
+        "name": "Plenary Stage"
+      },
+      {
+        "id": "d5d48eb6-f49a-4b4f-a365-6387f77035a0",
+        "name": "Panel Discussion"
+      },
+      {
+        "id": "f286431c-e03c-4527-af18-4fc77f4902a2",
+        "name": "Innovation"
+      }
+    ],
+    "enable_feedback": false,
+    "enable_qna": false,
+    "qna_topic_id": null
+  }
+]
