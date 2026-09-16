@@ -5,6 +5,24 @@ import initialSessions2026 from '../data/agenda_2026_sessions.json';
 
 const EVENT_ID_2026 = 'ab653814-9e72-4ba7-aa84-837e164a1735';
 
+// Parse KonfHub timestamp (UTC without offset) into Date object
+function parseKonfhubDate(raw) {
+  if (!raw) return null;
+  let s = String(raw).trim();
+  if (!s.includes('Z') && !s.includes('+')) {
+    s = s.replace(' ', 'T') + 'Z';
+  }
+  const d = new Date(s);
+  return isNaN(d.getTime()) ? null : d;
+}
+
+// Convert UTC timestamp to IST YYYY-MM-DD date key
+function getIstDateKey(raw) {
+  const d = parseKonfhubDate(raw);
+  if (!d) return '';
+  return d.toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' });
+}
+
 export default function Agenda2026({ isScreen = false }) {
   const [filtersData, setFiltersData] = useState(initialFilters2026 || []);
   const [sessionsData, setSessionsData] = useState(initialSessions2026 || []);
@@ -78,18 +96,30 @@ export default function Agenda2026({ isScreen = false }) {
     };
   }, [filtersData, sessionsData]);
 
-  // Group sessions by date
+  // Group sessions by IST date and sort chronologically
   const { groupedSessions, dates } = useMemo(() => {
     const groups = {};
     if (Array.isArray(sessionsData)) {
       sessionsData.forEach(session => {
         if (session.start_timestamp) {
-          const dateKey = session.start_timestamp.slice(0, 10);
-          if (!groups[dateKey]) groups[dateKey] = [];
-          groups[dateKey].push(session);
+          const dateKey = getIstDateKey(session.start_timestamp);
+          if (dateKey) {
+            if (!groups[dateKey]) groups[dateKey] = [];
+            groups[dateKey].push(session);
+          }
         }
       });
     }
+
+    // Sort sessions in each date group by start timestamp
+    Object.keys(groups).forEach(dateKey => {
+      groups[dateKey].sort((a, b) => {
+        const da = parseKonfhubDate(a.start_timestamp);
+        const db = parseKonfhubDate(b.start_timestamp);
+        return (da ? da.getTime() : 0) - (db ? db.getTime() : 0);
+      });
+    });
+
     const sortedDates = Object.keys(groups).sort();
     return { groupedSessions: groups, dates: sortedDates };
   }, [sessionsData]);
@@ -124,8 +154,9 @@ export default function Agenda2026({ isScreen = false }) {
 
   const formatTimeRange = (startTimestamp, endTimestamp) => {
     try {
-      const start = new Date(startTimestamp);
-      const end = new Date(endTimestamp);
+      const start = parseKonfhubDate(startTimestamp);
+      const end = parseKonfhubDate(endTimestamp);
+      if (!start || !end) return '';
       const formatOpts = { timeZone: 'Asia/Kolkata', hour: 'numeric', minute: '2-digit', hour12: true };
       const sStr = start.toLocaleTimeString('en-US', formatOpts).toLowerCase();
       const eStr = end.toLocaleTimeString('en-US', formatOpts).toLowerCase();
