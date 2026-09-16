@@ -420,6 +420,7 @@ export default function Agenda2026({ isScreen = false }) {
             color: rgb(10, 10, 10) !important;
             margin: 0 0 10px 0 !important;
             letter-spacing: -0.2px;
+            text-transform: none !important;
           }
 
           /* TAGS — Light Pink Box & Red Text */
@@ -434,8 +435,8 @@ export default function Agenda2026({ isScreen = false }) {
             font-family: 'Comfortaa', sans-serif !important;
             font-size: 11px !important;
             font-weight: 600 !important;
-            letter-spacing: 0.8px !important;
-            text-transform: uppercase !important;
+            letter-spacing: 0.2px !important;
+            text-transform: none !important;
             padding: 4px 10px !important;
             border-radius: 2px !important;
             background-color: #fff1f0 !important;
@@ -448,15 +449,16 @@ export default function Agenda2026({ isScreen = false }) {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            text-transform: none !important;
             color: #ff6257;
             text-decoration: none;
             margin-top: 6px;
             margin-bottom: 12px;
             cursor: pointer;
+            font-family: 'Comfortaa', sans-serif !important;
           }
           .session-desc-link:hover { text-decoration: underline; }
 
@@ -523,7 +525,18 @@ export default function Agenda2026({ isScreen = false }) {
           }
           .inline-session-popup__close:hover { color: #ff6257; }
           .inline-session-popup__eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #ff6257; margin-bottom: 6px; }
-          .inline-session-popup__title { font-size: 17px; font-weight: 700; color: #111; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #eaedf1; padding-right: 25px; line-height: 1.35; font-family: 'Comfortaa', sans-serif !important; }
+          .inline-session-popup__title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eaedf1;
+            padding-right: 25px;
+            line-height: 1.35;
+            font-family: 'Comfortaa', sans-serif !important;
+            text-transform: none !important;
+          }
           .inline-session-popup__body { font-size: 13px; line-height: 1.65; color: rgba(17,17,17,0.75); max-height: 280px; overflow-y: auto; white-space: pre-line; }
 
           .no-results { text-align: center; padding: 40px 15px; color: rgba(17,17,17,0.35); font-size: 14px; }
@@ -707,7 +720,7 @@ export default function Agenda2026({ isScreen = false }) {
                             </div>
 
                             <div className="session-body">
-                              <h3 className="session-title">{session.session_title}</h3>
+                              <div className="session-title" style={{ textTransform: 'none', fontFamily: '"Comfortaa", sans-serif' }}>{session.session_title}</div>
 
                               {nonStageTags.length > 0 && (
                                 <div className="session-tags">
