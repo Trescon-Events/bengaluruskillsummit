@@ -57,7 +57,7 @@ export default function Contact() {
     margin-right: -50vw !important;
     box-sizing: border-box !important;
     min-height: 380px !important;
-    background-image: linear-gradient(rgba(13, 27, 62, 0.45), rgba(13, 27, 62, 0.55)), url("https://bengaluruskillsummit.com/wp-content/uploads/2025/09/agenda-banner.png") !important;
+    background-image: linear-gradient(rgba(13, 27, 62, 0.45), rgba(13, 27, 62, 0.55)), url("/wp-content/uploads/2025/09/agenda-banner.webp") !important;
     background-position: center center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;

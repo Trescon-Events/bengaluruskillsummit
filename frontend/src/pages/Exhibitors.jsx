@@ -53,7 +53,7 @@ export default function Exhibitors() {
         /* ---------- HERO BANNER ---------- */
         #Skillathon-Banner {
           position: relative;
-          background: url('https://bengaluruskillsummit.com/wp-content/uploads/2025/09/banner-skillathon-05.png') center center / cover no-repeat;
+          background: url('/wp-content/uploads/2025/09/banner-skillathon-05.webp') center center / cover no-repeat;
           padding: 100px 15px;
           display: flex;
           justify-content: center;
@@ -430,12 +430,11 @@ export default function Exhibitors() {
               >
                 <div className="exhibitor-card__inner">
                   <div className="exhibitor-card__media">
-                    <img
-                      src={item.logo}
+                    <img src={item.logo}
                       alt={`${item.name} logo`}
                       className="exhibitor-card__logo"
                       loading="lazy"
-                    />
+                     decoding="async" />
                   </div>
                   <div className="exhibitor-card__meta">
                     <div className="exhibitor-card__name">{item.name}</div>
@@ -464,11 +463,10 @@ export default function Exhibitors() {
               &times;
             </button>
             <div className="kh-modal__header">
-              <img
-                src={selectedExhibitor.logo}
+              <img src={selectedExhibitor.logo}
                 alt={`${selectedExhibitor.name} logo`}
                 className="kh-modal__logo"
-              />
+               decoding="async" />
               <div className="kh-modal__title">
                 <h3>{selectedExhibitor.name}</h3>
               </div>

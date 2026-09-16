@@ -70,7 +70,7 @@ export default function ExhibitNow() {
         .bss-exhibit-hero {
           width: 100%;
           min-height: 380px;
-          background-image: url('/wp-content/uploads/2025/09/agenda-banner.png');
+          background-image: url('/wp-content/uploads/2025/09/agenda-banner.webp');
           background-position: center center;
           background-repeat: no-repeat;
           background-size: cover;

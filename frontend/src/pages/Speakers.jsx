@@ -94,7 +94,7 @@ export default function Speakers() {
             padding-top: 100px !important;
             padding-bottom: 100px !important;
             min-height: 420px !important;
-            background-image: url('https://bengaluruskillsummit.com/wp-content/uploads/2025/09/banner-skillathon-05.png') !important;
+            background-image: url('/wp-content/uploads/2025/09/banner-skillathon-05.webp') !important;
             background-position: center center !important;
             background-repeat: no-repeat !important;
             background-size: cover !important;
@@ -542,12 +542,11 @@ export default function Speakers() {
                             tabIndex={0}
                           >
                             {speaker.image_url ? (
-                              <img
-                                src={speaker.image_url}
+                              <img src={speaker.image_url}
                                 className="SKR-IMG"
                                 alt={speaker.name}
                                 loading="lazy"
-                              />
+                               decoding="async" />
                             ) : (
                               <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#e2e8f0', color: '#64748b' }}>
                                 No Image
@@ -596,7 +595,7 @@ export default function Speakers() {
                     <div className="modal-header-row">
                       {selectedSpeaker.image_url && (
                         <div className="Left-Img">
-                          <img src={selectedSpeaker.image_url} alt={selectedSpeaker.name} />
+                          <img src={selectedSpeaker.image_url} alt={selectedSpeaker.name}  decoding="async" loading="lazy" />
                         </div>
                       )}
                       <div className="Right-Content">

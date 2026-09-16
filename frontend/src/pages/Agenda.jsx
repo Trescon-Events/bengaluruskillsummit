@@ -205,7 +205,7 @@ export default function Agenda({ isScreen = false }) {
           /* ---------- HERO BANNER ---------- */
           .agenda-hero {
             position: relative;
-            background-image: linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(6,45,64,0.68) 100%), url('https://bengaluruskillsummit.com/wp-content/uploads/2025/09/agenda-banner.png');
+            background-image: linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(6,45,64,0.68) 100%), url('/wp-content/uploads/2025/09/agenda-banner.webp');
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -1029,12 +1029,11 @@ export default function Agenda({ isScreen = false }) {
                                 return (
                                   <div key={sp.speaker_id || idx} className="agenda-speaker-card">
                                     {sp.image_url ? (
-                                      <img
-                                        className="agenda-speaker-card__img"
+                                      <img className="agenda-speaker-card__img"
                                         src={sp.image_url}
                                         alt={sp.name || ''}
                                         loading="lazy"
-                                      />
+                                       decoding="async" />
                                     ) : (
                                       <div className="agenda-speaker-card__img-placeholder">
                                         <i className="fa-solid fa-user"></i>

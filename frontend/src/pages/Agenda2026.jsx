@@ -224,7 +224,7 @@ export default function Agenda2026({ isScreen = false }) {
           /* HERO BANNER */
           .agenda-hero {
             position: relative;
-            background: url('https://bengaluruskillsummit.com/wp-content/uploads/2025/09/agenda-banner.png') center center / cover no-repeat #0a2533;
+            background: url('/wp-content/uploads/2025/09/agenda-banner.webp') center center / cover no-repeat #0a2533;
             padding: 100px 15px 45px;
             text-align: center;
             overflow: hidden;
@@ -770,11 +770,10 @@ export default function Agenda2026({ isScreen = false }) {
                                     return (
                                       <div key={sp.speaker_id || spIdx} className="session-speaker-card">
                                         {sp.image_url ? (
-                                          <img
-                                            className="session-speaker-card__img"
+                                          <img className="session-speaker-card__img"
                                             src={sp.image_url}
                                             alt={sp.name}
-                                          />
+                                           decoding="async" loading="lazy" />
                                         ) : (
                                           <div className="session-speaker-card__img-placeholder">
                                             <i className="fa fa-user"></i>

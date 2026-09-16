@@ -124,7 +124,7 @@ export default function BeASpeaker() {
           position: relative;
           width: 100%;
           min-height: 380px;
-          background-image: url('https://bengaluruskillsummit.com/wp-content/uploads/2025/09/agenda-banner.png');
+          background-image: url('/wp-content/uploads/2025/09/agenda-banner.webp');
           background-position: center top;
           background-repeat: no-repeat;
           background-size: cover;

@@ -116,7 +116,7 @@ export default function Speakers2026() {
              Banner Section
              ========================================== */
           #Skillathon-Banner {
-            background-image: url('https://bengaluruskillsummit.com/wp-content/uploads/2025/09/banner-skillathon-05.png') !important;
+            background-image: url('/wp-content/uploads/2025/09/banner-skillathon-05.webp') !important;
             background-position: center center !important;
             background-repeat: no-repeat !important;
             background-size: cover !important;
@@ -500,12 +500,11 @@ export default function Speakers2026() {
                         >
                           <div className="speaker-photo-wrapper">
                             {speaker.image_url ? (
-                              <img
-                                src={speaker.image_url}
+                              <img src={speaker.image_url}
                                 className="speaker-photo"
                                 alt={speaker.name}
                                 loading="lazy"
-                              />
+                               decoding="async" />
                             ) : (
                               <div style={{ width: '100%', paddingTop: '100%', background: '#eee', position: 'relative' }}>
                                 <span style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: '#888', fontSize: '13px' }}>
@@ -542,11 +541,10 @@ export default function Speakers2026() {
                               </button>
 
                               {speaker.image_url && (
-                                <img
-                                  src={speaker.image_url}
+                                <img src={speaker.image_url}
                                   className="popup-image"
                                   alt={speaker.name}
-                                />
+                                 decoding="async" loading="lazy" />
                               )}
 
                               <div className="popup-header-info">

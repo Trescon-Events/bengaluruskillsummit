@@ -65,31 +65,31 @@ const juryMembers = [
     name: "Dr. Prasant Misra",
     designation: "Chair Elect,",
     company: "IEEE Bangalore Section",
-    image: "/wp-content/uploads/2025/10/jury-1-2025.png"
+    image: "/wp-content/uploads/2025/10/jury-1-2025.webp"
   },
   {
     name: "Dr. Sneha Thapliyal",
     designation: "Professor,",
     company: "National Law School of India University",
-    image: "/wp-content/uploads/2025/10/Sneha-Thapliyal.png"
+    image: "/wp-content/uploads/2025/10/Sneha-Thapliyal.webp"
   },
   {
     name: "Manjula V",
     designation: "IAS (R),",
     company: "Former Additional Chief Secretary to the Government of Karnataka",
-    image: "/wp-content/uploads/2025/10/Ms-Manjula-V.png"
+    image: "/wp-content/uploads/2025/10/Ms-Manjula-V.webp"
   },
   {
     name: "Monica Datta",
     designation: "Head, Tech4PositiveFutures,",
     company: "Capgemini CSR",
-    image: "/wp-content/uploads/2025/10/Ms-Monica-Datta.png"
+    image: "/wp-content/uploads/2025/10/Ms-Monica-Datta.webp"
   },
   {
     name: "Sonali Keshwa Murti",
     designation: "Program Director,",
     company: "Melton Foundation",
-    image: "/wp-content/uploads/2025/10/Ms-Sonali-Keshwa-Murti-new.png"
+    image: "/wp-content/uploads/2025/10/Ms-Sonali-Keshwa-Murti-new.webp"
   }
 ];
 
@@ -97,27 +97,27 @@ const challenges = [
   {
     title: "Integrating\nVocational Education",
     desc: "How can vocational education be effectively integrated into mainstream higher education to make learning more practical and career-oriented?",
-    img: "/wp-content/uploads/2025/09/Integrating-vocational-education-1.png"
+    img: "/wp-content/uploads/2025/09/Integrating-vocational-education-1.webp"
   },
   {
     title: "Technology for Scale",
     desc: "In what ways can technologies such as AI, AR/VR, and digital platforms be used to deliver skill training at scale and with better outcomes?",
-    img: "/wp-content/uploads/2025/09/technology-scale.png"
+    img: "/wp-content/uploads/2025/09/technology-scale.webp"
   },
   {
     title: "Inclusive Pathways",
     desc: "What innovative models can create stronger pathways to skilling and employment for women, persons with disabilities, rural youth, and informal workers?",
-    img: "/wp-content/uploads/2025/09/inclusive-pathway.png"
+    img: "/wp-content/uploads/2025/09/inclusive-pathway.webp"
   },
   {
     title: "Sustainable Financing",
     desc: "How can CSR, public–private partnerships, or community-driven models be leveraged to finance and sustain skilling initiatives more effectively?",
-    img: "/wp-content/uploads/2025/09/sustainable-finance.png"
+    img: "/wp-content/uploads/2025/09/sustainable-finance.webp"
   },
   {
     title: "Global Opportunities",
     desc: "What steps can Karnataka and India take to prepare youth for global employment and international mobility, including skills, certifications, and language training?",
-    img: "/wp-content/uploads/2025/09/global-opprtunity.png"
+    img: "/wp-content/uploads/2025/09/global-opprtunity.webp"
   }
 ];
 
@@ -166,7 +166,7 @@ export default function Skillathon2025() {
 
         /* Hero Banner */
         #Skillathon-Banner {
-          background-image: url('/wp-content/uploads/2025/09/banner-skillathon-05.png');
+          background-image: url('/wp-content/uploads/2025/09/banner-skillathon-05.webp');
           background-position: center center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -826,15 +826,15 @@ export default function Skillathon2025() {
         <div className="about-logos-row">
           <div className="about-logo-item">
             <p>Hosted by</p>
-            <img src="/wp-content/uploads/2025/09/kaushalya-karnataka.webp" alt="Kaushalya Karnataka" />
+            <img src="/wp-content/uploads/2025/09/kaushalya-karnataka.webp" alt="Kaushalya Karnataka"  decoding="async" loading="lazy" width={64} height={86} />
           </div>
           <div className="about-logo-item">
             <p>In Collaboration with</p>
-            <img src="/wp-content/uploads/2025/09/melton.webp" alt="Melton Foundation" />
+            <img src="/wp-content/uploads/2025/09/melton.webp" alt="Melton Foundation"  decoding="async" loading="lazy" width={136} height={94} />
           </div>
           <div className="about-logo-item">
             <p>Supported by</p>
-            <img src="/wp-content/uploads/2025/09/supported-by.webp" alt="Supported by" />
+            <img src="/wp-content/uploads/2025/09/supported-by.webp" alt="Supported by"  decoding="async" loading="lazy" width={221} height={104} />
           </div>
         </div>
 
@@ -858,7 +858,7 @@ export default function Skillathon2025() {
         <h2 className="Section-Heading">Objectives</h2>
         <div className="objectives-grid">
           <div className="objectives-col">
-            <img src="/wp-content/uploads/2025/09/objective-1.webp" alt="Objectives illustration" />
+            <img src="/wp-content/uploads/2025/09/objective-1.webp" alt="Objectives illustration"  decoding="async" loading="lazy" width={480} height={272} />
           </div>
           <div className="objectives-col">
             <ul className="fancy-dot-list">
@@ -877,7 +877,7 @@ export default function Skillathon2025() {
         <h2 className="Section-Heading">Competition Structure</h2>
         <div className="competition-phase1-grid">
           <div className="comp-img-col">
-            <img src="/wp-content/uploads/2025/09/competition-structure-phase-1-virtual.webp" alt="Competition Phase 1 Virtual" />
+            <img src="/wp-content/uploads/2025/09/competition-structure-phase-1-virtual.webp" alt="Competition Phase 1 Virtual"  decoding="async" loading="lazy" width={472} height={324} />
           </div>
           <div className="comp-text-col">
             <h4 className="competition-stru-sub">Phase I – Virtual Round</h4>
@@ -897,16 +897,14 @@ export default function Skillathon2025() {
           <div className="Section-Sec-Heading">
             <h4>Submission Guidelines</h4>
           </div>
-          <img
-            src="/wp-content/uploads/2025/09/submission-guideline-new-scaled.png"
+          <img src="/wp-content/uploads/2025/09/submission-guideline-new-scaled.webp"
             alt="Submission Guidelines"
             className="desk-only-img"
-          />
-          <img
-            src="/wp-content/uploads/2025/09/Submission-Template-mobile-scaled.png"
+           decoding="async" loading="lazy" width={2560} height={484} />
+          <img src="/wp-content/uploads/2025/09/Submission-Template-mobile-scaled.webp"
             alt="Submission Guidelines Mobile"
             className="mob-only-img"
-          />
+           decoding="async" loading="lazy" width={1581} height={2560} />
         </div>
 
         {/* Evaluation Criteria */}
@@ -914,17 +912,15 @@ export default function Skillathon2025() {
           <div className="Section-Sec-Heading">
             <h4>Evaluation Criteria</h4>
           </div>
-          <img
-            src="/wp-content/uploads/2025/09/evaluation-criteria-scaled.png"
+          <img src="/wp-content/uploads/2025/09/evaluation-criteria-scaled.webp"
             alt="Evaluation Criteria"
             className="desk-only-img"
             style={{ maxWidth: '980px' }}
-          />
-          <img
-            src="/wp-content/uploads/2025/09/Evaluation-Criteria-mobile.png"
+           decoding="async" loading="lazy" width={2560} height={544} />
+          <img src="/wp-content/uploads/2025/09/Evaluation-Criteria-mobile.webp"
             alt="Evaluation Criteria Mobile"
             className="mob-only-img"
-          />
+           decoding="async" loading="lazy" width={1344} height={2154} />
         </div>
       </section>
 
@@ -936,7 +932,7 @@ export default function Skillathon2025() {
         <div className="jury-grid">
           {juryMembers.map((jury, index) => (
             <div key={index} className="jury-card">
-              <img src={jury.image} alt={jury.name} />
+              <img src={jury.image} alt={jury.name}  decoding="async" loading="lazy" />
               <p className="jury-name">{jury.name}</p>
               <p className="jury-designation">{jury.designation}</p>
               <p className="jury-company">{jury.company}</p>
@@ -959,7 +955,7 @@ export default function Skillathon2025() {
               <p className="challenge-box-heading" dangerouslySetInnerHTML={{ __html: c.title.replace('\n', '<br />') }} />
               <p className="challenge-box-description">{c.desc}</p>
               <div className="challenge-img-wrap">
-                <img src={c.img} alt={c.title.replace('\n', ' ')} />
+                <img src={c.img} alt={c.title.replace('\n', ' ')}  decoding="async" loading="lazy" />
               </div>
             </div>
           ))}
@@ -992,7 +988,7 @@ export default function Skillathon2025() {
             </ul>
           </div>
           <div className="phase-finals-img-col">
-            <img src="/wp-content/uploads/2025/09/competition-structure-phase-1-finals.png" alt="In-Person Finals" />
+            <img src="/wp-content/uploads/2025/09/competition-structure-phase-1-finals.webp" alt="In-Person Finals"  decoding="async" loading="lazy" width={473} height={324} />
           </div>
         </div>
 
@@ -1001,17 +997,15 @@ export default function Skillathon2025() {
           <div className="Section-Sec-Heading">
             <h4>The curated format will take teams through five stages of problem-solving</h4>
           </div>
-          <img
-            src="/wp-content/uploads/2025/09/curated-format.png"
+          <img src="/wp-content/uploads/2025/09/curated-format.webp"
             alt="Five Stages of Problem Solving"
             className="desk-only-img"
             style={{ maxWidth: '1000px' }}
-          />
-          <img
-            src="/wp-content/uploads/2025/09/in-person-finals-mobile-scaled.png"
+           decoding="async" loading="lazy" width={1996} height={714} />
+          <img src="/wp-content/uploads/2025/09/in-person-finals-mobile-scaled.webp"
             alt="Five Stages of Problem Solving Mobile"
             className="mob-only-img"
-          />
+           decoding="async" loading="lazy" width={1039} height={2560} />
         </div>
       </section>
 
@@ -1038,17 +1032,15 @@ export default function Skillathon2025() {
       <section id="key-dates">
         <h2 className="Section-Heading">Key Dates</h2>
         <div className="full-width-diagram">
-          <img
-            src="/wp-content/uploads/2025/09/key-dates-desktop-new-scaled.png"
+          <img src="/wp-content/uploads/2025/09/key-dates-desktop-new-scaled.webp"
             alt="Key Dates Desktop"
             className="desk-only-img"
             style={{ maxWidth: '950px' }}
-          />
-          <img
-            src="/wp-content/uploads/2025/09/key-dates-mobile-new.png"
+           decoding="async" loading="lazy" width={2560} height={539} />
+          <img src="/wp-content/uploads/2025/09/key-dates-mobile-new.webp"
             alt="Key Dates Mobile"
             className="mob-only-img"
-          />
+           decoding="async" loading="lazy" width={2225} height={1824} />
         </div>
       </section>
 
@@ -1082,7 +1074,7 @@ export default function Skillathon2025() {
             </p>
           </div>
           <div className="reg-right-col">
-            <img src="/wp-content/uploads/2025/09/registration-details-new-img-25.png" alt="Registration Details Graphic" />
+            <img src="/wp-content/uploads/2025/09/registration-details-new-img-25.webp" alt="Registration Details Graphic"  decoding="async" loading="lazy" width={1140} height={1140} />
           </div>
         </div>
       </section>
