@@ -210,8 +210,8 @@ export default function Agenda2026({ isScreen = false }) {
       <div id="ajax-content-wrap">
         <style>{`
           /* ============================================
-             BSS 2026 AGENDA — Comfortaa Theme
-             Palette: #fff bg | #ff6257 accent | #111 text
+             BSS 2026 AGENDA — Matching Exact Design
+             Font: Comfortaa 400 | Size: 18px | Line-Height: 30px
              ============================================ */
           .agenda-page-wrap {
             font-family: 'Comfortaa', sans-serif !important;
@@ -354,25 +354,95 @@ export default function Agenda2026({ isScreen = false }) {
           .day-divider__line { flex: 1; height: 1px; background: rgba(255,98,87,0.25); }
           .day-divider__label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #ff6257; white-space: nowrap; }
 
-          /* SESSION CARDS */
+          /* SESSION CARDS — EXACT USER DESIGN */
           .session-card {
             position: relative;
             display: flex;
             flex-direction: row;
-            border-bottom: 1px solid #eaedf1;
-            padding: 24px 0;
+            border-bottom: 1px solid #f0f2f5;
+            padding: 30px 0;
             width: 100%;
             text-align: left;
+            align-items: flex-start;
           }
           .session-card:last-child { border-bottom: none; }
 
-          .session-meta { flex: 0 0 200px; width: 200px; padding-right: 20px; padding-top: 3px; }
-          .session-meta__time { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; font-weight: 700; color: #111; margin-bottom: 6px; }
-          .meta-icon { color: #ff6257; font-size: 13px; margin-top: 2px; }
-          .session-meta__stage { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; font-weight: 500; color: rgba(17,17,17,0.55); }
+          /* LEFT META (Time & Stage) */
+          .session-meta {
+            flex: 0 0 220px;
+            width: 220px;
+            padding-right: 25px;
+            padding-top: 2px;
+            box-sizing: border-box;
+          }
+          .session-meta__time {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #222222;
+            margin-bottom: 8px;
+            font-family: 'Comfortaa', sans-serif !important;
+          }
+          .meta-icon-time {
+            color: #ff6257;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+          }
+          .session-meta__stage {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 13px;
+            font-weight: 400;
+            color: #8c939d;
+            font-family: 'Comfortaa', sans-serif !important;
+          }
+          .meta-icon-stage {
+            color: #ff6257;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+          }
 
-          .session-body { flex: 1; min-width: 0; }
-          .session-title { font-size: 18px; font-weight: 700; line-height: 1.35; color: #111; margin: 0 0 10px 0; font-family: 'Joost', sans-serif !important; }
+          /* RIGHT BODY (Title & Tags) */
+          .session-body {
+            flex: 1;
+            min-width: 0;
+          }
+          .session-title {
+            font-family: 'Comfortaa', sans-serif !important;
+            font-weight: 400 !important;
+            font-size: 18px !important;
+            line-height: 30px !important;
+            color: rgb(10, 10, 10) !important;
+            margin: 0 0 10px 0 !important;
+            letter-spacing: -0.2px;
+          }
+
+          /* TAGS — Light Pink Box & Red Text */
+          .session-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 4px;
+            margin-bottom: 12px;
+          }
+          .session-tag {
+            font-family: 'Comfortaa', sans-serif !important;
+            font-size: 11px !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.8px !important;
+            text-transform: uppercase !important;
+            padding: 4px 10px !important;
+            border-radius: 2px !important;
+            background-color: #fff1f0 !important;
+            border: 1px solid #ffd8d6 !important;
+            color: #ff6257 !important;
+            line-height: 1.4 !important;
+          }
 
           .session-desc-link {
             display: inline-flex;
@@ -384,26 +454,14 @@ export default function Agenda2026({ isScreen = false }) {
             text-transform: uppercase;
             color: #ff6257;
             text-decoration: none;
+            margin-top: 6px;
             margin-bottom: 12px;
             cursor: pointer;
           }
           .session-desc-link:hover { text-decoration: underline; }
 
-          .session-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
-          .session-tag {
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            padding: 3px 8px;
-            border-radius: 2px;
-            background: rgba(255,98,87,0.08);
-            border: 1px solid rgba(255,98,87,0.28);
-            color: #ff6257;
-          }
-
           /* SPEAKERS MINI GRID */
-          .session-speakers-grid { display: flex; flex-wrap: wrap; gap: 14px; width: 100%; margin-top: 10px; }
+          .session-speakers-grid { display: flex; flex-wrap: wrap; gap: 14px; width: 100%; margin-top: 14px; }
           .session-speaker-card { display: flex; align-items: flex-start; gap: 10px; flex: 0 0 calc(50% - 7px); }
           .session-speaker-card__img, .session-speaker-card__img-placeholder {
             width: 52px;
@@ -465,7 +523,7 @@ export default function Agenda2026({ isScreen = false }) {
           }
           .inline-session-popup__close:hover { color: #ff6257; }
           .inline-session-popup__eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #ff6257; margin-bottom: 6px; }
-          .inline-session-popup__title { font-size: 17px; font-weight: 700; color: #111; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #eaedf1; padding-right: 25px; line-height: 1.35; font-family: 'Joost', sans-serif !important; }
+          .inline-session-popup__title { font-size: 17px; font-weight: 700; color: #111; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #eaedf1; padding-right: 25px; line-height: 1.35; font-family: 'Comfortaa', sans-serif !important; }
           .inline-session-popup__body { font-size: 13px; line-height: 1.65; color: rgba(17,17,17,0.75); max-height: 280px; overflow-y: auto; white-space: pre-line; }
 
           .no-results { text-align: center; padding: 40px 15px; color: rgba(17,17,17,0.35); font-size: 14px; }
@@ -503,7 +561,7 @@ export default function Agenda2026({ isScreen = false }) {
               flex-wrap: wrap;
               gap: 6px 16px;
             }
-            .session-title { font-size: 16px; }
+            .session-title { font-size: 16px !important; line-height: 26px !important; }
             .session-speakers-grid { gap: 10px; }
             .session-speaker-card { flex: 0 0 100%; }
             .inline-session-popup {
@@ -631,24 +689,33 @@ export default function Agenda2026({ isScreen = false }) {
                         const isPopupOpen = activePopupId === popupId;
                         const speakers = session.session_speakers || [];
                         const stageTag = (session.tags || []).find(t => stageTagIds.includes(t.id));
+                        const nonStageTags = (session.tags || []).filter(t => !stageTagIds.includes(t.id));
 
                         return (
                           <div key={session.session_id || sIdx} className="session-card">
                             <div className="session-meta">
                               <div className="session-meta__time">
-                                <i className="fa fa-clock meta-icon"></i>
+                                <span className="meta-icon-time"><i className="fa-regular fa-clock"></i></span>
                                 {formatTimeRange(session.start_timestamp, session.end_timestamp)}
                               </div>
                               {stageTag && (
                                 <div className="session-meta__stage">
-                                  <i className="fa fa-location-dot meta-icon"></i>
+                                  <span className="meta-icon-stage"><i className="fa-solid fa-location-dot"></i></span>
                                   {stageTag.name}
                                 </div>
                               )}
                             </div>
 
                             <div className="session-body">
-                              <div className="session-title">{session.session_title}</div>
+                              <h3 className="session-title">{session.session_title}</h3>
+
+                              {nonStageTags.length > 0 && (
+                                <div className="session-tags">
+                                  {nonStageTags.map(t => (
+                                    <span key={t.id} className="session-tag">{t.name}</span>
+                                  ))}
+                                </div>
+                              )}
 
                               {session.session_description && (
                                 <>
@@ -682,12 +749,6 @@ export default function Agenda2026({ isScreen = false }) {
                                   )}
                                 </>
                               )}
-
-                              <div className="session-tags">
-                                {(session.tags || []).map(t => (
-                                  <span key={t.id} className="session-tag">{t.name}</span>
-                                ))}
-                              </div>
 
                               {speakers.length > 0 && (
                                 <div className="session-speakers-grid">
