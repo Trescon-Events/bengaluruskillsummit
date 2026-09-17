@@ -68,7 +68,7 @@ export default function ThankYouGuestRegistration() {
           position: relative;
           box-sizing: border-box;
           padding: 70px 20px 80px 20px;
-          background: #525252 url('/bengaluruskillsummit/wp-content/uploads/2025/08/footer-white-and-gray-bg.svg') center center no-repeat;
+          background: #525252 url('/bengaluruskillsummit/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg') center center no-repeat;
           background-size: cover;
         }
 

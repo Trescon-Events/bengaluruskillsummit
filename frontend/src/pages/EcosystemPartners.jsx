@@ -210,7 +210,7 @@ export default function EcosystemPartners({ isScreen = false }) {
           margin-right: -50vw !important;
           box-sizing: border-box !important;
           padding: 60px 20px !important;
-          background: #525252 url('https://bengaluruskillsummit/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg') center center no-repeat !important;
+          background: #525252 url('/bengaluruskillsummit/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg') center center no-repeat !important;
           background-size: cover !important;
         }
 

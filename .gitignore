@@ -36,3 +36,6 @@ Thumbs.db
 
 # Archives
 *.zip
+
+bengaluruskillsummit-production/
+frontend/clean_dist/

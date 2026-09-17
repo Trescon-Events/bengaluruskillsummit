@@ -224,7 +224,7 @@ export default function KaushalyaAwardsRegistration() {
         /* ---------------- CONTACT INFO SECTION ---------------- */
         .bss-awards-contact-section {
           width: 100%;
-          background-image: url("https://bengaluruskillsummit/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg");
+          background-image: url("/bengaluruskillsummit/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg");
           background-position: center center;
           background-repeat: no-repeat;
           background-size: cover;
