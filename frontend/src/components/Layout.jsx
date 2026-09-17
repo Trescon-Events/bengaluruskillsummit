@@ -18,8 +18,15 @@ export default function Layout() {
   // Global interceptor for all internal anchor links
   useEffect(() => {
     const handleAnchorClick = (e) => {
+      // If already handled (e.g. by React Router <Link>), let it proceed natively
+      if (e.defaultPrevented) return;
+
       const a = e.target.closest('a');
       if (!a) return;
+
+      // If it's a React Router Link, do not intercept
+      if (a.hasAttribute('data-discover')) return;
+
       const href = a.getAttribute('href');
       if (!href) return;
 
@@ -51,8 +58,8 @@ export default function Layout() {
         }
 
         e.preventDefault();
-        // Strip subdirectory prefix if already present
-        let cleanRoute = href.replace(/^\/bengaluruskillsummit\.com/, '');
+        // Strip subdirectory prefix if already present (both with and without .com)
+        let cleanRoute = href.replace(/^\/bengaluruskillsummit(?:\.com)?/i, '');
         if (!cleanRoute.startsWith('/')) cleanRoute = '/' + cleanRoute;
         navigate(cleanRoute);
         window.scrollTo(0, 0);
