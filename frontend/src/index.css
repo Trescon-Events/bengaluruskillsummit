@@ -641,9 +641,7 @@ img.img-with-animation,
   display: block !important;
 }
 
-.sf-menu > li:hover > ul.sub-menu,
-.sf-menu > li:focus-within > ul.sub-menu,
-.sf-menu > li.sfHover > ul.sub-menu {
+.sf-menu > li:hover > ul.sub-menu {
   opacity: 1 !important;
   visibility: visible !important;
   transform: translateY(0) !important;
@@ -766,6 +764,75 @@ img.img-with-animation,
   position: relative !important;
   z-index: 1 !important;
   padding: 55px 0 !important;
+  width: 100% !important;
+  clear: both !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+#impact-scale .row_col_wrap_12 {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  max-width: 1350px !important;
+  margin: 0 auto !important;
+  padding: 0 30px !important;
+  box-sizing: border-box !important;
+  float: none !important;
+  clear: both !important;
+}
+
+#impact-scale .vc_col-sm-4 {
+  width: 30% !important;
+  max-width: 30% !important;
+  flex: 0 0 30% !important;
+  float: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+#impact-scale .vc_col-sm-8 {
+  width: 70% !important;
+  max-width: 70% !important;
+  flex: 0 0 70% !important;
+  float: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+#impact-scale .impact-numbers {
+  width: 100% !important;
+  display: block !important;
+}
+
+#impact-scale .impact-numbers .row_col_wrap_12_inner {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-around !important;
+  flex-wrap: nowrap !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 15px !important;
+  float: none !important;
+}
+
+#impact-scale .impact-scale-counter-card {
+  text-align: center !important;
+  flex: 1 1 25% !important;
+  max-width: 25% !important;
+  width: 25% !important;
+  float: none !important;
+  padding: 0 5px !important;
+  box-sizing: border-box !important;
 }
 
 #impact-scale .impact-scale-title {
@@ -785,26 +852,13 @@ img.img-with-animation,
   color: #ffc933 !important;
 }
 
-#impact-scale .impact-numbers .row_col_wrap_12_inner {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-around !important;
-  flex-wrap: wrap !important;
-  gap: 15px !important;
-}
-
-#impact-scale .impact-scale-counter-card {
-  text-align: center !important;
-  flex: 1 1 20% !important;
-  min-width: 140px !important;
-}
-
 #impact-scale .impact-scale-counter-card .nectar-milestone {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 #impact-scale .impact-scale-counter-card .nectar-milestone .number {
@@ -822,7 +876,7 @@ img.img-with-animation,
 #impact-scale .impact-scale-counter-card .nectar-milestone .number .symbol {
   font-size: 46px !important;
   margin-left: 2px !important;
-  color: #ffffff !important;
+  color: #ffc933 !important;
   display: inline-block !important;
 }
 
@@ -838,10 +892,33 @@ img.img-with-animation,
 }
 
 @media (max-width: 991px) {
+  #impact-scale {
+    padding: 40px 0 !important;
+  }
+  #impact-scale .row_col_wrap_12 {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 0 20px !important;
+  }
+  #impact-scale .vc_col-sm-4 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-bottom: 25px !important;
+  }
+  #impact-scale .vc_col-sm-8 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
   #impact-scale .impact-numbers .row_col_wrap_12_inner {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 25px 15px !important;
+  }
+  #impact-scale .impact-scale-counter-card {
+    max-width: 100% !important;
+    width: 100% !important;
   }
   #impact-scale .impact-scale-counter-card .nectar-milestone .number {
     font-size: 44px !important;

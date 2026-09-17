@@ -36,6 +36,11 @@ export default function Home() {
   const [impactInView, setImpactInView] = useState(false);
 
   useEffect(() => {
+    // Guaranteed fallback: trigger after 500ms so numbers always animate and show even without scroll
+    const timer = setTimeout(() => {
+      setImpactInView(true);
+    }, 500);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -43,7 +48,7 @@ export default function Home() {
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.01 }
     );
 
     if (impactRef.current) {
@@ -51,6 +56,7 @@ export default function Home() {
     }
 
     return () => {
+      clearTimeout(timer);
       if (observer) observer.disconnect();
     };
   }, []);
