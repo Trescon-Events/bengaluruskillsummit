@@ -87,7 +87,15 @@ p {
     .flowchart-mobile { display: block; }
 }
 
-.row-bg.using-image { background-size: cover !important; }
+.row-bg.using-image,
+.row-bg-wrap .row-bg,
+.row-bg-wrap .row-bg[data-nectar-img-src],
+.column-image-bg-wrap .column-image-bg[data-nectar-img-src],
+.column-image-bg {
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-size: cover !important;
+}
 
 .toggle.default {
     margin-bottom: 14px !important;
