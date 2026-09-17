@@ -65,6 +65,140 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    const carousels = document.querySelectorAll('.nectar-flickity.nectar-carousel');
+    const cleanups = [];
+
+    carousels.forEach(container => {
+      const viewport = container.querySelector('.flickity-viewport');
+      const slider = container.querySelector('.flickity-slider');
+      if (!viewport || !slider) return;
+
+      const cells = Array.from(slider.querySelectorAll(':scope > .cell'));
+      if (!cells.length) return;
+
+      let currentIndex = 0;
+      let isPaused = false;
+
+      function getMetrics() {
+        const cell = cells[0];
+        const gap = parseFloat(window.getComputedStyle(cell).marginRight) || 10;
+        const step = cell.offsetWidth + gap;
+        let totalWidth = 0;
+        cells.forEach(c => {
+          totalWidth += c.offsetWidth + (parseFloat(window.getComputedStyle(c).marginRight) || 10);
+        });
+        const viewWidth = viewport.offsetWidth;
+        const maxScroll = Math.max(0, totalWidth - viewWidth);
+        const maxIndex = Math.max(1, Math.ceil(maxScroll / (step || 1)));
+        return { step, maxScroll, maxIndex };
+      }
+
+      function goToSlide(idx) {
+        const { step, maxScroll, maxIndex } = getMetrics();
+        if (idx > maxIndex) {
+          currentIndex = 0;
+        } else if (idx < 0) {
+          currentIndex = maxIndex;
+        } else {
+          currentIndex = idx;
+        }
+        const offset = Math.min(currentIndex * step, maxScroll);
+        slider.style.transform = `translateX(-${offset}px)`;
+      }
+
+      // Prev & Next Buttons
+      let prevBtn = container.querySelector('.flickity-prev-next-button.previous');
+      let nextBtn = container.querySelector('.flickity-prev-next-button.next');
+
+      if (!prevBtn) {
+        prevBtn = document.createElement('button');
+        prevBtn.className = 'flickity-button flickity-prev-next-button previous';
+        prevBtn.setAttribute('type', 'button');
+        prevBtn.setAttribute('aria-label', 'Previous');
+        prevBtn.innerHTML = '<svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50 L 70,10 L 60,0 Z"></path></svg>';
+        container.appendChild(prevBtn);
+      }
+
+      if (!nextBtn) {
+        nextBtn = document.createElement('button');
+        nextBtn.className = 'flickity-button flickity-prev-next-button next';
+        nextBtn.setAttribute('type', 'button');
+        nextBtn.setAttribute('aria-label', 'Next');
+        nextBtn.innerHTML = '<svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50 L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180)"></path></svg>';
+        container.appendChild(nextBtn);
+      }
+
+      const onPrev = (e) => {
+        e.preventDefault();
+        goToSlide(currentIndex - 1);
+      };
+      const onNext = (e) => {
+        e.preventDefault();
+        goToSlide(currentIndex + 1);
+      };
+
+      prevBtn.addEventListener('click', onPrev);
+      nextBtn.addEventListener('click', onNext);
+
+      // Autoplay every 3.8s
+      const timer = setInterval(() => {
+        if (!isPaused) {
+          goToSlide(currentIndex + 1);
+        }
+      }, 3800);
+
+      // Hover pause
+      const onMouseEnter = () => { isPaused = true; };
+      const onMouseLeave = () => { isPaused = false; };
+      container.addEventListener('mouseenter', onMouseEnter);
+      container.addEventListener('mouseleave', onMouseLeave);
+
+      // Touch swipe
+      let touchStartX = 0;
+      const onTouchStart = (e) => {
+        if (e.touches && e.touches[0]) {
+          touchStartX = e.touches[0].clientX;
+          isPaused = true;
+        }
+      };
+      const onTouchEnd = (e) => {
+        if (e.changedTouches && e.changedTouches[0]) {
+          const diff = e.changedTouches[0].clientX - touchStartX;
+          if (diff < -40) {
+            goToSlide(currentIndex + 1);
+          } else if (diff > 40) {
+            goToSlide(currentIndex - 1);
+          }
+          isPaused = false;
+        }
+      };
+      viewport.addEventListener('touchstart', onTouchStart, { passive: true });
+      viewport.addEventListener('touchend', onTouchEnd, { passive: true });
+
+      // Resize
+      const onResize = () => {
+        goToSlide(currentIndex);
+      };
+      window.addEventListener('resize', onResize);
+
+      cleanups.push(() => {
+        clearInterval(timer);
+        prevBtn.removeEventListener('click', onPrev);
+        nextBtn.removeEventListener('click', onNext);
+        container.removeEventListener('mouseenter', onMouseEnter);
+        container.removeEventListener('mouseleave', onMouseLeave);
+        viewport.removeEventListener('touchstart', onTouchStart);
+        viewport.removeEventListener('touchend', onTouchEnd);
+        window.removeEventListener('resize', onResize);
+      });
+    });
+
+    return () => {
+      cleanups.forEach(fn => fn());
+    };
+  }, []);
+
   const toggleHomeFaq = (index) => {
     setOpenFaq(prev => (prev === index ? null : index));
   };
