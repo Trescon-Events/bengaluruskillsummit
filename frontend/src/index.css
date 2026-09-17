@@ -759,22 +759,25 @@ img.img-with-animation,
 }
 
 /* ==========================================================================
-   The Scale of Impact Section Styling
+   The Scale of Impact Section Styling (Pixel-Perfect to Video Reference)
    ========================================================================== */
 #impact-scale {
   background-color: #0d53c7 !important;
   position: relative !important;
   z-index: 1 !important;
-  padding: 45px 0 !important;
+  padding: 55px 0 !important;
 }
 
 #impact-scale .impact-scale-title {
   color: #ffc933 !important;
   font-family: 'Joost', sans-serif !important;
   font-weight: 700 !important;
-  line-height: 1 !important;
+  text-transform: uppercase !important;
+  line-height: 0.95 !important;
+  letter-spacing: 0.5px !important;
   margin: 0 !important;
   text-align: center !important;
+  font-size: 58px !important;
 }
 
 #impact-scale .impact-scale-title .highlight {
@@ -806,17 +809,18 @@ img.img-with-animation,
 
 #impact-scale .impact-scale-counter-card .nectar-milestone .number {
   font-family: "Comfortaa", sans-serif !important;
-  font-size: 52px !important;
+  font-size: 56px !important;
   font-weight: 700 !important;
   color: #ffffff !important;
   line-height: 1.1 !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  min-width: 130px !important;
 }
 
 #impact-scale .impact-scale-counter-card .nectar-milestone .number .symbol {
-  font-size: 42px !important;
+  font-size: 46px !important;
   margin-left: 2px !important;
   color: #ffffff !important;
   display: inline-block !important;
@@ -825,9 +829,9 @@ img.img-with-animation,
 #impact-scale .impact-scale-counter-card .nectar-milestone .subject {
   color: #ffffff !important;
   text-transform: uppercase !important;
-  font-weight: 500 !important;
-  font-size: 16px !important;
-  letter-spacing: 1.5px !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  letter-spacing: 2px !important;
   margin-top: 10px !important;
   font-family: "Comfortaa", sans-serif !important;
   text-align: center !important;
@@ -841,6 +845,7 @@ img.img-with-animation,
   }
   #impact-scale .impact-scale-counter-card .nectar-milestone .number {
     font-size: 44px !important;
+    min-width: auto !important;
   }
   #impact-scale .impact-scale-title {
     font-size: 44px !important;
@@ -856,6 +861,7 @@ img.img-with-animation,
     font-size: 34px !important;
   }
   #impact-scale .impact-scale-counter-card .nectar-milestone .subject {
-    font-size: 14px !important;
+    font-size: 13px !important;
+    letter-spacing: 1px !important;
   }
 }
