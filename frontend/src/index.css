@@ -1494,6 +1494,22 @@ img.img-with-animation[src*="header-image"],
   padding: 0 !important;
 }
 
+.nectar-flickity .flickity-prev-next-button:before,
+.nectar-flickity .flickity-prev-next-button:after,
+.nectar-flickity[data-controls*="arrows_overlaid"] .flickity-prev-next-button:before,
+.nectar-flickity[data-controls*="arrows_overlaid"] .flickity-prev-next-button:after,
+.nectar-flickity[data-controls*="arrows_overlaid"] .flickity-prev-next-button.previous:before,
+.nectar-flickity[data-controls*="arrows_overlaid"] .flickity-prev-next-button.previous:after,
+.nectar-flickity[data-controls*="arrows_overlaid"] .flickity-prev-next-button.next:before,
+.nectar-flickity[data-controls*="arrows_overlaid"] .flickity-prev-next-button.next:after {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
 .nectar-flickity .flickity-prev-next-button:hover {
   background: #022E77 !important;
   color: #ffffff !important;
@@ -1501,11 +1517,23 @@ img.img-with-animation[src*="header-image"],
   box-shadow: 0 6px 18px rgba(2, 46, 119, 0.35) !important;
 }
 
-.nectar-flickity .flickity-prev-next-button svg {
-  width: 16px !important;
-  height: 16px !important;
-  fill: currentColor !important;
+.nectar-flickity .flickity-prev-next-button svg,
+.nectar-flickity[data-controls*="arrows_overlaid"] .flickity-prev-next-button svg,
+.nectar-flickity[data-controls*="arrows_overlaid"] .flickity-prev-next-button.previous svg,
+.nectar-flickity[data-controls*="arrows_overlaid"] .flickity-prev-next-button.next svg {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  width: 20px !important;
+  height: 20px !important;
+  fill: none !important;
+  stroke: currentColor !important;
   pointer-events: none !important;
+  display: block !important;
+  margin: 0 !important;
 }
 
 .nectar-flickity .flickity-prev-next-button.previous {

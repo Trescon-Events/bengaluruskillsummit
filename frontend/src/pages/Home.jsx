@@ -116,7 +116,7 @@ export default function Home() {
         prevBtn.className = 'flickity-button flickity-prev-next-button previous';
         prevBtn.setAttribute('type', 'button');
         prevBtn.setAttribute('aria-label', 'Previous');
-        prevBtn.innerHTML = '<svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50 L 70,10 L 60,0 Z"></path></svg>';
+        prevBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>';
         container.appendChild(prevBtn);
       }
 
@@ -125,7 +125,7 @@ export default function Home() {
         nextBtn.className = 'flickity-button flickity-prev-next-button next';
         nextBtn.setAttribute('type', 'button');
         nextBtn.setAttribute('aria-label', 'Next');
-        nextBtn.innerHTML = '<svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50 L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180)"></path></svg>';
+        nextBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
         container.appendChild(nextBtn);
       }
 
