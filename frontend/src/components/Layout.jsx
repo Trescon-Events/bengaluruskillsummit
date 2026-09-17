@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import FloatingSocialShare from './FloatingSocialShare';
 
 export default function Layout() {
   const location = useLocation();
@@ -136,6 +137,7 @@ export default function Layout() {
     <>
       <Header />
       <Outlet />
+      <FloatingSocialShare />
       <Footer />
     </>
   );
