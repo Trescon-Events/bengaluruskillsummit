@@ -116,13 +116,20 @@ export default function Speakers2026() {
              Banner Section
              ========================================== */
           #Skillathon-Banner {
+            width: 100vw !important;
+            position: relative !important;
+            left: 50% !important;
+            right: 50% !important;
+            margin-left: -50vw !important;
+            margin-right: -50vw !important;
+            box-sizing: border-box !important;
             background-image: url('/bengaluruskillsummit/wp-content/uploads/2025/09/banner-skillathon-05.webp') !important;
             background-position: center center !important;
             background-repeat: no-repeat !important;
             background-size: cover !important;
             padding-top: 100px !important;
             padding-bottom: 100px !important;
-            min-height: 380px !important;
+            min-height: 420px !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
