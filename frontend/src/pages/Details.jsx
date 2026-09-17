@@ -11,7 +11,7 @@ export default function Details() {
     {
       id: 'agenda',
       title: 'Agenda',
-      icon: '/wp-content/uploads/2025/10/agenda.svg',
+      icon: '/bengaluruskillsummit.com/wp-content/uploads/2025/10/agenda.svg',
       link: '/agenda',
       width: 59,
       height: 60,
@@ -19,7 +19,7 @@ export default function Details() {
     {
       id: 'floorplan',
       title: 'Floorplan',
-      icon: '/wp-content/uploads/2025/10/floorplan.svg',
+      icon: '/bengaluruskillsummit.com/wp-content/uploads/2025/10/floorplan.svg',
       link: '/floorplan',
       width: 60,
       height: 60,
@@ -27,7 +27,7 @@ export default function Details() {
     {
       id: 'partners',
       title: 'Partners',
-      icon: '/wp-content/uploads/2025/10/sponsors-exhibitors.svg',
+      icon: '/bengaluruskillsummit.com/wp-content/uploads/2025/10/sponsors-exhibitors.svg',
       link: '/ecosystem-partners',
       width: 61,
       height: 60,
@@ -39,7 +39,7 @@ export default function Details() {
       {/* Top Banner */}
       <div className="bss-details-banner-wrap">
         <Link to="/" title="Bengaluru Skill Summit 2025 - Home">
-          <img src="/wp-content/uploads/2025/11/home-page-header.webp"
+          <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/11/home-page-header.webp"
             alt="Bengaluru Skill Summit 2025"
             className="bss-details-banner-img"
            decoding="async" width={1925} height={1349} />

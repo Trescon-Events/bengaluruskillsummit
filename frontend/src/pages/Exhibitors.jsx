@@ -53,7 +53,7 @@ export default function Exhibitors() {
         /* ---------- HERO BANNER ---------- */
         #Skillathon-Banner {
           position: relative;
-          background: url('/wp-content/uploads/2025/09/banner-skillathon-05.webp') center center / cover no-repeat;
+          background: url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/banner-skillathon-05.webp') center center / cover no-repeat;
           padding: 100px 15px;
           display: flex;
           justify-content: center;

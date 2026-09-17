@@ -108,7 +108,7 @@ export default function SnapshotAgenda() {
         /* ---------- HERO BANNER ---------- */
         .agenda-hero {
           position: relative;
-          background: url('/wp-content/uploads/2025/09/agenda-banner.webp') center center / cover no-repeat;
+          background: url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/agenda-banner.webp') center center / cover no-repeat;
           padding: 120px 15px 50px;
           text-align: center;
           overflow: hidden;

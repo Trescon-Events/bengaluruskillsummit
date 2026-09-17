@@ -70,7 +70,7 @@ export default function InauguralDayInvite() {
         .bss-inaugural-hero {
           width: 100%;
           min-height: 380px;
-          background-image: url('/wp-content/uploads/2025/09/agenda-banner.webp');
+          background-image: url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/agenda-banner.webp');
           background-position: center center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -213,7 +213,7 @@ export default function InauguralDayInvite() {
           position: relative;
           box-sizing: border-box;
           padding: 70px 20px 80px 20px;
-          background: #525252 url('/wp-content/uploads/2025/08/footer-white-and-gray-bg.svg') center center no-repeat;
+          background: #525252 url('/bengaluruskillsummit.com/wp-content/uploads/2025/08/footer-white-and-gray-bg.svg') center center no-repeat;
           background-size: cover;
         }
 

@@ -14,7 +14,7 @@ export default function Floorplan() {
       <div className="bss-floorplan-content">
         <div className="bss-floorplan-container">
           <div className="bss-floorplan-img-wrap">
-            <img src="/wp-content/uploads/2025/11/bss-25-floor-plan-screen-5.webp"
+            <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/11/bss-25-floor-plan-screen-5.webp"
               alt="bss 25 floor plan screen 5"
               className="bss-floorplan-svg"
              decoding="async" loading="lazy" width={1134} height={1512} />

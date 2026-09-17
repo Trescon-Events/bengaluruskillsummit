@@ -115,7 +115,7 @@ export default function KaushalyaAwardsRegistration() {
         .bss-awards-reg-hero {
           position: relative;
           width: 100%;
-          background-image: url('/wp-content/uploads/2025/09/banner-skillathon-05.webp');
+          background-image: url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/banner-skillathon-05.webp');
           background-position: left top;
           background-repeat: no-repeat;
           background-size: cover;

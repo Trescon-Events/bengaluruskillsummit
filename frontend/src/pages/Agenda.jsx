@@ -205,7 +205,7 @@ export default function Agenda({ isScreen = false }) {
           /* ---------- HERO BANNER ---------- */
           .agenda-hero {
             position: relative;
-            background-image: linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(6,45,64,0.68) 100%), url('/wp-content/uploads/2025/09/agenda-banner.webp');
+            background-image: linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(6,45,64,0.68) 100%), url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/agenda-banner.webp');
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;

@@ -94,7 +94,7 @@ export default function Speakers() {
             padding-top: 100px !important;
             padding-bottom: 100px !important;
             min-height: 420px !important;
-            background-image: url('/wp-content/uploads/2025/09/banner-skillathon-05.webp') !important;
+            background-image: url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/banner-skillathon-05.webp') !important;
             background-position: center center !important;
             background-repeat: no-repeat !important;
             background-size: cover !important;

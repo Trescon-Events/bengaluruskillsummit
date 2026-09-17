@@ -70,7 +70,7 @@ export default function BeAMediaPartner() {
         .bss-media-partner-hero {
           width: 100%;
           min-height: 380px;
-          background-image: url('/wp-content/uploads/2025/09/agenda-banner.webp');
+          background-image: url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/agenda-banner.webp');
           background-position: center center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -312,7 +312,7 @@ export default function BeAMediaPartner() {
           margin-right: -50vw;
           box-sizing: border-box;
           padding: 60px 20px;
-          background: #525252 url('/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg') center center no-repeat;
+          background: #525252 url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg') center center no-repeat;
           background-size: cover;
         }
 

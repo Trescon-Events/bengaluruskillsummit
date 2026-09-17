@@ -71,7 +71,7 @@ export default function SkillathonRegistration() {
         .bss-skill-reg-hero {
           width: 100%;
           min-height: 380px;
-          background-image: url('/wp-content/uploads/2025/09/banner-skillathon-05.webp');
+          background-image: url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/banner-skillathon-05.webp');
           background-position: left top;
           background-repeat: no-repeat;
           background-size: cover;
@@ -332,7 +332,7 @@ export default function SkillathonRegistration() {
           margin-right: -50vw;
           box-sizing: border-box;
           padding: 60px 20px;
-          background: #525252 url('/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg') center center no-repeat;
+          background: #525252 url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg') center center no-repeat;
           background-size: cover;
         }
 

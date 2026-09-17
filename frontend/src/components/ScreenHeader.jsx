@@ -14,7 +14,7 @@ export default function ScreenHeader({ active = 'AGENDA' }) {
       <div className="bss-screen-header-inner">
         <div className="bss-screen-logo-wrap">
           <Link to="/details/" title="Bengaluru Skill Summit">
-            <img src="/wp-content/uploads/2025/09/bss-logo-white.svg"
+            <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/bss-logo-white.svg"
               alt="bss logo white"
               className="bss-screen-logo"
              decoding="async" width={492} height={157} />
