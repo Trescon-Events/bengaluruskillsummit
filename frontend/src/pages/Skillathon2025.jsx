@@ -932,7 +932,7 @@ export default function Skillathon2025() {
         <div className="jury-grid">
           {juryMembers.map((jury, index) => (
             <div key={index} className="jury-card">
-              <img src={jury.image} alt={jury.name}  decoding="async" loading="lazy" />
+              <img src={jury.image} alt={jury.name} decoding="async" loading="lazy" width={280} height={280} />
               <p className="jury-name">{jury.name}</p>
               <p className="jury-designation">{jury.designation}</p>
               <p className="jury-company">{jury.company}</p>
@@ -955,7 +955,7 @@ export default function Skillathon2025() {
               <p className="challenge-box-heading" dangerouslySetInnerHTML={{ __html: c.title.replace('\n', '<br />') }} />
               <p className="challenge-box-description">{c.desc}</p>
               <div className="challenge-img-wrap">
-                <img src={c.img} alt={c.title.replace('\n', ' ')}  decoding="async" loading="lazy" />
+                <img src={c.img} alt={c.title.replace('\n', ' ')} decoding="async" loading="lazy" width={400} height={240} />
               </div>
             </div>
           ))}

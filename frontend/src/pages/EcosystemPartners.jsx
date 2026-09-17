@@ -300,7 +300,9 @@ export default function EcosystemPartners({ isScreen = false }) {
                           alt={`${partner.name} logo`}
                           className="exhibitor-card__logo"
                           loading="lazy"
-                         decoding="async" />
+                          decoding="async"
+                          width={220}
+                          height={110} />
                       </div>
                     </div>
                   );

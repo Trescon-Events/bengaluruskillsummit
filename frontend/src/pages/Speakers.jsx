@@ -546,7 +546,9 @@ export default function Speakers() {
                                 className="SKR-IMG"
                                 alt={speaker.name}
                                 loading="lazy"
-                               decoding="async" />
+                                decoding="async"
+                                width={320}
+                                height={320} />
                             ) : (
                               <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#e2e8f0', color: '#64748b' }}>
                                 No Image
@@ -595,7 +597,7 @@ export default function Speakers() {
                     <div className="modal-header-row">
                       {selectedSpeaker.image_url && (
                         <div className="Left-Img">
-                          <img src={selectedSpeaker.image_url} alt={selectedSpeaker.name}  decoding="async" loading="lazy" />
+                          <img src={selectedSpeaker.image_url} alt={selectedSpeaker.name} decoding="async" loading="lazy" width={320} height={320} />
                         </div>
                       )}
                       <div className="Right-Content">

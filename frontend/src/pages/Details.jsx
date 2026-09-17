@@ -42,7 +42,11 @@ export default function Details() {
           <img src="/bengaluruskillsummit/wp-content/uploads/2025/11/home-page-header.webp"
             alt="Bengaluru Skill Summit 2025"
             className="bss-details-banner-img"
-           decoding="async" width={1925} height={1349} />
+            decoding="async"
+            fetchpriority="high"
+            loading="eager"
+            width={1925}
+            height={1349} />
         </Link>
       </div>
 
@@ -58,10 +62,11 @@ export default function Details() {
               <div className="bss-details-card-icon-wrap">
                 <img src={card.icon}
                   alt={card.title}
-                  width={card.width}
-                  height={card.height}
+                  width={60}
+                  height={60}
                   className="bss-details-card-icon"
-                 decoding="async" loading="lazy" />
+                  decoding="async"
+                  loading="lazy" />
               </div>
               <div className="bss-details-card-text">
                 <strong>{card.title}</strong>

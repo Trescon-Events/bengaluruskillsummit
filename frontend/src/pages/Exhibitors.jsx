@@ -434,7 +434,9 @@ export default function Exhibitors() {
                       alt={`${item.name} logo`}
                       className="exhibitor-card__logo"
                       loading="lazy"
-                     decoding="async" />
+                      decoding="async"
+                      width={200}
+                      height={100} />
                   </div>
                   <div className="exhibitor-card__meta">
                     <div className="exhibitor-card__name">{item.name}</div>
@@ -466,7 +468,10 @@ export default function Exhibitors() {
               <img src={selectedExhibitor.logo}
                 alt={`${selectedExhibitor.name} logo`}
                 className="kh-modal__logo"
-               decoding="async" />
+                decoding="async"
+                loading="lazy"
+                width={180}
+                height={90} />
               <div className="kh-modal__title">
                 <h3>{selectedExhibitor.name}</h3>
               </div>

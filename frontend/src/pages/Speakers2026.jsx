@@ -504,7 +504,9 @@ export default function Speakers2026() {
                                 className="speaker-photo"
                                 alt={speaker.name}
                                 loading="lazy"
-                               decoding="async" />
+                                decoding="async"
+                                width={320}
+                                height={320} />
                             ) : (
                               <div style={{ width: '100%', paddingTop: '100%', background: '#eee', position: 'relative' }}>
                                 <span style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: '#888', fontSize: '13px' }}>
@@ -544,7 +546,10 @@ export default function Speakers2026() {
                                 <img src={speaker.image_url}
                                   className="popup-image"
                                   alt={speaker.name}
-                                 decoding="async" loading="lazy" />
+                                  decoding="async"
+                                  loading="lazy"
+                                  width={100}
+                                  height={100} />
                               )}
 
                               <div className="popup-header-info">

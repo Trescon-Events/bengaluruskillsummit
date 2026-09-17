@@ -773,7 +773,10 @@ export default function Agenda2026({ isScreen = false }) {
                                           <img className="session-speaker-card__img"
                                             src={sp.image_url}
                                             alt={sp.name}
-                                           decoding="async" loading="lazy" />
+                                            decoding="async"
+                                            loading="lazy"
+                                            width={60}
+                                            height={60} />
                                         ) : (
                                           <div className="session-speaker-card__img-placeholder">
                                             <i className="fa fa-user"></i>

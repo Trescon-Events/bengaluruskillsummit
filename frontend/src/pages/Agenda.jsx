@@ -1033,7 +1033,9 @@ export default function Agenda({ isScreen = false }) {
                                         src={sp.image_url}
                                         alt={sp.name || ''}
                                         loading="lazy"
-                                       decoding="async" />
+                                        decoding="async"
+                                        width={60}
+                                        height={60} />
                                     ) : (
                                       <div className="agenda-speaker-card__img-placeholder">
                                         <i className="fa-solid fa-user"></i>

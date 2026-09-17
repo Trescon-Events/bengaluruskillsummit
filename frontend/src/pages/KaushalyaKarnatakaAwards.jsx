@@ -887,7 +887,10 @@ export default function KaushalyaKarnatakaAwards() {
           <img src={about.image}
             alt="Kaushalya Karnataka Awards Trophy"
             className="kka-about-trophy"
-           decoding="async" loading="lazy" />
+            decoding="async"
+            loading="lazy"
+            width={460}
+            height={460} />
         </div>
       </section>
 
@@ -925,7 +928,10 @@ export default function KaushalyaKarnatakaAwards() {
               <img src={awardsTabs.corporate.banner}
                 alt="Organised by and Powered by Banner"
                 className="kka-tab-banner"
-               decoding="async" />
+                decoding="async"
+                loading="lazy"
+                width={1200}
+                height={160} />
               <h3 className="kka-winners-heading">Featured Winners</h3>
 
               <div className="kka-corp-grid">
@@ -935,7 +941,7 @@ export default function KaushalyaKarnatakaAwards() {
                   <div className="logo-grid">
                     {awardsTabs.corporate.largeEnterprises.map((item, idx) => (
                       <div key={idx} className="logo-item" title={item.name}>
-                        <img src={item.logo} alt={item.name} loading="lazy"  decoding="async" />
+                        <img src={item.logo} alt={item.name} loading="lazy" decoding="async" width={180} height={70} />
                       </div>
                     ))}
                   </div>
@@ -952,7 +958,7 @@ export default function KaushalyaKarnatakaAwards() {
                         title={item.name}
                         style={idx === 9 ? { gridColumn: 2 } : {}}
                       >
-                        <img src={item.logo} alt={item.name} loading="lazy"  decoding="async" />
+                        <img src={item.logo} alt={item.name} loading="lazy" decoding="async" width={180} height={70} />
                       </div>
                     ))}
                   </div>
@@ -964,7 +970,10 @@ export default function KaushalyaKarnatakaAwards() {
               <img src={awardsTabs.institutional.banner}
                 alt="Institutional Excellence Banner"
                 className="kka-inst-banner"
-               decoding="async" />
+                decoding="async"
+                loading="lazy"
+                width={1200}
+                height={160} />
               <h3 className="kka-winners-heading">Featured Winners</h3>
 
               {/* Accordion 2 Columns */}
@@ -1149,7 +1158,9 @@ export default function KaushalyaKarnatakaAwards() {
                       alt={card.company}
                       className="testi-logo"
                       loading="lazy"
-                     decoding="async" />
+                      decoding="async"
+                      width={160}
+                      height={60} />
                   </div>
                 </div>
               </div>
@@ -1205,7 +1216,9 @@ export default function KaushalyaKarnatakaAwards() {
             alt="The Journey Continues"
             className="kka-journey-img"
             loading="lazy"
-           decoding="async" />
+            decoding="async"
+            width={540}
+            height={400} />
         </div>
       </section>
 

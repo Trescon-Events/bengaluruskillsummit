@@ -17,7 +17,11 @@ export default function ScreenHeader({ active = 'AGENDA' }) {
             <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/bss-logo-white.svg"
               alt="bss logo white"
               className="bss-screen-logo"
-             decoding="async" width={492} height={157} />
+              decoding="async"
+              fetchpriority="high"
+              loading="eager"
+              width={492}
+              height={157} />
           </Link>
         </div>
         <div className="bss-screen-buttons-wrap">

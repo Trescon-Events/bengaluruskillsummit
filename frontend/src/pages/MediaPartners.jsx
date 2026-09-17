@@ -285,7 +285,9 @@ export default function MediaPartners() {
                           alt={`${partner.name} logo`}
                           className="exhibitor-card__logo"
                           loading="lazy"
-                         decoding="async" />
+                          decoding="async"
+                          width={220}
+                          height={110} />
                       </div>
                     </div>
                   );

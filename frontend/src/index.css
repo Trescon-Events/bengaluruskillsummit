@@ -865,3 +865,42 @@ img.img-with-animation,
     letter-spacing: 1px !important;
   }
 }
+
+/* ==========================================================================
+   IMAGE PERFORMANCE OPTIMIZATIONS & CLS PREVENTION
+   ========================================================================== */
+
+/* Universal aspect ratio preservation to prevent Cumulative Layout Shift (CLS) */
+img {
+  max-width: 100%;
+}
+
+img[width][height] {
+  aspect-ratio: auto;
+}
+
+/* Subtle image placeholders for smooth rendering without layout pops */
+.img-with-aniamtion-wrap .inner,
+.exhibitor-card__media,
+.logo-item,
+.speaker-photo-wrapper,
+.SKR-IMG,
+.jury-card,
+.challenge-img-wrap,
+.portfolio-items .work-item {
+  background-color: rgba(240, 243, 249, 0.6);
+  border-radius: inherit;
+}
+
+/* Content visibility optimizations for heavy offscreen sections */
+#hodl-faq-section,
+#contact-info,
+.digital-coverage,
+.wpb_gallery_slidesflickity_style,
+.partners-section,
+.jury-grid,
+.challenge-grid {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
