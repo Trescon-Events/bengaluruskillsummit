@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 
 // Eager load Home for instant First Contentful Paint
@@ -48,6 +48,8 @@ export default function App() {
             {/* About Summit */}
             <Route path="about-us" element={<AboutUs />} />
             <Route path="about-us/" element={<AboutUs />} />
+            <Route path="about" element={<Navigate to="/about-us" replace />} />
+            <Route path="about/" element={<Navigate to="/about-us" replace />} />
             
             {/* Curtain Raiser */}
             <Route path="curtain-raiser" element={<CurtainRaiser />} />
