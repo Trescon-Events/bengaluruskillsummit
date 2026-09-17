@@ -108,7 +108,7 @@ export default function SnapshotAgenda() {
         /* ---------- HERO BANNER ---------- */
         .agenda-hero {
           position: relative;
-          background: url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/agenda-banner.webp') center center / cover no-repeat;
+          background: url('/bengaluruskillsummit/wp-content/uploads/2025/09/agenda-banner.webp') center center / cover no-repeat;
           padding: 120px 15px 50px;
           text-align: center;
           overflow: hidden;
@@ -535,7 +535,7 @@ export default function SnapshotAgenda() {
           margin-right: -50vw !important;
           box-sizing: border-box !important;
           padding: 60px 20px !important;
-          background: #525252 url('https://bengaluruskillsummit.com/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg') center center no-repeat !important;
+          background: #525252 url('https://bengaluruskillsummit/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg') center center no-repeat !important;
           background-size: cover !important;
         }
 

@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/bengaluruskillsummit.com/',
+  base: '/bengaluruskillsummit/',
   plugins: [
     react(),
     {
@@ -11,7 +11,7 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
           if (req.url.startsWith('/wp-content/') || req.url.startsWith('/uploads/')) {
-            req.url = '/bengaluruskillsummit.com' + req.url;
+            req.url = '/bengaluruskillsummit' + req.url;
           }
           next();
         });

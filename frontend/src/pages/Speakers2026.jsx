@@ -116,7 +116,7 @@ export default function Speakers2026() {
              Banner Section
              ========================================== */
           #Skillathon-Banner {
-            background-image: url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/banner-skillathon-05.webp') !important;
+            background-image: url('/bengaluruskillsummit/wp-content/uploads/2025/09/banner-skillathon-05.webp') !important;
             background-position: center center !important;
             background-repeat: no-repeat !important;
             background-size: cover !important;

@@ -39,7 +39,7 @@ const SponsorRegistration = lazy(() => import('./pages/SponsorRegistration'));
 
 export default function App() {
   return (
-    <BrowserRouter basename="/bengaluruskillsummit.com">
+    <BrowserRouter basename="/bengaluruskillsummit">
       <Suspense fallback={<div style={{ minHeight: '60vh' }} />}>
         <Routes>
           <Route path="/" element={<Layout />}>

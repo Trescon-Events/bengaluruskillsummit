@@ -124,7 +124,7 @@ export default function BeASpeaker() {
           position: relative;
           width: 100%;
           min-height: 380px;
-          background-image: url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/agenda-banner.webp');
+          background-image: url('/bengaluruskillsummit/wp-content/uploads/2025/09/agenda-banner.webp');
           background-position: center top;
           background-repeat: no-repeat;
           background-size: cover;
@@ -343,7 +343,7 @@ export default function BeASpeaker() {
         /* ---------------- CONTACT INFO SECTION ---------------- */
         .bss-speaker-contact-section {
           width: 100%;
-          background-image: url("https://bengaluruskillsummit.com/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg");
+          background-image: url("https://bengaluruskillsummit/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg");
           background-position: center center;
           background-repeat: no-repeat;
           background-size: cover;

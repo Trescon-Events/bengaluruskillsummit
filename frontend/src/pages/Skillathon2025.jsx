@@ -65,31 +65,31 @@ const juryMembers = [
     name: "Dr. Prasant Misra",
     designation: "Chair Elect,",
     company: "IEEE Bangalore Section",
-    image: "/bengaluruskillsummit.com/wp-content/uploads/2025/10/jury-1-2025.webp"
+    image: "/bengaluruskillsummit/wp-content/uploads/2025/10/jury-1-2025.webp"
   },
   {
     name: "Dr. Sneha Thapliyal",
     designation: "Professor,",
     company: "National Law School of India University",
-    image: "/bengaluruskillsummit.com/wp-content/uploads/2025/10/Sneha-Thapliyal.webp"
+    image: "/bengaluruskillsummit/wp-content/uploads/2025/10/Sneha-Thapliyal.webp"
   },
   {
     name: "Manjula V",
     designation: "IAS (R),",
     company: "Former Additional Chief Secretary to the Government of Karnataka",
-    image: "/bengaluruskillsummit.com/wp-content/uploads/2025/10/Ms-Manjula-V.webp"
+    image: "/bengaluruskillsummit/wp-content/uploads/2025/10/Ms-Manjula-V.webp"
   },
   {
     name: "Monica Datta",
     designation: "Head, Tech4PositiveFutures,",
     company: "Capgemini CSR",
-    image: "/bengaluruskillsummit.com/wp-content/uploads/2025/10/Ms-Monica-Datta.webp"
+    image: "/bengaluruskillsummit/wp-content/uploads/2025/10/Ms-Monica-Datta.webp"
   },
   {
     name: "Sonali Keshwa Murti",
     designation: "Program Director,",
     company: "Melton Foundation",
-    image: "/bengaluruskillsummit.com/wp-content/uploads/2025/10/Ms-Sonali-Keshwa-Murti-new.webp"
+    image: "/bengaluruskillsummit/wp-content/uploads/2025/10/Ms-Sonali-Keshwa-Murti-new.webp"
   }
 ];
 
@@ -97,27 +97,27 @@ const challenges = [
   {
     title: "Integrating\nVocational Education",
     desc: "How can vocational education be effectively integrated into mainstream higher education to make learning more practical and career-oriented?",
-    img: "/bengaluruskillsummit.com/wp-content/uploads/2025/09/Integrating-vocational-education-1.webp"
+    img: "/bengaluruskillsummit/wp-content/uploads/2025/09/Integrating-vocational-education-1.webp"
   },
   {
     title: "Technology for Scale",
     desc: "In what ways can technologies such as AI, AR/VR, and digital platforms be used to deliver skill training at scale and with better outcomes?",
-    img: "/bengaluruskillsummit.com/wp-content/uploads/2025/09/technology-scale.webp"
+    img: "/bengaluruskillsummit/wp-content/uploads/2025/09/technology-scale.webp"
   },
   {
     title: "Inclusive Pathways",
     desc: "What innovative models can create stronger pathways to skilling and employment for women, persons with disabilities, rural youth, and informal workers?",
-    img: "/bengaluruskillsummit.com/wp-content/uploads/2025/09/inclusive-pathway.webp"
+    img: "/bengaluruskillsummit/wp-content/uploads/2025/09/inclusive-pathway.webp"
   },
   {
     title: "Sustainable Financing",
     desc: "How can CSR, public–private partnerships, or community-driven models be leveraged to finance and sustain skilling initiatives more effectively?",
-    img: "/bengaluruskillsummit.com/wp-content/uploads/2025/09/sustainable-finance.webp"
+    img: "/bengaluruskillsummit/wp-content/uploads/2025/09/sustainable-finance.webp"
   },
   {
     title: "Global Opportunities",
     desc: "What steps can Karnataka and India take to prepare youth for global employment and international mobility, including skills, certifications, and language training?",
-    img: "/bengaluruskillsummit.com/wp-content/uploads/2025/09/global-opprtunity.webp"
+    img: "/bengaluruskillsummit/wp-content/uploads/2025/09/global-opprtunity.webp"
   }
 ];
 
@@ -166,7 +166,7 @@ export default function Skillathon2025() {
 
         /* Hero Banner */
         #Skillathon-Banner {
-          background-image: url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/banner-skillathon-05.webp');
+          background-image: url('/bengaluruskillsummit/wp-content/uploads/2025/09/banner-skillathon-05.webp');
           background-position: center center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -527,7 +527,7 @@ export default function Skillathon2025() {
 
         /* Prizes & Recognition */
         #prizes-recognition {
-          background-image: url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/bg-prize-recognition.webp');
+          background-image: url('/bengaluruskillsummit/wp-content/uploads/2025/09/bg-prize-recognition.webp');
           background-position: center center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -712,7 +712,7 @@ export default function Skillathon2025() {
           margin-right: -50vw;
           box-sizing: border-box;
           padding: 60px 20px;
-          background: #525252 url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg') center center no-repeat;
+          background: #525252 url('/bengaluruskillsummit/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg') center center no-repeat;
           background-size: cover;
         }
         #contact-info .contact-info-wrap {
@@ -826,15 +826,15 @@ export default function Skillathon2025() {
         <div className="about-logos-row">
           <div className="about-logo-item">
             <p>Hosted by</p>
-            <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/kaushalya-karnataka.webp" alt="Kaushalya Karnataka"  decoding="async" loading="lazy" width={64} height={86} />
+            <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/kaushalya-karnataka.webp" alt="Kaushalya Karnataka"  decoding="async" loading="lazy" width={64} height={86} />
           </div>
           <div className="about-logo-item">
             <p>In Collaboration with</p>
-            <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/melton.webp" alt="Melton Foundation"  decoding="async" loading="lazy" width={136} height={94} />
+            <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/melton.webp" alt="Melton Foundation"  decoding="async" loading="lazy" width={136} height={94} />
           </div>
           <div className="about-logo-item">
             <p>Supported by</p>
-            <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/supported-by.webp" alt="Supported by"  decoding="async" loading="lazy" width={221} height={104} />
+            <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/supported-by.webp" alt="Supported by"  decoding="async" loading="lazy" width={221} height={104} />
           </div>
         </div>
 
@@ -858,7 +858,7 @@ export default function Skillathon2025() {
         <h2 className="Section-Heading">Objectives</h2>
         <div className="objectives-grid">
           <div className="objectives-col">
-            <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/objective-1.webp" alt="Objectives illustration"  decoding="async" loading="lazy" width={480} height={272} />
+            <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/objective-1.webp" alt="Objectives illustration"  decoding="async" loading="lazy" width={480} height={272} />
           </div>
           <div className="objectives-col">
             <ul className="fancy-dot-list">
@@ -877,7 +877,7 @@ export default function Skillathon2025() {
         <h2 className="Section-Heading">Competition Structure</h2>
         <div className="competition-phase1-grid">
           <div className="comp-img-col">
-            <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/competition-structure-phase-1-virtual.webp" alt="Competition Phase 1 Virtual"  decoding="async" loading="lazy" width={472} height={324} />
+            <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/competition-structure-phase-1-virtual.webp" alt="Competition Phase 1 Virtual"  decoding="async" loading="lazy" width={472} height={324} />
           </div>
           <div className="comp-text-col">
             <h4 className="competition-stru-sub">Phase I – Virtual Round</h4>
@@ -897,11 +897,11 @@ export default function Skillathon2025() {
           <div className="Section-Sec-Heading">
             <h4>Submission Guidelines</h4>
           </div>
-          <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/submission-guideline-new-scaled.webp"
+          <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/submission-guideline-new-scaled.webp"
             alt="Submission Guidelines"
             className="desk-only-img"
            decoding="async" loading="lazy" width={2560} height={484} />
-          <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/Submission-Template-mobile-scaled.webp"
+          <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/Submission-Template-mobile-scaled.webp"
             alt="Submission Guidelines Mobile"
             className="mob-only-img"
            decoding="async" loading="lazy" width={1581} height={2560} />
@@ -912,12 +912,12 @@ export default function Skillathon2025() {
           <div className="Section-Sec-Heading">
             <h4>Evaluation Criteria</h4>
           </div>
-          <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/evaluation-criteria-scaled.webp"
+          <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/evaluation-criteria-scaled.webp"
             alt="Evaluation Criteria"
             className="desk-only-img"
             style={{ maxWidth: '980px' }}
            decoding="async" loading="lazy" width={2560} height={544} />
-          <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/Evaluation-Criteria-mobile.webp"
+          <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/Evaluation-Criteria-mobile.webp"
             alt="Evaluation Criteria Mobile"
             className="mob-only-img"
            decoding="async" loading="lazy" width={1344} height={2154} />
@@ -988,7 +988,7 @@ export default function Skillathon2025() {
             </ul>
           </div>
           <div className="phase-finals-img-col">
-            <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/competition-structure-phase-1-finals.webp" alt="In-Person Finals"  decoding="async" loading="lazy" width={473} height={324} />
+            <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/competition-structure-phase-1-finals.webp" alt="In-Person Finals"  decoding="async" loading="lazy" width={473} height={324} />
           </div>
         </div>
 
@@ -997,12 +997,12 @@ export default function Skillathon2025() {
           <div className="Section-Sec-Heading">
             <h4>The curated format will take teams through five stages of problem-solving</h4>
           </div>
-          <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/curated-format.webp"
+          <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/curated-format.webp"
             alt="Five Stages of Problem Solving"
             className="desk-only-img"
             style={{ maxWidth: '1000px' }}
            decoding="async" loading="lazy" width={1996} height={714} />
-          <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/in-person-finals-mobile-scaled.webp"
+          <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/in-person-finals-mobile-scaled.webp"
             alt="Five Stages of Problem Solving Mobile"
             className="mob-only-img"
            decoding="async" loading="lazy" width={1039} height={2560} />
@@ -1032,12 +1032,12 @@ export default function Skillathon2025() {
       <section id="key-dates">
         <h2 className="Section-Heading">Key Dates</h2>
         <div className="full-width-diagram">
-          <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/key-dates-desktop-new-scaled.webp"
+          <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/key-dates-desktop-new-scaled.webp"
             alt="Key Dates Desktop"
             className="desk-only-img"
             style={{ maxWidth: '950px' }}
            decoding="async" loading="lazy" width={2560} height={539} />
-          <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/key-dates-mobile-new.webp"
+          <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/key-dates-mobile-new.webp"
             alt="Key Dates Mobile"
             className="mob-only-img"
            decoding="async" loading="lazy" width={2225} height={1824} />
@@ -1074,7 +1074,7 @@ export default function Skillathon2025() {
             </p>
           </div>
           <div className="reg-right-col">
-            <img src="/bengaluruskillsummit.com/wp-content/uploads/2025/09/registration-details-new-img-25.webp" alt="Registration Details Graphic"  decoding="async" loading="lazy" width={1140} height={1140} />
+            <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/registration-details-new-img-25.webp" alt="Registration Details Graphic"  decoding="async" loading="lazy" width={1140} height={1140} />
           </div>
         </div>
       </section>

@@ -224,7 +224,7 @@ export default function Agenda2026({ isScreen = false }) {
           /* HERO BANNER */
           .agenda-hero {
             position: relative;
-            background: url('/bengaluruskillsummit.com/wp-content/uploads/2025/09/agenda-banner.webp') center center / cover no-repeat #0a2533;
+            background: url('/bengaluruskillsummit/wp-content/uploads/2025/09/agenda-banner.webp') center center / cover no-repeat #0a2533;
             padding: 100px 15px 45px;
             text-align: center;
             overflow: hidden;

@@ -217,7 +217,7 @@ export default function KaushalyaKarnatakaAwards() {
           margin-top: 25px;
         }
         .kka-about-box {
-          background-image: url('/bengaluruskillsummit.com/wp-content/uploads/2026/05/Rectangle-112064.webp');
+          background-image: url('/bengaluruskillsummit/wp-content/uploads/2026/05/Rectangle-112064.webp');
           background-size: 100% 100%;
           background-repeat: no-repeat;
           background-position: center;
@@ -539,7 +539,7 @@ export default function KaushalyaKarnatakaAwards() {
         .kk-image-section {
           flex: 0 0 62%;
           position: relative;
-          background-image: url('/bengaluruskillsummit.com/wp-content/uploads/2026/05/video-poster.webp');
+          background-image: url('/bengaluruskillsummit/wp-content/uploads/2026/05/video-poster.webp');
           background-size: cover;
           background-position: center;
           display: flex;
@@ -739,7 +739,7 @@ export default function KaushalyaKarnatakaAwards() {
           margin-right: -50vw !important;
           box-sizing: border-box !important;
           padding: 60px 20px !important;
-          background: #525252 url('https://bengaluruskillsummit.com/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg') center center no-repeat !important;
+          background: #525252 url('https://bengaluruskillsummit/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg') center center no-repeat !important;
           background-size: cover !important;
         }
 
