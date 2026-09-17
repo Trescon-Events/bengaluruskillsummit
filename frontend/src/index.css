@@ -879,17 +879,43 @@ img[width][height] {
   aspect-ratio: auto;
 }
 
-/* Subtle image placeholders for smooth rendering without layout pops */
+/* Ensure all logos, branding, header, footer, and hero images NEVER have grey background boxes */
+.img-with-aniamtion-wrap,
 .img-with-aniamtion-wrap .inner,
-.exhibitor-card__media,
+.img-with-animation,
 .logo-item,
-.speaker-photo-wrapper,
-.SKR-IMG,
-.jury-card,
-.challenge-img-wrap,
-.portfolio-items .work-item {
-  background-color: rgba(240, 243, 249, 0.6);
-  border-radius: inherit;
+.hidden-logo,
+.default-logo,
+header img,
+footer img,
+#header-outer img,
+#footer-outer img,
+.Hero-old img,
+.Hero-old .inner,
+.Hero-old .img-with-aniamtion-wrap .inner,
+#footer-outer .inner,
+#footer-outer .img-with-aniamtion-wrap .inner,
+.hover-wrap,
+.hover-wrap-inner {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Unhide all animated columns, images, and hero right-side banner elements */
+.Hero-old,
+.Hero-old .wpb_column,
+.Hero-old .vc_column-inner,
+.Hero-old .has-animation,
+.Hero-old .nectar-mask-reveal,
+.Hero-old img,
+.Hero-old img.img-with-animation,
+.Hero-old .img-with-aniamtion-wrap,
+.Hero-old .inner,
+img.img-with-animation[src*="header-image"],
+.has-animation.col-overflow-hidden {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
 }
 
 /* Content visibility optimizations for heavy offscreen sections */

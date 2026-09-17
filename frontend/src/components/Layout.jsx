@@ -41,6 +41,9 @@ export default function Layout() {
         href.startsWith('https://') ||
         /\.(pdf|zip|png|jpg|jpeg|svg|webp)$/i.test(href)
       ) {
+        if (href === '#' || href === '') {
+          e.preventDefault();
+        }
         return;
       }
 
@@ -61,14 +64,23 @@ export default function Layout() {
         // Strip subdirectory prefix if already present (both with and without .com)
         let cleanRoute = href.replace(/^\/bengaluruskillsummit(?:\.com)?/i, '');
         if (!cleanRoute.startsWith('/')) cleanRoute = '/' + cleanRoute;
-        navigate(cleanRoute);
-        window.scrollTo(0, 0);
+        const currentNormalized = location.pathname.toLowerCase().replace(/\/+$/, '') || '/';
+        const targetNormalized = cleanRoute.toLowerCase().replace(/\/+$/, '') || '/';
+        if (currentNormalized !== targetNormalized) {
+          navigate(cleanRoute);
+          window.scrollTo(0, 0);
+        }
       }
     };
 
     document.addEventListener('click', handleAnchorClick);
     return () => document.removeEventListener('click', handleAnchorClick);
-  }, [navigate]);
+  }, [navigate, location.pathname]);
+
+  // Scroll to top when actual route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   // Hydrate lazy images and background images on route change or dynamic DOM update
   useEffect(() => {
