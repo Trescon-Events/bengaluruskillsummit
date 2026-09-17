@@ -7,57 +7,68 @@ export default function CurtainRaiser() {
         <h1 style={{ wordSpacing: "5px", fontWeight: "bold", margin: "0 0 5px 0", fontSize: "clamp(28px, 5.5vw, 60px)", fontFamily: '"Jost", sans-serif', textAlign: "center", lineHeight: "1.2", textTransform: "uppercase" }}>CURTAIN RAISER</h1>
         <p style={{ margin: "0", fontSize: "clamp(20px, 4vw, 40px)", fontFamily: '"Jost", sans-serif', textAlign: "center", lineHeight: "1.2", color: "#565454" }}>19 Sep 2025</p>
     </div></div></div></div></div></div></div></div></div></div></div><div id="fws_6a9e69154e2e6"  data-column-margin="30px" data-midnight="dark"  className="wpb_row vc_row-fluid vc_row  top_padding_phone_40px"  style={{"paddingTop":"70px","paddingBottom":"0px"}}><div className="row-bg-wrap" data-bg-animation="none" data-bg-animation-delay="" data-bg-overlay="false"><div className="inner-wrap row-bg-layer" ><div className="row-bg viewport-desktop"  style={{}}></div></div></div><div className="row_col_wrap_12 col span_12 dark left"><div  className="vc_col-sm-6 wpb_column column_container vc_column_container col no-extra-padding force-phone-text-align-center inherit_tablet inherit_phone "  data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" ><div className="vc_column-inner" ><div className="wpb_wrapper"><div className="nectar-responsive-text font_size_desktop_48px font_size_phone_36px font_line_height_110pct nectar-link-underline-effect" style={{"color":"#0d53c7"}} data-inherit-heading-family="h2"><h2 style={{"fontWeight":"bold","marginBottom":"20px"}}>Summit Vision &amp; Media Spotlight</h2></div><div className="nectar-responsive-text font_size_desktop_16px font_line_height_26px nectar-link-underline-effect" style={{"color":"#0a0a0a"}} data-inherit-heading-family="p"><div></div><p>The <strong>Bengaluru Skill Summit 2025</strong> was officially announced at a curtain raiser event led by the Government of Karnataka, under the Department of Skill Development, Entrepreneurship &amp; Livelihood. The <strong>Hon’ble Minister Dr. Sharanaprakash Rudrappa Patil</strong> unveiled the vision of the Summit, emphasizing Karnataka’s role as a hub for skills, innovation, and opportunities.</p><p>With strong media presence and widespread coverage across leading publications, the launch set the tone for a landmark gathering of industry leaders, academia, policymakers, and youth this November.</p></div></div></div></div><div  className="vc_col-sm-6 wpb_column column_container vc_column_container col no-extra-padding inherit_tablet inherit_phone "  data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" ><div className="vc_column-inner" ><div className="wpb_wrapper"><div className="img-with-aniamtion-wrap center" data-max-width="100%" data-max-width-mobile="default" data-shadow="none" data-animation="none" ><div className="inner"><div className="hover-wrap"><div className="hover-wrap-inner"> <img fetchpriority="high" decoding="async" className="img-with-animation skip-lazy nectar-lazy" data-delay="0" height="467" width="527" data-animation="none" data-nectar-img-src="/bengaluruskillsummit/wp-content/uploads/2025/10/about-curtain-raiser.webp" src="/bengaluruskillsummit/wp-content/uploads/2025/10/about-curtain-raiser.webp" alt="about curtain raiser" data-nectar-img-srcset="/bengaluruskillsummit/wp-content/uploads/2025/10/about-curtain-raiser.webp 527w, /bengaluruskillsummit/wp-content/uploads/2025/10/about-curtain-raiser-300x266.webp 300w, /bengaluruskillsummit/wp-content/uploads/2025/10/about-curtain-raiser-160x142.webp 160w, /bengaluruskillsummit/wp-content/uploads/2025/10/about-curtain-raiser-320x284.webp 320w, /bengaluruskillsummit/wp-content/uploads/2025/10/about-curtain-raiser-480x425.webp 480w" sizes="(max-width: 527px) 100vw, 527px" /></div></div></div></div></div></div></div></div></div><div id="fws_6a9e69154e9e0"  data-column-margin="default" data-midnight="dark"  className="wpb_row vc_row-fluid vc_row  top_padding_phone_40px"  style={{"paddingTop":"70px","paddingBottom":"0px"}}><div className="row-bg-wrap" data-bg-animation="none" data-bg-animation-delay="" data-bg-overlay="false"><div className="inner-wrap row-bg-layer" ><div className="row-bg viewport-desktop"  style={{}}></div></div></div><div className="row_col_wrap_12 col span_12 dark center"><div  className="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding inherit_tablet inherit_phone "  data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" ><div className="vc_column-inner" ><div className="wpb_wrapper"><div className="nectar-responsive-text font_size_desktop_48px font_size_phone_36px font_line_height_110pct nectar-link-underline-effect" style={{"color":"#0d53c7"}} data-inherit-heading-family="h2"><h2 style={{"fontWeight":"bold","marginBottom":"20px"}}>Glimpses from the Curtain Raiser</h2></div></div></div></div></div></div><div id="fws_6a9e69154ec6d"  data-column-margin="default" data-midnight="dark"  className="wpb_row vc_row-fluid vc_row"  style={{"paddingTop":"0px","paddingBottom":"0px"}}><div className="row-bg-wrap" data-bg-animation="none" data-bg-animation-delay="" data-bg-overlay="false"><div className="inner-wrap row-bg-layer" ><div className="row-bg viewport-desktop"  style={{}}></div></div></div><div className="row_col_wrap_12 col span_12 dark left"><div  className="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding inherit_tablet inherit_phone "  data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" ><div className="vc_column-inner" ><div className="wpb_wrapper"><div className="wpb_gallery wpb_content_element clearfix"><div className="wpb_wrapper"><style>{`
-  .portfolio-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px 0;
+  #fws_6a9e69154ec6d .portfolio-items {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+    padding: 20px 0 !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
   }
-  .portfolio-items .col.span_4 {
-    flex: 0 0 calc(33.333% - 20px);
-    width: auto !important;
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  #fws_6a9e69154ec6d .portfolio-items.masonry-items {
+    height: auto !important;
+  }
+  #fws_6a9e69154ec6d .portfolio-items .col.span_4 {
+    width: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08) !important;
+    transition: transform 0.35s ease, box-shadow 0.35s ease !important;
     margin: 0 !important;
     left: auto !important;
     top: auto !important;
     padding: 0 !important;
+    background: #f8f9fa !important;
   }
-  .portfolio-items .col.span_4:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  #fws_6a9e69154ec6d .portfolio-items .col.span_4:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.16) !important;
   }
-  .portfolio-items .col.span_4 .inner-wrap,
-  .portfolio-items .col.span_4 .work-item {
-    height: 100%;
+  #fws_6a9e69154ec6d .portfolio-items .col.span_4 .inner-wrap,
+  #fws_6a9e69154ec6d .portfolio-items .col.span_4 .work-item {
+    height: 100% !important;
+    width: 100% !important;
+    display: block !important;
   }
-  .portfolio-items .col.span_4 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 15px;
-    transition: transform 0.4s ease;
+  #fws_6a9e69154ec6d .portfolio-items .col.span_4 img {
+    width: 100% !important;
+    height: 250px !important;
+    aspect-ratio: 4 / 3 !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 12px !important;
+    transition: transform 0.4s ease !important;
   }
-  .portfolio-items .col.span_4:hover img {
-    transform: scale(1.05);
-  }
-  /* Remove WPBakery masonry absolute positioning which breaks flexbox */
-  .portfolio-items.masonry-items {
-    height: auto !important;
+  #fws_6a9e69154ec6d .portfolio-items .col.span_4:hover img {
+    transform: scale(1.05) !important;
   }
   @media (max-width: 991px) {
-    .portfolio-items .col.span_4 {
-      flex: 0 0 calc(50% - 20px);
+    #fws_6a9e69154ec6d .portfolio-items {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 16px !important;
+    }
+    #fws_6a9e69154ec6d .portfolio-items .col.span_4 img {
+      height: 220px !important;
     }
   }
-  @media (max-width: 767px) {
-    .portfolio-items .col.span_4 {
-      flex: 0 0 calc(100% - 20px);
+  @media (max-width: 600px) {
+    #fws_6a9e69154ec6d .portfolio-items {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+    #fws_6a9e69154ec6d .portfolio-items .col.span_4 img {
+      height: 230px !important;
     }
   }
 `}</style>

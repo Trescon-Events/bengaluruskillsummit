@@ -762,13 +762,18 @@ img.img-with-animation,
 #impact-scale {
   background-color: #0d53c7 !important;
   position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
   z-index: 1 !important;
   padding: 55px 0 !important;
-  width: 100% !important;
   clear: both !important;
   display: block !important;
   box-sizing: border-box !important;
-  overflow: visible !important;
+  overflow: hidden !important;
 }
 
 #impact-scale .row_col_wrap_12 {
@@ -1006,4 +1011,235 @@ img.img-with-animation[src*="header-image"],
   content-visibility: auto;
   contain-intrinsic-size: auto 500px;
 }
+
+/* ==========================================================================
+   WHAT'S EVOLVING IN 2026 - Hover Effect & Card Transitions
+   ========================================================================== */
+#fws_6a9ab97b3ea12 .vc_col-sm-3 {
+  transition: transform 0.35s ease, background-color 0.35s ease, box-shadow 0.35s ease !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+}
+
+#fws_6a9ab97b3ea12 .vc_col-sm-3:hover {
+  background-color: rgba(10, 10, 10, 0.22) !important;
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18) !important;
+}
+
+/* ==========================================================================
+   Carousel Column Image Backgrounds (Explore Future & Connect Ecosystem)
+   ========================================================================== */
+.explore-future-carousel .column-image-bg,
+.connect-ecosystem-carousel .column-image-bg,
+[data-centered-cells="true"] .column-image-bg {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  min-height: 280px !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  border-radius: 15px !important;
+}
+
+/* ==========================================================================
+   Inaugural Summit 2025 Testimonial Tabs & Cards
+   ========================================================================== */
+.attendee-tab ul.wpb_tabs_nav {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 15px !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 auto 35px auto !important;
+  flex-wrap: wrap !important;
+}
+
+.attendee-tab ul.wpb_tabs_nav li {
+  list-style: none !important;
+  display: inline-block !important;
+  margin: 0 !important;
+}
+
+.attendee-tab ul.wpb_tabs_nav li a {
+  font-family: "Comfortaa", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  padding: 10px 28px !important;
+  border: 2px solid #022E77 !important;
+  border-radius: 30px !important;
+  color: #022E77 !important;
+  display: inline-block !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+  background: transparent !important;
+}
+
+.attendee-tab ul.wpb_tabs_nav li a:hover,
+.attendee-tab ul.wpb_tabs_nav li.active-tab a,
+.attendee-tab ul.wpb_tabs_nav li a.active-tab {
+  background: #022E77 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(2, 46, 119, 0.3) !important;
+}
+
+.testi-row .wpb_wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 24px !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+
+.testi-row .wpb_wrapper .nectar_single_testimonial {
+  flex: 0 0 calc(33.333% - 16px) !important;
+  max-width: calc(33.333% - 16px) !important;
+  min-width: 280px !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  padding: 40px 24px !important;
+  font-family: "Comfortaa", sans-serif !important;
+  background-image: url(/bengaluruskillsummit/wp-content/uploads/2025/12/bg-testimonials-new.webp) !important;
+  background-size: cover !important;
+  background-position: center left !important;
+  background-repeat: no-repeat !important;
+  border-radius: 15px !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  margin: 0 !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.testi-row .wpb_wrapper .nectar_single_testimonial:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+.testi-row .wpb_wrapper .nectar_single_testimonial .inner {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+}
+
+.testi-row .wpb_wrapper .nectar_single_testimonial .inner p {
+  font-size: 15px !important;
+  line-height: 160% !important;
+  font-weight: 600 !important;
+  font-style: italic !important;
+  color: #0e1220 !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 20px !important;
+}
+
+.testi-row .wpb_wrapper .nectar_single_testimonial .inner .image-icon {
+  width: 120px !important;
+  height: 50px !important;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  margin: 15px auto !important;
+}
+
+.testi-row .wpb_wrapper .nectar_single_testimonial .inner .wrap {
+  display: block !important;
+  margin-top: auto !important;
+}
+
+.testi-row .wpb_wrapper .nectar_single_testimonial .inner .wrap span {
+  display: block !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #0e1220 !important;
+}
+
+.testi-row .wpb_wrapper .nectar_single_testimonial .inner .wrap span.title {
+  font-size: 12.5px !important;
+  font-weight: 400 !important;
+  color: #555555 !important;
+  margin-top: 4px !important;
+}
+
+@media (max-width: 991px) {
+  .testi-row .wpb_wrapper .nectar_single_testimonial {
+    flex: 0 0 calc(50% - 15px) !important;
+    max-width: calc(50% - 15px) !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .testi-row .wpb_wrapper .nectar_single_testimonial {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   Prevent pseudo-elements from creating empty grid cells in photo galleries
+   ========================================================================== */
+.portfolio-items:before,
+.portfolio-items:after,
+#fws_6a9e69154ec6d .portfolio-items:before,
+#fws_6a9e69154ec6d .portfolio-items:after,
+#fws_6a9fa5962ebe3 .portfolio-items:before,
+#fws_6a9fa5962ebe3 .portfolio-items:after {
+  display: none !important;
+  content: none !important;
+}
+
+/* ==========================================================================
+   Ensure Carousel Cards Render Background Images Perfectly
+   ========================================================================== */
+.nectar-carousel .cell .inner-wrap,
+.nectar-carousel .cell .vc_column-inner {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 280px !important;
+  border-radius: 15px !important;
+  overflow: hidden !important;
+}
+
+.nectar-carousel .column-image-bg-wrap,
+.nectar-carousel .column-image-bg-wrap .inner-wrap,
+.nectar-carousel .column-image-bg {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 15px !important;
+  z-index: 1 !important;
+}
+
+.nectar-carousel .vc_column-inner .wpb_wrapper {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+/* Gradient overlay for Explore Future cards text contrast */
+#fws_6a9ab97b3f3de .cell .vc_column-inner::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.1) 100%) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  border-radius: 15px !important;
+}
+
+
 
