@@ -26,6 +26,7 @@ const BeAMediaPartner = lazy(() => import('./pages/BeAMediaPartner'));
 const Register = lazy(() => import('./pages/Register'));
 const InauguralDayInvite = lazy(() => import('./pages/InauguralDayInvite'));
 const KaushalyaKarnatakaAwards = lazy(() => import('./pages/KaushalyaKarnatakaAwards'));
+const KaushalyaKarnatakaAwards2026 = lazy(() => import('./pages/KaushalyaKarnatakaAwards2026'));
 const KaushalyaKarnatakaAwardsOld = lazy(() => import('./pages/KaushalyaKarnatakaAwardsOld'));
 const Details = lazy(() => import('./pages/Details'));
 const Poster = lazy(() => import('./pages/Poster'));
@@ -126,6 +127,10 @@ export default function App() {
             <Route path="inaugural-day-invite/" element={<InauguralDayInvite />} />
 
             {/* Kaushalya Karnataka Awards */}
+            <Route path="kaushalya-karnataka-awards-2026" element={<KaushalyaKarnatakaAwards2026 />} />
+            <Route path="kaushalya-karnataka-awards-2026/" element={<KaushalyaKarnatakaAwards2026 />} />
+            <Route path="awards-2026" element={<KaushalyaKarnatakaAwards2026 />} />
+            <Route path="awards-2026/" element={<KaushalyaKarnatakaAwards2026 />} />
             <Route path="kaushalya-karnataka-awards-2025" element={<KaushalyaKarnatakaAwards />} />
             <Route path="kaushalya-karnataka-awards-2025/" element={<KaushalyaKarnatakaAwards />} />
             <Route path="kaushalya-karnataka-awards-2025-old" element={<KaushalyaKarnatakaAwardsOld />} />

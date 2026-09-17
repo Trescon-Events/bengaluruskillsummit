@@ -1,0 +1,322 @@
+{
+  "hero": {
+    "title": "The Kaushalya Karnataka Awards",
+    "subtitle": "Celebrating Excellence in Skills",
+    "dateVenue": "5 November 2026 | The Grand Awards Ceremony | The Lalit Ashok, Bengaluru",
+    "bgGradient": "radial-gradient(ellipse at 50% 30%, #061c47 0%, #020b1e 75%, #010610 100%)",
+    "trophyImage": "/bengaluruskillsummit/wp-content/uploads/2026/awards/trophy_podium.webp"
+  },
+  "corporate": {
+    "banner": {
+      "badge": "/bengaluruskillsummit/wp-content/uploads/2026/awards/initiative_zyoin_badge.webp",
+      "heading": "RECOGNIZING INDUSTRY LEADERSHIP IN SKILLING",
+      "description": "The Kaushalya Karnataka Corporate Excellence Awards honour organisations that are transforming the workforce through impactful skilling initiatives, industry-academia partnerships, and sustainable employment upskilling practices."
+    },
+    "about": {
+      "title": "ABOUT THE AWARDS",
+      "description": "The Kaushalya Karnataka Corporate Excellence Awards, presented at the Bengaluru Skill Summit (5 November 2026 at The Lalit Ashok, Bengaluru), under Department of Skill Development, Entrepreneurship and Livelihood, Government of Karnataka recognise outstanding contributions by Corporates, Large Enterprises, MSMEs and Startups in advancing the skilling ecosystem.\n\nThese awards are a flagship initiative of the Government of Karnataka to:",
+      "objectives": [
+        {
+          "title": "Promote industry-led skilling",
+          "icon": "factory"
+        },
+        {
+          "title": "Encourage workforce transformation",
+          "icon": "gears"
+        },
+        {
+          "title": "Strengthen industry-government and Industry - Academia collaboration",
+          "icon": "handshake"
+        },
+        {
+          "title": "Enhance employability and economic growth",
+          "icon": "chart"
+        }
+      ],
+      "policyAlignment": {
+        "bookImage": "/bengaluruskillsummit/wp-content/uploads/2026/awards/skill_policy_book.webp",
+        "preText": "The awards are aligned with the",
+        "policyTitle": "Karnataka Skill Development Policy (2025–30)",
+        "postText": "and Karnataka and national skilling priorities."
+      }
+    },
+    "whyMatter": {
+      "title": "WHY THESE AWARDS MATTER",
+      "subtitle": "In a rapidly evolving economic landscape, organisations play a crucial role in building a future-ready workforce.",
+      "intro": "These awards recognise companies that:",
+      "steps": [
+        {
+          "num": "01",
+          "color": "#0284c7",
+          "text": "Showcase your organisation's skilling initiatives and measurable outcomes."
+        },
+        {
+          "num": "02",
+          "color": "#1d4ed8",
+          "text": "Gain recognition for your contribution to Karnataka's workforce and skill ecosystem."
+        },
+        {
+          "num": "03",
+          "color": "#059669",
+          "text": "Benchmark your efforts through a structured, evidence-based evaluation."
+        },
+        {
+          "num": "04",
+          "color": "#ea580c",
+          "text": "Highlight impactful and scalable skilling practices."
+        },
+        {
+          "num": "05",
+          "color": "#7c3aed",
+          "text": "Celebrate your commitment to building a skilled, inclusive and future-ready workforce."
+        }
+      ],
+      "summary": "The awards recognise organisations that are helping build a future-ready workforce through industry-led skilling, inclusion, innovation, workforce transformation and stronger links between skills and employment."
+    },
+    "whyParticipate": {
+      "title": "WHY PARTICIPATE",
+      "collageImage": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why_participate_collage.webp",
+      "benefits": [
+        "National-level recognition",
+        "Position your organisation as a leader in skilling",
+        "Showcase impact to government & industry",
+        "Networking with policymakers, academia, and industry leaders",
+        "Enhance employer brand and credibility"
+      ]
+    },
+    "categories": {
+      "title": "AWARD CATEGORIES",
+      "subtitle": "Awards will be presented across the following segments:",
+      "sectionTitle": "By Organisation Type",
+      "dignitariesImage": "/bengaluruskillsummit/wp-content/uploads/2026/awards/dignitaries_row.webp",
+      "items": [
+        {
+          "title": "Large Enterprises",
+          "desc": "Organisations with",
+          "count": "3,000+",
+          "unit": "headcounts",
+          "color": "#d97706",
+          "bg": "#fffbeb",
+          "borderColor": "#fde68a"
+        },
+        {
+          "title": "Mid-Market",
+          "desc": "Organisations with",
+          "count": "1,000–2,999",
+          "unit": "headcounts",
+          "color": "#059669",
+          "bg": "#ecfdf5",
+          "borderColor": "#a7f3d0"
+        },
+        {
+          "title": "Growth Enterprise",
+          "desc": "Organisations with",
+          "count": "200–999",
+          "unit": "headcount",
+          "color": "#7c3aed",
+          "bg": "#f5f3ff",
+          "borderColor": "#ddd6fe"
+        },
+        {
+          "title": "Emerging / MSME",
+          "desc": "Organisations with",
+          "count": "fewer than 200",
+          "unit": "headcounts",
+          "color": "#dc2626",
+          "bg": "#fef2f2",
+          "borderColor": "#fecaca"
+        }
+      ]
+    },
+    "evaluation": {
+      "title": "EVALUATION FRAMEWORK",
+      "subtitle": "The evaluation framework is designed to assess real impact, not just activity.",
+      "pillars": [
+        {
+          "title": "Reach & Karnataka Impact",
+          "color": "#0284c7",
+          "bg": "#f0f9ff",
+          "borderColor": "#bae6fd",
+          "points": [
+            "Karnataka learners trained",
+            "Workforce coverage",
+            "Structured skilling reach beyond own employees"
+          ]
+        },
+        {
+          "title": "Inclusion",
+          "color": "#e11d48",
+          "bg": "#fff1f2",
+          "borderColor": "#fecdd3",
+          "points": [
+            "Women participation",
+            "Rural and underserved groups",
+            "Inclusive-group participation"
+          ]
+        },
+        {
+          "title": "Quality & Relevance",
+          "color": "#d97706",
+          "bg": "#fffbeb",
+          "borderColor": "#fde68a",
+          "points": [
+            "NSQF / NOS / SSC alignment",
+            "Future and emerging-skills share",
+            "Certification rate"
+          ]
+        },
+        {
+          "title": "Skilling Outcomes & Impact",
+          "color": "#059669",
+          "bg": "#ecfdf5",
+          "borderColor": "#a7f3d0",
+          "points": [
+            "Apprenticeships",
+            "Internships / Fellowships",
+            "External employment and livelihood",
+            "Internal mobility",
+            "Demonstrated skilling impact"
+          ]
+        }
+      ]
+    },
+    "process": {
+      "title": "FOUR STEPS FROM NOMINATION TO RECOGNITION",
+      "steps": [
+        {
+          "num": "01",
+          "title": "NOMINATION",
+          "desc": "Organisations nominate themselves for the Kaushalya Karnataka Corporate Excellence Awards 2026."
+        },
+        {
+          "num": "02",
+          "title": "PARTICIPATION",
+          "desc": "Eligible organisations complete and submit the detailed award application."
+        },
+        {
+          "num": "03",
+          "title": "EVALUATION",
+          "desc": "Applications are assessed through a structured, evidence-based evaluation."
+        },
+        {
+          "num": "04",
+          "title": "JURY VALIDATION",
+          "desc": "Shortlisted entries are reviewed and validated by the independent jury panel."
+        },
+        {
+          "num": "05",
+          "title": "RECOGNITION",
+          "desc": "Winners are recognised at the Kaushalya Karnataka Corporate Excellence Awards 2026."
+        }
+      ],
+      "timeline": {
+        "title": "APPLICATION TIMELINE 2026 CYCLE",
+        "milestones": [
+          { "label": "LAUNCH", "date": "SEP 2026" },
+          { "label": "NOMINATION DEADLINE", "date": "9 OCT 2026" },
+          { "label": "APPLICATION DEADLINE", "date": "16 OCT 2026" },
+          { "label": "JURY REVIEW", "date": "23 OCT 2026" },
+          { "label": "RECOGNITION", "date": "5 NOV 2026" }
+        ]
+      }
+    },
+    "cta": {
+      "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/awards_ceremony_winners.webp",
+      "title": "Be part of Karnataka's most prestigious skilling recognition platform.",
+      "launch": "September 2026",
+      "deadline": "9 October 2026"
+    }
+  },
+  "institutional": {
+    "banner": {
+      "heading": "RECOGNIZING INSTITUTIONAL LEADERSHIP IN SKILLING",
+      "description": "The Kaushalya Karnataka Institutional Excellence Awards celebrate ITIs, GTTCs, polytechnics, training centres and community organisations driving employability, industry collaboration, inclusivity and impactful skilling initiatives."
+    },
+    "overview": {
+      "title": "RECOGNISING EXCELLENCE IN SKILL DEVELOPMENT EDUCATION & TRAINING",
+      "p1": "The Kaushalya Karnataka Institutional Excellence Awards at Bengaluru Skill Summit (5 November 2026 at The Lalit Ashok, Bengaluru), under Department of Skill Development, Entrepreneurship & Livelihood, Gov of Karnataka honour the backbone of Karnataka's skilling ecosystem - districts, ITIs, GTTCs, polytechnics, training centres, and community partners. The awards are not just accolades - they are a tribute to the educators, administrators, and community champions who are shaping the next generation of skilled professionals.",
+      "p2": "Initiated by KSDA and the Government of Karnataka, these recognitions celebrate innovation in training delivery, strong industry linkages, and measurable impact on employability.",
+      "collageImage": "/bengaluruskillsummit/wp-content/uploads/2026/awards/institutional_ceremony_collage.webp",
+      "institutes": [
+        { "name": "Department of Industrial Training and Employment", "abbr": "DITE" },
+        { "name": "Industrial Training Institute", "abbr": "ITI" },
+        { "name": "Government Tool Room & Training Centre", "abbr": "GTTC" },
+        { "name": "Karnataka German Technical Training Institute", "abbr": "KGTTI" },
+        { "name": "Sanjeevini KSRLPS", "abbr": "KSRLPS" },
+        { "name": "Karnataka Skill Development Authority", "abbr": "KSDA" },
+        { "name": "Karnataka Skill Development Corporation", "abbr": "KSDC" },
+        { "name": "Aajeevika", "abbr": "Aajeevika" }
+      ]
+    },
+    "categories": {
+      "title": "AWARD CATEGORIES",
+      "subtitle": "Institutional Excellence Awards In Skilling",
+      "items": [
+        {
+          "title": "Best District for Skill Development",
+          "color": "#0284c7",
+          "icon": "map"
+        },
+        {
+          "title": "Best Institutions in Skill Competitions",
+          "color": "#dc2626",
+          "icon": "school"
+        },
+        {
+          "title": "Best Performing ITIs – Government, Private, and Aided",
+          "color": "#d97706",
+          "icon": "trophy"
+        },
+        {
+          "title": "Best Performing GTTCs and KGTTIs",
+          "color": "#059669",
+          "icon": "users"
+        }
+      ]
+    }
+  },
+  "showcase2025": {
+    "title": "Celebrate the organisations recognised in 2025 for their exceptional contributions to skilling.",
+    "buttonText": "2025 WINNERS SHOWCASE",
+    "buttonLink": "/kaushalya-karnataka-awards-2025"
+  },
+  "organisedBy": [
+    { "name": "Government of Karnataka", "subtitle": "Government of Karnataka" },
+    { "name": "KSDC", "subtitle": "Karnataka Skill Development Corporation" },
+    { "name": "KSDA", "subtitle": "Karnataka Skill Development Authority" },
+    { "name": "KDEM", "subtitle": "Karnataka Digital Economy Mission" }
+  ],
+  "inPartnershipWith": [
+    { "name": "Workplace Awards", "subtitle": "Initiative by Zyoin Group" }
+  ],
+  "contactInfo": {
+    "title": "Contact for more information",
+    "email": "bengaluruskillsummit@workplaceawards.in",
+    "phone": "+91 80503 14499 ( Sushpit Ghosh)"
+  },
+  "testimonials": {
+    "title": "WHAT OUR 2025 WINNERS SAY",
+    "quotes": [
+      {
+        "quote": "A fantastic initiative that brings the right kind of focus to what the future upholds. By aligning technical partners and skilling innovators, the Kaushalya Karnataka Awards are truly setting the stage for the state to become the Skill Capital of India.",
+        "author": "Representative",
+        "company": "Mu Sigma"
+      },
+      {
+        "quote": "From AI integration to global skill standards, the Bengaluru Skill Summit covers it all. The Kaushalya Karnataka Awards are the perfect culmination of this three-day journey, celebrating the organizations that make Karnataka a powerhouse of entrepreneurship and livelihood.",
+        "author": "Representative",
+        "company": "Hertz Global"
+      },
+      {
+        "quote": "Skills are the need of the hour for every organization. The Bengaluru Skill Summit serves as the vital bridge between institutions like ITIs and GTTCs and the corporate world. Receiving a Kaushalya Karnataka Award validates our commitment to upskilling and proves that when we align education with industry needs, everyone prospers.",
+        "author": "Representative",
+        "company": "Pramana"
+      },
+      {
+        "quote": "The Bengaluru Skill Summit is a unique platform where industry and academia finally meet to understand the pulse of skilling in our country. Being honored with the Kaushalya Karnataka Award reinforces my mission at GTTC to ensure our students are trained to meet the highest global standards.",
+        "author": "Representative",
+        "company": "GTTC"
+      }
+    ]
+  }
+}
