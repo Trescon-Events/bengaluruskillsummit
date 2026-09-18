@@ -646,88 +646,135 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         /* =========================================
-           WHY PARTICIPATE (DEEP BLUE BACKGROUND)
+           WHY PARTICIPATE (FULL-WIDTH DEEP BLUE BACKGROUND)
            ========================================= */
         .kka-participate-wrap {
-          background: #0d53c7;
-          color: #ffffff;
-          padding: 60px 40px;
-          margin: 60px 0;
-          border-radius: 20px;
-          box-shadow: 0 15px 40px rgba(13, 83, 199, 0.25);
+          width: 100vw !important;
+          position: relative !important;
+          left: 50% !important;
+          right: 50% !important;
+          margin-left: -50vw !important;
+          margin-right: -50vw !important;
+          background: #0d53c7 !important;
+          color: #ffffff !important;
+          padding: 80px 5% !important;
+          margin-top: 70px !important;
+          margin-bottom: 70px !important;
+          border-radius: 0 !important;
+          box-shadow: none !important;
+          box-sizing: border-box !important;
         }
 
         .kka-participate-inner {
-          max-width: 1200px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: 1fr 1.2fr;
-          gap: 50px;
-          align-items: center;
+          max-width: 1250px !important;
+          margin: 0 auto !important;
+          display: grid !important;
+          grid-template-columns: 1fr 1.35fr !important;
+          gap: 60px !important;
+          align-items: center !important;
         }
 
         .kka-participate-collage-img {
-          width: 100%;
-          height: auto;
-          border-radius: 16px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+          width: 100% !important;
+          max-width: 520px !important;
+          height: auto !important;
+          border-radius: 16px !important;
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25) !important;
+          display: block !important;
         }
 
         .kka-participate-title {
-          font-family: 'Jost', sans-serif !important;
-          font-size: 2.8rem;
-          color: #ffffff;
-          margin: 0 0 25px 0;
-          font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
+          font-family: 'Oswald', sans-serif !important;
+          font-size: 3.2rem !important;
+          color: #ffffff !important;
+          margin: 0 0 35px 0 !important;
+          font-weight: 700 !important;
+          text-transform: uppercase !important;
+          letter-spacing: 0.5px !important;
+          line-height: 1.1 !important;
         }
 
         .kka-participate-list {
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-          margin-bottom: 35px;
+          display: grid !important;
+          grid-template-columns: 1.05fr 1fr !important;
+          column-gap: 36px !important;
+          row-gap: 32px !important;
+          margin-bottom: 38px !important;
         }
 
         .kka-participate-item {
-          display: flex;
-          align-items: center;
-          gap: 14px;
+          display: flex !important;
+          align-items: flex-start !important;
+          gap: 14px !important;
         }
 
         .kka-participate-icon-box {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.2);
-          color: #ffffff;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 14px;
-          flex-shrink: 0;
+          width: 34px !important;
+          height: 34px !important;
+          border-radius: 50% !important;
+          background: rgba(255, 255, 255, 0.22) !important;
+          color: #ffffff !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          font-size: 14px !important;
+          flex-shrink: 0 !important;
+          margin-top: 2px !important;
         }
 
         .kka-participate-text {
-          font-size: 1.05rem;
-          color: #ffffff;
-          margin: 0;
-          font-weight: 500;
+          font-family: 'Comfortaa', sans-serif !important;
+          font-size: 1.05rem !important;
+          line-height: 1.45 !important;
+          color: #ffffff !important;
+          margin: 0 !important;
+          font-weight: 500 !important;
+        }
+
+        .kka-participate-btn {
+          background: #ff5252 !important;
+          color: #ffffff !important;
+          border: none !important;
+          padding: 12px 34px !important;
+          border-radius: 22px !important;
+          font-family: 'Oswald', 'Jost', sans-serif !important;
+          font-size: 0.95rem !important;
+          font-weight: 700 !important;
+          letter-spacing: 0.5px !important;
+          cursor: pointer !important;
+          box-shadow: 0 4px 15px rgba(255, 82, 82, 0.4) !important;
+          transition: transform 0.2s, box-shadow 0.2s !important;
+          text-decoration: none !important;
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          text-transform: uppercase !important;
+        }
+        .kka-participate-btn:hover {
+          transform: translateY(-2px) !important;
+          box-shadow: 0 6px 20px rgba(255, 82, 82, 0.6) !important;
         }
 
         /* =========================================
-           AWARD CATEGORIES
+           AWARD CATEGORIES (FULL-WIDTH WITH BACKGROUND PHOTO)
            ========================================= */
         .kka-categories-wrap {
-          background: #081736 url('/bengaluruskillsummit/wp-content/uploads/2026/awards/dignitaries_row.webp') no-repeat center center / cover;
-          padding: 70px 30px;
-          color: #ffffff;
-          position: relative;
-          border-radius: 20px;
-          overflow: hidden;
-          margin: 60px 0;
-          box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+          width: 100vw !important;
+          position: relative !important;
+          left: 50% !important;
+          right: 50% !important;
+          margin-left: -50vw !important;
+          margin-right: -50vw !important;
+          background: #081736 url('/bengaluruskillsummit/wp-content/uploads/2026/awards/bg-award-categories.png') no-repeat center center / cover !important;
+          padding: 80px 5% 75px 5% !important;
+          color: #ffffff !important;
+          position: relative !important;
+          border-radius: 0 !important;
+          overflow: hidden !important;
+          margin-top: 60px !important;
+          margin-bottom: 60px !important;
+          box-shadow: none !important;
+          box-sizing: border-box !important;
         }
 
         .kka-categories-wrap::before {
@@ -737,16 +784,75 @@ export default function KaushalyaKarnatakaAwards2026() {
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgba(8, 23, 54, 0.88);
+          background: rgba(8, 23, 54, 0.35) !important;
           pointer-events: none;
         }
 
         .kka-categories-inner {
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-          z-index: 2;
-          text-align: center;
+          max-width: 1200px !important;
+          margin: 0 auto !important;
+          position: relative !important;
+          z-index: 2 !important;
+          text-align: center !important;
+        }
+
+        .kka-cat-main-title {
+          font-family: 'Oswald', sans-serif !important;
+          font-size: 3.3rem !important;
+          color: #ffffff !important;
+          margin: 0 0 10px 0 !important;
+          font-weight: 700 !important;
+          text-transform: uppercase !important;
+          letter-spacing: 0.5px !important;
+          line-height: 1.15 !important;
+        }
+
+        .kka-cat-subtitle {
+          font-family: 'Comfortaa', sans-serif !important;
+          font-size: 1.15rem !important;
+          color: #ffffff !important;
+          margin: 0 0 20px 0 !important;
+          font-weight: 500 !important;
+        }
+
+        .kka-cat-section-title {
+          font-family: 'Comfortaa', 'Jost', sans-serif !important;
+          font-size: 1.85rem !important;
+          font-weight: 700 !important;
+          color: #ffffff !important;
+          margin: 0 0 35px 0 !important;
+          text-transform: none !important;
+        }
+
+        .kka-categories-grid {
+          display: grid !important;
+          grid-template-columns: repeat(4, 1fr) !important;
+          gap: 22px !important;
+          max-width: 1180px !important;
+          margin: 0 auto 35px auto !important;
+        }
+
+        .kka-category-svg-card {
+          border-radius: 14px !important;
+          overflow: hidden !important;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18) !important;
+          transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+          background: transparent !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+        }
+
+        .kka-category-svg-card:hover {
+          transform: translateY(-6px) !important;
+          box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .kka-category-svg-img {
+          width: 100% !important;
+          height: auto !important;
+          display: block !important;
+          object-fit: contain !important;
         }
 
         .kka-categories-top-row {
@@ -768,13 +874,6 @@ export default function KaushalyaKarnatakaAwards2026() {
           height: 48px;
           width: auto;
           object-fit: contain;
-        }
-
-        .kka-categories-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 20px;
-          margin: 40px 0 35px 0;
         }
 
         .kka-category-card {
@@ -1530,6 +1629,9 @@ export default function KaushalyaKarnatakaAwards2026() {
           .section-title { font-size: 2rem !important; }
           .kka-cta-main-head { font-size: 2.1rem !important; }
           .kka-cta-timeline-box { flex-direction: column; align-items: flex-start; gap: 15px; }
+          .kka-participate-wrap { padding: 50px 20px !important; margin-top: 40px !important; margin-bottom: 40px !important; }
+          .kka-participate-title { font-size: 2.2rem !important; text-align: center; }
+          .kka-participate-list { grid-template-columns: 1fr !important; gap: 20px !important; }
         }
 
         @media (max-width: 480px) {
@@ -1783,8 +1885,8 @@ export default function KaushalyaKarnatakaAwards2026() {
                       </div>
                     ))}
                   </div>
-                  <Link to="/kaushalya-awards-registration" className="primary-btn">
-                    Apply Now
+                  <Link to="/kaushalya-awards-registration" className="kka-participate-btn">
+                    APPLY NOW
                   </Link>
                 </div>
               </div>
@@ -1793,43 +1895,46 @@ export default function KaushalyaKarnatakaAwards2026() {
             {/* 4. AWARD CATEGORIES */}
             <section id="award-categories" className="kka-categories-wrap">
               <div className="kka-categories-inner">
-                <div className="kka-categories-top-row">
-                  <div className="kka-cat-gov-logos">
-                    <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/Gov-Karnataka-logo.svg" alt="Gov of Karnataka" />
-                    <img src="/bengaluruskillsummit/wp-content/uploads/2026/04/bss-26-logo.svg" alt="Bengaluru Skill Summit" />
-                  </div>
-                </div>
-
-                <h2 className="main-title" style={{ color: '#ffffff', fontSize: '2.8rem' }}>{corporate.categories.title}</h2>
-                <p style={{ fontSize: '17px', color: 'rgba(255, 255, 255, 0.9)', margin: '0 0 10px 0' }}>{corporate.categories.subtitle}</p>
-                <h3 style={{ fontSize: '26px', fontWeight: 800, color: '#ffc933', margin: '0 0 35px 0' }}>
+                <h2 className="kka-cat-main-title">{corporate.categories.title}</h2>
+                <p className="kka-cat-subtitle">{corporate.categories.subtitle}</p>
+                <h3 className="kka-cat-section-title">
                   {corporate.categories.sectionTitle}
                 </h3>
 
                 <div className="kka-categories-grid">
-                  {corporate.categories.items.map((cat, idx) => (
-                    <div 
-                      key={idx} 
-                      className="kka-category-card"
-                      style={{ backgroundColor: cat.bg, borderColor: cat.borderColor }}
-                    >
-                      <div className="kka-category-icon" style={{ color: cat.color }}>
-                        {idx === 0 && <FaIndustry />}
-                        {idx === 1 && <FaHandshake />}
-                        {idx === 2 && <FaGears />}
-                        {idx === 3 && <FaUsers />}
-                      </div>
-                      <h4 className="kka-category-title">{cat.title}</h4>
-                      <p className="kka-category-desc">{cat.desc}</p>
-                      <p className="kka-category-count" style={{ color: cat.color }}>{cat.count}</p>
-                      <p className="kka-category-unit">{cat.unit}</p>
-                    </div>
-                  ))}
+                  <div className="kka-category-svg-card">
+                    <img 
+                      src="/bengaluruskillsummit/wp-content/uploads/2026/awards/large-enterprises.svg" 
+                      alt="Large Enterprises: Organisations with 3,000+ headcounts" 
+                      className="kka-category-svg-img"
+                    />
+                  </div>
+                  <div className="kka-category-svg-card">
+                    <img 
+                      src="/bengaluruskillsummit/wp-content/uploads/2026/awards/mid-market.svg" 
+                      alt="Mid-Market: Organisations with 1,000-2,999 headcounts" 
+                      className="kka-category-svg-img"
+                    />
+                  </div>
+                  <div className="kka-category-svg-card">
+                    <img 
+                      src="/bengaluruskillsummit/wp-content/uploads/2026/awards/growth-enterprises.svg" 
+                      alt="Growth Enterprise: Organisations with 200-999 headcount" 
+                      className="kka-category-svg-img"
+                    />
+                  </div>
+                  <div className="kka-category-svg-card">
+                    <img 
+                      src="/bengaluruskillsummit/wp-content/uploads/2026/awards/emerging-msme.svg" 
+                      alt="Emerging / MSME - Organisations with fewer than 200 headcounts" 
+                      className="kka-category-svg-img"
+                    />
+                  </div>
                 </div>
 
-                <div style={{ textAlign: 'center', marginTop: '30px' }}>
-                  <Link to="/kaushalya-awards-registration" className="primary-btn">
-                    Apply Now
+                <div style={{ textAlign: 'center', marginTop: '35px' }}>
+                  <Link to="/kaushalya-awards-registration" className="kka-participate-btn">
+                    APPLY NOW
                   </Link>
                 </div>
               </div>
@@ -2069,8 +2174,8 @@ export default function KaushalyaKarnatakaAwards2026() {
             {/* Institutional Categories */}
             <section id="award-categories" className="kka-categories-wrap">
               <div className="kka-categories-inner">
-                <h2 className="main-title" style={{ color: '#ffffff', fontSize: '2.8rem' }}>{institutional.categories.title}</h2>
-                <h3 style={{ fontSize: '24px', fontWeight: 800, color: '#ffc933', margin: '0 0 35px 0' }}>
+                <h2 className="kka-cat-main-title">{institutional.categories.title}</h2>
+                <h3 className="kka-cat-section-title" style={{ color: '#ffc933', marginTop: '10px' }}>
                   {institutional.categories.subtitle}
                 </h3>
 
@@ -2092,9 +2197,9 @@ export default function KaushalyaKarnatakaAwards2026() {
                   ))}
                 </div>
 
-                <div style={{ textAlign: 'center', marginTop: '30px' }}>
-                  <Link to="/kaushalya-awards-registration" className="primary-btn">
-                    Apply Now
+                <div style={{ textAlign: 'center', marginTop: '35px' }}>
+                  <Link to="/kaushalya-awards-registration" className="kka-participate-btn">
+                    APPLY NOW
                   </Link>
                 </div>
               </div>
