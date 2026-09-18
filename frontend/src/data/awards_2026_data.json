@@ -296,26 +296,54 @@
   },
   "testimonials": {
     "title": "WHAT OUR 2025 WINNERS SAY",
-    "quotes": [
+    "cards": [
       {
-        "quote": "A fantastic initiative that brings the right kind of focus to what the future upholds. By aligning technical partners and skilling innovators, the Kaushalya Karnataka Awards are truly setting the stage for the state to become the Skill Capital of India.",
-        "author": "Representative",
+        "id": 1,
+        "text": "A fantastic initiative that brings the right kind of focus to what the future upholds. By aligning technical partners and skilling innovators, the <strong>Kaushalya Karnataka Awards</strong> are truly setting the stage for the state to become the Skill Capital of India.",
+        "logo": "/bengaluruskillsummit/wp-content/uploads/2026/05/mu-sigma-1.png",
         "company": "Mu Sigma"
       },
       {
-        "quote": "From AI integration to global skill standards, the Bengaluru Skill Summit covers it all. The Kaushalya Karnataka Awards are the perfect culmination of this three-day journey, celebrating the organizations that make Karnataka a powerhouse of entrepreneurship and livelihood.",
-        "author": "Representative",
-        "company": "Hertz Global"
-      },
-      {
-        "quote": "Skills are the need of the hour for every organization. The Bengaluru Skill Summit serves as the vital bridge between institutions like ITIs and GTTCs and the corporate world. Receiving a Kaushalya Karnataka Award validates our commitment to upskilling and proves that when we align education with industry needs, everyone prospers.",
-        "author": "Representative",
+        "id": 2,
+        "text": "Skills are the need of the hour for every organization. The Bengaluru Skill Summit serves as the vital bridge between institutions like ITIs and GTTCs and the corporate world. Receiving a <strong>Kaushalya Karnataka Awards</strong> validates our commitment to upskilling and proves that when we align education with industry needs, everyone prospers.",
+        "logo": "/bengaluruskillsummit/wp-content/uploads/2026/05/pramana.png",
         "company": "Pramana"
       },
       {
-        "quote": "The Bengaluru Skill Summit is a unique platform where industry and academia finally meet to understand the pulse of skilling in our country. Being honored with the Kaushalya Karnataka Award reinforces my mission at GTTC to ensure our students are trained to meet the highest global standards.",
-        "author": "Representative",
+        "id": 3,
+        "text": "From AI integration to global skill standards, the Bengaluru Skill Summit covers it all. The <strong>Kaushalya Karnataka Awards</strong> are the perfect culmination of this three-day journey, celebrating the organizations that make Karnataka a powerhouse of entrepreneurship and livelihood.",
+        "logo": "/bengaluruskillsummit/wp-content/uploads/2026/05/hertz-global.png",
+        "company": "Hertz Global"
+      },
+      {
+        "id": 4,
+        "text": "The Bengaluru Skill Summit is a unique platform where industry and academia finally meet to understand the pulse of skilling in our country. Being honored with the <strong>Kaushalya Karnataka Awards</strong> reinforces my mission at GTTC to ensure our students are trained to meet the highest global standards.",
+        "logo": "/bengaluruskillsummit/wp-content/uploads/2026/05/gttc.png",
         "company": "GTTC"
+      },
+      {
+        "id": 5,
+        "text": "On behalf of OPSL Global and SMP’s Electric Control, I want to thank the Government of Karnataka for this amazing initiative. Winning the <strong>Kaushalya Karnataka Awards</strong> is a significant milestone for us, celebrating our shared vision of building a more skilled and competitive workforce.",
+        "logo": "/bengaluruskillsummit/wp-content/uploads/2026/05/smps.png",
+        "company": "SMPS"
+      },
+      {
+        "id": 6,
+        "text": "Our journey with the skilling ecosystem began years ago, and being recognized today at the Bengaluru Skill Summit is a monumental milestone. The <strong>Kaushalya Karnataka Awards</strong> celebrates the continuous effort of institutions like Lavonne Academy to nurture specialized talent and drive professional excellence across the state.",
+        "logo": "/bengaluruskillsummit/wp-content/uploads/2026/05/lavonne.png",
+        "company": "Lavonne Academy"
+      },
+      {
+        "id": 7,
+        "text": "We thank the Government of Karnataka and the Department of Skill Development for organizing the Bengaluru Skill Summit. This <strong>Kaushalya Karnataka Awards</strong> serves as a vital recognition for premier institutions like NTTF, proving that when we celebrate excellence in the skilling field, we inspire everyone to do even better for society.",
+        "logo": "/bengaluruskillsummit/wp-content/uploads/2026/05/nttf.png",
+        "company": "NTTF"
+      },
+      {
+        "id": 8,
+        "text": "Winning the <strong>Kaushalya Karnataka Awards</strong> is a massive milestone for us. The Bengaluru Skill Summit is the perfect platform to celebrate the future-ready skills, like drone aviation, that are putting Karnataka on the global tech map.",
+        "logo": "/bengaluruskillsummit/wp-content/uploads/2026/05/clearskies.png",
+        "company": "Clearskies"
       }
     ]
   }
