@@ -1,6 +1,6 @@
 {
   "hero": {
-    "title": "The Kaushalya Karnataka Awards",
+    "title": "The Kaushalya Karnataka Awards 2026",
     "subtitle": "Celebrating Excellence in Skills",
     "dateVenue": "5 November 2026 | The Grand Awards Ceremony | The Lalit Ashok, Bengaluru",
     "bgGradient": "radial-gradient(ellipse at 50% 30%, #061c47 0%, #020b1e 75%, #010610 100%)",
@@ -18,22 +18,23 @@
       "objectives": [
         {
           "title": "Promote industry-led skilling",
-          "icon": "factory"
+          "iconSvg": "/bengaluruskillsummit/wp-content/uploads/2026/08/Group-1410089691.svg"
         },
         {
           "title": "Encourage workforce transformation",
-          "icon": "gears"
+          "iconSvg": "/bengaluruskillsummit/wp-content/uploads/2026/08/Group-1410089692.svg"
         },
         {
           "title": "Strengthen industry-government and Industry - Academia collaboration",
-          "icon": "handshake"
+          "iconSvg": "/bengaluruskillsummit/wp-content/uploads/2026/08/Group-1410089693.svg"
         },
         {
           "title": "Enhance employability and economic growth",
-          "icon": "chart"
+          "iconSvg": "/bengaluruskillsummit/wp-content/uploads/2026/08/Group-1410089695.svg"
         }
       ],
       "policyAlignment": {
+        "policyImage": "/bengaluruskillsummit/wp-content/uploads/2026/08/ChatGPT-Image-May-26-2026-04_46_56-PM-2-scaled.png",
         "bookImage": "/bengaluruskillsummit/wp-content/uploads/2026/awards/skill_policy_book.webp",
         "preText": "The awards are aligned with the",
         "policyTitle": "Karnataka Skill Development Policy (2025–30)",
@@ -230,13 +231,14 @@
   "institutional": {
     "banner": {
       "heading": "RECOGNIZING INSTITUTIONAL LEADERSHIP IN SKILLING",
-      "description": "The Kaushalya Karnataka Institutional Excellence Awards celebrate ITIs, GTTCs, polytechnics, training centres and community organisations driving employability, industry collaboration, inclusivity and impactful skilling initiatives."
+      "description": "The Kaushalya Karnataka Institutional Excellence Awards celebrate ITIs, GTTCs, polytechnics, training centres and community organisations driving employability, industry collaboration, inclusivity and impactful skilling initiatives.",
+      "trophyImage": "/bengaluruskillsummit/wp-content/uploads/2026/05/Group-1410089602.png"
     },
     "overview": {
       "title": "RECOGNISING EXCELLENCE IN SKILL DEVELOPMENT EDUCATION & TRAINING",
       "p1": "The Kaushalya Karnataka Institutional Excellence Awards at Bengaluru Skill Summit (5 November 2026 at The Lalit Ashok, Bengaluru), under Department of Skill Development, Entrepreneurship & Livelihood, Gov of Karnataka honour the backbone of Karnataka's skilling ecosystem - districts, ITIs, GTTCs, polytechnics, training centres, and community partners. The awards are not just accolades - they are a tribute to the educators, administrators, and community champions who are shaping the next generation of skilled professionals.",
       "p2": "Initiated by KSDA and the Government of Karnataka, these recognitions celebrate innovation in training delivery, strong industry linkages, and measurable impact on employability.",
-      "collageImage": "/bengaluruskillsummit/wp-content/uploads/2026/awards/institutional_ceremony_collage.webp",
+      "collageImage": "/bengaluruskillsummit/wp-content/uploads/2026/08/Group-1410089654.png",
       "institutes": [
         { "name": "Department of Industrial Training and Employment", "abbr": "DITE" },
         { "name": "Industrial Training Institute", "abbr": "ITI" },
