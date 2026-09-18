@@ -124,7 +124,7 @@ export default function KaushalyaKarnatakaAwards2026() {
 
         /* Hero Wrapper */
         .kka-hero-wrap {
-          background: ${hero.bgGradient};
+          background: #020b1e url('/bengaluruskillsummit/wp-content/uploads/2026/08/banner-skillathon-03-2-2.png') no-repeat center top / cover;
           color: #ffffff;
           padding: 80px 20px 60px 20px;
           position: relative;
@@ -135,12 +135,11 @@ export default function KaushalyaKarnatakaAwards2026() {
         .kka-hero-wrap::before {
           content: '';
           position: absolute;
-          top: -20%;
-          left: -10%;
-          width: 120%;
-          height: 140%;
-          background: radial-gradient(circle at 70% 30%, rgba(2, 74, 180, 0.25) 0%, transparent 60%),
-                      radial-gradient(circle at 20% 80%, rgba(225, 173, 39, 0.12) 0%, transparent 50%);
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(180deg, rgba(2, 11, 30, 0.4) 0%, rgba(2, 11, 30, 0.55) 50%, rgba(2, 11, 30, 0.85) 100%);
           pointer-events: none;
         }
 
@@ -1079,9 +1078,13 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .kka-partners-partner-img {
-          height: 55px;
+          height: 52px;
           width: auto;
           object-fit: contain;
+          background: #081736;
+          padding: 8px 16px;
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         /* Contact Box */
