@@ -210,7 +210,7 @@ export default function KaushalyaKarnatakaAwards2026() {
   return (
     <div className="kka-2026-page">
       <style>{`
-        @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Jost:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Jost:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
 
         @font-face {
           font-family: 'Joost';
@@ -370,59 +370,59 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .kka-hero-badge-wrap {
-          margin-bottom: 20px;
+          margin-bottom: 24px;
           display: inline-block;
         }
 
         .kka-hero-badge-img {
-          height: 60px;
-          width: auto;
-          max-width: 320px;
-          object-fit: contain;
-          filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+          height: 105px !important;
+          width: auto !important;
+          max-width: 440px !important;
+          object-fit: contain !important;
+          filter: drop-shadow(0 6px 16px rgba(0,0,0,0.6));
         }
 
         .section-title {
-          font-family: 'Jost', 'Joost', sans-serif !important;
-          font-size: 55px !important;
-          line-height: 1.15 !important;
+          font-family: 'Oswald', sans-serif !important;
+          font-size: 60px !important;
+          line-height: 1.12 !important;
           margin-top: 0;
-          margin-bottom: 18px;
+          margin-bottom: 20px;
           text-transform: uppercase !important;
           font-weight: 700 !important;
-          color: #ffffff;
-          letter-spacing: 0.5px;
+          color: #ffffff !important;
+          letter-spacing: 0.5px !important;
           word-wrap: break-word !important;
         }
 
         .description {
           font-family: 'Comfortaa', sans-serif !important;
-          font-size: 23px !important;
+          font-size: 21px !important;
           font-weight: 500 !important;
-          line-height: 30px !important;
-          margin-bottom: 26px;
+          line-height: 1.55 !important;
+          margin-bottom: 28px !important;
           color: #ffffff !important;
-          max-width: 840px !important;
+          max-width: 820px !important;
           word-wrap: break-word !important;
         }
 
         .action-buttons {
           display: flex;
-          gap: 12px;
-          margin-bottom: 18px;
+          gap: 14px;
+          margin-bottom: 20px;
           flex-wrap: wrap;
         }
 
         .outline-btn {
           background: transparent;
-          color: #ffffff;
-          border: 1.5px solid rgba(255, 255, 255, 0.85);
-          padding: 8px 20px;
-          border-radius: 20px;
-          font-family: 'Comfortaa', sans-serif !important;
-          font-size: 14px !important;
-          font-weight: 400 !important;
-          line-height: 14px !important;
+          color: #ffffff !important;
+          border: 1.5px solid rgba(255, 255, 255, 0.75);
+          padding: 10px 24px;
+          border-radius: 25px;
+          font-family: 'Oswald', 'Inter', sans-serif !important;
+          font-size: 15px !important;
+          font-weight: 600 !important;
+          line-height: 15px !important;
           letter-spacing: 0.5px;
           cursor: pointer;
           transition: all 0.3s ease;
@@ -436,32 +436,33 @@ export default function KaushalyaKarnatakaAwards2026() {
           background: rgba(255, 255, 255, 0.15); 
           color: #ffffff; 
           transform: translateY(-2px);
+          border-color: #ffffff;
         }
 
         .primary-btn {
-          background: #ff5252;
+          background: #ff5252 !important;
           color: white !important;
           border: none;
-          padding: 11px 26px;
-          border-radius: 22px;
-          font-family: 'Inter', sans-serif !important;
+          padding: 13px 32px !important;
+          border-radius: 25px !important;
+          font-family: 'Oswald', 'Inter', sans-serif !important;
           font-size: 16px !important;
           font-weight: 700 !important;
           line-height: 16px !important;
-          letter-spacing: 0.5px;
+          letter-spacing: 0.5px !important;
           cursor: pointer;
-          box-shadow: 0 4px 15px rgba(255, 82, 82, 0.35);
+          box-shadow: 0 4px 18px rgba(255, 82, 82, 0.45);
           transition: transform 0.2s, box-shadow 0.2s;
           text-decoration: none;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          text-transform: uppercase;
+          text-transform: uppercase !important;
           word-wrap: break-word !important;
         }
         .primary-btn:hover { 
           transform: translateY(-2px); 
-          box-shadow: 0 6px 20px rgba(255, 82, 82, 0.55); 
+          box-shadow: 0 6px 24px rgba(255, 82, 82, 0.65); 
         }
 
         .image-content {
@@ -1759,8 +1760,8 @@ export default function KaushalyaKarnatakaAwards2026() {
               </div>
 
               <h2 className="section-title">
-                <span style={{ display: 'block', whiteSpace: 'nowrap' }}>RECOGNIZING INDUSTRY</span>
-                <span style={{ display: 'block', whiteSpace: 'nowrap' }}>LEADERSHIP IN SKILLING</span>
+                <span style={{ display: 'block', whiteSpace: 'nowrap' }}>RECOGNIZING INDUSTRY LEADERSHIP</span>
+                <span style={{ display: 'block', whiteSpace: 'nowrap' }}>IN SKILLING</span>
               </h2>
               <p className="description">
                 {corporate.banner.description}
