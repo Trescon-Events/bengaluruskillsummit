@@ -1,6 +1,6 @@
 {
   "hero": {
-    "title": "The Kaushalya Karnataka Awards 2026",
+    "title": "The Kaushalya Karnataka Awards",
     "subtitle": "Celebrating Excellence in Skills",
     "dateVenue": "5 November 2026 | The Grand Awards Ceremony | The Lalit Ashok, Bengaluru",
     "bgGradient": "radial-gradient(ellipse at 50% 30%, #061c47 0%, #020b1e 75%, #010610 100%)",
@@ -8,7 +8,7 @@
   },
   "corporate": {
     "banner": {
-      "badge": "/bengaluruskillsummit/wp-content/uploads/2026/08/powered-by-logos.png",
+      "badge": "/bengaluruskillsummit/wp-content/uploads/2026/awards/initiative_zyoin_badge.webp",
       "heading": "RECOGNIZING INDUSTRY LEADERSHIP IN SKILLING",
       "description": "The Kaushalya Karnataka Corporate Excellence Awards honour organisations that are transforming the workforce through impactful skilling initiatives, industry-academia partnerships, and sustainable employment upskilling practices."
     },
@@ -49,31 +49,31 @@
         {
           "num": "01",
           "color": "#0284c7",
-          "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why1.png",
+          "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why-this-matter-1.jpg",
           "text": "Showcase your organisation's skilling initiatives and measurable outcomes."
         },
         {
           "num": "02",
           "color": "#1d4ed8",
-          "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why2.png",
+          "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why-this-matter-2.jpg",
           "text": "Gain recognition for your contribution to Karnataka's workforce and skill ecosystem."
         },
         {
           "num": "03",
           "color": "#059669",
-          "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why3.png",
+          "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why-this-matter-3.jpg",
           "text": "Benchmark your efforts through a structured, evidence-based evaluation."
         },
         {
           "num": "04",
           "color": "#ea580c",
-          "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why4.png",
+          "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why-this-matter-4.jpg",
           "text": "Highlight impactful and scalable skilling practices."
         },
         {
           "num": "05",
           "color": "#7c3aed",
-          "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why5.png",
+          "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why-this-matter-5.jpg",
           "text": "Celebrate your commitment to building a skilled, inclusive and future-ready workforce."
         }
       ],
