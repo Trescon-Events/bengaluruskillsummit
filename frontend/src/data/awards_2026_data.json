@@ -18,19 +18,19 @@
       "objectives": [
         {
           "title": "Promote industry-led skilling",
-          "iconSvg": "/bengaluruskillsummit/wp-content/uploads/2026/08/Group-1410089691.svg"
+          "iconSvg": "/bengaluruskillsummit/wp-content/uploads/2026/08/Group-1410089695.svg"
         },
         {
           "title": "Encourage workforce transformation",
-          "iconSvg": "/bengaluruskillsummit/wp-content/uploads/2026/08/Group-1410089692.svg"
-        },
-        {
-          "title": "Strengthen industry-government and Industry - Academia collaboration",
           "iconSvg": "/bengaluruskillsummit/wp-content/uploads/2026/08/Group-1410089693.svg"
         },
         {
+          "title": "Strengthen industry-government and Industry - Academia collaboration",
+          "iconSvg": "/bengaluruskillsummit/wp-content/uploads/2026/08/Group-1410089692.svg"
+        },
+        {
           "title": "Enhance employability and economic growth",
-          "iconSvg": "/bengaluruskillsummit/wp-content/uploads/2026/08/Group-1410089695.svg"
+          "iconSvg": "/bengaluruskillsummit/wp-content/uploads/2026/08/Group-1410089691.svg"
         }
       ],
       "policyAlignment": {
@@ -49,26 +49,31 @@
         {
           "num": "01",
           "color": "#0284c7",
+          "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why1.png",
           "text": "Showcase your organisation's skilling initiatives and measurable outcomes."
         },
         {
           "num": "02",
           "color": "#1d4ed8",
+          "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why2.png",
           "text": "Gain recognition for your contribution to Karnataka's workforce and skill ecosystem."
         },
         {
           "num": "03",
           "color": "#059669",
+          "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why3.png",
           "text": "Benchmark your efforts through a structured, evidence-based evaluation."
         },
         {
           "num": "04",
           "color": "#ea580c",
+          "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why4.png",
           "text": "Highlight impactful and scalable skilling practices."
         },
         {
           "num": "05",
           "color": "#7c3aed",
+          "image": "/bengaluruskillsummit/wp-content/uploads/2026/awards/why5.png",
           "text": "Celebrate your commitment to building a skilled, inclusive and future-ready workforce."
         }
       ],
@@ -138,6 +143,7 @@
           "color": "#0284c7",
           "bg": "#f0f9ff",
           "borderColor": "#bae6fd",
+          "icon": "/bengaluruskillsummit/wp-content/uploads/2026/awards/eval1.png",
           "points": [
             "Karnataka learners trained",
             "Workforce coverage",
@@ -149,6 +155,7 @@
           "color": "#e11d48",
           "bg": "#fff1f2",
           "borderColor": "#fecdd3",
+          "icon": "/bengaluruskillsummit/wp-content/uploads/2026/awards/eval2.png",
           "points": [
             "Women participation",
             "Rural and underserved groups",
@@ -160,6 +167,7 @@
           "color": "#d97706",
           "bg": "#fffbeb",
           "borderColor": "#fde68a",
+          "icon": "/bengaluruskillsummit/wp-content/uploads/2026/awards/eval3.png",
           "points": [
             "NSQF / NOS / SSC alignment",
             "Future and emerging-skills share",
@@ -171,6 +179,7 @@
           "color": "#059669",
           "bg": "#ecfdf5",
           "borderColor": "#a7f3d0",
+          "icon": "/bengaluruskillsummit/wp-content/uploads/2026/awards/eval4.png",
           "points": [
             "Apprenticeships",
             "Internships / Fellowships",

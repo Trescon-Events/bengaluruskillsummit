@@ -11,7 +11,8 @@ import {
   FaCalendarCheck, 
   FaGraduationCap, 
   FaUsers, 
-  FaLocationDot
+  FaLocationDot,
+  FaArrowRight
 } from 'react-icons/fa6';
 import {
   LuLightbulb,
@@ -19,7 +20,10 @@ import {
   LuTrendingUp,
   LuSprout,
   LuSettings,
-  LuCalendarCheck2
+  LuCalendarCheck2,
+  LuGift,
+  LuClock,
+  LuDownload
 } from 'react-icons/lu';
 import awardsData from '../data/awards_2026_data.json';
 
@@ -111,7 +115,7 @@ export default function KaushalyaKarnatakaAwards2026() {
       'BEGIN:VEVENT',
       'UID:bss-awards-2026@bengaluruskillsummit.com',
       'DTSTAMP:20260918T000000Z',
-      'DTSTART;VALUE=DATE:20261103',
+      'DTSTART;VALUE=DATE:20261105',
       'DTEND;VALUE=DATE:20261106',
       'SUMMARY:Bengaluru Skill Summit 2026 - Kaushalya Karnataka Awards',
       'DESCRIPTION:The Kaushalya Karnataka Awards 2026 Ceremony celebrating excellence in skills.',
@@ -148,22 +152,22 @@ export default function KaushalyaKarnatakaAwards2026() {
           }}
         >
           {testimonials.cards.map((card) => (
-            <div key={card.id} className="testi-card">
+            <div className="testi-card" key={card.id}>
               <div className="testi-card-inner">
-                <span className="testi-quote-icon">
-                  <svg viewBox="0 0 48 36">
-                    <path d="M0 36V20.4C0 13.6 1.4 8.6 4.2 5.4 7 2 11.2.2 16.8 0l1.2 6c-3.2.4-5.6 1.6-7.2 3.4-1.6 1.8-2.6 4-2.8 6.6H14v20H0Zm26 0V20.4c0-6.8 1.4-11.8 4.2-15C33 2 37.2.2 42.8 0L44 6c-3.2.4-5.6 1.6-7.2 3.4-1.6 1.8-2.6 4-2.8 6.6H40v20H26Z"/>
+                <div className="testi-quote-icon">
+                  <svg viewBox="0 0 44 34" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.5 0C5.6 0 0 5.6 0 12.5c0 5.4 3.4 10 8.2 11.7L4.7 34h8.5l4.3-10.8c.8-2 .9-3.9.9-5.7 0-9.4-2.5-17.5-5.9-17.5zm24.6 0c-6.9 0-12.5 5.6-12.5 12.5 0 5.4 3.4 10 8.2 11.7L28.5 34H37l4.3-10.8c.8-2 .9-3.9.9-5.7 0-9.4-2.5-17.5-5.8-17.5z" />
                   </svg>
-                </span>
-                <p 
+                </div>
+                <p
                   className="testi-text"
                   dangerouslySetInnerHTML={{ __html: card.text }}
-                />
+                ></p>
                 <div className="testi-footer">
-                  <img 
-                    className="testi-logo" 
-                    src={card.logo} 
-                    alt={card.company} 
+                  <img
+                    src={card.logo}
+                    alt={card.company}
+                    className="testi-logo"
                   />
                 </div>
               </div>
@@ -171,32 +175,31 @@ export default function KaushalyaKarnatakaAwards2026() {
           ))}
         </div>
 
+        {/* Slider Controls */}
         <div className="testi-nav">
-          <button 
-            className="testi-prev" 
-            aria-label="Previous"
+          <button
             onClick={handlePrevTesti}
+            aria-label="Previous testimonial"
           >
             <svg viewBox="0 0 24 24">
-              <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
             </svg>
           </button>
           <div className="testi-dots">
-            {Array.from({ length: maxTestiIndex + 1 }).map((_, dotIdx) => (
+            {Array.from({ length: maxTestiIndex + 1 }).map((_, idx) => (
               <span
-                key={dotIdx}
-                className={`testi-dot ${currentTestiIdx === dotIdx ? 'active' : ''}`}
-                onClick={() => setCurrentTestiIdx(dotIdx)}
+                key={idx}
+                className={`testi-dot ${idx === currentTestiIdx ? 'active' : ''}`}
+                onClick={() => setCurrentTestiIdx(idx)}
               />
             ))}
           </div>
-          <button 
-            className="testi-next" 
-            aria-label="Next"
+          <button
             onClick={handleNextTesti}
+            aria-label="Next testimonial"
           >
             <svg viewBox="0 0 24 24">
-              <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
             </svg>
           </button>
         </div>
@@ -396,26 +399,27 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .primary-btn {
-          background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+          background: linear-gradient(90deg, #ff5757, #ff7b54);
           color: white !important;
           border: none;
           padding: 12px 35px;
           border-radius: 25px;
           font-family: 'Comfortaa', sans-serif;
-          font-size: 1rem;
+          font-size: 0.95rem;
           font-weight: 700;
           cursor: pointer;
-          box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+          box-shadow: 0 4px 15px rgba(255, 87, 87, 0.4);
           transition: transform 0.2s, box-shadow 0.2s;
           text-decoration: none;
           display: inline-flex;
           align-items: center;
           justify-content: center;
           text-transform: uppercase;
+          letter-spacing: 0.5px;
         }
         .primary-btn:hover { 
           transform: translateY(-2px); 
-          box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6); 
+          box-shadow: 0 6px 20px rgba(255, 87, 87, 0.6); 
         }
 
         .image-content {
@@ -438,17 +442,16 @@ export default function KaushalyaKarnatakaAwards2026() {
            ========================================= */
         .about-section-wrapper {
           background-color: #ffffff;
-          padding: 70px 5%;
+          padding: 70px 5% 40px 5%;
           color: #333333;
           animation: fadeIn 0.5s ease;
         }
 
         .about-container {
-          max-width: 1200px;
+          max-width: 1250px;
           margin: 0 auto;
         }
 
-        /* Corporate About specific styles */
         .about-corporate-center {
           text-align: center;
         }
@@ -469,22 +472,23 @@ export default function KaushalyaKarnatakaAwards2026() {
         .intro-text {
           font-size: 1.05rem;
           line-height: 1.8;
-          max-width: 1000px;
-          margin: 0 auto 28px;
-          color: #444444;
+          max-width: 1050px;
+          margin: 0 auto 24px;
+          color: #334155;
           text-align: center;
         }
 
         .intro-text.highlight {
-          margin-bottom: 50px;
+          margin-bottom: 45px;
           font-weight: 600;
+          color: #0f172a;
         }
 
         .features-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 30px;
-          margin-bottom: 70px;
+          gap: 25px;
+          margin-bottom: 60px;
         }
 
         .feature-item {
@@ -494,18 +498,18 @@ export default function KaushalyaKarnatakaAwards2026() {
           text-align: center;
         }
         .feature-icon {
-          width: 90px;
-          height: 90px;
-          margin-bottom: 20px;
+          width: 84px;
+          height: 84px;
+          margin-bottom: 18px;
           object-fit: contain;
           transition: transform 0.3s ease;
         }
         .feature-item:hover .feature-icon { transform: translateY(-5px); }
         .feature-text {
-          font-size: 1rem;
+          font-size: 0.98rem;
           line-height: 1.5;
-          font-weight: 500;
-          color: #333333;
+          font-weight: 600;
+          color: #1e293b;
         }
 
         /* Simplified Policy Card */
@@ -513,306 +517,119 @@ export default function KaushalyaKarnatakaAwards2026() {
           display: flex;
           align-items: center;
           justify-content: center;
-          max-width: 1000px;
+          max-width: 900px;
           margin: 0 auto 70px auto;
         }
         
         .policy-image {
           width: 100%;
-          max-width: 800px; 
+          max-width: 760px; 
           height: auto;
           border-radius: 12px;
-          box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+          box-shadow: 0 10px 40px rgba(0,0,0,0.06);
         }
 
-        /* CORPORATE CATEGORY / EVALUATION SECTION */
-        .bss-category-section {
-          width: 100%; 
-          margin: 30px 0 0 0; 
-          padding: 20px 0; 
-          box-sizing: border-box;
-          display: flex; 
-          justify-content: center; 
-          background-color: transparent;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-        .bss-category-section * { box-sizing: border-box; }
-        .bss-category-section .cards-container {
-          display: grid; 
-          grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-          gap: 16px; 
-          max-width: 1200px; 
-          width: 100%;
-        }
-        .bss-category-section .card {
-          border-radius: 16px; 
-          padding: 32px 20px; 
-          display: flex; 
-          flex-direction: column;
-          align-items: center; 
-          text-align: center; 
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-          border: 1px solid rgba(255, 255, 255, 0.8); 
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .bss-category-section .card:hover { 
-          transform: translateY(-4px); 
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06); 
-        }
-        .bss-category-section .card-blue { background: linear-gradient(180deg, #f0f7ff 0%, #f8fbff 40%, #ffffff 100%); }
-        .bss-category-section .card-red { background: linear-gradient(180deg, #fff3f3 0%, #fdf8f8 40%, #ffffff 100%); }
-        .bss-category-section .card-yellow { background: linear-gradient(180deg, #fffbeb 0%, #fefcf6 40%, #ffffff 100%); }
-        .bss-category-section .card-green { background: linear-gradient(180deg, #f0fdf4 0%, #f7fdf9 40%, #ffffff 100%); }
-        .bss-category-section .icon-wrapper {
-          width: 76px; 
-          height: 76px; 
-          border-radius: 50%; 
-          display: flex; 
-          align-items: center;
-          justify-content: center; 
-          margin-bottom: 20px; 
-          background: #ffffff; 
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-        }
-        .bss-category-section .card-blue .icon-wrapper { border: 2px solid #e0edff; color: #2563eb; }
-        .bss-category-section .card-red .icon-wrapper { border: 2px solid #fee2e2; color: #ef4444; }
-        .bss-category-section .card-yellow .icon-wrapper { border: 2px solid #fef3c7; color: #f59e0b; }
-        .bss-category-section .card-green .icon-wrapper { border: 2px solid #d1fae5; color: #10b981; }
-        
-        .bss-category-section .card-title {
-          font-size: 1.02rem; 
-          font-weight: 700; 
-          color: #1e293b; 
-          line-height: 1.35;
-          min-height: 44px; 
-          display: flex; 
-          align-items: center; 
-          justify-content: center; 
-          margin-bottom: 14px;
-        }
-        .bss-category-section .divider { 
-          width: 28px; 
-          height: 3px; 
-          border-radius: 2px; 
-          margin-bottom: 20px; 
-        }
-        .bss-category-section .card-blue .divider { background-color: #2563eb; }
-        .bss-category-section .card-red .divider { background-color: #ef4444; }
-        .bss-category-section .card-yellow .divider { background-color: #f59e0b; }
-        .bss-category-section .card-green .divider { background-color: #10b981; }
-
-        .bss-category-section .item-list,
-        .bss-category-section .item-list li {
-          list-style: none !important;
-          list-style-type: none !important;
-          margin-bottom: 0 !important;
+        /* =========================================
+           WHY THESE AWARDS MATTER SECTION
+           ========================================= */
+        .kka-why-matter-section {
+          margin: 60px auto 80px auto;
+          max-width: 1250px;
+          text-align: center;
         }
 
-        .bss-category-section .item-list {
-          text-align: left; 
-          width: 100%; 
-          font-size: 0.88rem; 
-          margin: 0 !important; 
-          padding: 0 !important;
-          color: #334155; 
-          line-height: 1.4; 
-          display: flex; 
-          flex-direction: column; 
-          gap: 12px;
+        .kka-why-matter-subhead {
+          font-size: 1.15rem;
+          color: #334155;
+          line-height: 1.6;
+          max-width: 950px;
+          margin: 0 auto 12px auto;
         }
-        .bss-category-section .item-list li { 
-          position: relative; 
-          padding-left: 14px !important; 
-          margin: 0 !important; 
-        }
-        .bss-category-section .item-list li::before { content: "•"; position: absolute; left: 0; top: -1px; font-size: 1.1rem; }
-        .bss-category-section .card-blue .item-list li::before { color: #2563eb; }
-        .bss-category-section .card-red .item-list li::before { color: #ef4444; }
-        .bss-category-section .card-yellow .item-list li::before { color: #f59e0b; }
-        .bss-category-section .card-green .item-list li::before { color: #10b981; }
 
-        /* CORPORATE TIMELINE SECTION */
-        .bss-timeline-embed-wrapper {
-          width: 100%; 
-          margin: 30px 0 60px 0; 
-          padding: 20px 0; 
-          box-sizing: border-box;
-          display: flex; 
-          flex-direction: column; 
-          align-items: center; 
-          gap: 40px;
-          background-color: transparent; 
-          font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        .kka-why-matter-intro {
+          font-size: 1.05rem;
+          color: #0f172a;
+          font-weight: 600;
+          margin: 0 auto 45px auto;
         }
-        .bss-timeline-embed-wrapper * { box-sizing: border-box; }
-        .bss-timeline-embed-wrapper .section-container { 
-          width: 100%; 
-          max-width: 1150px; 
-          display: flex; 
-          justify-content: center; 
-        }
-        .bss-timeline-embed-wrapper .process-timeline {
-          display: flex; 
-          justify-content: space-between; 
+
+        .kka-why-matter-flow {
+          display: flex;
           align-items: flex-start;
-          width: 100%; 
-          position: relative; 
-          font-family: 'Outfit', sans-serif;
-        }
-        .bss-timeline-embed-wrapper .process-timeline::before {
-          content: ""; 
-          position: absolute; 
-          top: 42px; 
-          left: calc(12.5% - 20px); 
-          right: calc(12.5% - 20px);
-          height: 2px; 
-          z-index: 1;
-          background-image: repeating-linear-gradient(to right, #0f172a 0, #0f172a 10px, transparent 10px, transparent 20px);
-        }
-        .bss-timeline-embed-wrapper .step-item {
-          position: relative; 
-          z-index: 2; 
-          display: flex; 
-          flex-direction: column;
-          align-items: center; 
-          text-align: center; 
-          flex: 1; 
-          padding: 0 12px;
-        }
-        .bss-timeline-embed-wrapper .step-circle {
-          width: 84px; 
-          height: 84px; 
-          border-radius: 50%; 
-          background-color: #f0f6fc;
-          display: flex; 
-          align-items: center; 
-          justify-content: center; 
-          font-size: 2rem;
-          font-weight: 800; 
-          color: #cbd5e1; 
-          margin-bottom: 20px;
-        }
-        .bss-timeline-embed-wrapper .step-title {
-          font-size: 1.15rem; 
-          font-weight: 800; 
-          color: #0f172a; 
-          letter-spacing: 1.2px;
-          text-transform: uppercase; 
-          margin-bottom: 8px;
-        }
-        .bss-timeline-embed-wrapper .step-description {
-          font-size: 0.9rem; 
-          font-weight: 400; 
-          color: #475569; 
-          line-height: 1.45; 
-          max-width: 210px;
-        }
-        .bss-timeline-embed-wrapper .timeline-card {
-          width: 100%; 
-          background-color: #dbeafe; 
-          border: 3px solid #0090ff; 
-          border-radius: 16px;
-          padding: 20px 32px; 
-          display: flex; 
-          align-items: center; 
-          justify-content: space-between; 
-          gap: 24px;
-        }
-        .bss-timeline-embed-wrapper .header-section { 
-          display: flex; 
-          align-items: center; 
-          gap: 12px; 
-          flex-shrink: 0; 
-        }
-        .bss-timeline-embed-wrapper .header-text { 
-          display: flex; 
-          flex-direction: column; 
-          text-align: left;
-        }
-        .bss-timeline-embed-wrapper .header-text .label { 
-          font-size: 0.75rem; 
-          font-weight: 700; 
-          color: #475569; 
-          letter-spacing: 0.5px; 
-          text-transform: uppercase; 
-        }
-        .bss-timeline-embed-wrapper .header-text .cycle { 
-          font-size: 1rem; 
-          font-weight: 800; 
-          color: #0f172a; 
-          letter-spacing: 0.5px; 
-        }
-        .bss-timeline-embed-wrapper .timeline-steps {
-          display: flex; 
-          align-items: flex-start; 
           justify-content: space-between;
-          position: relative; 
-          flex-grow: 1; 
-          max-width: 500px;
-        }
-        .bss-timeline-embed-wrapper .timeline-steps::before {
-          content: ""; 
-          position: absolute; 
-          top: -10px; 
-          left: 10px; 
-          right: 10px; 
-          border-top: 2px dashed #94a3b8; 
-          z-index: 1;
-        }
-        .bss-timeline-embed-wrapper .timeline-item { 
-          display: flex; 
-          flex-direction: column; 
-          align-items: flex-start; 
-          position: relative; 
-          z-index: 2; 
-          text-align: left;
-        }
-        .bss-timeline-embed-wrapper .timeline-badge { 
-          width: 30px; 
-          height: 6px; 
-          background-color: #00d592; 
-          border-radius: 2px; 
-          margin-bottom: 8px; 
-        }
-        .bss-timeline-embed-wrapper .item-label { 
-          font-size: 0.65rem; 
-          font-weight: 700; 
-          color: #64748b; 
-          letter-spacing: 0.5px; 
-          text-transform: uppercase; 
-          margin-bottom: 2px; 
-        }
-        .bss-timeline-embed-wrapper .item-date { 
-          font-size: 0.85rem; 
-          font-weight: 800; 
-          color: #0f172a; 
-          white-space: nowrap; 
-        }
-        .bss-timeline-embed-wrapper .btn-calender {
-          background-color: #ff5952; 
-          color: #ffffff; 
-          border: none; 
-          padding: 12px 20px;
-          border-radius: 8px; 
-          font-size: 0.75rem; 
-          font-weight: 700; 
-          letter-spacing: 0.8px;
-          text-transform: uppercase; 
-          cursor: pointer; 
-          flex-shrink: 0; 
-          transition: background-color 0.2s ease, transform 0.2s;
-        }
-        .bss-timeline-embed-wrapper .btn-calender:hover { 
-          background-color: #e04842; 
-          transform: translateY(-2px);
+          gap: 15px;
+          position: relative;
+          margin: 0 auto 45px auto;
         }
 
-        /* WHY PARTICIPATE & CATEGORIES */
+        .kka-why-matter-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          flex: 1;
+          max-width: 215px;
+          text-align: center;
+        }
+
+        .kka-why-matter-circle-wrap {
+          position: relative;
+          width: 150px;
+          height: 150px;
+          margin-bottom: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .kka-why-matter-circle-img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          transition: transform 0.3s ease;
+        }
+
+        .kka-why-matter-item:hover .kka-why-matter-circle-img {
+          transform: scale(1.05);
+        }
+
+        .kka-why-matter-arrow {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 22px;
+          color: #0284c7;
+          margin-top: 60px;
+          flex-shrink: 0;
+        }
+
+        .kka-why-matter-text {
+          font-size: 14px;
+          line-height: 1.5;
+          color: #334155;
+          margin: 0;
+          font-weight: 500;
+        }
+
+        .kka-why-matter-summary {
+          font-size: 1.25rem;
+          line-height: 1.65;
+          color: #0f172a;
+          max-width: 1100px;
+          margin: 50px auto 0 auto;
+          font-weight: 600;
+          text-align: center;
+        }
+
+        /* =========================================
+           WHY PARTICIPATE (DEEP BLUE BACKGROUND)
+           ========================================= */
         .kka-participate-wrap {
-          background: #f8fafc;
-          padding: 60px 20px;
-          margin: 40px 0;
+          background: #0d53c7;
+          color: #ffffff;
+          padding: 60px 40px;
+          margin: 60px 0;
           border-radius: 20px;
+          box-shadow: 0 15px 40px rgba(13, 83, 199, 0.25);
         }
 
         .kka-participate-inner {
@@ -820,66 +637,72 @@ export default function KaushalyaKarnatakaAwards2026() {
           margin: 0 auto;
           display: grid;
           grid-template-columns: 1fr 1.2fr;
-          gap: 40px;
+          gap: 50px;
           align-items: center;
         }
 
         .kka-participate-collage-img {
           width: 100%;
+          height: auto;
           border-radius: 16px;
-          box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.25);
         }
 
         .kka-participate-title {
           font-family: 'Jost', sans-serif !important;
-          font-size: 2.2rem;
-          color: #0d53c7;
-          margin: 0 0 20px 0;
+          font-size: 2.8rem;
+          color: #ffffff;
+          margin: 0 0 25px 0;
           font-weight: 800;
           text-transform: uppercase;
+          letter-spacing: 0.5px;
         }
 
         .kka-participate-list {
           display: flex;
           flex-direction: column;
-          gap: 12px;
-          margin-bottom: 25px;
+          gap: 16px;
+          margin-bottom: 35px;
         }
 
         .kka-participate-item {
           display: flex;
           align-items: center;
-          gap: 12px;
+          gap: 14px;
         }
 
         .kka-participate-icon-box {
-          width: 28px;
-          height: 28px;
+          width: 32px;
+          height: 32px;
           border-radius: 50%;
-          background: #dbeafe;
-          color: #0d53c7;
+          background: rgba(255, 255, 255, 0.2);
+          color: #ffffff;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 12px;
+          font-size: 14px;
           flex-shrink: 0;
         }
 
         .kka-participate-text {
-          font-size: 15px;
-          color: #334155;
+          font-size: 1.05rem;
+          color: #ffffff;
           margin: 0;
+          font-weight: 500;
         }
 
-        /* Categories Section */
+        /* =========================================
+           AWARD CATEGORIES
+           ========================================= */
         .kka-categories-wrap {
-          background: #081736 url('/bengaluruskillsummit/wp-content/uploads/2026/08/banner-skillathon-03-2-2.png') no-repeat center center / cover;
-          padding: 60px 20px;
+          background: #081736 url('/bengaluruskillsummit/wp-content/uploads/2026/awards/dignitaries_row.webp') no-repeat center center / cover;
+          padding: 70px 30px;
           color: #ffffff;
           position: relative;
           border-radius: 20px;
           overflow: hidden;
-          margin: 40px 0;
+          margin: 60px 0;
+          box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
 
         .kka-categories-wrap::before {
@@ -889,7 +712,7 @@ export default function KaushalyaKarnatakaAwards2026() {
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgba(8, 23, 54, 0.85);
+          background: rgba(8, 23, 54, 0.88);
           pointer-events: none;
         }
 
@@ -922,33 +745,26 @@ export default function KaushalyaKarnatakaAwards2026() {
           object-fit: contain;
         }
 
-        .kka-dignitaries-img {
-          height: 52px;
-          width: auto;
-          object-fit: contain;
-          border-radius: 8px;
-        }
-
         .kka-categories-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          grid-template-columns: repeat(4, 1fr);
           gap: 20px;
-          margin: 35px 0;
+          margin: 40px 0 35px 0;
         }
 
         .kka-category-card {
           background: #ffffff;
           border: 2px solid;
           border-radius: 16px;
-          padding: 28px 20px;
+          padding: 30px 18px;
           text-align: center;
           transition: transform 0.25s ease, box-shadow 0.25s ease;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+          box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
 
         .kka-category-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+          transform: translateY(-5px);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.25);
         }
 
         .kka-category-icon {
@@ -958,7 +774,7 @@ export default function KaushalyaKarnatakaAwards2026() {
 
         .kka-category-title {
           font-family: 'Jost', sans-serif !important;
-          font-size: 1.2rem;
+          font-size: 1.25rem;
           font-weight: 700;
           color: #0f172a;
           margin: 0 0 8px 0;
@@ -982,6 +798,391 @@ export default function KaushalyaKarnatakaAwards2026() {
           text-transform: uppercase;
           letter-spacing: 0.5px;
           margin: 0;
+        }
+
+        /* =========================================
+           EVALUATION FRAMEWORK (4 CARDS MATCHING FIGMA)
+           ========================================= */
+        .kka-eval-section {
+          margin: 70px auto;
+          max-width: 1250px;
+          text-align: center;
+        }
+
+        .kka-eval-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+          margin-top: 40px;
+        }
+
+        .kka-eval-card {
+          border-radius: 18px;
+          padding: 35px 22px 30px 22px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          background: #ffffff;
+          border: 1.5px solid;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .kka-eval-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+        }
+
+        .kka-eval-icon-img {
+          width: 110px;
+          height: 110px;
+          object-fit: contain;
+          margin-bottom: 18px;
+        }
+
+        .kka-eval-title {
+          font-family: 'Jost', sans-serif !important;
+          font-size: 1.15rem;
+          font-weight: 700;
+          color: #0f172a;
+          margin: 0 0 14px 0;
+          line-height: 1.3;
+          min-height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .kka-eval-divider {
+          width: 32px;
+          height: 3px;
+          border-radius: 2px;
+          margin-bottom: 22px;
+        }
+
+        .kka-eval-list {
+          list-style: none !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          text-align: left;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .kka-eval-list li {
+          position: relative;
+          padding-left: 0 !important;
+          font-size: 14px;
+          color: #334155;
+          line-height: 1.45;
+          font-weight: 500;
+          display: flex;
+          align-items: flex-start;
+        }
+
+        /* =========================================
+           FOUR STEPS & TIMELINE
+           ========================================= */
+        .kka-timeline-wrapper {
+          width: 100%;
+          margin: 70px 0 60px 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 45px;
+        }
+
+        .kka-steps-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          width: 100%;
+          max-width: 1250px;
+          position: relative;
+        }
+
+        .kka-steps-row::before {
+          content: "";
+          position: absolute;
+          top: 36px;
+          left: calc(10% - 10px);
+          right: calc(10% - 10px);
+          height: 2px;
+          z-index: 1;
+          background-image: repeating-linear-gradient(to right, #94a3b8 0, #94a3b8 10px, transparent 10px, transparent 20px);
+        }
+
+        .kka-step-col {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          flex: 1;
+          padding: 0 10px;
+        }
+
+        .kka-step-badge {
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          background: #edf2f7;
+          color: #94a3b8;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.6rem;
+          font-weight: 800;
+          margin-bottom: 16px;
+        }
+
+        .kka-step-heading {
+          font-family: 'Jost', sans-serif !important;
+          font-size: 1.1rem;
+          font-weight: 800;
+          color: #0f172a;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+          margin: 0 0 8px 0;
+        }
+
+        .kka-step-desc {
+          font-size: 13.5px;
+          color: #475569;
+          line-height: 1.45;
+          margin: 0;
+        }
+
+        /* Timeline Box */
+        .kka-timeline-card-wrap {
+          width: 100%;
+          max-width: 1250px;
+        }
+
+        .kka-timeline-bar {
+          background: #dbeafe;
+          border-radius: 16px;
+          padding: 22px 32px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+        }
+
+        .kka-timeline-bar-left {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          flex-shrink: 0;
+        }
+
+        .kka-timeline-bar-title {
+          font-family: 'Jost', sans-serif !important;
+          font-size: 16px;
+          font-weight: 800;
+          color: #0f172a;
+          letter-spacing: 0.5px;
+          line-height: 1.2;
+        }
+
+        .kka-timeline-bar-steps {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          position: relative;
+          flex-grow: 1;
+          max-width: 680px;
+          padding: 0 10px;
+        }
+
+        .kka-timeline-bar-steps::before {
+          content: "";
+          position: absolute;
+          top: 3px;
+          left: 15px;
+          right: 15px;
+          border-top: 2px dashed #94a3b8;
+          z-index: 1;
+        }
+
+        .kka-timeline-bar-item {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          position: relative;
+          z-index: 2;
+          text-align: left;
+        }
+
+        .kka-timeline-bar-dot {
+          width: 28px;
+          height: 8px;
+          background: #10b981;
+          border-radius: 3px;
+          margin-bottom: 8px;
+        }
+
+        .kka-timeline-bar-item-lbl {
+          font-size: 11px;
+          font-weight: 700;
+          color: #64748b;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: 2px;
+        }
+
+        .kka-timeline-bar-item-dt {
+          font-size: 14px;
+          font-weight: 800;
+          color: #0f172a;
+          white-space: nowrap;
+        }
+
+        /* =========================================
+           2025 WINNERS SHOWCASE BANNER
+           ========================================= */
+        .kka-showcase-banner-cream {
+          background: #FFF9EF;
+          border: 1px solid #FFE7C2;
+          color: #0f172a;
+          padding: 55px 35px;
+          border-radius: 20px;
+          text-align: center;
+          margin: 60px auto;
+          max-width: 1250px;
+          box-shadow: 0 8px 25px rgba(245, 166, 35, 0.08);
+        }
+
+        .kka-showcase-cream-title {
+          font-family: 'Jost', sans-serif !important;
+          font-size: 2.2rem;
+          font-weight: 700;
+          margin: 0 0 28px 0;
+          color: #1e293b;
+          line-height: 1.35;
+          max-width: 950px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        /* =========================================
+           CTA SECTION ("Be part of Karnataka's...")
+           ========================================= */
+        .kka-cta-split-section {
+          margin: 70px auto 60px auto;
+          max-width: 1250px;
+          display: grid;
+          grid-template-columns: 1fr 1.15fr;
+          gap: 50px;
+          align-items: center;
+        }
+
+        .kka-cta-photo-col img {
+          width: 100%;
+          height: auto;
+          border-radius: 18px;
+          box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+        }
+
+        .kka-cta-text-col {
+          text-align: left;
+        }
+
+        .kka-cta-main-head {
+          font-family: 'Jost', sans-serif !important;
+          font-size: 2.6rem;
+          color: #0d53c7;
+          font-weight: 800;
+          line-height: 1.25;
+          margin: 0 0 24px 0;
+        }
+
+        .kka-cta-subhead {
+          font-family: 'Jost', sans-serif !important;
+          font-size: 1.35rem;
+          color: #0f172a;
+          font-weight: 700;
+          margin: 0 0 14px 0;
+        }
+
+        .kka-cta-timeline-box {
+          border: 1.5px solid #cbd5e1;
+          border-radius: 12px;
+          padding: 18px 24px;
+          display: flex;
+          align-items: center;
+          gap: 35px;
+          margin-bottom: 28px;
+          background: #ffffff;
+        }
+
+        .kka-cta-timeline-unit {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .kka-cta-timeline-icon {
+          width: 42px;
+          height: 42px;
+          border-radius: 8px;
+          border: 1.5px solid #f59e0b;
+          color: #f59e0b;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 20px;
+          flex-shrink: 0;
+        }
+
+        .kka-cta-timeline-icon.red {
+          border-color: #ef4444;
+          color: #ef4444;
+        }
+
+        .kka-cta-timeline-label {
+          font-size: 15px;
+          color: #475569;
+          margin: 0;
+        }
+
+        .kka-cta-timeline-label strong {
+          color: #0f172a;
+          font-weight: 700;
+        }
+
+        .kka-cta-btn-row {
+          display: flex;
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+
+        .kka-cta-download-btn {
+          background: #ff5757;
+          color: #ffffff !important;
+          border: none;
+          padding: 12px 30px;
+          border-radius: 25px;
+          font-family: 'Comfortaa', sans-serif;
+          font-size: 0.95rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.25s ease;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+        .kka-cta-download-btn:hover {
+          background: #e04842;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(255, 87, 87, 0.4);
         }
 
         /* Institutional About specific styles */
@@ -1153,35 +1354,35 @@ export default function KaushalyaKarnatakaAwards2026() {
           background: #F5A623;
         }
 
-        /* 2025 Winners Showcase Banner */
-        .kka-showcase-banner {
-          background: linear-gradient(135deg, #0b1a38 0%, #030a17 100%);
-          color: #ffffff;
-          padding: 50px 30px;
-          border-radius: 20px;
-          text-align: center;
-          margin: 50px auto 40px auto;
-          max-width: 1200px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        .kka-eval-list {
+          list-style: none !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          text-align: left;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
         }
 
-        .kka-showcase-title {
-          font-family: 'Jost', sans-serif !important;
-          font-size: 1.8rem;
-          font-weight: 700;
-          margin: 0 0 24px 0;
-          color: #ffffff;
-          line-height: 1.3;
+        .kka-eval-list li {
+          position: relative;
+          padding-left: 18px !important;
+          font-size: 14px;
+          color: #334155;
+          line-height: 1.45;
+          font-weight: 500;
         }
 
         /* Partners & Contact */
         .kka-partners-wrap {
-          display: grid;
-          grid-template-columns: 1.2fr 0.8fr;
-          gap: 30px;
+          display: flex;
+          justify-content: center;
+          gap: 80px;
           align-items: center;
           max-width: 1100px;
-          margin: 40px auto 20px auto;
+          margin: 60px auto 30px auto;
+          flex-wrap: wrap;
         }
 
         .kka-partners-col {
@@ -1193,34 +1394,31 @@ export default function KaushalyaKarnatakaAwards2026() {
 
         .kka-partners-col-title {
           font-family: 'Jost', sans-serif !important;
-          font-size: 16px;
+          font-size: 18px;
           font-weight: 700;
           color: #0f172a;
           margin: 0 0 16px 0;
-          text-transform: uppercase;
           letter-spacing: 0.5px;
         }
 
         .kka-partners-img-row {
           display: flex;
           align-items: center;
-          gap: 20px;
+          justify-content: center;
         }
 
         .kka-partners-govt-img {
-          height: 65px;
+          height: 60px;
           width: auto;
+          max-width: 100%;
           object-fit: contain;
         }
 
         .kka-partners-partner-img {
-          height: 52px;
+          height: 55px;
           width: auto;
+          max-width: 100%;
           object-fit: contain;
-          background: #081736;
-          padding: 8px 16px;
-          border-radius: 8px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         .kka-contact-box {
@@ -1264,6 +1462,12 @@ export default function KaushalyaKarnatakaAwards2026() {
         @media(max-width: 1024px) {
           .testi-card { flex: 0 0 50% !important; } 
           .features-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .kka-categories-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .kka-eval-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .kka-why-matter-flow { flex-wrap: wrap; justify-content: center; gap: 30px; }
+          .kka-why-matter-arrow { display: none; }
+          .kka-why-matter-item { max-width: 260px; }
+          .kka-cta-split-section { grid-template-columns: 1fr !important; }
         }
 
         @media (max-width: 992px) {
@@ -1278,9 +1482,14 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         @media (max-width: 900px) {
-          .bss-timeline-embed-wrapper .timeline-card { flex-direction: column !important; align-items: stretch !important; gap: 20px !important; padding: 20px !important; }
-          .bss-timeline-embed-wrapper .timeline-steps { max-width: 100% !important; overflow-x: auto !important; padding-top: 14px !important; gap: 12px !important; }
-          .bss-timeline-embed-wrapper .btn-calender { width: 100% !important; text-align: center !important; }
+          .kka-timeline-bar { flex-direction: column !important; align-items: stretch !important; gap: 20px !important; padding: 20px !important; }
+          .kka-timeline-bar-steps { max-width: 100% !important; overflow-x: auto !important; padding-top: 14px !important; gap: 12px !important; }
+          .kka-steps-row { flex-direction: column !important; align-items: center !important; gap: 30px !important; }
+          .kka-steps-row::before {
+            top: 36px !important; bottom: 36px !important; left: 50% !important; right: auto !important; width: 2px !important; height: auto !important;
+            transform: translateX(-50%) !important; background-image: repeating-linear-gradient(to bottom, #94a3b8 0, #94a3b8 10px, transparent 10px, transparent 20px) !important;
+          }
+          .kka-step-col { width: 100% !important; max-width: 320px !important; }
         }
 
         @media(max-width: 800px) {
@@ -1294,16 +1503,14 @@ export default function KaushalyaKarnatakaAwards2026() {
           .main-title { font-size: 2.5rem !important; }
           .subtitle { font-size: 1.3rem !important; }
           .section-title { font-size: 2rem !important; }
-          .bss-timeline-embed-wrapper .process-timeline { flex-direction: column !important; align-items: center !important; gap: 32px !important; }
-          .bss-timeline-embed-wrapper .process-timeline::before {
-            top: 42px !important; bottom: 42px !important; left: 50% !important; right: auto !important; width: 2px !important; height: auto !important;
-            transform: translateX(-50%) !important; background-image: repeating-linear-gradient(to bottom, #0f172a 0, #0f172a 10px, transparent 10px, transparent 20px) !important;
-          }
-          .bss-timeline-embed-wrapper .step-item { width: 100% !important; max-width: 300px !important; }
+          .kka-cta-main-head { font-size: 2.1rem !important; }
+          .kka-cta-timeline-box { flex-direction: column; align-items: flex-start; gap: 15px; }
         }
 
         @media (max-width: 480px) {
           .features-grid { grid-template-columns: 1fr !important; }
+          .kka-categories-grid { grid-template-columns: 1fr !important; }
+          .kka-eval-grid { grid-template-columns: 1fr !important; }
           .main-title { font-size: 2rem !important; }
           .tab-btn { font-size: 1rem !important; padding: 10px 18px !important; }
         }
@@ -1420,12 +1627,13 @@ export default function KaushalyaKarnatakaAwards2026() {
       </section>
 
       {/* =========================================
-           ABOUT SECTION 1: CORPORATE (WHITE BACKGROUND)
+           SECTION 1: CORPORATE TAB BODY
            ========================================= */}
       {activeTab === 'corporate' && (
         <section className="about-section-wrapper">
           <div className="about-container about-corporate-center">
             
+            {/* 1. ABOUT THE AWARDS */}
             <h2 className="about-heading-blue">ABOUT THE AWARDS</h2>
             <p className="intro-text">
               {corporate.about.description.split('\n\n')[0]}
@@ -1469,7 +1677,7 @@ export default function KaushalyaKarnatakaAwards2026() {
               </div>
             </div>
 
-            {/* SIMPLIFIED POLICY CARD (Image contains text already) */}
+            {/* SIMPLIFIED POLICY CARD */}
             <div className="policy-card">
               <img 
                 src={corporate.about.policyAlignment.policyImage} 
@@ -1478,153 +1686,40 @@ export default function KaushalyaKarnatakaAwards2026() {
               />
             </div>
 
-            {/* EVALUATION FRAMEWORK SECTION */}
-            <div style={{ textAlign: 'center', marginTop: '60px' }}>
-              <h2 className="about-heading-blue">Evaluation Framework</h2>
-              <p className="intro-text" style={{ marginBottom: '20px' }}>
-                The evaluation framework is designed to assess real impact, not just activity.
+            {/* 2. WHY THESE AWARDS MATTER */}
+            <div className="kka-why-matter-section">
+              <h2 className="about-heading-blue">{corporate.whyMatter.title}</h2>
+              <p className="kka-why-matter-subhead">{corporate.whyMatter.subtitle}</p>
+              <p className="kka-why-matter-intro">{corporate.whyMatter.intro}</p>
+
+              <div className="kka-why-matter-flow">
+                {corporate.whyMatter.steps.map((step, idx) => (
+                  <React.Fragment key={idx}>
+                    <div className="kka-why-matter-item">
+                      <div className="kka-why-matter-circle-wrap">
+                        <img 
+                          src={step.image} 
+                          alt={`Step ${step.num}`} 
+                          className="kka-why-matter-circle-img" 
+                        />
+                      </div>
+                      <p className="kka-why-matter-text">{step.text}</p>
+                    </div>
+                    {idx < corporate.whyMatter.steps.length - 1 && (
+                      <div className="kka-why-matter-arrow">
+                        <FaArrowRight />
+                      </div>
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
+
+              <p className="kka-why-matter-summary">
+                {corporate.whyMatter.summary}
               </p>
             </div>
 
-            <div className="bss-category-section">
-              <div className="cards-container">
-                <div className="card card-blue">
-                  <div className="icon-wrapper">
-                    <LuLightbulb strokeWidth={1.8} style={{ width: '34px', height: '34px' }} />
-                  </div>
-                  <h3 className="card-title">Skilling &amp; Workforce Development</h3>
-                  <div className="divider"></div>
-                  <ul className="item-list">
-                    <li>Training Programs</li>
-                    <li>Upskilling Initiatives</li>
-                    <li>Certification Outcomes</li>
-                  </ul>
-                </div>
-
-                <div className="card card-red">
-                  <div className="icon-wrapper">
-                    <LuBrainCircuit strokeWidth={1.8} style={{ width: '34px', height: '34px' }} />
-                  </div>
-                  <h3 className="card-title">Employability &amp; Workforce Integration</h3>
-                  <div className="divider"></div>
-                  <ul className="item-list">
-                    <li>Apprenticeships (NAPS/ NATS)</li>
-                    <li>Internships &amp; Fellowships</li>
-                    <li>Employment Generation</li>
-                  </ul>
-                </div>
-
-                <div className="card card-yellow">
-                  <div className="icon-wrapper">
-                    <LuTrendingUp strokeWidth={1.8} style={{ width: '34px', height: '34px' }} />
-                  </div>
-                  <h3 className="card-title">Industry Collaboration</h3>
-                  <div className="divider"></div>
-                  <ul className="item-list">
-                    <li>Partnerships With Institutions</li>
-                    <li>Engagement With Government Initiatives</li>
-                    <li>Participation In Skill Ecosystem (ILC, Etc.)</li>
-                  </ul>
-                </div>
-
-                <div className="card card-green">
-                  <div className="icon-wrapper">
-                    <LuSprout strokeWidth={1.8} style={{ width: '34px', height: '34px' }} />
-                  </div>
-                  <h3 className="card-title">Inclusion &amp; Sustainability</h3>
-                  <div className="divider"></div>
-                  <ul className="item-list">
-                    <li>Women Participation</li>
-                    <li>Rural &amp; Underserved Groups</li>
-                    <li>Inclusive Hiring</li>
-                  </ul>
-                </div>
-
-                <div className="card card-blue">
-                  <div className="icon-wrapper">
-                    <LuSettings strokeWidth={1.8} style={{ width: '34px', height: '34px' }} />
-                  </div>
-                  <h3 className="card-title">Innovation &amp; Future Skills</h3>
-                  <div className="divider"></div>
-                  <ul className="item-list">
-                    <li>Digital Skilling</li>
-                    <li>AI/ML, EV, Green Skills</li>
-                    <li>Technology-Driven Learning</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* FOUR STEPS TIMELINE SECTION */}
-            <div style={{ textAlign: 'center', marginTop: '70px' }}>
-              <h2 className="about-heading-blue">Four steps from nomination to recognition</h2>
-            </div>
-
-            <div className="bss-timeline-embed-wrapper">
-              <div className="section-container">
-                <div className="process-timeline">
-                  <div className="step-item">
-                    <div className="step-circle">01</div>
-                    <h3 className="step-title">Nomination</h3>
-                    <p className="step-description">Organisations submit applications through the online portal</p>
-                  </div>
-                  <div className="step-item">
-                    <div className="step-circle">02</div>
-                    <h3 className="step-title">Evaluation</h3>
-                    <p className="step-description">Data-driven scoring based on defined parameters</p>
-                  </div>
-                  <div className="step-item">
-                    <div className="step-circle">03</div>
-                    <h3 className="step-title">Recognition</h3>
-                    <p className="step-description">Winners announced at Bengaluru Skill Summit 2026</p>
-                  </div>
-                  <div className="step-item">
-                    <div className="step-circle">04</div>
-                    <h3 className="step-title">Jury Review</h3>
-                    <p className="step-description">Independent jury panel validates shortlisted entries</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="section-container">
-                <div className="timeline-card">
-                  <div className="header-section">
-                    <LuCalendarCheck2 strokeWidth={2} style={{ width: '36px', height: '36px', color: '#0f172a' }} />
-                    <div className="header-text">
-                      <span className="label">Application Timeline</span>
-                      <span className="cycle">2026 CYCLE</span>
-                    </div>
-                  </div>
-                  <div className="timeline-steps">
-                    <div className="timeline-item">
-                      <div className="timeline-badge"></div>
-                      <span className="item-label">Launch</span>
-                      <span className="item-date">JUN 2026</span>
-                    </div>
-                    <div className="timeline-item">
-                      <div className="timeline-badge"></div>
-                      <span className="item-label">Deadline</span>
-                      <span className="item-date">AUG 2026</span>
-                    </div>
-                    <div className="timeline-item">
-                      <div className="timeline-badge"></div>
-                      <span className="item-label">Jury Review</span>
-                      <span className="item-date">SEP–OCT</span>
-                    </div>
-                    <div className="timeline-item">
-                      <div className="timeline-badge"></div>
-                      <span className="item-label">Awards Night</span>
-                      <span className="item-date">3–5 NOV 2026</span>
-                    </div>
-                  </div>
-                  <button className="btn-calender" onClick={handleDownloadCalendar}>
-                    Add To Calender
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* WHY PARTICIPATE & CATEGORIES */}
+            {/* 3. WHY PARTICIPATE (DEEP BLUE SECTION) */}
             <div className="kka-participate-wrap">
               <div className="kka-participate-inner">
                 <div>
@@ -1653,7 +1748,7 @@ export default function KaushalyaKarnatakaAwards2026() {
               </div>
             </div>
 
-            {/* Award Categories */}
+            {/* 4. AWARD CATEGORIES */}
             <section id="award-categories" className="kka-categories-wrap">
               <div className="kka-categories-inner">
                 <div className="kka-categories-top-row">
@@ -1661,16 +1756,11 @@ export default function KaushalyaKarnatakaAwards2026() {
                     <img src="/bengaluruskillsummit/wp-content/uploads/2025/09/Gov-Karnataka-logo.svg" alt="Gov of Karnataka" />
                     <img src="/bengaluruskillsummit/wp-content/uploads/2026/04/bss-26-logo.svg" alt="Bengaluru Skill Summit" />
                   </div>
-                  <img 
-                    src={corporate.categories.dignitariesImage} 
-                    alt="Government Leadership" 
-                    className="kka-dignitaries-img"
-                  />
                 </div>
 
-                <h2 className="main-title" style={{ color: '#ffffff', fontSize: '2.4rem' }}>{corporate.categories.title}</h2>
-                <p style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.85)', margin: '0 0 10px 0' }}>{corporate.categories.subtitle}</p>
-                <h3 style={{ fontSize: '24px', fontWeight: 800, color: '#ffc933', margin: '0 0 35px 0' }}>
+                <h2 className="main-title" style={{ color: '#ffffff', fontSize: '2.8rem' }}>{corporate.categories.title}</h2>
+                <p style={{ fontSize: '17px', color: 'rgba(255, 255, 255, 0.9)', margin: '0 0 10px 0' }}>{corporate.categories.subtitle}</p>
+                <h3 style={{ fontSize: '26px', fontWeight: 800, color: '#ffc933', margin: '0 0 35px 0' }}>
                   {corporate.categories.sectionTitle}
                 </h3>
 
@@ -1695,7 +1785,7 @@ export default function KaushalyaKarnatakaAwards2026() {
                   ))}
                 </div>
 
-                <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                <div style={{ textAlign: 'center', marginTop: '30px' }}>
                   <Link to="/kaushalya-awards-registration" className="primary-btn">
                     Apply Now
                   </Link>
@@ -1703,28 +1793,152 @@ export default function KaushalyaKarnatakaAwards2026() {
               </div>
             </section>
 
-            {/* WHAT OUR 2025 WINNERS SAY SLIDER */}
-            <div style={{ textAlign: 'center', marginTop: '60px' }}>
-              <h2 className="about-heading-blue">{testimonials.title}</h2>
-            </div>
-            {renderTestimonialsSlider()}
+            {/* 5. EVALUATION FRAMEWORK */}
+            <div className="kka-eval-section">
+              <h2 className="about-heading-blue">{corporate.evaluation.title}</h2>
+              <p className="intro-text" style={{ marginBottom: '20px' }}>
+                {corporate.evaluation.subtitle}
+              </p>
 
-            {/* 2025 Winners Showcase Banner */}
-            <section id="2025-winners" className="kka-showcase-banner">
-              <h2 className="kka-showcase-title">{showcase2025.title}</h2>
+              <div className="kka-eval-grid">
+                {corporate.evaluation.pillars.map((pillar, idx) => (
+                  <div 
+                    key={idx} 
+                    className="kka-eval-card"
+                    style={{ borderColor: pillar.borderColor, background: `linear-gradient(180deg, ${pillar.bg} 0%, #ffffff 60%)` }}
+                  >
+                    <img 
+                      src={pillar.icon} 
+                      alt={pillar.title} 
+                      className="kka-eval-icon-img"
+                    />
+                    <h3 className="kka-eval-title">{pillar.title}</h3>
+                    <div className="kka-eval-divider" style={{ backgroundColor: pillar.color }}></div>
+                    <ul className="kka-eval-list">
+                      {pillar.points.map((pt, pIdx) => (
+                        <li key={pIdx} style={{ color: '#334155' }}>
+                          <span style={{ color: pillar.color, fontWeight: 'bold', marginRight: '6px' }}>•</span>
+                          {pt}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 6. FOUR STEPS FROM NOMINATION TO RECOGNITION */}
+            <div className="kka-timeline-wrapper">
+              <div style={{ textAlign: 'center' }}>
+                <h2 className="about-heading-blue">{corporate.process.title}</h2>
+              </div>
+
+              <div className="kka-steps-row">
+                {corporate.process.steps.map((step, idx) => (
+                  <div key={idx} className="kka-step-col">
+                    <div className="kka-step-badge">{step.num}</div>
+                    <h3 className="kka-step-heading">{step.title}</h3>
+                    <p className="kka-step-desc">{step.desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Application Timeline 2026 Cycle Card */}
+              <div className="kka-timeline-card-wrap">
+                <div className="kka-timeline-bar">
+                  <div className="kka-timeline-bar-left">
+                    <span style={{ fontSize: '11px', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                      Application Timeline
+                    </span>
+                    <span className="kka-timeline-bar-title">2026 CYCLE</span>
+                  </div>
+                  <div className="kka-timeline-bar-steps">
+                    {corporate.process.timeline.milestones.map((m, idx) => (
+                      <div key={idx} className="kka-timeline-bar-item">
+                        <div className="kka-timeline-bar-dot"></div>
+                        <span className="kka-timeline-bar-item-lbl">{m.label}</span>
+                        <span className="kka-timeline-bar-item-dt">{m.date}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <Link to="/kaushalya-awards-registration" className="primary-btn" style={{ padding: '10px 24px', fontSize: '0.85rem' }}>
+                    Apply Now
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* 7. 2025 WINNERS SHOWCASE BANNER */}
+            <section id="2025-winners" className="kka-showcase-banner-cream">
+              <h2 className="kka-showcase-cream-title">{showcase2025.title}</h2>
               <Link to={showcase2025.buttonLink} className="primary-btn">
                 {showcase2025.buttonText}
               </Link>
             </section>
 
-            {/* Organised by & Partners */}
+            {/* 8. CTA SECTION ("Be part of Karnataka's most prestigious...") */}
+            <div className="kka-cta-split-section">
+              <div className="kka-cta-photo-col">
+                <img 
+                  src={corporate.cta.image} 
+                  alt="Bengaluru Skill Summit Awards Ceremony" 
+                />
+              </div>
+              <div className="kka-cta-text-col">
+                <h2 className="kka-cta-main-head">{corporate.cta.title}</h2>
+                <h3 className="kka-cta-subhead">Application Timeline</h3>
+
+                <div className="kka-cta-timeline-box">
+                  <div className="kka-cta-timeline-unit">
+                    <div className="kka-cta-timeline-icon">
+                      <LuGift />
+                    </div>
+                    <p className="kka-cta-timeline-label">
+                      Launch: <strong>{corporate.cta.launch}</strong>
+                    </p>
+                  </div>
+                  <div className="kka-cta-timeline-unit">
+                    <div className="kka-cta-timeline-icon red">
+                      <LuClock />
+                    </div>
+                    <p className="kka-cta-timeline-label">
+                      Deadline: <strong>{corporate.cta.deadline}</strong>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="kka-cta-btn-row">
+                  <Link to="/kaushalya-awards-registration" className="primary-btn">
+                    Apply Now
+                  </Link>
+                  <a 
+                    href="#download-guidelines" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleDownloadCalendar();
+                    }}
+                    className="kka-cta-download-btn"
+                  >
+                    Download Guidelines
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* 9. WHAT OUR 2025 WINNERS SAY SLIDER */}
+            <div style={{ textAlign: 'center', marginTop: '70px' }}>
+              <h2 className="about-heading-blue">{testimonials.title}</h2>
+            </div>
+            {renderTestimonialsSlider()}
+
+            {/* 10. Organised by & Partners */}
             <div className="kka-partners-wrap">
               <div className="kka-partners-col">
                 <h3 className="kka-partners-col-title">Organised By</h3>
                 <div className="kka-partners-img-row">
                   <img 
-                    src="/bengaluruskillsummit/wp-content/uploads/2025/09/govt-logos-light.svg" 
-                    alt="Government of Karnataka, KSDC, KSDA, KDEM" 
+                    src="/bengaluruskillsummit/wp-content/uploads/2026/awards/organised_by_logos.png" 
+                    alt="Government of Karnataka, KSDC, KSDA" 
                     className="kka-partners-govt-img"
                   />
                 </div>
@@ -1733,7 +1947,7 @@ export default function KaushalyaKarnatakaAwards2026() {
                 <h3 className="kka-partners-col-title">In Partnership with</h3>
                 <div className="kka-partners-img-row">
                   <img 
-                    src={corporate.banner.badge} 
+                    src="/bengaluruskillsummit/wp-content/uploads/2026/awards/partnership_logos.png" 
                     alt="Workplace Awards Initiative by Zyoin Group" 
                     className="kka-partners-partner-img"
                   />
@@ -1741,7 +1955,7 @@ export default function KaushalyaKarnatakaAwards2026() {
               </div>
             </div>
 
-            {/* Contact Info Box */}
+            {/* 11. Contact Info Box */}
             <div className="kka-contact-box">
               <h3 className="kka-contact-box-title">{contactInfo.title}</h3>
               <p className="kka-contact-box-desc">
@@ -1754,7 +1968,7 @@ export default function KaushalyaKarnatakaAwards2026() {
       )}
 
       {/* =========================================
-           ABOUT SECTION 2: INSTITUTIONAL (WHITE BACKGROUND)
+           SECTION 2: INSTITUTIONAL TAB BODY
            ========================================= */}
       {activeTab === 'institutional' && (
         <section className="about-section-wrapper">
@@ -1813,8 +2027,8 @@ export default function KaushalyaKarnatakaAwards2026() {
             {/* Institutional Categories */}
             <section id="award-categories" className="kka-categories-wrap">
               <div className="kka-categories-inner">
-                <h2 className="main-title" style={{ color: '#ffffff', fontSize: '2.4rem' }}>{institutional.categories.title}</h2>
-                <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#ffc933', margin: '0 0 35px 0' }}>
+                <h2 className="main-title" style={{ color: '#ffffff', fontSize: '2.8rem' }}>{institutional.categories.title}</h2>
+                <h3 style={{ fontSize: '24px', fontWeight: 800, color: '#ffc933', margin: '0 0 35px 0' }}>
                   {institutional.categories.subtitle}
                 </h3>
 
@@ -1836,7 +2050,7 @@ export default function KaushalyaKarnatakaAwards2026() {
                   ))}
                 </div>
 
-                <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                <div style={{ textAlign: 'center', marginTop: '30px' }}>
                   <Link to="/kaushalya-awards-registration" className="primary-btn">
                     Apply Now
                   </Link>
@@ -1845,14 +2059,14 @@ export default function KaushalyaKarnatakaAwards2026() {
             </section>
 
             {/* WHAT OUR 2025 WINNERS SAY SLIDER */}
-            <div style={{ textAlign: 'center', marginTop: '60px' }}>
+            <div style={{ textAlign: 'center', marginTop: '70px' }}>
               <h2 className="about-heading-blue">{testimonials.title}</h2>
             </div>
             {renderTestimonialsSlider()}
 
             {/* 2025 Winners Showcase Banner */}
-            <section id="2025-winners" className="kka-showcase-banner">
-              <h2 className="kka-showcase-title">{showcase2025.title}</h2>
+            <section id="2025-winners" className="kka-showcase-banner-cream">
+              <h2 className="kka-showcase-cream-title">{showcase2025.title}</h2>
               <Link to={showcase2025.buttonLink} className="primary-btn">
                 {showcase2025.buttonText}
               </Link>
@@ -1864,8 +2078,8 @@ export default function KaushalyaKarnatakaAwards2026() {
                 <h3 className="kka-partners-col-title">Organised By</h3>
                 <div className="kka-partners-img-row">
                   <img 
-                    src="/bengaluruskillsummit/wp-content/uploads/2025/09/govt-logos-light.svg" 
-                    alt="Government of Karnataka, KSDC, KSDA, KDEM" 
+                    src="/bengaluruskillsummit/wp-content/uploads/2026/awards/organised_by_logos.png" 
+                    alt="Government of Karnataka, KSDC, KSDA" 
                     className="kka-partners-govt-img"
                   />
                 </div>
@@ -1874,7 +2088,7 @@ export default function KaushalyaKarnatakaAwards2026() {
                 <h3 className="kka-partners-col-title">In Partnership with</h3>
                 <div className="kka-partners-img-row">
                   <img 
-                    src={corporate.banner.badge} 
+                    src="/bengaluruskillsummit/wp-content/uploads/2026/awards/partnership_logos.png" 
                     alt="Workplace Awards Initiative by Zyoin Group" 
                     className="kka-partners-partner-img"
                   />
