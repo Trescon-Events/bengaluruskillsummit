@@ -210,7 +210,12 @@ export default function KaushalyaKarnatakaAwards2026() {
   return (
     <div className="kka-2026-page">
       <style>{`
-        @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Jost:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Jost:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
+
+        @font-face {
+          font-family: 'Joost';
+          src: local('Jost');
+        }
 
         .kka-2026-page {
           font-family: 'Comfortaa', sans-serif;
@@ -255,8 +260,8 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .main-title {
-          font-family: 'Oswald', sans-serif !important;
-          font-size: 3.5rem !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
+          font-size: 56px !important;
           color: #f5b919 !important; 
           margin: 0 !important;
           font-weight: 700 !important;
@@ -264,26 +269,31 @@ export default function KaushalyaKarnatakaAwards2026() {
           line-height: 1.15 !important;
           text-transform: none !important;
           text-shadow: 0 2px 14px rgba(0,0,0,0.6) !important;
+          word-wrap: break-word !important;
         }
 
         .subtitle {
-          font-family: 'Oswald', sans-serif !important;
-          font-size: 1.85rem !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
+          font-size: 40px !important;
           color: #FFFFFF !important;
           margin: 8px 0 14px !important;
           font-weight: 400 !important;
           letter-spacing: 0.5px !important;
           text-transform: none !important;
+          line-height: 1.25 !important;
+          word-wrap: break-word !important;
         }
 
         .hero-date-venue {
-          font-family: 'Oswald', sans-serif !important;
-          font-size: 1.25rem !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
+          font-size: 30px !important;
           color: #FFFFFF !important;
-          font-weight: 500 !important;
+          font-weight: 700 !important;
           margin: 0 0 10px 0 !important;
           letter-spacing: 0.5px !important;
           text-transform: none !important;
+          line-height: 1.3 !important;
+          word-wrap: break-word !important;
         }
 
         /* TABS WITH CONTINUOUS HORIZONTAL GOLD LINE */
@@ -311,7 +321,7 @@ export default function KaushalyaKarnatakaAwards2026() {
           gap: 10px;
           padding: 12px 28px;
           border-radius: 6px 6px 0 0;
-          font-family: 'Oswald', sans-serif !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
           font-size: 1.05rem;
           font-weight: 700;
           letter-spacing: 0.5px;
@@ -373,24 +383,27 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .section-title {
-          font-family: 'Oswald', sans-serif !important;
-          font-size: 3.2rem;
-          line-height: 1.15;
+          font-family: 'Jost', 'Joost', sans-serif !important;
+          font-size: 55px !important;
+          line-height: 1.15 !important;
           margin-top: 0;
           margin-bottom: 18px;
-          text-transform: uppercase;
-          font-weight: 700;
+          text-transform: uppercase !important;
+          font-weight: 700 !important;
           color: #ffffff;
           letter-spacing: 0.5px;
+          word-wrap: break-word !important;
         }
 
         .description {
-          font-family: 'Comfortaa', sans-serif;
-          font-size: 1.1rem;
-          line-height: 1.7;
+          font-family: 'Comfortaa', sans-serif !important;
+          font-size: 23px !important;
+          font-weight: 500 !important;
+          line-height: 30px !important;
           margin-bottom: 26px;
-          color: #e2e8f0;
-          max-width: 620px;
+          color: #ffffff !important;
+          max-width: 840px !important;
+          word-wrap: break-word !important;
         }
 
         .action-buttons {
@@ -406,9 +419,10 @@ export default function KaushalyaKarnatakaAwards2026() {
           border: 1.5px solid rgba(255, 255, 255, 0.85);
           padding: 8px 20px;
           border-radius: 20px;
-          font-family: 'Oswald', 'Jost', sans-serif;
-          font-size: 0.85rem;
-          font-weight: 500;
+          font-family: 'Comfortaa', sans-serif !important;
+          font-size: 14px !important;
+          font-weight: 400 !important;
+          line-height: 14px !important;
           letter-spacing: 0.5px;
           cursor: pointer;
           transition: all 0.3s ease;
@@ -416,6 +430,7 @@ export default function KaushalyaKarnatakaAwards2026() {
           text-decoration: none;
           display: inline-flex;
           align-items: center;
+          word-wrap: break-word !important;
         }
         .outline-btn:hover { 
           background: rgba(255, 255, 255, 0.15); 
@@ -429,9 +444,10 @@ export default function KaushalyaKarnatakaAwards2026() {
           border: none;
           padding: 11px 26px;
           border-radius: 22px;
-          font-family: 'Oswald', 'Jost', sans-serif;
-          font-size: 0.88rem;
-          font-weight: 700;
+          font-family: 'Inter', sans-serif !important;
+          font-size: 16px !important;
+          font-weight: 700 !important;
+          line-height: 16px !important;
           letter-spacing: 0.5px;
           cursor: pointer;
           box-shadow: 0 4px 15px rgba(255, 82, 82, 0.35);
@@ -441,6 +457,7 @@ export default function KaushalyaKarnatakaAwards2026() {
           align-items: center;
           justify-content: center;
           text-transform: uppercase;
+          word-wrap: break-word !important;
         }
         .primary-btn:hover { 
           transform: translateY(-2px); 
@@ -482,33 +499,38 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .about-heading-blue {
-          font-family: 'Oswald', sans-serif !important;
-          font-size: 3.2rem !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
+          font-size: 48px !important;
           color: #0d53c7 !important;
           text-transform: uppercase !important;
           font-weight: 700 !important;
           margin-top: 0 !important;
           margin-bottom: 22px !important;
           letter-spacing: 0.5px !important;
-          line-height: 1.15 !important;
+          line-height: 50.88px !important;
           text-align: center !important;
+          word-wrap: break-word !important;
         }
 
         .intro-text {
           font-family: 'Comfortaa', sans-serif !important;
-          font-size: 1.1rem !important;
-          line-height: 1.8 !important;
-          max-width: 1050px !important;
+          font-size: 16px !important;
+          line-height: 30px !important;
+          max-width: 1088px !important;
           margin: 0 auto 24px !important;
-          color: #334155 !important;
+          color: #0A0A0A !important;
+          font-weight: 400 !important;
           text-align: center !important;
+          word-wrap: break-word !important;
         }
 
         .intro-text.highlight {
           margin-bottom: 45px !important;
-          font-weight: 600 !important;
-          color: #0f172a !important;
-          font-size: 1.18rem !important;
+          font-weight: 400 !important;
+          color: #0A0A0A !important;
+          font-size: 16px !important;
+          line-height: 30px !important;
+          word-wrap: break-word !important;
         }
 
         .features-grid {
@@ -566,18 +588,25 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .kka-why-matter-subhead {
-          font-size: 1.15rem;
-          color: #334155;
-          line-height: 1.6;
-          max-width: 950px;
-          margin: 0 auto 12px auto;
+          font-family: 'Comfortaa', sans-serif !important;
+          font-size: 16px !important;
+          color: #0A0A0A !important;
+          line-height: 30px !important;
+          max-width: 956px !important;
+          margin: 0 auto 12px auto !important;
+          font-weight: 400 !important;
+          word-wrap: break-word !important;
         }
 
         .kka-why-matter-intro {
-          font-size: 1.05rem;
-          color: #0f172a;
-          font-weight: 600;
-          margin: 0 auto 45px auto;
+          font-family: 'Comfortaa', sans-serif !important;
+          font-size: 16px !important;
+          color: #0A0A0A !important;
+          font-weight: 400 !important;
+          line-height: 30px !important;
+          margin: 0 auto 45px auto !important;
+          max-width: 651px !important;
+          word-wrap: break-word !important;
         }
 
         .kka-why-matter-flow {
@@ -594,7 +623,7 @@ export default function KaushalyaKarnatakaAwards2026() {
           flex-direction: column;
           align-items: center;
           flex: 1;
-          max-width: 215px;
+          max-width: 220px;
           text-align: center;
         }
 
@@ -630,21 +659,25 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .kka-why-matter-text {
-          font-size: 14px;
-          line-height: 1.5;
-          color: #334155;
+          font-family: 'Comfortaa', sans-serif !important;
+          font-size: 16px !important;
+          line-height: 20px !important;
+          color: #0A0A0A !important;
           margin: 0;
-          font-weight: 500;
+          font-weight: 400 !important;
+          word-wrap: break-word !important;
         }
 
         .kka-why-matter-summary {
-          font-size: 1.25rem;
-          line-height: 1.65;
-          color: #0f172a;
-          max-width: 1100px;
-          margin: 50px auto 0 auto;
-          font-weight: 600;
-          text-align: center;
+          font-family: 'Comfortaa', sans-serif !important;
+          font-size: 25px !important;
+          line-height: 30px !important;
+          color: #0A0A0A !important;
+          max-width: 1128px !important;
+          margin: 50px auto 0 auto !important;
+          font-weight: 700 !important;
+          text-align: center !important;
+          word-wrap: break-word !important;
         }
 
         /* =========================================
@@ -686,14 +719,15 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .kka-participate-title {
-          font-family: 'Oswald', sans-serif !important;
-          font-size: 3.2rem !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
+          font-size: 48px !important;
           color: #ffffff !important;
           margin: 0 0 35px 0 !important;
           font-weight: 700 !important;
           text-transform: uppercase !important;
           letter-spacing: 0.5px !important;
-          line-height: 1.1 !important;
+          line-height: 50.88px !important;
+          word-wrap: break-word !important;
         }
 
         .kka-participate-list {
@@ -726,11 +760,12 @@ export default function KaushalyaKarnatakaAwards2026() {
 
         .kka-participate-text {
           font-family: 'Comfortaa', sans-serif !important;
-          font-size: 1.05rem !important;
-          line-height: 1.45 !important;
+          font-size: 16px !important;
+          line-height: 20px !important;
           color: #ffffff !important;
           margin: 0 !important;
-          font-weight: 500 !important;
+          font-weight: 400 !important;
+          word-wrap: break-word !important;
         }
 
         .kka-participate-btn {
@@ -739,9 +774,10 @@ export default function KaushalyaKarnatakaAwards2026() {
           border: none !important;
           padding: 12px 34px !important;
           border-radius: 22px !important;
-          font-family: 'Oswald', 'Jost', sans-serif !important;
-          font-size: 0.95rem !important;
+          font-family: 'Inter', sans-serif !important;
+          font-size: 16px !important;
           font-weight: 700 !important;
+          line-height: 16px !important;
           letter-spacing: 0.5px !important;
           cursor: pointer !important;
           box-shadow: 0 4px 15px rgba(255, 82, 82, 0.4) !important;
@@ -751,6 +787,7 @@ export default function KaushalyaKarnatakaAwards2026() {
           align-items: center !important;
           justify-content: center !important;
           text-transform: uppercase !important;
+          word-wrap: break-word !important;
         }
         .kka-participate-btn:hover {
           transform: translateY(-2px) !important;
@@ -799,31 +836,35 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .kka-cat-main-title {
-          font-family: 'Oswald', sans-serif !important;
-          font-size: 3.3rem !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
+          font-size: 48px !important;
           color: #ffffff !important;
           margin: 0 0 10px 0 !important;
           font-weight: 700 !important;
           text-transform: uppercase !important;
-          letter-spacing: 0.5px !important;
-          line-height: 1.15 !important;
+          line-height: 50.88px !important;
+          word-wrap: break-word !important;
         }
 
         .kka-cat-subtitle {
           font-family: 'Comfortaa', sans-serif !important;
-          font-size: 1.15rem !important;
+          font-size: 16px !important;
           color: #ffffff !important;
           margin: 0 0 20px 0 !important;
-          font-weight: 500 !important;
+          font-weight: 400 !important;
+          line-height: 30px !important;
+          word-wrap: break-word !important;
         }
 
         .kka-cat-section-title {
-          font-family: 'Comfortaa', 'Jost', sans-serif !important;
-          font-size: 1.85rem !important;
+          font-family: 'Inter', sans-serif !important;
+          font-size: 30px !important;
           font-weight: 700 !important;
           color: #ffffff !important;
           margin: 0 0 35px 0 !important;
-          text-transform: none !important;
+          text-transform: capitalize !important;
+          line-height: 31.80px !important;
+          word-wrap: break-word !important;
         }
 
         .kka-categories-grid {
@@ -1053,36 +1094,40 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .kka-step-badge {
-          width: 72px;
-          height: 72px;
-          border-radius: 50%;
-          background: #edf2f7;
-          color: #94a3b8;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-family: 'Oswald', 'Outfit', sans-serif !important;
-          font-size: 1.8rem !important;
-          font-weight: 800 !important;
-          margin-bottom: 16px;
+          width: 69px !important;
+          height: 69px !important;
+          border-radius: 9999px !important;
+          background: #EEF4FC !important;
+          color: rgba(192, 186, 186, 0.7) !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
+          font-size: 30px !important;
+          font-weight: 700 !important;
+          margin-bottom: 16px !important;
         }
 
         .kka-step-heading {
-          font-family: 'Oswald', sans-serif !important;
-          font-size: 1.3rem !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
+          font-size: 20px !important;
           font-weight: 700 !important;
-          color: #0f172a !important;
+          color: #000000 !important;
           letter-spacing: 0.5px !important;
           text-transform: uppercase !important;
+          line-height: 21.20px !important;
           margin: 0 0 8px 0 !important;
+          word-wrap: break-word !important;
         }
 
         .kka-step-desc {
           font-family: 'Comfortaa', sans-serif !important;
           font-size: 14px !important;
-          color: #475569 !important;
+          color: #000000 !important;
           line-height: 1.5 !important;
           margin: 0 !important;
+          font-weight: 400 !important;
+          word-wrap: break-word !important;
         }
 
         /* Timeline Box */
@@ -1109,7 +1154,7 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .kka-timeline-bar-title {
-          font-family: 'Oswald', sans-serif !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
           font-size: 1.15rem !important;
           font-weight: 700 !important;
           color: #0f172a !important;
@@ -1190,14 +1235,15 @@ export default function KaushalyaKarnatakaAwards2026() {
 
         .kka-showcase-cream-title {
           font-family: 'Comfortaa', sans-serif !important;
-          font-size: 2.15rem !important;
+          font-size: 30px !important;
           font-weight: 700 !important;
           margin: 0 0 28px 0 !important;
-          color: #1e293b !important;
-          line-height: 1.35 !important;
-          max-width: 950px !important;
+          color: #0A0A0A !important;
+          line-height: 40px !important;
+          max-width: 756px !important;
           margin-left: auto !important;
           margin-right: auto !important;
+          word-wrap: break-word !important;
         }
 
         /* =========================================
@@ -1224,16 +1270,18 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .kka-cta-main-head {
-          font-family: 'Oswald', sans-serif !important;
-          font-size: 2.9rem !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
+          font-size: 48px !important;
           color: #0d53c7 !important;
           font-weight: 700 !important;
           line-height: 1.15 !important;
           margin: 0 0 24px 0 !important;
+          max-width: 551px !important;
+          word-wrap: break-word !important;
         }
 
         .kka-cta-subhead {
-          font-family: 'Oswald', sans-serif !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
           font-size: 1.5rem !important;
           color: #0f172a !important;
           font-weight: 700 !important;
@@ -1277,15 +1325,18 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .kka-cta-timeline-label {
-          font-family: 'Comfortaa', sans-serif !important;
-          font-size: 15px !important;
-          color: #475569 !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
+          font-size: 23px !important;
+          color: #0A0A0A !important;
           margin: 0 !important;
+          line-height: 25px !important;
+          font-weight: 400 !important;
+          word-wrap: break-word !important;
         }
 
         .kka-cta-timeline-label strong {
-          color: #0f172a;
-          font-weight: 700;
+          color: #0A0A0A !important;
+          font-weight: 700 !important;
         }
 
         .kka-cta-btn-row {
@@ -1300,9 +1351,10 @@ export default function KaushalyaKarnatakaAwards2026() {
           border: none;
           padding: 12px 30px;
           border-radius: 25px;
-          font-family: 'Oswald', sans-serif !important;
-          font-size: 0.95rem !important;
+          font-family: 'Inter', sans-serif !important;
+          font-size: 16px !important;
           font-weight: 700 !important;
+          line-height: 16px !important;
           cursor: pointer;
           transition: all 0.25s ease;
           text-decoration: none;
@@ -1311,6 +1363,7 @@ export default function KaushalyaKarnatakaAwards2026() {
           justify-content: center;
           text-transform: uppercase;
           letter-spacing: 0.5px;
+          word-wrap: break-word !important;
         }
         .kka-cta-download-btn:hover {
           background: #e04842;
@@ -1344,10 +1397,13 @@ export default function KaushalyaKarnatakaAwards2026() {
           box-shadow: 0 15px 40px rgba(0,0,0,0.08); 
         }
         .institutional-paragraph { 
-          font-size: 1.05rem; 
-          line-height: 1.8; 
-          color: #444444; 
-          margin-bottom: 20px; 
+          font-family: 'Comfortaa', sans-serif !important;
+          font-size: 16px !important; 
+          line-height: 30px !important; 
+          color: #0A0A0A !important; 
+          margin-bottom: 20px !important; 
+          font-weight: 400 !important;
+          word-wrap: break-word !important;
         }
 
         .kka-inst-logos-grid {
@@ -1415,6 +1471,7 @@ export default function KaushalyaKarnatakaAwards2026() {
           fill: #F5A623;
         }
         .testi-text {
+          font-family: 'Comfortaa', sans-serif !important;
           font-size: 15px;
           line-height: 1.65;
           color: #333333;
@@ -1517,26 +1574,29 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .kka-contact-box-title {
-          font-family: 'Oswald', sans-serif !important;
-          font-size: 1.65rem !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
+          font-size: 30px !important;
           font-weight: 700 !important;
           color: #0d53c7 !important;
           margin: 0 0 8px 0 !important;
-          letter-spacing: 0.5px !important;
+          line-height: 31.80px !important;
+          word-wrap: break-word !important;
         }
 
         .kka-contact-box-desc {
           font-family: 'Comfortaa', sans-serif !important;
-          font-size: 1.05rem !important;
+          font-size: 21px !important;
           color: #0d53c7 !important;
           margin: 0 !important;
-          font-weight: 500 !important;
+          font-weight: 700 !important;
+          line-height: 22.26px !important;
+          word-wrap: break-word !important;
         }
 
         .kka-contact-box-desc a {
-          color: #0d53c7;
-          font-weight: 600;
-          text-decoration: underline;
+          color: #0d53c7 !important;
+          font-weight: 700 !important;
+          text-decoration: underline !important;
         }
 
         /* Animations & Media Queries */
@@ -1585,19 +1645,23 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         @media (max-width: 768px) {
-          .about-heading-blue { font-size: 2.2rem !important; }
-          .main-title { font-size: 2.5rem !important; }
-          .subtitle { font-size: 1.3rem !important; }
-          .section-title { font-size: 2rem !important; }
-          .kka-cta-main-head { font-size: 2.1rem !important; }
+          .about-heading-blue { font-size: 32px !important; line-height: 36px !important; }
+          .main-title { font-size: 38px !important; }
+          .subtitle { font-size: 26px !important; }
+          .hero-date-venue { font-size: 20px !important; }
+          .section-title { font-size: 34px !important; }
+          .description { font-size: 18px !important; line-height: 26px !important; }
+          .kka-cta-main-head { font-size: 32px !important; }
+          .kka-cta-timeline-label { font-size: 18px !important; }
           .kka-cta-timeline-box { flex-direction: column; align-items: flex-start; gap: 15px; }
           .kka-participate-wrap { padding: 50px 20px !important; margin-top: 40px !important; margin-bottom: 40px !important; }
-          .kka-participate-title { font-size: 2.2rem !important; text-align: center; }
+          .kka-participate-title { font-size: 32px !important; line-height: 36px !important; text-align: center; }
           .kka-participate-list { grid-template-columns: 1fr !important; gap: 20px !important; }
-          .kka-cat-main-title { font-size: 2.3rem !important; }
-          .kka-cat-section-title { font-size: 1.5rem !important; }
-          .kka-showcase-cream-title { font-size: 1.6rem !important; }
-          .kka-contact-box-title { font-size: 1.35rem !important; }
+          .kka-cat-main-title { font-size: 32px !important; line-height: 36px !important; }
+          .kka-cat-section-title { font-size: 22px !important; }
+          .kka-showcase-cream-title { font-size: 22px !important; line-height: 30px !important; }
+          .kka-contact-box-title { font-size: 22px !important; }
+          .kka-contact-box-desc { font-size: 16px !important; }
           .kka-partners-wrap { gap: 30px !important; margin: 40px auto 30px auto !important; }
           .kka-partner-banner-img { max-height: 90px !important; }
         }
@@ -1606,12 +1670,14 @@ export default function KaushalyaKarnatakaAwards2026() {
           .features-grid { grid-template-columns: 1fr !important; }
           .kka-categories-grid { grid-template-columns: 1fr !important; }
           .kka-eval-grid { grid-template-columns: 1fr !important; }
-          .main-title { font-size: 2.1rem !important; }
+          .main-title { font-size: 28px !important; }
+          .subtitle { font-size: 20px !important; }
+          .hero-date-venue { font-size: 16px !important; }
           .tab-btn { font-size: 0.95rem !important; padding: 10px 16px !important; }
-          .about-heading-blue { font-size: 1.9rem !important; }
-          .section-title { font-size: 1.8rem !important; }
-          .kka-cta-main-head { font-size: 1.8rem !important; }
-          .kka-cat-main-title { font-size: 1.9rem !important; }
+          .about-heading-blue { font-size: 26px !important; line-height: 30px !important; }
+          .section-title { font-size: 26px !important; }
+          .kka-cta-main-head { font-size: 26px !important; }
+          .kka-cat-main-title { font-size: 26px !important; line-height: 30px !important; }
         }
       `}</style>
 
@@ -1752,7 +1818,9 @@ export default function KaushalyaKarnatakaAwards2026() {
             {/* 1. ABOUT THE AWARDS */}
             <h2 className="about-heading-blue">ABOUT THE AWARDS</h2>
             <p className="intro-text">
-              {corporate.about.description.split('\n\n')[0]}
+              The Kaushalya Karnataka Corporate Excellence Awards, presented at the{' '}
+              <strong>Bengaluru Skill Summit (5 November 2026 at The Lalit Ashok, Bengaluru),</strong>{' '}
+              under Department of Skill Development, Entrepreneurship and Livelihood, Government of Karnataka recognise outstanding contributions by Corporates, Large Enterprises, MSMEs and Startups in advancing the skilling ecosystem.
             </p>
             <p className="intro-text highlight">
               These awards are a flagship initiative of the Government of Karnataka to:
@@ -1916,7 +1984,7 @@ export default function KaushalyaKarnatakaAwards2026() {
             <div className="kka-eval-section">
               <h2 className="about-heading-blue">{corporate.evaluation.title}</h2>
               <p className="intro-text" style={{ marginBottom: '20px' }}>
-                {corporate.evaluation.subtitle}
+                The evaluation framework is designed to assess <strong>real impact, not just activity.</strong>
               </p>
 
               <div className="kka-eval-grid">
