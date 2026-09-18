@@ -357,7 +357,7 @@ export default function KaushalyaKarnatakaAwards2026() {
           align-items: center;
           width: 100%;
           max-width: 1250px;
-          padding: 0 5%;
+          padding: 0 !important;
           gap: 40px;
           animation: fadeIn 0.5s ease;
           position: relative;
@@ -365,8 +365,8 @@ export default function KaushalyaKarnatakaAwards2026() {
         }
 
         .text-content {
-          flex: 1.15;
-          max-width: 680px;
+          flex: 1.25;
+          max-width: 780px;
         }
 
         .kka-hero-badge-wrap {
@@ -694,7 +694,7 @@ export default function KaushalyaKarnatakaAwards2026() {
           color: #ffffff !important;
           padding: 80px 5% !important;
           margin-top: 70px !important;
-          margin-bottom: 70px !important;
+          margin-bottom: 0 !important;
           border-radius: 0 !important;
           box-shadow: none !important;
           box-sizing: border-box !important;
@@ -810,7 +810,7 @@ export default function KaushalyaKarnatakaAwards2026() {
           position: relative !important;
           border-radius: 0 !important;
           overflow: hidden !important;
-          margin-top: 60px !important;
+          margin-top: 0 !important;
           margin-bottom: 60px !important;
           box-shadow: none !important;
           box-sizing: border-box !important;
@@ -1278,6 +1278,7 @@ export default function KaushalyaKarnatakaAwards2026() {
           margin: 0 0 24px 0 !important;
           max-width: 551px !important;
           word-wrap: break-word !important;
+          text-transform: none !important;
         }
 
         .kka-cta-subhead {
@@ -1292,18 +1293,22 @@ export default function KaushalyaKarnatakaAwards2026() {
         .kka-cta-timeline-box {
           border: 1.5px solid #cbd5e1;
           border-radius: 12px;
-          padding: 18px 24px;
+          padding: 16px 22px;
           display: flex;
           align-items: center;
-          gap: 35px;
+          gap: 28px;
           margin-bottom: 28px;
           background: #ffffff;
+          width: fit-content;
+          max-width: 100%;
         }
 
         .kka-cta-timeline-unit {
           display: flex;
           align-items: center;
           gap: 12px;
+          white-space: nowrap !important;
+          flex-shrink: 0;
         }
 
         .kka-cta-timeline-icon {
@@ -1326,17 +1331,19 @@ export default function KaushalyaKarnatakaAwards2026() {
 
         .kka-cta-timeline-label {
           font-family: 'Jost', 'Joost', sans-serif !important;
-          font-size: 23px !important;
+          font-size: 21px !important;
           color: #0A0A0A !important;
           margin: 0 !important;
           line-height: 25px !important;
           font-weight: 400 !important;
-          word-wrap: break-word !important;
+          white-space: nowrap !important;
+          word-wrap: normal !important;
         }
 
         .kka-cta-timeline-label strong {
           color: #0A0A0A !important;
           font-weight: 700 !important;
+          white-space: nowrap !important;
         }
 
         .kka-cta-btn-row {
@@ -1550,7 +1557,8 @@ export default function KaushalyaKarnatakaAwards2026() {
           justify-content: center !important;
           align-items: flex-end !important;
           gap: 60px !important;
-          max-width: 1000px !important;
+          width: 100% !important;
+          max-width: 100% !important;
           margin: 60px auto 40px auto !important;
           flex-wrap: wrap !important;
         }
@@ -1567,10 +1575,12 @@ export default function KaushalyaKarnatakaAwards2026() {
           border-radius: 12px;
           padding: 24px 30px;
           text-align: center;
-          max-width: 950px;
+          width: 100% !important;
+          max-width: 100% !important;
           margin: 40px auto 60px auto;
           background: #ffffff;
           box-shadow: 0 4px 15px rgba(13, 83, 199, 0.06);
+          box-sizing: border-box !important;
         }
 
         .kka-contact-box-title {
@@ -1650,6 +1660,7 @@ export default function KaushalyaKarnatakaAwards2026() {
           .subtitle { font-size: 26px !important; }
           .hero-date-venue { font-size: 20px !important; }
           .section-title { font-size: 34px !important; }
+          .section-title span { white-space: normal !important; }
           .description { font-size: 18px !important; line-height: 26px !important; }
           .kka-cta-main-head { font-size: 32px !important; }
           .kka-cta-timeline-label { font-size: 18px !important; }
@@ -1747,7 +1758,10 @@ export default function KaushalyaKarnatakaAwards2026() {
                 />
               </div>
 
-              <h2 className="section-title">RECOGNIZING INDUSTRY LEADERSHIP<br />IN SKILLING</h2>
+              <h2 className="section-title">
+                <span style={{ display: 'block', whiteSpace: 'nowrap' }}>RECOGNIZING INDUSTRY</span>
+                <span style={{ display: 'block', whiteSpace: 'nowrap' }}>LEADERSHIP IN SKILLING</span>
+              </h2>
               <p className="description">
                 {corporate.banner.description}
               </p>
@@ -2112,12 +2126,6 @@ export default function KaushalyaKarnatakaAwards2026() {
               </div>
             </div>
 
-            {/* 9. WHAT OUR 2025 WINNERS SAY SLIDER */}
-            <div style={{ textAlign: 'center', marginTop: '70px' }}>
-              <h2 className="about-heading-blue">{testimonials.title}</h2>
-            </div>
-            {renderTestimonialsSlider()}
-
             {/* 10. Organised by & Partners */}
             <div className="kka-partners-wrap">
               <img 
@@ -2139,6 +2147,12 @@ export default function KaushalyaKarnatakaAwards2026() {
                 Email: <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a> | Phone: {contactInfo.phone}
               </p>
             </div>
+
+            {/* 12. WHAT OUR 2025 WINNERS SAY SLIDER (Moved to last) */}
+            <div style={{ textAlign: 'center', marginTop: '70px' }}>
+              <h2 className="about-heading-blue">{testimonials.title}</h2>
+            </div>
+            {renderTestimonialsSlider()}
 
           </div>
         </section>
@@ -2235,12 +2249,6 @@ export default function KaushalyaKarnatakaAwards2026() {
               </div>
             </section>
 
-            {/* WHAT OUR 2025 WINNERS SAY SLIDER */}
-            <div style={{ textAlign: 'center', marginTop: '70px' }}>
-              <h2 className="about-heading-blue">{testimonials.title}</h2>
-            </div>
-            {renderTestimonialsSlider()}
-
             {/* 2025 Winners Showcase Banner */}
             <section id="2025-winners" className="kka-showcase-banner-cream">
               <h2 className="kka-showcase-cream-title">{showcase2025.title}</h2>
@@ -2270,6 +2278,12 @@ export default function KaushalyaKarnatakaAwards2026() {
                 Email: <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a> | Phone: {contactInfo.phone}
               </p>
             </div>
+
+            {/* WHAT OUR 2025 WINNERS SAY SLIDER (Moved to last) */}
+            <div style={{ textAlign: 'center', marginTop: '70px' }}>
+              <h2 className="about-heading-blue">{testimonials.title}</h2>
+            </div>
+            {renderTestimonialsSlider()}
 
           </div>
         </section>
