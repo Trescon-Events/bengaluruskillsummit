@@ -99,16 +99,6 @@ export default function Header() {
                       <Link to="/about-us"><span className="menu-title-text">About</span></Link>
                     </li>
 
-                    {/* Agenda 2026 */}
-                    <li id="menu-item-agenda-2026" className={`menu-item menu-item-type-post_type menu-item-object-page ${isAgenda2026Active ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
-                      <Link to="/agenda-2026"><span className="menu-title-text">Agenda 2026</span></Link>
-                    </li>
-
-                    {/* Speakers 2026 */}
-                    <li id="menu-item-speakers-2026" className={`menu-item menu-item-type-post_type menu-item-object-page ${isSpeakers2026Active ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
-                      <Link to="/speakers-2026"><span className="menu-title-text">Speakers 2026</span></Link>
-                    </li>
-
                     {/* 2025 Highlights */}
                     <li id="menu-item-3443" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children ${isHighlightsActive ? 'current-menu-item' : ''} nectar-regular-menu-item sf-with-ul`}>
                       <Link to="/2025-highlights" aria-haspopup="true" aria-expanded="false">
@@ -144,20 +134,28 @@ export default function Header() {
                         </li>
                       </ul>
                     </li>
+
+                    {/* Agenda */}
+                    <li id="menu-item-agenda-2026" className={`menu-item menu-item-type-post_type menu-item-object-page ${isAgenda2026Active ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
+                      <Link to="/agenda-2026"><span className="menu-title-text">Agenda</span></Link>
+                    </li>
+
+                    {/* Speakers */}
+                    <li id="menu-item-speakers-2026" className={`menu-item menu-item-type-post_type menu-item-object-page ${isSpeakers2026Active ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
+                      <Link to="/speakers-2026"><span className="menu-title-text">Speakers</span></Link>
+                    </li>
                   </ul>
 
                   <ul className="buttons sf-menu" data-user-set-ocm="off">
                     <li id="menu-item-347" className="menu-btn-2 konfhub-btn menu-item menu-item-type-custom menu-item-object-custom nectar-regular-menu-item menu-item-btn-style-button_extra-color-1 menu-item-hover-text-reveal">
-                      <Link to="/get-involved">
-                        <span className="menu-title-text">
-                          <span className="nectar-text-reveal-button">
-                            <span className="nectar-text-reveal-button__text" data-text="Get Your Pass">Get Your Pass</span>
-                          </span>
-                        </span>
+                      <Link to="/get-involved" className="header-cta-btn">
+                        <span className="menu-title-text">Get Your Pass</span>
                       </Link>
                     </li>
-                    <li id="menu-item-4157" className="menu-btn-2 konfhub-btn menu-item menu-item-type-custom menu-item-object-custom nectar-regular-menu-item menu-item-btn-style-button_extra-color-1 menu-item-hover-text-reveal menu-item-type-post_type menu-item-object-page">
-                      <Link to="/general-enquiry"><span className="menu-title-text">Enquiry Now</span></Link>
+                    <li id="menu-item-4157" className="menu-btn-2 konfhub-btn menu-item menu-item-type-custom menu-item-object-custom nectar-regular-menu-item menu-item-btn-style-button_extra-color-1 menu-item-hover-text-reveal">
+                      <Link to="/general-enquiry" className="header-cta-btn">
+                        <span className="menu-title-text">Enquiry Now</span>
+                      </Link>
                     </li>
                   </ul>
                 </nav>
@@ -192,12 +190,6 @@ export default function Header() {
                       <Link to="/about-us" onClick={closeMobileMenu} style={{ color: isAboutActive ? "#ff6257" : "#ffffff", fontWeight: 600, fontSize: "16px", textDecoration: "none" }}>About</Link>
                     </li>
                     <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
-                      <Link to="/agenda-2026" onClick={closeMobileMenu} style={{ color: isAgenda2026Active ? "#ff6257" : "#ffffff", fontWeight: 600, fontSize: "16px", textDecoration: "none" }}>Agenda 2026</Link>
-                    </li>
-                    <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
-                      <Link to="/speakers-2026" onClick={closeMobileMenu} style={{ color: isSpeakers2026Active ? "#ff6257" : "#ffffff", fontWeight: 600, fontSize: "16px", textDecoration: "none" }}>Speakers 2026</Link>
-                    </li>
-                    <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer" }} onClick={(e) => toggleSubMenu('highlights', e)}>
                         <span style={{ color: isHighlightsActive ? "#ff6257" : "#ffffff", fontWeight: 600, fontSize: "16px" }}>2025 HIGHLIGHTS</span>
                         {openSubMenus.highlights ? <FaAngleUp style={{ fontSize: "18px", color: "#ff6257" }} /> : <FaAngleDown style={{ fontSize: "18px", color: "#ff6257" }} />}
@@ -215,25 +207,35 @@ export default function Header() {
                         </ul>
                       )}
                     </li>
-                    <li style={{ paddingTop: "16px", display: "flex", gap: "10px", flexWrap: "wrap" }}>
+                    <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
+                      <Link to="/agenda-2026" onClick={closeMobileMenu} style={{ color: isAgenda2026Active ? "#ff6257" : "#ffffff", fontWeight: 600, fontSize: "16px", textDecoration: "none" }}>Agenda</Link>
+                    </li>
+                    <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
+                      <Link to="/speakers-2026" onClick={closeMobileMenu} style={{ color: isSpeakers2026Active ? "#ff6257" : "#ffffff", fontWeight: 600, fontSize: "16px", textDecoration: "none" }}>Speakers</Link>
+                    </li>
+                    <li style={{ paddingTop: "16px", display: "flex", gap: "12px", flexWrap: "wrap" }}>
                       <Link to="/get-involved" onClick={closeMobileMenu} style={{
                         backgroundColor: "#ff6257",
                         color: "#fff",
-                        padding: "10px 18px",
+                        padding: "10px 20px",
                         borderRadius: "25px",
                         textDecoration: "none",
-                        fontWeight: 600,
-                        fontSize: "14px",
+                        fontWeight: 700,
+                        fontSize: "13px",
+                        letterSpacing: "0.5px",
+                        textTransform: "uppercase",
                         display: "inline-block"
                       }}>Get Your Pass</Link>
                       <Link to="/general-enquiry" onClick={closeMobileMenu} style={{
-                        backgroundColor: "#0d53c7",
+                        backgroundColor: "#ff6257",
                         color: "#fff",
-                        padding: "10px 18px",
+                        padding: "10px 20px",
                         borderRadius: "25px",
                         textDecoration: "none",
-                        fontWeight: 600,
-                        fontSize: "14px",
+                        fontWeight: 700,
+                        fontSize: "13px",
+                        letterSpacing: "0.5px",
+                        textTransform: "uppercase",
                         display: "inline-block"
                       }}>Enquiry Now</Link>
                     </li>

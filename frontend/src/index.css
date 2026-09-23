@@ -685,6 +685,35 @@ img.img-with-animation,
   color: #ff6257 !important;
 }
 
+/* Header CTA Buttons - Guaranteed Identical Style */
+.sf-menu.buttons li a,
+.header-cta-btn,
+#header-outer nav .buttons > li > a {
+  background-color: #ff6257 !important;
+  color: #ffffff !important;
+  border-radius: 25px !important;
+  padding: 10px 22px !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.6px !important;
+  text-transform: uppercase !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+  border: none !important;
+}
+
+.sf-menu.buttons li a:hover,
+.header-cta-btn:hover,
+#header-outer nav .buttons > li > a:hover {
+  background-color: #e55349 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(255, 98, 87, 0.4) !important;
+}
+
 /* ==========================================================================
    Fixed Header Solid Background on Scroll
    ========================================================================== */
