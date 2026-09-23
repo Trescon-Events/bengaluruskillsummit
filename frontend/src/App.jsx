@@ -39,6 +39,7 @@ const SponsorNow = lazy(() => import('./pages/SponsorNow'));
 const SponsorRegistration = lazy(() => import('./pages/SponsorRegistration'));
 const Partners2026 = lazy(() => import('./pages/Partners2026'));
 const Skillathon2026 = lazy(() => import('./pages/Skillathon2026'));
+const AssociationEnquiry = lazy(() => import('./pages/AssociationEnquiry'));
 
 export default function App() {
   return (
@@ -175,6 +176,8 @@ export default function App() {
             <Route path="sponsor-now/" element={<SponsorNow />} />
             <Route path="sponsor-registration" element={<SponsorRegistration />} />
             <Route path="sponsor-registration/" element={<SponsorRegistration />} />
+            <Route path="association-enquiry" element={<AssociationEnquiry />} />
+            <Route path="association-enquiry/" element={<AssociationEnquiry />} />
           </Route>
         </Routes>
       </Suspense>

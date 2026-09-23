@@ -18,7 +18,7 @@ export default function SkillathonRegistration() {
         container.innerHTML = '';
         window.hbspt.forms.create({
           portalId: "2953901",
-          formId: "aeb72209-7ec9-4aff-99ae-e3cc2602c53d",
+          formId: "ef93998c-d1d4-4da5-a115-d105d7f60528",
           region: "na1",
           target: "#hubspot-skillathon-form",
           onFormSubmitted: function() {

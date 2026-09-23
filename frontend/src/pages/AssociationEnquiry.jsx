@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 
-export default function SponsorRegistration() {
+export default function AssociationEnquiry() {
   useEffect(() => {
-    document.title = 'Sponsor Registration - Bengaluru Skill Summit';
+    document.title = 'Association Enquiry | Bengaluru Skill Summit';
     window.scrollTo(0, 0);
 
     let intervalId = null;
 
     const renderHubspot = () => {
-      const container = document.getElementById('hubspot-sponsor-reg-form');
+      const container = document.getElementById('hubspot-association-form');
       if (window.hbspt && container) {
         if (container.querySelector('form') || container.querySelector('.hbspt-form')) {
           return;
@@ -17,9 +17,9 @@ export default function SponsorRegistration() {
         container.innerHTML = '';
         window.hbspt.forms.create({
           portalId: "2953901",
-          formId: "fe1579e2-886c-4ce8-b62b-31eaf510f9a8",
+          formId: "59425875-6216-4cdd-b148-3d48c612888b",
           region: "na1",
-          target: "#hubspot-sponsor-reg-form",
+          target: "#hubspot-association-form",
           onFormSubmitted: function() {
             window.location.href = "/thank-you";
           }
@@ -29,7 +29,7 @@ export default function SponsorRegistration() {
 
     // Guardian: Ensure form stays in the container if mis-targeted
     const guardian = () => {
-      const container = document.getElementById('hubspot-sponsor-reg-form');
+      const container = document.getElementById('hubspot-association-form');
       if (!container) return;
       const misplacedForms = document.querySelectorAll('body > .hbspt-form, body > div > .hbspt-form');
       misplacedForms.forEach(form => {
@@ -64,12 +64,12 @@ export default function SponsorRegistration() {
   }, []);
 
   return (
-    <div className="bss-sponsor-reg-page" style={{ fontFamily: '"Comfortaa", sans-serif', color: '#0e1220' }}>
+    <div className="bss-association-enquiry-page" style={{ fontFamily: '"Comfortaa", sans-serif', color: '#0e1220' }}>
       <style>{`
         /* ---------------- HERO BANNER ---------------- */
-        .bss-sponsor-reg-hero {
+        .bss-association-hero {
           width: 100%;
-          min-height: 260px;
+          min-height: 380px;
           background-image: url('/bengaluruskillsummit/wp-content/uploads/2025/09/agenda-banner.webp');
           background-position: center center;
           background-repeat: no-repeat;
@@ -77,13 +77,13 @@ export default function SponsorRegistration() {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: calc(100vw * 0.06) 20px;
+          padding: 150px 20px;
           box-sizing: border-box;
           text-align: center;
           position: relative;
         }
 
-        .bss-sponsor-reg-hero::before {
+        .bss-association-hero::before {
           content: '';
           position: absolute;
           top: 0;
@@ -94,7 +94,7 @@ export default function SponsorRegistration() {
           z-index: 1;
         }
 
-        .bss-sponsor-reg-hero__container {
+        .bss-association-hero__container {
           max-width: 1100px;
           width: 100%;
           margin: 0 auto;
@@ -102,46 +102,51 @@ export default function SponsorRegistration() {
           z-index: 2;
         }
 
-        .bss-sponsor-reg-hero__title {
+        .bss-association-hero__title {
           font-family: 'Oswald', 'Comfortaa', sans-serif !important;
-          font-size: 52px !important;
+          font-size: 60px !important;
           color: #ffffff !important;
           font-weight: 700 !important;
-          letter-spacing: 1px !important;
-          line-height: 1.2 !important;
+          word-spacing: 10px !important;
+          letter-spacing: 2px !important;
+          line-height: 1.15 !important;
           text-align: center !important;
           margin: 0 !important;
           text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5) !important;
         }
 
         @media (max-width: 991px) {
-          .bss-sponsor-reg-hero {
-            padding: 80px 20px;
+          .bss-association-hero {
+            min-height: 300px;
+            padding: 100px 20px;
           }
-          .bss-sponsor-reg-hero__title {
-            font-size: 38px !important;
+          .bss-association-hero__title {
+            font-size: 40px !important;
+            word-spacing: 6px !important;
           }
         }
 
         @media (max-width: 767px) {
-          .bss-sponsor-reg-hero {
-            padding: 50px 15px;
+          .bss-association-hero {
+            min-height: 240px;
+            padding: 60px 15px;
           }
-          .bss-sponsor-reg-hero__title {
-            font-size: 28px !important;
+          .bss-association-hero__title {
+            font-size: 30px !important;
+            word-spacing: 4px !important;
           }
         }
 
         /* ---------------- HUBSPOT FORM SECTION ---------------- */
-        .bss-sponsor-reg-form-section {
+        .bss-association-form-section {
           width: 100%;
-          padding: 70px 10% 40px;
+          padding: 60px 10%;
           box-sizing: border-box;
           background-color: #ffffff;
           min-height: 450px;
         }
 
-        .bss-sponsor-reg-form-container {
+        .bss-association-form-container {
           max-width: 1050px;
           margin: 0 auto;
           box-sizing: border-box;
@@ -193,203 +198,209 @@ export default function SponsorRegistration() {
           font-weight: 300 !important;
           line-height: 100% !important;
           padding: 16px 18px !important;
-          border-radius: 0px !important;
+          border-radius: 4px !important;
           box-sizing: border-box !important;
-          margin-bottom: 20px !important;
-          outline: none !important;
+          margin-bottom: 12px !important;
+          transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
         }
 
-        .hbspt-form textarea,
-        .hs-form textarea {
-          min-height: 120px !important;
-          line-height: 1.4 !important;
-        }
-
-        .hbspt-form select,
-        .hs-form select {
-          cursor: pointer;
-          padding-right: 30px !important;
-        }
-
-        .hbspt-form input:focus,
-        .hs-form input:focus,
+        .hbspt-form input[type="text"]:focus,
+        .hbspt-form input[type="email"]:focus,
+        .hbspt-form input[type="tel"]:focus,
+        .hbspt-form select:focus,
+        .hbspt-form textarea:focus,
+        .hs-form input[type="text"]:focus,
+        .hs-form input[type="email"]:focus,
+        .hs-form input[type="tel"]:focus,
         .hs-form select:focus,
         .hs-form textarea:focus {
-          border-color: #106cff !important;
-          box-shadow: 0 0 6px rgba(16, 108, 255, 0.3) !important;
+          border-color: #ff6257 !important;
+          outline: none !important;
+          box-shadow: 0 0 8px rgba(255, 98, 87, 0.25) !important;
         }
 
-        /* Checkbox */
-        .hbspt-form input[type="checkbox"],
-        .hs-form input[type="checkbox"] {
-          margin-right: 10px;
-          transform: scale(1.2);
-          cursor: pointer;
-        }
-
-        .hbspt-form input[type="checkbox"] + label,
-        .hs-form input[type="checkbox"] + label {
-          font-size: 14px;
-          font-weight: normal;
-          text-transform: none;
-          display: inline;
-        }
-
-        /* Submit Button */
-        .hbspt-form .actions,
-        .hs-form .actions {
-          padding-top: 30px;
-          text-align: center;
-        }
-
+        .hbspt-form .hs-button,
+        .hs-form .hs-button,
         .hbspt-form input[type="submit"],
-        .hs-form input[type="submit"],
-        .hs-form .hs-button.primary {
+        .hs-form input[type="submit"] {
           background-color: #ff6257 !important;
+          border: 2px solid #ff6257 !important;
           color: #ffffff !important;
           font-family: 'Comfortaa', sans-serif !important;
           font-size: 16px !important;
           font-weight: 700 !important;
           text-transform: uppercase !important;
-          letter-spacing: 1px !important;
-          padding: 14px 45px !important;
-          border: none !important;
-          border-radius: 4px !important;
+          padding: 16px 40px !important;
+          border-radius: 30px !important;
           cursor: pointer !important;
-          transition: all 0.25s ease !important;
-          margin-top: 15px !important;
           display: inline-block !important;
+          margin-top: 15px !important;
+          letter-spacing: 1px !important;
+          transition: all 0.3s ease !important;
         }
 
+        .hbspt-form .hs-button:hover,
+        .hs-form .hs-button:hover,
         .hbspt-form input[type="submit"]:hover,
-        .hs-form input[type="submit"]:hover,
-        .hs-form .hs-button.primary:hover {
-          background-color: #f74d41 !important;
-          transform: translateY(-2px) !important;
-          box-shadow: 0 6px 18px rgba(255, 98, 87, 0.35) !important;
+        .hs-form input[type="submit"]:hover {
+          background-color: #e5554b !important;
+          border-color: #e5554b !important;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(255, 98, 87, 0.35);
         }
 
-        .hbspt-form fieldset.form-columns-2,
-        .hs-form .form-columns-2 {
-          display: flex !important;
-          gap: 20px !important;
-          max-width: 100% !important;
-          margin-bottom: 20px !important;
-          border: none !important;
+        .hbspt-form .hs-form-field,
+        .hs-form .hs-form-field {
+          margin-bottom: 22px;
+        }
+
+        .hbspt-form ul.inputs-list,
+        .hs-form ul.inputs-list {
+          list-style: none !important;
           padding: 0 !important;
+          margin: 10px 0 !important;
         }
 
-        .hs-form .form-columns-2 .hs-form-field {
-          flex: 1 1 50% !important;
-          width: 50% !important;
+        .hbspt-form ul.inputs-list li,
+        .hs-form ul.inputs-list li {
+          margin-bottom: 8px !important;
+          display: flex !important;
+          align-items: center !important;
         }
 
-        @media (max-width: 768px) {
-          .bss-sponsor-reg-form-section {
-            padding: 40px 5% 40px;
-          }
-          .hs-form .form-columns-2 {
-            flex-direction: column !important;
-            gap: 10px !important;
-          }
-          .hs-form .form-columns-2 .hs-form-field {
-            width: 100% !important;
-          }
+        .hbspt-form ul.inputs-list input[type="checkbox"],
+        .hbspt-form ul.inputs-list input[type="radio"],
+        .hs-form ul.inputs-list input[type="checkbox"],
+        .hs-form ul.inputs-list input[type="radio"] {
+          width: auto !important;
+          margin-right: 10px !important;
+          cursor: pointer !important;
+        }
+
+        .hbspt-form ul.inputs-list label,
+        .hs-form ul.inputs-list label {
+          font-size: 15px !important;
+          text-transform: none !important;
+          margin-bottom: 0 !important;
+          cursor: pointer !important;
+          font-weight: 400 !important;
+        }
+
+        .hs-error-msgs {
+          list-style: none !important;
+          padding: 0 !important;
+          margin: 6px 0 0 0 !important;
+          color: #ff3333 !important;
+          font-size: 13px !important;
         }
 
         /* ---------------- CONTACT INFO SECTION ---------------- */
-        #contact-info {
-          width: 100vw;
-          position: relative;
-          left: 50%;
-          right: 50%;
-          margin-left: -50vw;
-          margin-right: -50vw;
+        .bss-association-contact-section {
+          width: 100%;
+          background: #fbf9f9;
+          padding: 60px 8%;
           box-sizing: border-box;
-          padding: 60px 20px;
-          background: #525252 url('/bengaluruskillsummit/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg') center center no-repeat;
-          background-size: cover;
+          border-top: 1px solid #ececec;
         }
 
-        #contact-info .contact-info-wrap {
+        .bss-association-contact-grid {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
-          gap: 15px;
-          max-width: 1440px;
+          gap: 25px;
+          max-width: 1250px;
           margin: 0 auto;
         }
 
-        #contact-info .contact-info-card {
-          flex: 1 1 calc(20% - 15px);
-          min-width: 240px;
-          background-color: #525252;
-          border-radius: 10px;
-          padding: 25px 14px;
-          box-sizing: border-box;
+        .contact-info-card {
+          flex: 1 1 210px;
+          max-width: 235px;
+          background: #ffffff;
+          padding: 28px 20px;
+          border-radius: 12px;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+          border: 1px solid #eef0f3;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
           text-align: left;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+          box-sizing: border-box;
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        #contact-info .contact-title {
-          font-size: 15px;
+        .contact-info-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .contact-title {
+          font-family: 'Oswald', 'Comfortaa', sans-serif;
+          font-size: 20px;
           line-height: 1.3;
-          color: #eaeaea;
-          margin-bottom: 10px;
-          min-height: 40px;
-          font-weight: 500;
+          font-weight: 700;
+          color: #ff6257;
+          margin-bottom: 16px;
         }
 
-        #contact-info .contact-name {
+        .contact-name {
+          font-size: 16px;
+          font-weight: 700;
+          color: #0e1220;
+          margin-bottom: 4px;
+        }
+
+        .contact-designation {
           font-size: 13px;
-          line-height: 1;
-          color: #ffffff;
-          font-weight: 600;
-          margin-bottom: 5px;
+          color: #666666;
+          line-height: 1.4;
+          margin-bottom: 14px;
         }
 
-        #contact-info .contact-designation {
-          font-size: 10px;
-          line-height: 1.2;
-          color: rgba(255,255,255,0.8);
-          margin-bottom: 12px;
-          min-height: 24px;
-        }
-
-        #contact-info .contact-email a {
-          font-size: 11px;
-          line-height: 1.3;
-          color: #ffc933;
+        .contact-email a {
+          font-size: 13px;
+          color: #00A8B2;
           text-decoration: none;
-          overflow-wrap: normal ;
-          word-break: normal ; white-space: nowrap ;
-          white-space: nowrap ;
-          display: inline-block;
+          word-break: break-all;
+          transition: color 0.2s ease;
+          font-weight: 600;
         }
 
-        #contact-info .contact-email a:hover { text-decoration: none !important; color: #ffd766 !important; }
+        .contact-email a:hover {
+          color: #ff6257;
+          text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+          .bss-association-form-section {
+            padding: 40px 5%;
+          }
+          .bss-association-contact-section {
+            padding: 40px 5%;
+          }
+          .contact-info-card {
+            max-width: 100%;
+            flex: 1 1 100%;
+          }
+        }
       `}</style>
 
       {/* Hero Banner */}
-      <section className="bss-sponsor-reg-hero">
-        <div className="bss-sponsor-reg-hero__container">
-          <h1 className="bss-sponsor-reg-hero__title">
-            Sponsor Registration
-          </h1>
+      <section className="bss-association-hero">
+        <div className="bss-association-hero__container">
+          <h1 className="bss-association-hero__title">ASSOCIATION ENQUIRY</h1>
         </div>
       </section>
 
       {/* HubSpot Form Section */}
-      <section className="bss-sponsor-reg-form-section">
-        <div className="bss-sponsor-reg-form-container">
-          <div id="hubspot-sponsor-reg-form"></div>
+      <section className="bss-association-form-section">
+        <div className="bss-association-form-container">
+          <div id="hubspot-association-form"></div>
         </div>
       </section>
 
-      {/* Contact Info */}
-            {/* Contact Cards Section */}
-      <section id="contact-info">
-        <div className="contact-info-wrap">
+      {/* Contact Cards Section */}
+      <section className="bss-association-contact-section">
+        <div className="bss-association-contact-grid">
           {/* Card 1: Sponsor and Exhibitor Queries */}
           <div className="contact-info-card">
             <div className="contact-title">

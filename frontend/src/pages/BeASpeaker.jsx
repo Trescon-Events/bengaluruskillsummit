@@ -2,38 +2,64 @@ import React, { useEffect } from 'react';
 
 export default function BeASpeaker() {
   useEffect(() => {
-    document.title = 'Be a Speaker | Share Your Expertise at Bengaluru Skill Summit 2025';
+    document.title = 'Be a Speaker | Bengaluru Skill Summit';
     window.scrollTo(0, 0);
 
-    const loadHubspot = () => {
-      if (window.hbspt) {
-        const container = document.getElementById('hubspot-speaker-form');
-        if (container) {
-          container.innerHTML = '';
-          window.hbspt.forms.create({
-            portalId: "2953901",
-            formId: "93bcc433-7b8a-4afd-8a9c-394e430d494b",
-            region: "na1",
-            target: "#hubspot-speaker-form",
-            onFormSubmitted: function() {
-              window.location.href = "/thank-you";
-            }
-          });
+    let intervalId = null;
+
+    const renderHubspot = () => {
+      const container = document.getElementById('hubspot-speaker-form');
+      if (window.hbspt && container) {
+        if (container.querySelector('form') || container.querySelector('.hbspt-form')) {
+          return;
         }
+
+        container.innerHTML = '';
+        window.hbspt.forms.create({
+          portalId: "2953901",
+          formId: "a6ad0d0b-d5b1-48ac-b572-cc7e4796ef0e",
+          region: "na1",
+          target: "#hubspot-speaker-form",
+          onFormSubmitted: function() {
+            window.location.href = "/thank-you";
+          }
+        });
       }
     };
 
+    const guardian = () => {
+      const container = document.getElementById('hubspot-speaker-form');
+      if (!container) return;
+      const misplacedForms = document.querySelectorAll('body > .hbspt-form, body > div > .hbspt-form');
+      misplacedForms.forEach(form => {
+        if (!container.contains(form)) {
+          container.appendChild(form);
+        }
+      });
+    };
+
     if (window.hbspt) {
-      loadHubspot();
+      renderHubspot();
     } else {
-      const script = document.createElement('script');
-      script.src = 'https://js.hsforms.net/forms/embed/v2.js';
-      script.charset = 'utf-8';
-      script.type = 'text/javascript';
-      script.async = true;
-      script.onload = loadHubspot;
-      document.body.appendChild(script);
+      const existingScript = document.querySelector('script[src*="hsforms.net"]');
+      if (!existingScript) {
+        const script = document.createElement('script');
+        script.src = 'https://js.hsforms.net/forms/embed/v2.js';
+        script.charset = 'utf-8';
+        script.type = 'text/javascript';
+        script.async = true;
+        script.onload = renderHubspot;
+        document.body.appendChild(script);
+      } else {
+        existingScript.addEventListener('load', renderHubspot);
+      }
     }
+
+    intervalId = setInterval(guardian, 500);
+
+    return () => {
+      if (intervalId) clearInterval(intervalId);
+    };
   }, []);
 
   return (

@@ -13,6 +13,7 @@ export default function Header() {
   const isAgendaActive = path.includes('/agenda-2026');
   const isSpeakersActive = path.includes('/speakers-2026');
   const isAwardsActive = path.includes('/kaushalya-karnataka-awards-2026') || path.includes('/awards-2026');
+  const isGetInvolvedActive = path.includes('/be-a-speaker') || path.includes('/sponsor-registration') || path.includes('/be-a-media-partner') || path.includes('/association-enquiry') || path.includes('/skillathon-registration');
 
   const toggleSubMenu = (key, e) => {
     e.preventDefault();
@@ -143,6 +144,33 @@ export default function Header() {
                     <li id="menu-item-awards" className={`menu-item menu-item-type-post_type menu-item-object-page ${isAwardsActive ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
                       <Link to="/kaushalya-karnataka-awards-2026"><span className="menu-title-text">AWARDS</span></Link>
                     </li>
+
+                    {/* GET INVOLVED with Flyout Sub-menu */}
+                    <li id="menu-item-get-involved" className={`menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ${isGetInvolvedActive ? 'current-menu-item' : ''} nectar-regular-menu-item sf-with-ul`}>
+                      <Link to="#" aria-haspopup="true" aria-expanded="false" onClick={(e) => e.preventDefault()}>
+                        <span className="menu-title-text">GET INVOLVED</span>
+                        <span className="sf-sub-indicator" style={{ display: "inline-flex", alignItems: "center", marginLeft: "6px" }}>
+                          <FaAngleDown style={{ fontSize: "12px", verticalAlign: "middle" }} />
+                        </span>
+                      </Link>
+                      <ul className="sub-menu">
+                        <li className="menu-item">
+                          <Link to="/be-a-speaker"><span>SPEAKER ENQUIRY</span></Link>
+                        </li>
+                        <li className="menu-item">
+                          <Link to="/sponsor-registration"><span>SPONSOR ENQUIRY</span></Link>
+                        </li>
+                        <li className="menu-item">
+                          <Link to="/be-a-media-partner"><span>MEDIA ENQUIRY</span></Link>
+                        </li>
+                        <li className="menu-item">
+                          <Link to="/association-enquiry"><span>ASSOCIATION ENQUIRY</span></Link>
+                        </li>
+                        <li className="menu-item">
+                          <Link to="/skillathon-registration"><span>SKILLATHON REGISTRATION</span></Link>
+                        </li>
+                      </ul>
+                    </li>
                   </ul>
 
                   <ul className="buttons header-cta-buttons" data-user-set-ocm="off">
@@ -224,6 +252,31 @@ export default function Header() {
                     </li>
                     <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
                       <Link to="/kaushalya-karnataka-awards-2026" onClick={closeMobileMenu} style={{ color: isAwardsActive ? "#ff6257" : "#ffffff", fontWeight: 700, fontSize: "15px", textDecoration: "none" }}>AWARDS</Link>
+                    </li>
+                    <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer" }} onClick={(e) => toggleSubMenu('getInvolved', e)}>
+                        <span style={{ color: isGetInvolvedActive ? "#ff6257" : "#ffffff", fontWeight: 700, fontSize: "15px" }}>GET INVOLVED</span>
+                        {openSubMenus.getInvolved ? <FaAngleUp style={{ fontSize: "18px", color: "#ff6257" }} /> : <FaAngleDown style={{ fontSize: "18px", color: "#ff6257" }} />}
+                      </div>
+                      {openSubMenus.getInvolved && (
+                        <ul style={{ listStyle: "none", paddingLeft: "16px", marginTop: "10px", margin: 0 }}>
+                          <li style={{ padding: "6px 0" }}>
+                            <Link to="/be-a-speaker" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>SPEAKER ENQUIRY</Link>
+                          </li>
+                          <li style={{ padding: "6px 0" }}>
+                            <Link to="/sponsor-registration" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>SPONSOR ENQUIRY</Link>
+                          </li>
+                          <li style={{ padding: "6px 0" }}>
+                            <Link to="/be-a-media-partner" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>MEDIA ENQUIRY</Link>
+                          </li>
+                          <li style={{ padding: "6px 0" }}>
+                            <Link to="/association-enquiry" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>ASSOCIATION ENQUIRY</Link>
+                          </li>
+                          <li style={{ padding: "6px 0" }}>
+                            <Link to="/skillathon-registration" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>SKILLATHON REGISTRATION</Link>
+                          </li>
+                        </ul>
+                      )}
                     </li>
                     <li style={{ paddingTop: "18px", display: "flex", gap: "12px", flexWrap: "wrap" }}>
                       <Link to="/get-involved" onClick={closeMobileMenu} className="header-cta-pill">
