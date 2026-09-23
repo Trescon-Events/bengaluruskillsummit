@@ -619,6 +619,27 @@ img.img-with-animation,
 }
 
 
+/* Header Navigation & CTA Flex Alignment */
+#header-outer #top .col.span_9 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+}
+
+#header-outer #top nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+}
+
+#header-outer #top nav > ul.sf-menu {
+  display: inline-flex !important;
+  align-items: center !important;
+  float: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /* Smooth CSS Dropdown Navigation for Header */
 .sf-menu > li {
   position: relative !important;
@@ -628,14 +649,15 @@ img.img-with-animation,
   position: absolute !important;
   top: 100% !important;
   left: 0 !important;
-  min-width: 200px !important;
-  background-color: #000000 !important;
+  width: max-content !important;
+  min-width: 275px !important;
+  background-color: #0b0b0b !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-radius: 4px !important;
-  padding: 8px 0 !important;
+  border-radius: 8px !important;
+  padding: 10px 0 !important;
   margin: 0 !important;
   list-style: none !important;
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.85) !important;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.95) !important;
   opacity: 0 !important;
   visibility: hidden !important;
   transform: translateY(6px) !important;
@@ -643,6 +665,17 @@ img.img-with-animation,
   pointer-events: none !important;
   z-index: 99999 !important;
   display: block !important;
+}
+
+/* Invisible bridge so mouse hover is never lost */
+.sf-menu > li > ul.sub-menu::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -20px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 20px !important;
+  background: transparent !important;
 }
 
 .sf-menu > li:hover > ul.sub-menu {
@@ -658,27 +691,32 @@ img.img-with-animation,
   display: block !important;
   padding: 0 !important;
   margin: 0 !important;
+  width: 100% !important;
 }
 
 .sf-menu ul.sub-menu > li > a {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  padding: 10px 20px !important;
+  padding: 12px 24px !important;
   color: #ffffff !important;
-  font-size: 14px !important;
+  font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 13.5px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.6px !important;
   text-decoration: none !important;
-  transition: background-color 0.15s ease, color 0.15s ease !important;
+  transition: background-color 0.15s ease, color 0.15s ease, padding-left 0.15s ease !important;
   white-space: nowrap !important;
   background-color: transparent !important;
+  box-sizing: border-box !important;
+  line-height: 1.3 !important;
 }
 
 .sf-menu ul.sub-menu > li > a:hover {
-  background-color: rgba(255, 98, 87, 0.15) !important;
+  background-color: rgba(255, 98, 87, 0.12) !important;
   color: #ff6257 !important;
+  padding-left: 28px !important;
 }
 
 /* Level 2 Sub-menu (Flyout to the right) */
@@ -686,14 +724,15 @@ img.img-with-animation,
   position: absolute !important;
   top: 0 !important;
   left: 100% !important;
-  min-width: 220px !important;
-  background-color: #000000 !important;
+  min-width: 240px !important;
+  width: max-content !important;
+  background-color: #0b0b0b !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-radius: 4px !important;
-  padding: 8px 0 !important;
+  border-radius: 8px !important;
+  padding: 10px 0 !important;
   margin: 0 !important;
   list-style: none !important;
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.85) !important;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.95) !important;
   opacity: 0 !important;
   visibility: hidden !important;
   transform: translateX(6px) !important;
@@ -718,45 +757,87 @@ img.img-with-animation,
 }
 
 /* ==========================================================================
-   Header CTA Buttons - Exact Coral Pill Style (Matching media_1790156401016.png)
+   Header CTA Buttons - Exact Solid Coral Pills (Matches media_1790156401016.png)
    ========================================================================== */
 #header-outer nav ul.buttons,
+#header-outer nav ul.header-cta-buttons,
 #header-outer nav .header-cta-buttons,
 ul.buttons.header-cta-buttons {
-  display: flex !important;
+  display: inline-flex !important;
   flex-direction: row !important;
   align-items: center !important;
-  gap: 16px !important;
+  gap: 15px !important;
   margin: 0 !important;
   padding: 0 !important;
   margin-left: 20px !important;
   list-style: none !important;
   height: auto !important;
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+  float: none !important;
 }
 
 #header-outer nav ul.buttons > li,
-#header-outer nav .header-cta-buttons > li {
+#header-outer nav ul.header-cta-buttons > li,
+#header-outer nav .header-cta-buttons > li,
+.header-cta-item {
   display: inline-flex !important;
   align-items: center !important;
   margin: 0 !important;
   padding: 0 !important;
   line-height: normal !important;
   height: auto !important;
+  position: relative !important;
+  float: none !important;
+  border: none !important;
+}
+
+/* Eliminate ANY Salient pseudo-element ghost shapes, borders, or extra layers */
+#header-outer nav ul.buttons > li:before,
+#header-outer nav ul.buttons > li:after,
+#header-outer nav ul.header-cta-buttons > li:before,
+#header-outer nav ul.header-cta-buttons > li:after,
+#header-outer nav .header-cta-buttons > li:before,
+#header-outer nav .header-cta-buttons > li:after,
+#header-outer nav ul.buttons > li > a:before,
+#header-outer nav ul.buttons > li > a:after,
+#header-outer nav ul.header-cta-buttons > li > a:before,
+#header-outer nav ul.header-cta-buttons > li > a:after,
+#header-outer nav .header-cta-buttons > li > a:before,
+#header-outer nav .header-cta-buttons > li > a:after,
+#header-outer .header-cta-item > a:before,
+#header-outer .header-cta-item > a:after,
+.header-cta-pill:before,
+.header-cta-pill:after,
+.header-cta-item:before,
+.header-cta-item:after {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  border: none !important;
 }
 
 #header-outer nav ul.buttons > li > a,
+#header-outer nav ul.header-cta-buttons > li > a,
 #header-outer nav .header-cta-buttons > li > a,
 .header-cta-pill {
   background-color: #ff6257 !important;
   color: #ffffff !important;
-  border-radius: 14px !important;
-  padding: 11px 24px !important;
+  border-radius: 12px !important;
+  padding: 10px 22px !important;
   font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   font-weight: 700 !important;
   font-size: 13.5px !important;
   line-height: 1.2 !important;
   height: auto !important;
-  letter-spacing: 0.4px !important;
+  letter-spacing: 0.5px !important;
   text-transform: uppercase !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -764,23 +845,30 @@ ul.buttons.header-cta-buttons {
   text-align: center !important;
   text-decoration: none !important;
   border: none !important;
+  outline: none !important;
   box-sizing: border-box !important;
   cursor: pointer !important;
   transition: all 0.25s ease !important;
   box-shadow: none !important;
   white-space: nowrap !important;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
 }
 
 #header-outer nav ul.buttons > li > a:hover,
+#header-outer nav ul.header-cta-buttons > li > a:hover,
 #header-outer nav .header-cta-buttons > li > a:hover,
 .header-cta-pill:hover {
   background-color: #e55349 !important;
   color: #ffffff !important;
-  transform: translateY(-1px) !important;
+  transform: translateY(-2px) !important;
   box-shadow: 0 4px 14px rgba(255, 98, 87, 0.4) !important;
 }
 
 #header-outer nav ul.buttons > li > a:active,
+#header-outer nav ul.header-cta-buttons > li > a:active,
 #header-outer nav .header-cta-buttons > li > a:active,
 .header-cta-pill:active {
   transform: translateY(0) !important;

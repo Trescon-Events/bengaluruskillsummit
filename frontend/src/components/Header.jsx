@@ -174,12 +174,12 @@ export default function Header() {
                   </ul>
 
                   <ul className="buttons header-cta-buttons" data-user-set-ocm="off">
-                    <li id="menu-item-347" className="menu-btn-2 konfhub-btn menu-item menu-item-347">
+                    <li className="header-cta-item header-cta-pass">
                       <Link to="/get-involved" className="header-cta-pill" data-discover="true">
                         GET YOUR PASS
                       </Link>
                     </li>
-                    <li id="menu-item-4157" className="menu-btn-2 konfhub-btn menu-item menu-item-4157">
+                    <li className="header-cta-item header-cta-enquiry">
                       <Link to="/general-enquiry" className="header-cta-pill" data-discover="true">
                         ENQUIRY NOW
                       </Link>
