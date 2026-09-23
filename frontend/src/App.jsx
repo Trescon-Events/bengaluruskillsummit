@@ -37,6 +37,7 @@ const Skillathon2025 = lazy(() => import('./pages/Skillathon2025'));
 const SkillathonRegistration = lazy(() => import('./pages/SkillathonRegistration'));
 const SponsorNow = lazy(() => import('./pages/SponsorNow'));
 const SponsorRegistration = lazy(() => import('./pages/SponsorRegistration'));
+const Partners2026 = lazy(() => import('./pages/Partners2026'));
 
 export default function App() {
   return (
@@ -61,6 +62,8 @@ export default function App() {
             <Route path="2025-highlights/" element={<Highlights2025 />} />
             <Route path="2025-summit-highlights" element={<Highlights2025 />} />
             <Route path="2025-summit-highlights/" element={<Highlights2025 />} />
+            <Route path="bss-home-2025" element={<Highlights2025 />} />
+            <Route path="bss-home-2025/" element={<Highlights2025 />} />
             
             {/* Contact / General Enquiry */}
             <Route path="contact" element={<Contact />} />
@@ -93,6 +96,8 @@ export default function App() {
             {/* Agenda */}
             <Route path="agenda" element={<Agenda />} />
             <Route path="agenda/" element={<Agenda />} />
+            <Route path="agenda-2025" element={<Agenda />} />
+            <Route path="agenda-2025/" element={<Agenda />} />
             
             {/* Snapshot Agenda */}
             <Route path="snapshot-agenda" element={<SnapshotAgenda />} />
@@ -115,6 +120,10 @@ export default function App() {
             <Route path="ecosystem-partners/" element={<EcosystemPartners />} />
             <Route path="partners" element={<EcosystemPartners />} />
             <Route path="partners/" element={<EcosystemPartners />} />
+            <Route path="partners-2025" element={<EcosystemPartners />} />
+            <Route path="partners-2025/" element={<EcosystemPartners />} />
+            <Route path="partners-2026" element={<Partners2026 />} />
+            <Route path="partners-2026/" element={<Partners2026 />} />
             
             {/* Media Partners */}
             <Route path="media-partners" element={<MediaPartners />} />
