@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaPlusCircle, FaMinusCircle, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
+import { FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
 
 const faqsData = [
   {
@@ -81,621 +81,720 @@ const challengeList = [
 ];
 
 export default function Skillathon2026() {
-  const [openFaq, setOpenFaq] = useState(null);
+  const [openFaq, setOpenFaq] = useState(0); // Q1 open by default as in screenshot
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
   return (
-    <div id="ajax-content-wrap">
+    <div id="ajax-content-wrap" style={{ backgroundColor: '#ffffff', color: '#0e1220', fontFamily: '"Comfortaa", sans-serif' }}>
       <div className="container-wrap">
-        <div className="container main-content" role="main">
-          <div className="row">
-            
-            {/* Banner Section */}
-            <div id="Skillathon-Banner" className="wpb_row vc_row-fluid vc_row top-level full-width-section" style={{
-              backgroundImage: 'url(/bengaluruskillsummit/wp-content/uploads/2025/09/banner-skillathon-05.png)',
-              backgroundPosition: 'center center',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              paddingTop: '100px',
-              paddingBottom: '100px'
+        <div className="container main-content" role="main" style={{ padding: 0, maxWidth: '100%', width: '100%' }}>
+          
+          {/* =========================================================================
+              1. Hero Banner (Matching media_1790157299086.png)
+              ========================================================================= */}
+          <section id="Skillathon-Banner" style={{
+            backgroundImage: 'url(/bengaluruskillsummit/wp-content/uploads/2025/09/banner-skillathon-05.png)',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            paddingTop: '90px',
+            paddingBottom: '90px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
+            <div style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+              padding: '45px 60px',
+              borderRadius: '16px',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.06)',
+              textAlign: 'center',
+              maxWidth: '780px',
+              width: '90%',
+              margin: '0 auto'
             }}>
-              <div className="row_col_wrap_12 col span_12 dark center" style={{ display: 'flex', justifyContent: 'center' }}>
-                <div className="vc_col-sm-8 Skillathon-Strip wpb_column column_container vc_column_container col centered-text force-desktop-text-align-center" style={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.85)',
-                  padding: '40px 30px',
-                  borderRadius: '16px',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
-                }}>
-                  <div className="wpb_wrapper">
-                    <div className="nectar-responsive-text Skillathon-Heading font_size_desktop_60px font_size_phone_46px font_line_height_110pct" style={{ color: '#106cff', marginBottom: '10px' }}>
-                      <h1 style={{ fontWeight: 700, letterSpacing: '3px', margin: 0, textTransform: 'uppercase' }}>Skillathon 2026</h1>
-                    </div>
-                    <div className="nectar-responsive-text Skillathon-Sub font_size_desktop_36px font_size_phone_28px font_line_height_110pct" style={{ color: '#0e1220', marginBottom: '24px' }}>
-                      <h4 style={{ fontWeight: 400, margin: 0 }}>Young minds powering tomorrow’s skills</h4>
-                    </div>
-                    <Link
-                      to="/skillathon-registration"
-                      className="nectar-button large regular extra-color-1 regular-button reg-details-btn"
-                      style={{
-                        backgroundColor: '#ff6257',
-                        color: '#ffffff',
-                        padding: '12px 34px',
-                        borderRadius: '12px',
-                        display: 'inline-block',
-                        fontWeight: 700,
-                        fontFamily: 'Comfortaa, sans-serif',
-                        textTransform: 'uppercase',
-                        textDecoration: 'none',
-                        letterSpacing: '0.5px'
-                      }}
-                    >
-                      <span>APPLY NOW</span>
-                    </Link>
-                  </div>
+              <h1 style={{
+                color: '#0066ff',
+                fontFamily: 'Comfortaa, sans-serif',
+                fontSize: '48px',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+                margin: '0 0 12px 0',
+                lineHeight: 1.15
+              }}>
+                SKILLATHON 2026
+              </h1>
+              <h4 style={{
+                color: '#0e1220',
+                fontFamily: 'Comfortaa, sans-serif',
+                fontSize: '24px',
+                fontWeight: 500,
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+                margin: '0 0 28px 0',
+                lineHeight: 1.25
+              }}>
+                YOUNG MINDS POWERING TOMORROW’S SKILLS
+              </h4>
+              <Link
+                to="/skillathon-registration"
+                style={{
+                  backgroundColor: '#ff6257',
+                  color: '#ffffff',
+                  padding: '12px 36px',
+                  borderRadius: '10px',
+                  display: 'inline-block',
+                  fontWeight: 700,
+                  fontSize: '14px',
+                  fontFamily: 'Comfortaa, sans-serif',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  letterSpacing: '0.5px',
+                  boxShadow: '0 4px 14px rgba(255, 98, 87, 0.35)',
+                  transition: 'all 0.25s ease'
+                }}
+              >
+                APPLY NOW
+              </Link>
+            </div>
+          </section>
+
+          {/* =========================================================================
+              2. Organizers & Description (Matching media_1790157309403.png)
+              ========================================================================= */}
+          <section id="Skillathon-About" style={{ paddingTop: '50px', paddingBottom: '50px', paddingLeft: '20px', paddingRight: '20px' }}>
+            <div style={{ maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
+              
+              {/* Organizers Strip */}
+              <div style={{ marginBottom: '45px' }}>
+                <img
+                  src="/bengaluruskillsummit/wp-content/uploads/2026/09/organizers-strip-2026.png"
+                  alt="Hosted by Crowd Product, MXR | In collaboration with KSDA | Knowledge Partner KDEM"
+                  style={{ maxWidth: '850px', width: '100%', height: 'auto', display: 'inline-block' }}
+                />
+              </div>
+
+              {/* Description Text */}
+              <div style={{
+                maxWidth: '960px',
+                margin: '0 auto',
+                fontSize: '17px',
+                lineHeight: '1.8',
+                color: '#0e1220',
+                textAlign: 'center'
+              }}>
+                <p style={{ marginBottom: '18px' }}>
+                  Skillathon 2026 brings together student and startup teams to build practical solutions for real-world challenges in Karnataka's skilling and employment ecosystem.
+                </p>
+                <p style={{ marginBottom: '18px' }}>
+                  Teams will move beyond ideas to <strong>validate problems, build prototypes, test solutions and demonstrate measurable outcomes</strong>, working with Government, industry, academia, mentors and potential users.
+                </p>
+                <p style={{ margin: 0 }}>
+                  The programme features six Government-defined challenges spanning AI-enabled skilling, rural employment, women returning to work, green jobs, inclusion and training-to-employment outcomes.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* =========================================================================
+              3. Objectives (Matching media_1790157317620.png)
+              ========================================================================= */}
+          <section id="Skillathon-Objectives" style={{ paddingTop: '20px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
+            <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+              <h2 style={{
+                color: '#0066ff',
+                fontFamily: 'Comfortaa, sans-serif',
+                fontSize: '44px',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                textAlign: 'center',
+                letterSpacing: '2px',
+                marginBottom: '40px'
+              }}>
+                OBJECTIVES
+              </h2>
+
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gap: '40px',
+                alignItems: 'center'
+              }}>
+                {/* Left: Stage Photo */}
+                <div style={{ textAlign: 'center' }}>
+                  <img
+                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/objectives-stage-photo.png"
+                    alt="Skillathon 2025 Congratulations Stage Award Ceremony"
+                    style={{
+                      maxWidth: '100%',
+                      height: 'auto',
+                      borderRadius: '16px',
+                      boxShadow: '0 6px 20px rgba(0,0,0,0.08)'
+                    }}
+                  />
+                </div>
+
+                {/* Right: Bullets */}
+                <div>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                    {[
+                      { strong: "Solve real-world challenges", text: " across Karnataka's skilling and employment ecosystem." },
+                      { strong: "Build practical solutions", text: " that move from problem identification to prototype and pilot." },
+                      { strong: "Connect innovators with stakeholders", text: " across Government, industry, academia and the wider ecosystem." },
+                      { strong: "Test and validate solutions", text: " through real-world users, institutions and workflows." },
+                      { strong: "Measure outcomes and impact", text: " to identify solutions with potential for scale." }
+                    ].map((item, idx) => (
+                      <li key={idx} style={{
+                        position: 'relative',
+                        paddingLeft: '22px',
+                        marginBottom: '18px',
+                        fontSize: '16px',
+                        lineHeight: '1.6',
+                        color: '#0e1220'
+                      }}>
+                        <span style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: '10px',
+                          width: '6px',
+                          height: '6px',
+                          backgroundColor: '#0e1220',
+                          borderRadius: '50%'
+                        }} />
+                        <strong>{item.strong}</strong>{item.text}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
+          </section>
 
-            {/* About Section & Organization Logos */}
-            <div id="Skillathon-About" className="wpb_row vc_row-fluid vc_row" style={{ paddingTop: '50px', paddingBottom: '30px' }}>
-              <div className="row_col_wrap_12 col span_12 dark left">
-                <div className="vc_col-sm-12 wpb_column column_container vc_column_container col centered-text">
-                  <div className="wpb_wrapper">
-                    <div className="row inner_row vc_row-o-content-top" style={{
+          {/* =========================================================================
+              4. Competition Structure (Matching media_1790157327607.png)
+              ========================================================================= */}
+          <section id="competition-structure" style={{ paddingTop: '20px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
+            <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+              <h2 style={{
+                color: '#0066ff',
+                fontFamily: 'Comfortaa, sans-serif',
+                fontSize: '44px',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                textAlign: 'center',
+                letterSpacing: '2px',
+                marginBottom: '40px'
+              }}>
+                COMPETITION STRUCTURE
+              </h2>
+
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gap: '40px',
+                alignItems: 'center'
+              }}>
+                {/* Left: Students Table Photo */}
+                <div style={{ textAlign: 'center' }}>
+                  <img
+                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/competition-students-photo.png"
+                    alt="Participants at Skillathon round table"
+                    style={{
+                      maxWidth: '100%',
+                      height: 'auto',
+                      borderRadius: '16px',
+                      boxShadow: '0 6px 20px rgba(0,0,0,0.08)'
+                    }}
+                  />
+                </div>
+
+                {/* Right: Bullets */}
+                <div>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                    {[
+                      "Challenge Selection & Application",
+                      "Selection & Orientation",
+                      "Stakeholder Connect",
+                      "Final Evaluation",
+                      "Skillathon Finale"
+                    ].map((item, idx) => (
+                      <li key={idx} style={{
+                        position: 'relative',
+                        paddingLeft: '22px',
+                        marginBottom: '20px',
+                        fontSize: '18px',
+                        fontWeight: 500,
+                        color: '#0e1220'
+                      }}>
+                        <span style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: '11px',
+                          width: '6px',
+                          height: '6px',
+                          backgroundColor: '#0e1220',
+                          borderRadius: '50%'
+                        }} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* =========================================================================
+              5. Submission Guidelines & Evaluation Criteria (Matching media_1790157341360.png)
+              ========================================================================= */}
+          <section id="submission-evaluation" style={{ paddingTop: '20px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
+            <div style={{ maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
+              
+              {/* Submission Guidelines */}
+              <div style={{ marginBottom: '60px' }}>
+                <h3 style={{
+                  color: '#000000',
+                  fontFamily: 'Comfortaa, sans-serif',
+                  fontSize: '32px',
+                  fontWeight: 700,
+                  marginBottom: '10px'
+                }}>
+                  Submission Guidelines
+                </h3>
+                <p style={{
+                  color: '#444444',
+                  fontSize: '17px',
+                  marginBottom: '35px'
+                }}>
+                  Your submission should include the following sections
+                </p>
+                <picture>
+                  <source media="(max-width: 768px)" srcSet="/bengaluruskillsummit/wp-content/uploads/2026/09/Submission-Template-mobile.png" />
+                  <img
+                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/Submission-Template-2026.png"
+                    alt="Submission Guidelines: Challenge Selected, Problem Understanding, Proposed Solution, Prototype Approach, Pilot Approach, Expected Impact"
+                    style={{ width: '100%', maxWidth: '1000px', height: 'auto', display: 'inline-block' }}
+                  />
+                </picture>
+              </div>
+
+              {/* Evaluation Criteria */}
+              <div>
+                <h3 style={{
+                  color: '#000000',
+                  fontFamily: 'Comfortaa, sans-serif',
+                  fontSize: '32px',
+                  fontWeight: 700,
+                  marginBottom: '35px'
+                }}>
+                  Evaluation Criteria
+                </h3>
+                <picture>
+                  <source media="(max-width: 768px)" srcSet="/bengaluruskillsummit/wp-content/uploads/2026/09/Evaluation-Criteria-mobile.png" />
+                  <img
+                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/Evaluation-Criteria.png"
+                    alt="Evaluation Criteria: 20% Problem Understanding, 25% Innovation, 25% Prototype & Validation, 15% Feasibility & Scalability, 15% Impact"
+                    style={{ width: '100%', maxWidth: '850px', height: 'auto', display: 'inline-block' }}
+                  />
+                </picture>
+              </div>
+
+            </div>
+          </section>
+
+          {/* =========================================================================
+              6. Choose Your Challenge (Matching media_1790157389912.png)
+              ========================================================================= */}
+          <section id="choose-challenge" style={{ paddingTop: '30px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
+            <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+              <h2 style={{
+                color: '#0066ff',
+                fontFamily: 'Comfortaa, sans-serif',
+                fontSize: '44px',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+                marginBottom: '10px'
+              }}>
+                CHOOSE YOUR CHALLENGE
+              </h2>
+              <h4 style={{
+                color: '#0e1220',
+                fontSize: '20px',
+                fontWeight: 500,
+                marginBottom: '18px'
+              }}>
+                Take on a real-world challenge and build a solution that can create measurable impact.
+              </h4>
+              <p style={{
+                color: '#444444',
+                fontSize: '15px',
+                lineHeight: '1.6',
+                maxWidth: '920px',
+                margin: '0 auto 40px auto'
+              }}>
+                We invite you to tackle real-world challenges that shape the future of education, employment, and innovation. Your ideas should align with the global goals and empower communities across India and beyond.
+              </p>
+
+              {/* 6 Challenge Cards Grid */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))',
+                gap: '16px',
+                alignItems: 'stretch',
+                marginBottom: '40px'
+              }}>
+                {challengeList.map((item, idx) => (
+                  <div
+                    key={idx}
+                    style={{
+                      backgroundColor: '#ffffff',
+                      borderRadius: '12px',
+                      padding: '24px 16px',
+                      border: '1px solid #edf0f5',
+                      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.04)',
                       display: 'flex',
-                      flexWrap: 'wrap',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      gap: '40px',
-                      paddingBottom: '40px'
-                    }}>
-                      <div style={{ textAlign: 'center' }}>
-                        <img
-                          src="/bengaluruskillsummit/wp-content/uploads/2026/09/Hosted-by.png"
-                          alt="Hosted by Government of Karnataka and KSDC"
-                          style={{ maxHeight: '100px', width: 'auto' }}
-                        />
-                      </div>
-                      <div style={{ textAlign: 'center' }}>
-                        <img
-                          src="/bengaluruskillsummit/wp-content/uploads/2026/09/Collaboration-with.png"
-                          alt="In Collaboration with BCIC"
-                          style={{ maxHeight: '100px', width: 'auto' }}
-                        />
-                      </div>
-                      <div style={{ textAlign: 'center' }}>
-                        <img
-                          src="/bengaluruskillsummit/wp-content/uploads/2026/09/Knowledge-partner.png"
-                          alt="Knowledge Partner"
-                          style={{ maxHeight: '100px', width: 'auto' }}
-                        />
-                      </div>
-                    </div>
-
-                    <div className="nectar-responsive-text Skillathon-About-Description font_size_desktop_18px" style={{
-                      color: '#0e1220',
-                      maxWidth: '1000px',
-                      margin: '0 auto',
-                      lineHeight: '1.8',
-                      textAlign: 'center'
-                    }}>
-                      <p>
-                        Skillathon 2026 brings together student and startup teams to build practical solutions for real-world challenges in Karnataka’s skilling and employment ecosystem.<br />
-                        Teams will move beyond ideas to <strong>validate problems, build prototypes, test solutions and demonstrate measurable outcomes,</strong> working with Government, industry, academia, mentors and potential users.<br />
-                        The programme features six Government-defined challenges spanning AI-enabled skilling, rural employment, women returning to work, green jobs, inclusion and training-to-employment outcomes.
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      textAlign: 'center',
+                      transition: 'transform 0.25s ease, box-shadow 0.25s ease'
+                    }}
+                  >
+                    <div>
+                      <h4 style={{
+                        color: '#0e1220',
+                        fontFamily: 'Comfortaa, sans-serif',
+                        fontSize: '14.5px',
+                        fontWeight: 700,
+                        marginBottom: '12px',
+                        lineHeight: 1.3
+                      }}>
+                        {item.title}
+                      </h4>
+                      <p style={{
+                        color: '#555555',
+                        fontSize: '12.5px',
+                        lineHeight: '1.5',
+                        margin: 0
+                      }}>
+                        {item.desc}
                       </p>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Objectives Section */}
-            <div id="Skillathon-Objectives" className="wpb_row vc_row-fluid vc_row" style={{ paddingTop: '30px', paddingBottom: '30px' }}>
-              <div className="row_col_wrap_12 col span_12 dark left">
-                <div className="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding">
-                  <div className="wpb_wrapper">
-                    <div className="nectar-responsive-text Section-Heading font_size_desktop_48px font_line_height_110pct" style={{ color: '#0d53c7', textAlign: 'center', marginBottom: '30px' }}>
-                      <h2 style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px' }}>Objectives</h2>
-                    </div>
-                    <div style={{ textAlign: 'center' }}>
+                    <div style={{ marginTop: '24px', display: 'flex', justifyContent: 'center' }}>
                       <img
-                        className="objective-img"
-                        src="/bengaluruskillsummit/wp-content/uploads/2026/09/objectives.png"
-                        alt="Skillathon 2026 Objectives"
-                        style={{ width: '100%', maxWidth: '1200px', height: 'auto', display: 'inline-block' }}
+                        src={item.img}
+                        alt={item.alt}
+                        style={{ width: '56px', height: '56px', objectFit: 'contain' }}
                       />
                     </div>
                   </div>
+                ))}
+              </div>
+
+              {/* Download Brief Link */}
+              <p style={{ fontSize: '16px', color: '#0e1220' }}>
+                Explore the complete challenge statements, expected outcomes and pilot approach in the{' '}
+                <a
+                  href="/bengaluruskillsummit/wp-content/uploads/2026/09/Skillathon-2026-BengaluruSkillSummit.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#0066ff', textDecoration: 'underline', fontWeight: 600 }}
+                >
+                  Skillathon 2026 Challenge Brief.
+                </a>
+              </p>
+            </div>
+          </section>
+
+          {/* =========================================================================
+              7. In-Person Finals & Curated Format & Key Dates (Matching media_1790157409934.png)
+              ========================================================================= */}
+          <section id="phase-finals" style={{ paddingTop: '30px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
+            <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+              
+              {/* Top Row: In-Person Finals with Stage Presentation Photo */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gap: '40px',
+                alignItems: 'center',
+                marginBottom: '60px'
+              }}>
+                <div>
+                  <h3 style={{
+                    color: '#0e1220',
+                    fontFamily: 'Comfortaa, sans-serif',
+                    fontSize: '20px',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px',
+                    margin: '0 0 6px 0'
+                  }}>
+                    IN-PERSON FINALS
+                  </h3>
+                  <div style={{ color: '#555555', fontSize: '16px', fontWeight: 600, marginBottom: '20px' }}>
+                    (4th November 2026)
+                  </div>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                    {[
+                      "Finalists will participate in a full-day Skillathon (6–7 hours) at the Bengaluru Skill Summit.",
+                      "Each team will make a 7-minute presentation followed by jury Q&A.",
+                      "Jury will include policymakers, industry leaders, academics, and practitioners."
+                    ].map((text, idx) => (
+                      <li key={idx} style={{
+                        position: 'relative',
+                        paddingLeft: '20px',
+                        marginBottom: '14px',
+                        fontSize: '15px',
+                        lineHeight: '1.6',
+                        color: '#0e1220'
+                      }}>
+                        <span style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: '10px',
+                          width: '5px',
+                          height: '5px',
+                          backgroundColor: '#0e1220',
+                          borderRadius: '50%'
+                        }} />
+                        {text}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div style={{ textAlign: 'center' }}>
+                  <img
+                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/in-person-finals-stage-photo.png"
+                    alt="Gamified Challenges and Community Tool Vaults Final Presentation"
+                    style={{
+                      maxWidth: '100%',
+                      height: 'auto',
+                      borderRadius: '16px',
+                      boxShadow: '0 6px 20px rgba(0,0,0,0.08)'
+                    }}
+                  />
                 </div>
               </div>
+
+              {/* Curated Format 5 Stages Graphic */}
+              <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+                <img
+                  src="/bengaluruskillsummit/wp-content/uploads/2026/09/curated-format-2026.png"
+                  alt="The curated format will take teams through five stages of problem-solving: 1 Empathise, 2 Define, 3 Ideate, 4 Consolidate, 5 Pitch"
+                  style={{ width: '100%', maxWidth: '980px', height: 'auto', display: 'inline-block' }}
+                />
+              </div>
+
+              {/* Key Dates Section */}
+              <div style={{ textAlign: 'center' }}>
+                <h2 style={{
+                  color: '#0066ff',
+                  fontFamily: 'Comfortaa, sans-serif',
+                  fontSize: '44px',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: '2px',
+                  marginBottom: '35px'
+                }}>
+                  KEY DATES
+                </h2>
+                <picture>
+                  <source media="(max-width: 768px)" srcSet="/bengaluruskillsummit/wp-content/uploads/2026/09/Key-Dates-Mobile-2026.png" />
+                  <img
+                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/Key-Dates-Desktop-2026.png"
+                    alt="Key Dates: Applications Open 22 Sep 2026, Application Deadline 2 Oct 2026, Final Evaluation 3-4 Nov 2026, Skillathon Finale 5 Nov 2026"
+                    style={{ width: '100%', maxWidth: '920px', height: 'auto', display: 'inline-block' }}
+                  />
+                </picture>
+              </div>
+
             </div>
+          </section>
 
-            {/* Competition Structure */}
-            <div id="competition-structure" className="wpb_row vc_row-fluid vc_row" style={{ paddingTop: '40px', paddingBottom: '40px', backgroundColor: 'rgba(245, 247, 250, 0.5)' }}>
-              <div className="row_col_wrap_12 col span_12 dark left">
-                <div className="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding">
-                  <div className="wpb_wrapper">
-                    <div className="nectar-responsive-text Section-Heading font_size_desktop_48px font_line_height_110pct" style={{ color: '#0d53c7', textAlign: 'center', marginBottom: '40px' }}>
-                      <h2 style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px' }}>Competition Structure</h2>
-                    </div>
+          {/* =========================================================================
+              8. Registration Details (Matching media_1790157421641.png)
+              ========================================================================= */}
+          <section id="registration-details" style={{ paddingTop: '30px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
+            <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+              <h2 style={{
+                color: '#0066ff',
+                fontFamily: 'Comfortaa, sans-serif',
+                fontSize: '44px',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                textAlign: 'center',
+                letterSpacing: '2px',
+                marginBottom: '40px'
+              }}>
+                REGISTRATION DETAILS
+              </h2>
 
-                    {/* Virtual Round Row */}
-                    <div className="row inner_row vc_row-o-content-middle" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', marginBottom: '50px' }}>
-                      <div className="vc_col-sm-6 col" style={{ textAlign: 'center' }}>
-                        <img
-                          src="/bengaluruskillsummit/wp-content/uploads/2026/09/virtual-round.png"
-                          alt="Phase 1: Virtual Round"
-                          style={{ maxWidth: '100%', height: 'auto' }}
-                        />
-                      </div>
-                      <div className="vc_col-sm-6 col" style={{ paddingLeft: '20px' }}>
-                        <ul className="competition-steps-list" style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                          {[
-                            "Challenge Selection & Application",
-                            "Selection & Orientation",
-                            "Stakeholder Connect",
-                            "Final Evaluation",
-                            "Skillathon Finale"
-                          ].map((step, idx) => (
-                            <li key={idx} style={{
-                              position: 'relative',
-                              paddingLeft: '26px',
-                              marginBottom: '14px',
-                              fontSize: '20px',
-                              fontWeight: 600,
-                              color: '#0e1220'
-                            }}>
-                              <span style={{
-                                position: 'absolute',
-                                left: 0,
-                                top: '8px',
-                                width: '10px',
-                                height: '10px',
-                                backgroundColor: '#ff6257',
-                                borderRadius: '50%'
-                              }} />
-                              {step}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gap: '40px',
+                alignItems: 'center'
+              }}>
+                {/* Left: Rules & Guidelines & Register Button */}
+                <div>
+                  <h4 style={{
+                    color: '#0e1220',
+                    fontFamily: 'Comfortaa, sans-serif',
+                    fontSize: '18px',
+                    fontWeight: 700,
+                    marginBottom: '16px'
+                  }}>
+                    Rules &amp; Guidelines
+                  </h4>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 28px 0' }}>
+                    {[
+                      "Choose one challenge and develop a solution addressing the identified problem.",
+                      "Build and demonstrate a working prototype, not just an idea.",
+                      "Validate your solution with relevant stakeholders and potential users.",
+                      "Test and measure your solution through real-world pilots wherever feasible.",
+                      "Present evidence and outcomes following the journey: Problem → Solution → Prototype → Pilot → Evidence → Impact → Scale.",
+                      "Final evaluation will consider problem understanding, innovation, prototype, validation, feasibility, impact and scalability."
+                    ].map((text, idx) => (
+                      <li key={idx} style={{
+                        position: 'relative',
+                        paddingLeft: '20px',
+                        marginBottom: '12px',
+                        fontSize: '14.5px',
+                        lineHeight: '1.6',
+                        color: '#0e1220'
+                      }}>
+                        <span style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: '9px',
+                          width: '5px',
+                          height: '5px',
+                          backgroundColor: '#0e1220',
+                          borderRadius: '50%'
+                        }} />
+                        {text}
+                      </li>
+                    ))}
+                  </ul>
 
-                    {/* Submission Guidelines */}
-                    <div style={{ textAlign: 'center', paddingTop: '30px', paddingBottom: '40px' }}>
-                      <h3 style={{ fontSize: '30px', fontWeight: 700, color: '#000000', marginBottom: '8px' }}>Submission Guidelines</h3>
-                      <p style={{ fontSize: '18px', color: '#555555', marginBottom: '25px' }}>Your submission should include the following sections</p>
-                      <picture>
-                        <source media="(max-width: 768px)" srcSet="/bengaluruskillsummit/wp-content/uploads/2026/09/Submission-Template-mobile.png" />
-                        <img
-                          src="/bengaluruskillsummit/wp-content/uploads/2026/09/Submission-Template-2026.png"
-                          alt="Submission Guidelines Template"
-                          style={{ width: '100%', maxWidth: '1100px', height: 'auto', display: 'inline-block' }}
-                        />
-                      </picture>
-                    </div>
+                  <Link
+                    to="/skillathon-registration"
+                    style={{
+                      backgroundColor: '#ff6257',
+                      color: '#ffffff',
+                      padding: '12px 32px',
+                      borderRadius: '10px',
+                      display: 'inline-block',
+                      fontWeight: 700,
+                      fontSize: '14px',
+                      fontFamily: 'Comfortaa, sans-serif',
+                      textTransform: 'uppercase',
+                      textDecoration: 'none',
+                      letterSpacing: '0.5px',
+                      boxShadow: '0 4px 14px rgba(255, 98, 87, 0.35)',
+                      transition: 'all 0.25s ease'
+                    }}
+                  >
+                    REGISTER NOW
+                  </Link>
+                </div>
 
-                    {/* Evaluation Criteria */}
-                    <div style={{ textAlign: 'center', paddingTop: '30px', paddingBottom: '20px' }}>
-                      <h3 style={{ fontSize: '30px', fontWeight: 700, color: '#000000', marginBottom: '25px' }}>Evaluation Criteria</h3>
-                      <picture>
-                        <source media="(max-width: 768px)" srcSet="/bengaluruskillsummit/wp-content/uploads/2026/09/Evaluation-Criteria-mobile.png" />
-                        <img
-                          src="/bengaluruskillsummit/wp-content/uploads/2026/09/Evaluation-Criteria.png"
-                          alt="Evaluation Criteria"
-                          style={{ width: '100%', maxWidth: '900px', height: 'auto', display: 'inline-block' }}
-                        />
-                      </picture>
-                    </div>
-
-                  </div>
+                {/* Right: Participants Group Photo */}
+                <div style={{ textAlign: 'center' }}>
+                  <img
+                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/registration-group-photo.png"
+                    alt="Participants with Summit badges at Bengaluru Skill Summit"
+                    style={{
+                      maxWidth: '100%',
+                      height: 'auto',
+                      borderRadius: '16px',
+                      boxShadow: '0 6px 20px rgba(0,0,0,0.08)'
+                    }}
+                  />
                 </div>
               </div>
+
             </div>
+          </section>
 
-            {/* Choose your Challenge */}
-            <div id="challenge-areas" className="wpb_row vc_row-fluid vc_row" style={{ paddingTop: '50px', paddingBottom: '50px' }}>
-              <div className="row_col_wrap_12 col span_12 dark left">
-                <div className="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding">
-                  <div className="wpb_wrapper">
-                    <div className="nectar-responsive-text challenge-main font_size_desktop_48px font_size_phone_36px font_line_height_110pct" style={{ color: '#0d53c7', textAlign: 'center', marginBottom: '10px' }}>
-                      <h2 style={{ fontWeight: 700, letterSpacing: '2px' }}>Choose your Challenge</h2>
-                    </div>
-                    <div className="nectar-responsive-text challenge-sub font_size_desktop_22px font_size_phone_20px" style={{ color: '#0e1220', textAlign: 'center', marginBottom: '16px' }}>
-                      <p style={{ margin: 0, fontWeight: 500 }}>Take on a real-world challenge and build a solution that can create measurable impact.</p>
-                    </div>
-                    <div className="nectar-responsive-text challenge-description font_size_desktop_16px" style={{ color: '#444444', textAlign: 'center', maxWidth: '850px', margin: '0 auto 40px auto', lineHeight: '1.6' }}>
-                      <p style={{ margin: 0 }}>We invite you to tackle real-world challenges that shape the future of education, employment, and innovation. Your ideas should align with the global goals and empower communities across India and beyond.</p>
-                    </div>
+          {/* =========================================================================
+              9. FAQs (Matching media_1790157421641.png)
+              ========================================================================= */}
+          <section id="faqs" style={{ paddingTop: '20px', paddingBottom: '80px', paddingLeft: '20px', paddingRight: '20px' }}>
+            <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+              <h2 style={{
+                color: '#0066ff',
+                fontFamily: 'Comfortaa, sans-serif',
+                fontSize: '44px',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                textAlign: 'center',
+                letterSpacing: '2px',
+                marginBottom: '40px'
+              }}>
+                FAQS
+              </h2>
 
-                    {/* 6 Challenge Cards Grid */}
-                    <div style={{
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                      gap: '24px',
-                      maxWidth: '1200px',
-                      margin: '0 auto'
-                    }}>
-                      {challengeList.map((item, idx) => (
-                        <div
-                          key={idx}
-                          style={{
-                            backgroundColor: '#fdfcfa',
-                            border: '1px solid #ebe6df',
-                            borderRadius: '10px',
-                            padding: '28px 24px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'space-between',
-                            boxShadow: '0 4px 15px rgba(0,0,0,0.04)',
-                            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                            textAlign: 'center'
-                          }}
-                        >
-                          <div>
-                            <h4 style={{
-                              color: '#0e1220',
-                              fontSize: '18px',
-                              fontWeight: 700,
-                              marginBottom: '12px'
-                            }}>
-                              {item.title}
-                            </h4>
-                            <p style={{
-                              color: '#555555',
-                              fontSize: '15px',
-                              lineHeight: '1.6',
-                              marginBottom: '20px'
-                            }}>
-                              {item.desc}
-                            </p>
-                          </div>
-                          <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center' }}>
-                            <img
-                              src={item.img}
-                              alt={item.alt}
-                              style={{ width: '80px', height: '80px', objectFit: 'contain' }}
-                            />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* PDF Brief Link */}
-                    <div style={{ textAlign: 'center', marginTop: '40px' }}>
-                      <p style={{ fontSize: '18px', color: '#0e1220' }}>
-                        Explore the complete challenge statements, expected outcomes and pilot approach in the{' '}
-                        <a
-                          href="/bengaluruskillsummit/wp-content/uploads/2026/09/Skillathon-2026-BengaluruSkillSummit.pdf"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ color: '#106cff', fontWeight: 700, textDecoration: 'underline' }}
-                        >
-                          Skillathon 2026 Challenge Brief.
-                        </a>
-                      </p>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* In-Person Finals & Curated Format */}
-            <div id="phase-finals" className="wpb_row vc_row-fluid vc_row" style={{ paddingTop: '40px', paddingBottom: '40px', backgroundColor: '#fafbfd' }}>
-              <div className="row_col_wrap_12 col span_12 dark left">
-                <div className="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding">
-                  <div className="wpb_wrapper">
-                    
-                    {/* Top In-Person Finals Details */}
-                    <div className="row inner_row vc_row-o-content-middle" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', marginBottom: '50px' }}>
-                      <div className="vc_col-sm-6 col" style={{ paddingRight: '20px' }}>
-                        <div style={{ marginBottom: '8px' }}>
-                          <span style={{ color: '#FF6257', fontWeight: 700, fontSize: '24px', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                            In-Person Finals
-                          </span>
-                        </div>
-                        <div style={{ color: '#0e1220', fontSize: '18px', fontWeight: 700, marginBottom: '20px' }}>
-                          (4th November 2026)
-                        </div>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                          {[
-                            "Finalists will participate in a full-day Skillathon (6–7 hours) at the Bengaluru Skill Summit.",
-                            "Each team will make a 7-minute presentation followed by jury Q&A.",
-                            "Jury will include policymakers, industry leaders, academics, and practitioners."
-                          ].map((bullet, idx) => (
-                            <li key={idx} style={{
-                              position: 'relative',
-                              paddingLeft: '24px',
-                              marginBottom: '12px',
-                              fontSize: '16px',
-                              lineHeight: '1.6',
-                              color: '#333333'
-                            }}>
-                              <span style={{
-                                position: 'absolute',
-                                left: 0,
-                                top: '8px',
-                                width: '8px',
-                                height: '8px',
-                                backgroundColor: '#ff6257',
-                                borderRadius: '50%'
-                              }} />
-                              {bullet}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="vc_col-sm-6 col" style={{ textAlign: 'center' }}>
-                        <img
-                          src="/bengaluruskillsummit/wp-content/uploads/2026/09/in-personal-finals.png"
-                          alt="Phase 2 In-Person Finals"
-                          style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px' }}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Curated Format 5 Stages */}
-                    <div style={{ textAlign: 'center', paddingTop: '20px' }}>
-                      <h3 style={{ fontSize: '28px', fontWeight: 700, color: '#000000', marginBottom: '30px' }}>
-                        The curated format will take teams through five stages of problem-solving
-                      </h3>
-                      <picture>
-                        <source media="(max-width: 768px)" srcSet="/bengaluruskillsummit/wp-content/uploads/2025/09/in-person-finals-mobile-scaled.png" />
-                        <img
-                          src="/bengaluruskillsummit/wp-content/uploads/2025/09/curated-format.png"
-                          alt="Curated Format 5 Stages of Problem-Solving"
-                          style={{ width: '100%', maxWidth: '1100px', height: 'auto', display: 'inline-block' }}
-                        />
-                      </picture>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Key Dates */}
-            <div id="key-dates" className="wpb_row vc_row-fluid vc_row" style={{ paddingTop: '60px', paddingBottom: '30px' }}>
-              <div className="row_col_wrap_12 col span_12 dark left">
-                <div className="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding">
-                  <div className="wpb_wrapper">
-                    <div className="nectar-responsive-text Section-Heading font_size_desktop_48px font_line_height_110pct" style={{ color: '#0d53c7', textAlign: 'center', marginBottom: '35px' }}>
-                      <h2 style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px' }}>Key Dates</h2>
-                    </div>
-                    <div style={{ textAlign: 'center' }}>
-                      <picture>
-                        <source media="(max-width: 768px)" srcSet="/bengaluruskillsummit/wp-content/uploads/2026/09/Key-Dates-Mobile-2026.png" />
-                        <img
-                          src="/bengaluruskillsummit/wp-content/uploads/2026/09/Key-Dates-Desktop-2026.png"
-                          alt="Key Dates Timeline 2026"
-                          style={{ width: '100%', maxWidth: '1000px', height: 'auto', display: 'inline-block' }}
-                        />
-                      </picture>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Registration Details */}
-            <div id="registration-details" className="wpb_row vc_row-fluid vc_row" style={{ paddingTop: '50px', paddingBottom: '60px' }}>
-              <div className="row_col_wrap_12 col span_12 dark left">
-                <div className="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding">
-                  <div className="wpb_wrapper">
-                    <div className="nectar-responsive-text Section-Heading font_size_desktop_48px font_line_height_110pct" style={{ color: '#0d53c7', textAlign: 'center', marginBottom: '40px' }}>
-                      <h2 style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px' }}>Registration Details</h2>
-                    </div>
-
-                    <div className="row inner_row vc_row-o-content-middle" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-                      <div className="vc_col-sm-6 col" style={{ paddingRight: '20px' }}>
-                        <h4 style={{ fontSize: '22px', fontWeight: 700, color: '#0e1220', marginBottom: '16px' }}>Rules &amp; Guidelines</h4>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 30px 0' }}>
-                          {[
-                            <><strong>Choose one challenge</strong> and develop a solution addressing the identified problem.</>,
-                            <><strong>Build and demonstrate</strong> a working prototype, not just an idea.</>,
-                            <><strong>Validate your solution</strong> with relevant stakeholders and potential users.</>,
-                            <><strong>Test and measure</strong> your solution through real-world pilots wherever feasible.</>,
-                            <><strong>Present evidence and outcomes</strong> following the journey: <strong>Problem → Solution → Prototype → Pilot → Evidence → Impact → Scale.</strong></>,
-                            <><strong>Final evaluation</strong> will consider problem understanding, innovation, prototype, validation, feasibility, impact and scalability.</>
-                          ].map((rule, idx) => (
-                            <li key={idx} style={{
-                              position: 'relative',
-                              paddingLeft: '24px',
-                              marginBottom: '12px',
-                              fontSize: '15px',
-                              lineHeight: '1.6',
-                              color: '#333333'
-                            }}>
-                              <span style={{
-                                position: 'absolute',
-                                left: 0,
-                                top: '8px',
-                                width: '8px',
-                                height: '8px',
-                                backgroundColor: '#ff6257',
-                                borderRadius: '50%'
-                              }} />
-                              {rule}
-                            </li>
-                          ))}
-                        </ul>
-
-                        <Link
-                          to="/skillathon-registration"
-                          className="nectar-button large regular extra-color-1 regular-button"
-                          style={{
-                            backgroundColor: '#ff6257',
-                            color: '#ffffff',
-                            padding: '12px 32px',
-                            borderRadius: '12px',
-                            display: 'inline-block',
-                            fontWeight: 700,
-                            fontFamily: 'Comfortaa, sans-serif',
-                            textTransform: 'uppercase',
-                            textDecoration: 'none',
-                            letterSpacing: '0.5px'
-                          }}
-                        >
-                          <span>REGISTER NOW</span>
-                        </Link>
-                      </div>
-
-                      <div className="vc_col-sm-6 col" style={{ textAlign: 'center' }}>
-                        <img
-                          src="/bengaluruskillsummit/wp-content/uploads/2026/09/registration-details-1.png"
-                          alt="Registration Details Guidelines"
-                          style={{ maxWidth: '100%', height: 'auto', borderRadius: '12px' }}
-                        />
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* FAQs Accordion */}
-            <div id="hodl-faq-section" className="wpb_row vc_row-fluid vc_row full-width-section" style={{
-              paddingTop: '60px',
-              paddingBottom: '70px',
-              backgroundColor: '#f8f9fa'
-            }}>
-              <div className="row_col_wrap_12 col span_12 dark left" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 20px' }}>
-                <div className="wpb_wrapper">
-                  <div className="nectar-responsive-text Section-Heading font_size_desktop_48px font_line_height_110pct" style={{ color: '#0d53c7', textAlign: 'center', marginBottom: '40px' }}>
-                    <h2 style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px' }}>FAQs</h2>
-                  </div>
-
-                  <div className="toggles accordion">
-                    {faqsData.map((faq, idx) => (
-                      <div
-                        key={idx}
+              <div style={{ border: '1px solid #d9e0ea', borderRadius: '4px', overflow: 'hidden' }}>
+                {faqsData.map((faq, idx) => {
+                  const isOpen = openFaq === idx;
+                  return (
+                    <div
+                      key={idx}
+                      style={{
+                        borderBottom: idx === faqsData.length - 1 ? 'none' : '1px solid #d9e0ea',
+                        backgroundColor: '#ffffff'
+                      }}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => toggleFaq(idx)}
                         style={{
-                          backgroundColor: '#ffffff',
-                          borderRadius: '8px',
-                          marginBottom: '14px',
-                          border: '1px solid #e2e8f0',
-                          overflow: 'hidden'
+                          width: '100%',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          padding: '16px 20px',
+                          background: 'none',
+                          border: 'none',
+                          outline: 'none',
+                          textAlign: 'left',
+                          cursor: 'pointer',
+                          fontFamily: 'Comfortaa, sans-serif',
+                          fontSize: '16px',
+                          fontWeight: 700,
+                          color: '#0e1220'
                         }}
                       >
-                        <button
-                          type="button"
-                          onClick={() => toggleFaq(idx)}
-                          style={{
-                            width: '100%',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'space-between',
-                            padding: '18px 24px',
-                            background: 'none',
-                            border: 'none',
-                            outline: 'none',
-                            textAlign: 'left',
-                            cursor: 'pointer',
-                            fontFamily: 'Comfortaa, sans-serif',
-                            fontSize: '18px',
-                            fontWeight: 600,
-                            color: '#0e1220'
-                          }}
-                        >
-                          <span style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                            {openFaq === idx ? (
-                              <FaMinusCircle style={{ color: '#ff6257', fontSize: '20px', flexShrink: 0 }} />
-                            ) : (
-                              <FaPlusCircle style={{ color: '#0d53c7', fontSize: '20px', flexShrink: 0 }} />
-                            )}
-                            {faq.question}
-                          </span>
-                        </button>
-                        {openFaq === idx && (
-                          <div style={{
-                            padding: '0 24px 20px 58px',
-                            color: '#444444',
-                            fontSize: '16px',
-                            lineHeight: '1.7'
-                          }}>
-                            {faq.answer}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-
-                </div>
+                        <span>{faq.question}</span>
+                        <span style={{ fontSize: '18px', color: '#0e1220', marginLeft: '16px', display: 'flex', alignItems: 'center' }}>
+                          {isOpen ? <FaMinusCircle /> : <FaPlusCircle />}
+                        </span>
+                      </button>
+                      {isOpen && (
+                        <div style={{
+                          padding: '0 20px 18px 20px',
+                          fontSize: '15px',
+                          lineHeight: '1.6',
+                          color: '#444444'
+                        }}>
+                          {faq.answer}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
+
             </div>
+          </section>
 
-            {/* Contact Section */}
-            <div id="contact-info" className="wpb_row vc_row-fluid vc_row full-width-section" style={{
-              paddingTop: '60px',
-              paddingBottom: '40px',
-              backgroundImage: 'url(/bengaluruskillsummit/wp-content/uploads/2025/09/footer-white-and-gray-bg.svg)',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover'
-            }}>
-              <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                  gap: '30px'
-                }}>
-                  <div className="contact-info-card" style={{
-                    backgroundColor: '#ffffff',
-                    padding: '25px',
-                    borderRadius: '12px',
-                    boxShadow: '0 4px 15px rgba(0,0,0,0.06)'
-                  }}>
-                    <h4 style={{ color: '#0d53c7', fontWeight: 700, marginBottom: '8px' }}>Sponsor &amp; Exhibitor Queries</h4>
-                    <p style={{ margin: '0 0 6px 0', fontWeight: 600, color: '#333' }}>Vinay Martin</p>
-                    <p style={{ margin: '0 0 10px 0', fontSize: '14px', color: '#666' }}>Commercial Director</p>
-                    <p style={{ margin: 0, fontSize: '14px' }}>
-                      <a href="mailto:vinay.martin@tresconglobal.com" style={{ color: '#ff6257', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <FaEnvelope /> vinay.martin@tresconglobal.com
-                      </a>
-                    </p>
-                  </div>
-
-                  <div className="contact-info-card" style={{
-                    backgroundColor: '#ffffff',
-                    padding: '25px',
-                    borderRadius: '12px',
-                    boxShadow: '0 4px 15px rgba(0,0,0,0.06)'
-                  }}>
-                    <h4 style={{ color: '#0d53c7', fontWeight: 700, marginBottom: '8px' }}>Partnership Queries</h4>
-                    <p style={{ margin: '0 0 6px 0', fontWeight: 600, color: '#333' }}>Shilpa S</p>
-                    <p style={{ margin: '0 0 10px 0', fontSize: '14px', color: '#666' }}>Lead Partnership</p>
-                    <p style={{ margin: 0, fontSize: '14px' }}>
-                      <a href="mailto:shilpa@tresconglobal.com" style={{ color: '#ff6257', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <FaEnvelope /> shilpa@tresconglobal.com
-                      </a>
-                    </p>
-                  </div>
-
-                  <div className="contact-info-card" style={{
-                    backgroundColor: '#ffffff',
-                    padding: '25px',
-                    borderRadius: '12px',
-                    boxShadow: '0 4px 15px rgba(0,0,0,0.06)'
-                  }}>
-                    <h4 style={{ color: '#0d53c7', fontWeight: 700, marginBottom: '8px' }}>General Queries</h4>
-                    <p style={{ margin: '0 0 6px 0', fontWeight: 600, color: '#333' }}>Bengaluru Skill Summit Team</p>
-                    <p style={{ margin: '0 0 10px 0', fontSize: '14px', color: '#666' }}>Event Support</p>
-                    <p style={{ margin: 0, fontSize: '14px' }}>
-                      <a href="mailto:info@bengaluruskillsummit.com" style={{ color: '#ff6257', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <FaEnvelope /> info@bengaluruskillsummit.com
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
         </div>
       </div>
     </div>
