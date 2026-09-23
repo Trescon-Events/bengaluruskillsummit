@@ -1683,3 +1683,60 @@ img.img-with-animation[src*="header-image"],
 .nectar-flickity .flickity-prev-next-button.next {
   right: 10px !important;
 }
+
+/* ==========================================================================
+   Skillathon 2026 Page Styles
+   ========================================================================== */
+#Skillathon-Banner .Skillathon-Strip {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+#Skillathon-Objectives .objective-img {
+  width: 100% !important;
+  max-width: 1200px !important;
+  height: auto !important;
+}
+
+#competition-structure .competition-img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+#competition-structure .submission-guide-desk-img,
+#competition-structure .evaluation-criteria-img,
+#phase-finals .curated-format-img,
+#key-dates .key-dates-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+#competition-structure .submission-guide-mob-img,
+#competition-structure .evaluation-criteria-img-mob,
+#phase-finals .curated-format-img-mob,
+#key-dates .key-dates-img-mob {
+  display: none;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  #competition-structure .submission-guide-desk-img,
+  #competition-structure .evaluation-criteria-img,
+  #phase-finals .curated-format-img,
+  #key-dates .key-dates-img {
+    display: none !important;
+  }
+
+  #competition-structure .submission-guide-mob-img,
+  #competition-structure .evaluation-criteria-img-mob,
+  #phase-finals .curated-format-img-mob,
+  #key-dates .key-dates-img-mob {
+    display: block !important;
+  }
+}
+

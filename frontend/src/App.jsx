@@ -38,6 +38,7 @@ const SkillathonRegistration = lazy(() => import('./pages/SkillathonRegistration
 const SponsorNow = lazy(() => import('./pages/SponsorNow'));
 const SponsorRegistration = lazy(() => import('./pages/SponsorRegistration'));
 const Partners2026 = lazy(() => import('./pages/Partners2026'));
+const Skillathon2026 = lazy(() => import('./pages/Skillathon2026'));
 
 export default function App() {
   return (
@@ -162,6 +163,10 @@ export default function App() {
             <Route path="agenda-screen/" element={<Agenda isScreen={true} />} />
             <Route path="partners-screen" element={<EcosystemPartners isScreen={true} />} />
             <Route path="partners-screen/" element={<EcosystemPartners isScreen={true} />} />
+            <Route path="skillathon-2026" element={<Skillathon2026 />} />
+            <Route path="skillathon-2026/" element={<Skillathon2026 />} />
+            <Route path="skillathon" element={<Skillathon2026 />} />
+            <Route path="skillathon/" element={<Skillathon2026 />} />
             <Route path="skillathon-2025" element={<Skillathon2025 />} />
             <Route path="skillathon-2025/" element={<Skillathon2025 />} />
             <Route path="skillathon-registration" element={<SkillathonRegistration />} />
