@@ -628,17 +628,17 @@ img.img-with-animation,
   position: absolute !important;
   top: 100% !important;
   left: 0 !important;
-  min-width: 230px !important;
+  min-width: 200px !important;
   background-color: #000000 !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
   border-radius: 4px !important;
-  padding: 10px 0 !important;
+  padding: 8px 0 !important;
   margin: 0 !important;
   list-style: none !important;
   box-shadow: 0 14px 35px rgba(0, 0, 0, 0.85) !important;
   opacity: 0 !important;
   visibility: hidden !important;
-  transform: translateY(8px) !important;
+  transform: translateY(6px) !important;
   transition: opacity 0.2s cubic-bezier(0.25, 1, 0.5, 1), transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.2s !important;
   pointer-events: none !important;
   z-index: 99999 !important;
@@ -652,16 +652,19 @@ img.img-with-animation,
   pointer-events: auto !important;
 }
 
-.sf-menu > li > ul.sub-menu > li {
+.sf-menu ul.sub-menu > li {
+  position: relative !important;
   opacity: 1 !important;
   display: block !important;
   padding: 0 !important;
   margin: 0 !important;
 }
 
-.sf-menu > li > ul.sub-menu > li > a {
-  display: block !important;
-  padding: 11px 24px !important;
+.sf-menu ul.sub-menu > li > a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 10px 20px !important;
   color: #ffffff !important;
   font-size: 14px !important;
   font-weight: 700 !important;
@@ -673,9 +676,38 @@ img.img-with-animation,
   background-color: transparent !important;
 }
 
-.sf-menu > li > ul.sub-menu > li > a:hover {
+.sf-menu ul.sub-menu > li > a:hover {
   background-color: rgba(255, 98, 87, 0.15) !important;
   color: #ff6257 !important;
+}
+
+/* Level 2 Sub-menu (Flyout to the right) */
+.sf-menu ul.sub-menu > li > ul.sub-menu {
+  position: absolute !important;
+  top: 0 !important;
+  left: 100% !important;
+  min-width: 220px !important;
+  background-color: #000000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 4px !important;
+  padding: 8px 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.85) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateX(6px) !important;
+  transition: opacity 0.2s cubic-bezier(0.25, 1, 0.5, 1), transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.2s !important;
+  pointer-events: none !important;
+  z-index: 100000 !important;
+  display: block !important;
+}
+
+.sf-menu ul.sub-menu > li:hover > ul.sub-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(0) !important;
+  pointer-events: auto !important;
 }
 
 .sf-menu > li:hover > a,

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
+import { FaAngleDown, FaAngleUp, FaAngleRight } from 'react-icons/fa';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -9,19 +9,10 @@ export default function Header() {
   const path = location.pathname;
 
   const isHomeActive = path === '/' || path === '/bengaluruskillsummit' || path === '/bengaluruskillsummit/';
-  const isAboutActive = path.includes('/about-us') || path.includes('/about');
-  const isAgenda2026Active = path.includes('/agenda-2026');
-  const isSpeakers2026Active = path.includes('/speakers-2026');
-  const isHighlightsActive = path.includes('/2025-highlights') ||
-    path.includes('/speakers-2025') ||
-    (path.includes('/agenda') && !path.includes('2026')) ||
-    path.includes('/snapshot-agenda') ||
-    path.includes('/exhibitors') ||
-    path.includes('/ecosystem-partners') ||
-    path.includes('/media-partners') ||
-    path.includes('/curtain-raiser') ||
-    path.includes('/awards-2025') ||
-    path.includes('/kaushalya-karnataka-awards-2025');
+  const isAboutActive = path.includes('/about-us') || path.includes('/about') || path.includes('2025') || (path.includes('/agenda') && !path.includes('2026')) || path.includes('/snapshot-agenda') || path.includes('/exhibitors') || path.includes('/ecosystem-partners') || path.includes('/media-partners') || path.includes('/curtain-raiser') || path.includes('/kaushalya-karnataka-awards-2025');
+  const isAgendaActive = path.includes('/agenda-2026');
+  const isSpeakersActive = path.includes('/speakers-2026');
+  const isAwardsActive = path.includes('/kaushalya-karnataka-awards-2026') || path.includes('/awards-2026');
 
   const toggleSubMenu = (key, e) => {
     e.preventDefault();
@@ -89,72 +80,80 @@ export default function Header() {
 
                 <nav aria-label="Main Menu">
                   <ul className="sf-menu">
-                    {/* Home */}
+                    {/* HOME */}
                     <li id="menu-item-3693" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-home ${isHomeActive ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
-                      <Link to="/" aria-current={isHomeActive ? "page" : undefined}><span className="menu-title-text">Home</span></Link>
+                      <Link to="/" aria-current={isHomeActive ? "page" : undefined}><span className="menu-title-text">HOME</span></Link>
                     </li>
 
-                    {/* About */}
-                    <li id="menu-item-2638" className={`menu-item menu-item-type-post_type menu-item-object-page ${isAboutActive ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
-                      <Link to="/about-us"><span className="menu-title-text">About</span></Link>
-                    </li>
-
-                    {/* 2025 Highlights */}
-                    <li id="menu-item-3443" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children ${isHighlightsActive ? 'current-menu-item' : ''} nectar-regular-menu-item sf-with-ul`}>
-                      <Link to="/2025-highlights" aria-haspopup="true" aria-expanded="false">
-                        <span className="menu-title-text">2025 Highlights</span>
+                    {/* ABOUT with Flyout Sub-menu */}
+                    <li id="menu-item-2638" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children ${isAboutActive ? 'current-menu-item' : ''} nectar-regular-menu-item sf-with-ul`}>
+                      <Link to="/about-us" aria-haspopup="true" aria-expanded="false">
+                        <span className="menu-title-text">ABOUT</span>
                         <span className="sf-sub-indicator" style={{ display: "inline-flex", alignItems: "center", marginLeft: "6px" }}>
                           <FaAngleDown style={{ fontSize: "12px", verticalAlign: "middle" }} />
                         </span>
                       </Link>
                       <ul className="sub-menu">
-                        <li id="menu-item-2754" className="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item">
-                          <Link to="/speakers-2025"><span className="menu-title-text">SPEAKERS</span></Link>
-                        </li>
-                        <li id="menu-item-1629" className="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item">
-                          <Link to="/agenda"><span className="menu-title-text">FULL AGENDA</span></Link>
-                        </li>
-                        <li id="menu-item-2926" className="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item">
-                          <Link to="/snapshot-agenda"><span className="menu-title-text">SNAPSHOT AGENDA</span></Link>
-                        </li>
-                        <li id="menu-item-2747" className="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item">
-                          <Link to="/exhibitors"><span className="menu-title-text">EXHIBITORS</span></Link>
-                        </li>
-                        <li id="menu-item-2815" className="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item">
-                          <Link to="/ecosystem-partners"><span className="menu-title-text">PARTNERS</span></Link>
-                        </li>
-                        <li id="menu-item-2858" className="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item">
-                          <Link to="/media-partners"><span className="menu-title-text">MEDIA PARTNERS</span></Link>
-                        </li>
-                        <li id="menu-item-2639" className="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item">
-                          <Link to="/curtain-raiser"><span className="menu-title-text">CURTAIN RAISER</span></Link>
-                        </li>
-                        <li id="menu-item-3971" className="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item">
-                          <Link to="/kaushalya-karnataka-awards-2025"><span className="menu-title-text">AWARDS</span></Link>
+                        <li className="menu-item menu-item-has-children">
+                          <Link to="/2025-highlights" style={{ color: "#ff6257" }}>
+                            <span>2025 HIGHLIGHTS</span>
+                            <FaAngleRight style={{ fontSize: "14px", marginLeft: "14px" }} />
+                          </Link>
+                          <ul className="sub-menu">
+                            <li className="menu-item">
+                              <Link to="/speakers-2025"><span>SPEAKERS</span></Link>
+                            </li>
+                            <li className="menu-item">
+                              <Link to="/agenda"><span>FULL AGENDA</span></Link>
+                            </li>
+                            <li className="menu-item">
+                              <Link to="/snapshot-agenda"><span>SNAPSHOT AGENDA</span></Link>
+                            </li>
+                            <li className="menu-item">
+                              <Link to="/exhibitors"><span>EXHIBITORS</span></Link>
+                            </li>
+                            <li className="menu-item">
+                              <Link to="/ecosystem-partners"><span>PARTNERS</span></Link>
+                            </li>
+                            <li className="menu-item">
+                              <Link to="/media-partners"><span>MEDIA PARTNERS</span></Link>
+                            </li>
+                            <li className="menu-item">
+                              <Link to="/curtain-raiser"><span>CURTAIN RAISER 2025</span></Link>
+                            </li>
+                            <li className="menu-item">
+                              <Link to="/kaushalya-karnataka-awards-2025"><span>AWARDS</span></Link>
+                            </li>
+                          </ul>
                         </li>
                       </ul>
                     </li>
 
-                    {/* Agenda */}
-                    <li id="menu-item-agenda-2026" className={`menu-item menu-item-type-post_type menu-item-object-page ${isAgenda2026Active ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
-                      <Link to="/agenda-2026"><span className="menu-title-text">Agenda</span></Link>
+                    {/* AGENDA */}
+                    <li id="menu-item-agenda" className={`menu-item menu-item-type-post_type menu-item-object-page ${isAgendaActive ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
+                      <Link to="/agenda-2026"><span className="menu-title-text">AGENDA</span></Link>
                     </li>
 
-                    {/* Speakers */}
-                    <li id="menu-item-speakers-2026" className={`menu-item menu-item-type-post_type menu-item-object-page ${isSpeakers2026Active ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
-                      <Link to="/speakers-2026"><span className="menu-title-text">Speakers</span></Link>
+                    {/* SPEAKERS */}
+                    <li id="menu-item-speakers" className={`menu-item menu-item-type-post_type menu-item-object-page ${isSpeakersActive ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
+                      <Link to="/speakers-2026"><span className="menu-title-text">SPEAKERS</span></Link>
+                    </li>
+
+                    {/* AWARDS */}
+                    <li id="menu-item-awards" className={`menu-item menu-item-type-post_type menu-item-object-page ${isAwardsActive ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
+                      <Link to="/kaushalya-karnataka-awards-2026"><span className="menu-title-text">AWARDS</span></Link>
                     </li>
                   </ul>
 
                   <ul className="buttons sf-menu" data-user-set-ocm="off">
-                    <li id="menu-item-347" className="menu-btn-2 konfhub-btn menu-item menu-item-type-custom menu-item-object-custom nectar-regular-menu-item menu-item-btn-style-button_extra-color-1 menu-item-hover-text-reveal">
+                    <li id="menu-item-347" className="menu-btn-2 konfhub-btn menu-item menu-item-type-custom menu-item-object-custom nectar-regular-menu-item menu-item-btn-style-button_extra-color-1">
                       <Link to="/get-involved" className="header-cta-btn">
-                        <span className="menu-title-text">Get Your Pass</span>
+                        <span className="menu-title-text">GET YOUR PASS</span>
                       </Link>
                     </li>
-                    <li id="menu-item-4157" className="menu-btn-2 konfhub-btn menu-item menu-item-type-custom menu-item-object-custom nectar-regular-menu-item menu-item-btn-style-button_extra-color-1 menu-item-hover-text-reveal">
+                    <li id="menu-item-4157" className="menu-btn-2 konfhub-btn menu-item menu-item-type-custom menu-item-object-custom nectar-regular-menu-item menu-item-btn-style-button_extra-color-1">
                       <Link to="/general-enquiry" className="header-cta-btn">
-                        <span className="menu-title-text">Enquiry Now</span>
+                        <span className="menu-title-text">ENQUIRY NOW</span>
                       </Link>
                     </li>
                   </ul>
@@ -184,36 +183,49 @@ export default function Header() {
                 <div className="menu-items-wrap row" data-has-secondary-text="false">
                   <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
                     <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
-                      <Link to="/" onClick={closeMobileMenu} style={{ color: isHomeActive ? "#ff6257" : "#ffffff", fontWeight: 600, fontSize: "16px", textDecoration: "none" }}>Home</Link>
+                      <Link to="/" onClick={closeMobileMenu} style={{ color: isHomeActive ? "#ff6257" : "#ffffff", fontWeight: 700, fontSize: "15px", textDecoration: "none" }}>HOME</Link>
                     </li>
                     <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
-                      <Link to="/about-us" onClick={closeMobileMenu} style={{ color: isAboutActive ? "#ff6257" : "#ffffff", fontWeight: 600, fontSize: "16px", textDecoration: "none" }}>About</Link>
-                    </li>
-                    <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
-                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer" }} onClick={(e) => toggleSubMenu('highlights', e)}>
-                        <span style={{ color: isHighlightsActive ? "#ff6257" : "#ffffff", fontWeight: 600, fontSize: "16px" }}>2025 HIGHLIGHTS</span>
-                        {openSubMenus.highlights ? <FaAngleUp style={{ fontSize: "18px", color: "#ff6257" }} /> : <FaAngleDown style={{ fontSize: "18px", color: "#ff6257" }} />}
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer" }} onClick={(e) => toggleSubMenu('about', e)}>
+                        <span style={{ color: isAboutActive ? "#ff6257" : "#ffffff", fontWeight: 700, fontSize: "15px" }}>ABOUT</span>
+                        {openSubMenus.about ? <FaAngleUp style={{ fontSize: "18px", color: "#ff6257" }} /> : <FaAngleDown style={{ fontSize: "18px", color: "#ff6257" }} />}
                       </div>
-                      {openSubMenus.highlights && (
+                      {openSubMenus.about && (
                         <ul style={{ listStyle: "none", paddingLeft: "16px", marginTop: "10px", margin: 0 }}>
-                          <li style={{ padding: "8px 0" }}><Link to="/speakers-2025" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>SPEAKERS</Link></li>
-                          <li style={{ padding: "8px 0" }}><Link to="/agenda" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>FULL AGENDA</Link></li>
-                          <li style={{ padding: "8px 0" }}><Link to="/snapshot-agenda" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>SNAPSHOT AGENDA</Link></li>
-                          <li style={{ padding: "8px 0" }}><Link to="/exhibitors" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>EXHIBITORS</Link></li>
-                          <li style={{ padding: "8px 0" }}><Link to="/ecosystem-partners" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>PARTNERS</Link></li>
-                          <li style={{ padding: "8px 0" }}><Link to="/media-partners" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>MEDIA PARTNERS</Link></li>
-                          <li style={{ padding: "8px 0" }}><Link to="/curtain-raiser" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>CURTAIN RAISER</Link></li>
-                          <li style={{ padding: "8px 0" }}><Link to="/kaushalya-karnataka-awards-2025" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>AWARDS</Link></li>
+                          <li style={{ padding: "6px 0" }}>
+                            <Link to="/about-us" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>ABOUT US</Link>
+                          </li>
+                          <li style={{ padding: "6px 0" }}>
+                            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer" }} onClick={(e) => toggleSubMenu('highlights', e)}>
+                              <span style={{ color: "#ff6257", fontWeight: 600, fontSize: "14px" }}>2025 HIGHLIGHTS</span>
+                              {openSubMenus.highlights ? <FaAngleUp style={{ fontSize: "16px", color: "#ff6257" }} /> : <FaAngleDown style={{ fontSize: "16px", color: "#ff6257" }} />}
+                            </div>
+                            {openSubMenus.highlights && (
+                              <ul style={{ listStyle: "none", paddingLeft: "16px", marginTop: "8px", margin: 0 }}>
+                                <li style={{ padding: "6px 0" }}><Link to="/speakers-2025" onClick={closeMobileMenu} style={{ color: "#cccccc", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}>SPEAKERS</Link></li>
+                                <li style={{ padding: "6px 0" }}><Link to="/agenda" onClick={closeMobileMenu} style={{ color: "#cccccc", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}>FULL AGENDA</Link></li>
+                                <li style={{ padding: "6px 0" }}><Link to="/snapshot-agenda" onClick={closeMobileMenu} style={{ color: "#cccccc", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}>SNAPSHOT AGENDA</Link></li>
+                                <li style={{ padding: "6px 0" }}><Link to="/exhibitors" onClick={closeMobileMenu} style={{ color: "#cccccc", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}>EXHIBITORS</Link></li>
+                                <li style={{ padding: "6px 0" }}><Link to="/ecosystem-partners" onClick={closeMobileMenu} style={{ color: "#cccccc", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}>PARTNERS</Link></li>
+                                <li style={{ padding: "6px 0" }}><Link to="/media-partners" onClick={closeMobileMenu} style={{ color: "#cccccc", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}>MEDIA PARTNERS</Link></li>
+                                <li style={{ padding: "6px 0" }}><Link to="/curtain-raiser" onClick={closeMobileMenu} style={{ color: "#cccccc", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}>CURTAIN RAISER 2025</Link></li>
+                                <li style={{ padding: "6px 0" }}><Link to="/kaushalya-karnataka-awards-2025" onClick={closeMobileMenu} style={{ color: "#cccccc", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}>AWARDS</Link></li>
+                              </ul>
+                            )}
+                          </li>
                         </ul>
                       )}
                     </li>
                     <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
-                      <Link to="/agenda-2026" onClick={closeMobileMenu} style={{ color: isAgenda2026Active ? "#ff6257" : "#ffffff", fontWeight: 600, fontSize: "16px", textDecoration: "none" }}>Agenda</Link>
+                      <Link to="/agenda-2026" onClick={closeMobileMenu} style={{ color: isAgendaActive ? "#ff6257" : "#ffffff", fontWeight: 700, fontSize: "15px", textDecoration: "none" }}>AGENDA</Link>
                     </li>
                     <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
-                      <Link to="/speakers-2026" onClick={closeMobileMenu} style={{ color: isSpeakers2026Active ? "#ff6257" : "#ffffff", fontWeight: 600, fontSize: "16px", textDecoration: "none" }}>Speakers</Link>
+                      <Link to="/speakers-2026" onClick={closeMobileMenu} style={{ color: isSpeakersActive ? "#ff6257" : "#ffffff", fontWeight: 700, fontSize: "15px", textDecoration: "none" }}>SPEAKERS</Link>
                     </li>
-                    <li style={{ paddingTop: "16px", display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                    <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
+                      <Link to="/kaushalya-karnataka-awards-2026" onClick={closeMobileMenu} style={{ color: isAwardsActive ? "#ff6257" : "#ffffff", fontWeight: 700, fontSize: "15px", textDecoration: "none" }}>AWARDS</Link>
+                    </li>
+                    <li style={{ paddingTop: "18px", display: "flex", gap: "12px", flexWrap: "wrap" }}>
                       <Link to="/get-involved" onClick={closeMobileMenu} style={{
                         backgroundColor: "#ff6257",
                         color: "#fff",
@@ -225,7 +237,7 @@ export default function Header() {
                         letterSpacing: "0.5px",
                         textTransform: "uppercase",
                         display: "inline-block"
-                      }}>Get Your Pass</Link>
+                      }}>GET YOUR PASS</Link>
                       <Link to="/general-enquiry" onClick={closeMobileMenu} style={{
                         backgroundColor: "#ff6257",
                         color: "#fff",
@@ -237,7 +249,7 @@ export default function Header() {
                         letterSpacing: "0.5px",
                         textTransform: "uppercase",
                         display: "inline-block"
-                      }}>Enquiry Now</Link>
+                      }}>ENQUIRY NOW</Link>
                     </li>
                   </ul>
                 </div>
