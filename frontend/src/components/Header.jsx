@@ -190,10 +190,6 @@ export default function Header() {
                     </li>
                   </ul>
                 </nav>
-
-                <div className="logo-spacing" data-using-image="true">
-                  <img className="hidden-logo" alt="Bengaluru Skill Summit" width={492} height={157} src="/bengaluruskillsummit/wp-content/uploads/2025/09/bss-logo-white.svg" decoding="async" loading="lazy" />
-                </div>
               </div>
             </div>
 
