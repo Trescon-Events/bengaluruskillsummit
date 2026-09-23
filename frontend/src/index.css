@@ -717,33 +717,103 @@ img.img-with-animation,
   color: #ff6257 !important;
 }
 
-/* Header CTA Buttons - Guaranteed Identical Style */
+/* Header CTA Buttons - Exact Salient WordPress Theme Styling */
+ul.buttons.sf-menu {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 15px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+#header-outer nav .buttons > li > a,
 .sf-menu.buttons li a,
-.header-cta-btn,
-#header-outer nav .buttons > li > a {
+.sf-menu.buttons li.menu-btn-2 > a,
+.sf-menu.buttons li[class*="menu-item-btn-style"] > a,
+.header-cta-btn {
   background-color: #ff6257 !important;
   color: #ffffff !important;
-  border-radius: 25px !important;
-  padding: 10px 22px !important;
+  border-radius: 12px !important;
+  padding: 12px 24px !important;
+  font-family: 'Comfortaa', sans-serif !important;
   font-weight: 700 !important;
-  font-size: 13px !important;
+  font-size: 14px !important;
   line-height: 1.2 !important;
-  letter-spacing: 0.6px !important;
+  letter-spacing: 0.3px !important;
   text-transform: uppercase !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  transition: all 0.2s ease !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
   border: none !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
 }
 
+#header-outer nav .buttons > li > a:hover,
 .sf-menu.buttons li a:hover,
-.header-cta-btn:hover,
-#header-outer nav .buttons > li > a:hover {
+.sf-menu.buttons li.menu-btn-2 > a:hover,
+.sf-menu.buttons li[class*="menu-item-btn-style"] > a:hover,
+.header-cta-btn:hover {
   background-color: #e55349 !important;
   color: #ffffff !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 4px 12px rgba(255, 98, 87, 0.4) !important;
+  box-shadow: 0 4px 14px rgba(255, 98, 87, 0.4) !important;
+}
+
+.sf-menu.buttons li a span.menu-title-text,
+#header-outer nav .buttons > li > a span.menu-title-text {
+  color: #ffffff !important;
+  font-family: 'Comfortaa', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.3px !important;
+  text-align: center !important;
+  display: inline-block !important;
+  line-height: 1.2 !important;
+}
+
+/* Nectar Hover Text Reveal Effect */
+.sf-menu.buttons .nectar-text-reveal-button {
+  overflow: hidden !important;
+  display: inline-block !important;
+  position: relative !important;
+  line-height: 1.2 !important;
+  vertical-align: middle !important;
+  transform: translateZ(0) !important;
+}
+
+.sf-menu.buttons .nectar-text-reveal-button__text {
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.33, 1) !important;
+  display: block !important;
+  position: relative !important;
+  color: #ffffff !important;
+}
+
+.sf-menu.buttons .nectar-text-reveal-button__text::after {
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.33, 1) !important;
+  bottom: -130% !important;
+  content: attr(data-text) !important;
+  left: 0 !important;
+  position: absolute !important;
+  color: #ffffff !important;
+  white-space: nowrap !important;
+  text-transform: uppercase !important;
+}
+
+.sf-menu.buttons li:hover .nectar-text-reveal-button__text,
+.sf-menu.buttons li a:hover .nectar-text-reveal-button__text {
+  transform: translateY(-110%) !important;
+}
+
+.sf-menu.buttons li:hover .nectar-text-reveal-button__text::after,
+.sf-menu.buttons li a:hover .nectar-text-reveal-button__text::after {
+  transform: translateY(-20%) !important;
 }
 
 /* ==========================================================================

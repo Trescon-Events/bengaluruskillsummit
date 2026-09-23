@@ -146,14 +146,22 @@ export default function Header() {
                   </ul>
 
                   <ul className="buttons sf-menu" data-user-set-ocm="off">
-                    <li id="menu-item-347" className="menu-btn-2 konfhub-btn menu-item menu-item-type-custom menu-item-object-custom nectar-regular-menu-item menu-item-btn-style-button_extra-color-1">
-                      <Link to="/get-involved" className="header-cta-btn">
-                        <span className="menu-title-text">GET YOUR PASS</span>
+                    <li id="menu-item-347" className="menu-btn-2 konfhub-btn menu-item menu-item-type-custom menu-item-object-custom nectar-regular-menu-item menu-item-btn-style-button_extra-color-1 menu-item-hover-text-reveal menu-item-347">
+                      <Link to="/get-involved" data-discover="true">
+                        <span className="menu-title-text">
+                          <span className="nectar-text-reveal-button">
+                            <span className="nectar-text-reveal-button__text" data-text="Get Your Pass">Get Your Pass</span>
+                          </span>
+                        </span>
                       </Link>
                     </li>
-                    <li id="menu-item-4157" className="menu-btn-2 konfhub-btn menu-item menu-item-type-custom menu-item-object-custom nectar-regular-menu-item menu-item-btn-style-button_extra-color-1">
-                      <Link to="/general-enquiry" className="header-cta-btn">
-                        <span className="menu-title-text">ENQUIRY NOW</span>
+                    <li id="menu-item-4157" className="menu-btn-2 konfhub-btn menu-item menu-item-type-custom menu-item-object-custom nectar-regular-menu-item menu-item-btn-style-button_extra-color-1 menu-item-hover-text-reveal menu-item-347 menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-4157">
+                      <Link to="/general-enquiry" data-discover="true">
+                        <span className="menu-title-text">
+                          <span className="nectar-text-reveal-button">
+                            <span className="nectar-text-reveal-button__text" data-text="Enquiry Now">Enquiry Now</span>
+                          </span>
+                        </span>
                       </Link>
                     </li>
                   </ul>
@@ -230,11 +238,12 @@ export default function Header() {
                         backgroundColor: "#ff6257",
                         color: "#fff",
                         padding: "10px 20px",
-                        borderRadius: "25px",
+                        borderRadius: "12px",
                         textDecoration: "none",
                         fontWeight: 700,
                         fontSize: "13px",
-                        letterSpacing: "0.5px",
+                        fontFamily: "Comfortaa, sans-serif",
+                        letterSpacing: "0.3px",
                         textTransform: "uppercase",
                         display: "inline-block"
                       }}>GET YOUR PASS</Link>
@@ -242,11 +251,12 @@ export default function Header() {
                         backgroundColor: "#ff6257",
                         color: "#fff",
                         padding: "10px 20px",
-                        borderRadius: "25px",
+                        borderRadius: "12px",
                         textDecoration: "none",
                         fontWeight: 700,
                         fontSize: "13px",
-                        letterSpacing: "0.5px",
+                        fontFamily: "Comfortaa, sans-serif",
+                        letterSpacing: "0.3px",
                         textTransform: "uppercase",
                         display: "inline-block"
                       }}>ENQUIRY NOW</Link>
