@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
 
 const faqsData = [
   {
@@ -81,7 +80,7 @@ const challengeList = [
 ];
 
 export default function Skillathon2026() {
-  const [openFaq, setOpenFaq] = useState(0); // Q1 open by default as in screenshot
+  const [openFaq, setOpenFaq] = useState(0); // Q1 open by default matching screenshot
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -410,7 +409,7 @@ export default function Skillathon2026() {
               6. Choose Your Challenge (Matching media_1790157389912.png)
               ========================================================================= */}
           <section id="choose-challenge" style={{ paddingTop: '30px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
-            <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ maxWidth: '1150px', margin: '0 auto', textAlign: 'center' }}>
               <h2 style={{
                 color: '#0066ff',
                 fontFamily: 'Comfortaa, sans-serif',
@@ -440,11 +439,11 @@ export default function Skillathon2026() {
                 We invite you to tackle real-world challenges that shape the future of education, employment, and innovation. Your ideas should align with the global goals and empower communities across India and beyond.
               </p>
 
-              {/* 6 Challenge Cards Grid */}
+              {/* 6 Challenge Cards Grid: 6 equal cards in a single row on desktop */}
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))',
-                gap: '16px',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+                gap: '12px',
                 alignItems: 'stretch',
                 marginBottom: '40px'
               }}>
@@ -453,14 +452,15 @@ export default function Skillathon2026() {
                     key={idx}
                     style={{
                       backgroundColor: '#ffffff',
-                      borderRadius: '12px',
-                      padding: '24px 16px',
-                      border: '1px solid #edf0f5',
-                      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.04)',
+                      borderRadius: '8px',
+                      padding: '22px 12px',
+                      border: '1px solid #f0f2f5',
+                      boxShadow: '0 4px 14px rgba(0, 0, 0, 0.03)',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'space-between',
                       textAlign: 'center',
+                      minHeight: '270px',
                       transition: 'transform 0.25s ease, box-shadow 0.25s ease'
                     }}
                   >
@@ -468,27 +468,27 @@ export default function Skillathon2026() {
                       <h4 style={{
                         color: '#0e1220',
                         fontFamily: 'Comfortaa, sans-serif',
-                        fontSize: '14.5px',
+                        fontSize: '13.5px',
                         fontWeight: 700,
-                        marginBottom: '12px',
+                        marginBottom: '10px',
                         lineHeight: 1.3
                       }}>
                         {item.title}
                       </h4>
                       <p style={{
-                        color: '#555555',
-                        fontSize: '12.5px',
-                        lineHeight: '1.5',
+                        color: '#444444',
+                        fontSize: '11.5px',
+                        lineHeight: '1.45',
                         margin: 0
                       }}>
                         {item.desc}
                       </p>
                     </div>
-                    <div style={{ marginTop: '24px', display: 'flex', justifyContent: 'center' }}>
+                    <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}>
                       <img
                         src={item.img}
                         alt={item.alt}
-                        style={{ width: '56px', height: '56px', objectFit: 'contain' }}
+                        style={{ width: '48px', height: '48px', objectFit: 'contain' }}
                       />
                     </div>
                   </div>
@@ -689,10 +689,10 @@ export default function Skillathon2026() {
                       backgroundColor: '#ff6257',
                       color: '#ffffff',
                       padding: '12px 32px',
-                      borderRadius: '10px',
+                      borderRadius: '8px',
                       display: 'inline-block',
                       fontWeight: 700,
-                      fontSize: '14px',
+                      fontSize: '13.5px',
                       fontFamily: 'Comfortaa, sans-serif',
                       textTransform: 'uppercase',
                       textDecoration: 'none',
@@ -727,7 +727,7 @@ export default function Skillathon2026() {
               9. FAQs (Matching media_1790157421641.png)
               ========================================================================= */}
           <section id="faqs" style={{ paddingTop: '20px', paddingBottom: '80px', paddingLeft: '20px', paddingRight: '20px' }}>
-            <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <div style={{ maxWidth: '850px', margin: '0 auto' }}>
               <h2 style={{
                 color: '#0066ff',
                 fontFamily: 'Comfortaa, sans-serif',
@@ -741,14 +741,14 @@ export default function Skillathon2026() {
                 FAQS
               </h2>
 
-              <div style={{ border: '1px solid #d9e0ea', borderRadius: '4px', overflow: 'hidden' }}>
+              <div style={{ border: '1px solid #c8d0dc', borderRadius: '0', overflow: 'hidden' }}>
                 {faqsData.map((faq, idx) => {
                   const isOpen = openFaq === idx;
                   return (
                     <div
                       key={idx}
                       style={{
-                        borderBottom: idx === faqsData.length - 1 ? 'none' : '1px solid #d9e0ea',
+                        borderBottom: idx === faqsData.length - 1 ? 'none' : '1px solid #c8d0dc',
                         backgroundColor: '#ffffff'
                       }}
                     >
@@ -760,29 +760,42 @@ export default function Skillathon2026() {
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'space-between',
-                          padding: '16px 20px',
+                          padding: '14px 18px',
                           background: 'none',
                           border: 'none',
                           outline: 'none',
                           textAlign: 'left',
                           cursor: 'pointer',
                           fontFamily: 'Comfortaa, sans-serif',
-                          fontSize: '16px',
+                          fontSize: '15px',
                           fontWeight: 700,
                           color: '#0e1220'
                         }}
                       >
                         <span>{faq.question}</span>
-                        <span style={{ fontSize: '18px', color: '#0e1220', marginLeft: '16px', display: 'flex', alignItems: 'center' }}>
-                          {isOpen ? <FaMinusCircle /> : <FaPlusCircle />}
+                        <span style={{
+                          width: '22px',
+                          height: '22px',
+                          borderRadius: '50%',
+                          border: '1.5px solid #0e1220',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '14px',
+                          fontWeight: 'bold',
+                          flexShrink: 0,
+                          marginLeft: '14px',
+                          color: '#0e1220'
+                        }}>
+                          {isOpen ? '—' : '+'}
                         </span>
                       </button>
                       {isOpen && (
                         <div style={{
-                          padding: '0 20px 18px 20px',
-                          fontSize: '15px',
+                          padding: '0 18px 16px 18px',
+                          fontSize: '14px',
                           lineHeight: '1.6',
-                          color: '#444444'
+                          color: '#333333'
                         }}>
                           {faq.answer}
                         </div>
