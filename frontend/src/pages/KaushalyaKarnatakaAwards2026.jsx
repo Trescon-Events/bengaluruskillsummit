@@ -41,35 +41,6 @@ export default function KaushalyaKarnatakaAwards2026() {
     }, 60);
   };
 
-  const downloadCalendar = () => {
-    const ics = [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'PRODID:-//Bengaluru Skill Summit//EN',
-      'CALSCALE:GREGORIAN',
-      'METHOD:PUBLISH',
-      'BEGIN:VEVENT',
-      'UID:bss-awards-2026@bengaluruskillsummit.com',
-      'DTSTAMP:20260918T000000Z',
-      'DTSTART;VALUE=DATE:20261105',
-      'DTEND;VALUE=DATE:20261106',
-      'SUMMARY:Bengaluru Skill Summit 2026 - Kaushalya Karnataka Awards',
-      'DESCRIPTION:The Kaushalya Karnataka Awards 2026 Ceremony celebrating excellence in skills.',
-      'LOCATION:The Lalit Ashok, Bengaluru',
-      'STATUS:CONFIRMED',
-      'END:VEVENT',
-      'END:VCALENDAR'
-    ].join('\r\n');
-    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'Bengaluru_Skill_Summit_2026.ics';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  };
-
   // Sync tab active classes with state
   useEffect(() => {
     const corporateHero = document.getElementById('hero-content-corporate');
