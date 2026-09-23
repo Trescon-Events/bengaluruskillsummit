@@ -88,10 +88,10 @@ export default function Header() {
 
                     {/* ABOUT with Flyout Sub-menu */}
                     <li id="menu-item-2638" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children ${isAboutActive ? 'current-menu-item' : ''} nectar-regular-menu-item sf-with-ul`}>
-                      <Link to="/about-us" aria-haspopup="true" aria-expanded="false">
+                      <Link to="/about-us" aria-haspopup="true" aria-expanded="false" className="nav-parent-link">
                         <span className="menu-title-text">ABOUT</span>
-                        <span className="sf-sub-indicator" style={{ display: "inline-flex", alignItems: "center", marginLeft: "6px" }}>
-                          <FaAngleDown style={{ fontSize: "12px", verticalAlign: "middle" }} />
+                        <span className="sf-sub-indicator">
+                          <FaAngleDown style={{ fontSize: "11px", verticalAlign: "middle" }} />
                         </span>
                       </Link>
                       <ul className="sub-menu">
@@ -147,10 +147,10 @@ export default function Header() {
 
                     {/* GET INVOLVED with Flyout Sub-menu */}
                     <li id="menu-item-get-involved" className={`menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ${isGetInvolvedActive ? 'current-menu-item' : ''} nectar-regular-menu-item sf-with-ul`}>
-                      <Link to="#" aria-haspopup="true" aria-expanded="false" onClick={(e) => e.preventDefault()}>
+                      <Link to="#" aria-haspopup="true" aria-expanded="false" onClick={(e) => e.preventDefault()} className="nav-parent-link">
                         <span className="menu-title-text">GET INVOLVED</span>
-                        <span className="sf-sub-indicator" style={{ display: "inline-flex", alignItems: "center", marginLeft: "6px" }}>
-                          <FaAngleDown style={{ fontSize: "12px", verticalAlign: "middle" }} />
+                        <span className="sf-sub-indicator">
+                          <FaAngleDown style={{ fontSize: "11px", verticalAlign: "middle" }} />
                         </span>
                       </Link>
                       <ul className="sub-menu">
@@ -176,12 +176,16 @@ export default function Header() {
                   <ul className="buttons header-cta-buttons" data-user-set-ocm="off">
                     <li className="header-cta-item header-cta-pass">
                       <Link to="/get-involved" className="header-cta-pill" data-discover="true">
-                        GET YOUR PASS
+                        <span className="nectar-text-reveal-button">
+                          <span className="nectar-text-reveal-button__text" data-text="GET YOUR PASS">GET YOUR PASS</span>
+                        </span>
                       </Link>
                     </li>
                     <li className="header-cta-item header-cta-enquiry">
                       <Link to="/general-enquiry" className="header-cta-pill" data-discover="true">
-                        ENQUIRY NOW
+                        <span className="nectar-text-reveal-button">
+                          <span className="nectar-text-reveal-button__text" data-text="ENQUIRY NOW">ENQUIRY NOW</span>
+                        </span>
                       </Link>
                     </li>
                   </ul>

@@ -620,24 +620,90 @@ img.img-with-animation,
 
 
 /* Header Navigation & CTA Flex Alignment */
+#header-outer #top .row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+
+#header-outer #top .col.span_3 {
+  flex-shrink: 0 !important;
+  width: auto !important;
+}
+
 #header-outer #top .col.span_9 {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-end !important;
+  flex-grow: 1 !important;
+  width: auto !important;
 }
 
 #header-outer #top nav {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-end !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
 }
 
-#header-outer #top nav > ul.sf-menu {
+#header-outer nav > ul.sf-menu {
   display: inline-flex !important;
+  flex-direction: row !important;
   align-items: center !important;
+  flex-wrap: nowrap !important;
   float: none !important;
   margin: 0 !important;
   padding: 0 !important;
+  white-space: nowrap !important;
+  gap: 2px !important;
+}
+
+#header-outer nav > ul.sf-menu > li {
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  position: relative !important;
+}
+
+#header-outer nav > ul.sf-menu > li > a {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  padding: 0 10px !important;
+  font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  letter-spacing: 0.4px !important;
+  text-decoration: none !important;
+  color: #ffffff !important;
+  line-height: normal !important;
+}
+
+#header-outer nav > ul.sf-menu > li > a .menu-title-text,
+#header-outer nav > ul.sf-menu > li > a span {
+  white-space: nowrap !important;
+  display: inline-block !important;
+}
+
+#header-outer nav > ul.sf-menu > li > a .sf-sub-indicator {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-left: 5px !important;
+  vertical-align: middle !important;
+}
+
+#header-outer nav > ul.sf-menu > li.sf-with-ul > a,
+#header-outer nav > ul.sf-menu > li > a.nav-parent-link {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
 }
 
 /* Smooth CSS Dropdown Navigation for Header */
@@ -766,10 +832,10 @@ ul.buttons.header-cta-buttons {
   display: inline-flex !important;
   flex-direction: row !important;
   align-items: center !important;
-  gap: 15px !important;
+  gap: 14px !important;
   margin: 0 !important;
   padding: 0 !important;
-  margin-left: 20px !important;
+  margin-left: 16px !important;
   list-style: none !important;
   height: auto !important;
   position: relative !important;
@@ -779,6 +845,8 @@ ul.buttons.header-cta-buttons {
   left: auto !important;
   transform: none !important;
   float: none !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
 #header-outer nav ul.buttons > li,
@@ -794,6 +862,8 @@ ul.buttons.header-cta-buttons {
   position: relative !important;
   float: none !important;
   border: none !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
 /* Eliminate ANY Salient pseudo-element ghost shapes, borders, or extra layers */
@@ -855,6 +925,62 @@ ul.buttons.header-cta-buttons {
   top: auto !important;
   left: auto !important;
   transform: none !important;
+  flex-shrink: 0 !important;
+}
+
+/* Nectar Text Reveal Animation inside CTA Buttons */
+.header-cta-pill .nectar-text-reveal-button {
+  overflow: hidden !important;
+  display: inline-block !important;
+  position: relative !important;
+  vertical-align: middle !important;
+  line-height: 1.25 !important;
+  height: 1.25em !important;
+  color: #ffffff !important;
+}
+
+.header-cta-pill .nectar-text-reveal-button__text {
+  display: block !important;
+  position: relative !important;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.33, 1) !important;
+  color: #ffffff !important;
+  white-space: nowrap !important;
+  line-height: 1.25 !important;
+}
+
+.header-cta-pill .nectar-text-reveal-button__text::after {
+  content: attr(data-text) !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 135% !important;
+  white-space: nowrap !important;
+  color: #ffffff !important;
+  display: block !important;
+  line-height: 1.25 !important;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.33, 1) !important;
+}
+
+.header-cta-pill:hover .nectar-text-reveal-button__text {
+  transform: translateY(-135%) !important;
+}
+
+#header-outer nav ul.header-cta-buttons > li > a:hover .nectar-text-reveal-button__text {
+  transform: translateY(-135%) !important;
+}
+
+/* Solid hover effect - ensures text ALWAYS stays 100% crisp white */
+#header-outer nav ul.buttons > li > a:hover,
+#header-outer nav ul.header-cta-buttons > li > a:hover,
+#header-outer nav .header-cta-buttons > li > a:hover,
+#header-outer header nav .header-cta-item a:hover,
+#header-outer header nav .header-cta-item a:hover *,
+#header-outer nav .header-cta-buttons a:hover,
+#header-outer nav .header-cta-buttons a:hover *,
+.header-cta-pill:hover,
+.header-cta-pill:hover * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
 }
 
 #header-outer nav ul.buttons > li > a:hover,
@@ -862,7 +988,6 @@ ul.buttons.header-cta-buttons {
 #header-outer nav .header-cta-buttons > li > a:hover,
 .header-cta-pill:hover {
   background-color: #e55349 !important;
-  color: #ffffff !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 4px 14px rgba(255, 98, 87, 0.4) !important;
 }
