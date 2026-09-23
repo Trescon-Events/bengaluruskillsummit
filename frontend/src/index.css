@@ -717,103 +717,73 @@ img.img-with-animation,
   color: #ff6257 !important;
 }
 
-/* Header CTA Buttons - Exact Salient WordPress Theme Styling */
-ul.buttons.sf-menu {
+/* ==========================================================================
+   Header CTA Buttons - Exact Coral Pill Style (Matching media_1790156401016.png)
+   ========================================================================== */
+#header-outer nav ul.buttons,
+#header-outer nav .header-cta-buttons,
+ul.buttons.header-cta-buttons {
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
-  gap: 15px !important;
+  gap: 16px !important;
   margin: 0 !important;
   padding: 0 !important;
+  margin-left: 20px !important;
   list-style: none !important;
+  height: auto !important;
 }
 
-#header-outer nav .buttons > li > a,
-.sf-menu.buttons li a,
-.sf-menu.buttons li.menu-btn-2 > a,
-.sf-menu.buttons li[class*="menu-item-btn-style"] > a,
-.header-cta-btn {
+#header-outer nav ul.buttons > li,
+#header-outer nav .header-cta-buttons > li {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: normal !important;
+  height: auto !important;
+}
+
+#header-outer nav ul.buttons > li > a,
+#header-outer nav .header-cta-buttons > li > a,
+.header-cta-pill {
   background-color: #ff6257 !important;
   color: #ffffff !important;
-  border-radius: 12px !important;
-  padding: 12px 24px !important;
-  font-family: 'Comfortaa', sans-serif !important;
+  border-radius: 14px !important;
+  padding: 11px 24px !important;
+  font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   font-weight: 700 !important;
-  font-size: 14px !important;
+  font-size: 13.5px !important;
   line-height: 1.2 !important;
-  letter-spacing: 0.3px !important;
+  height: auto !important;
+  letter-spacing: 0.4px !important;
   text-transform: uppercase !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
   text-decoration: none !important;
-  transition: all 0.25s ease !important;
   border: none !important;
   box-sizing: border-box !important;
   cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  box-shadow: none !important;
+  white-space: nowrap !important;
 }
 
-#header-outer nav .buttons > li > a:hover,
-.sf-menu.buttons li a:hover,
-.sf-menu.buttons li.menu-btn-2 > a:hover,
-.sf-menu.buttons li[class*="menu-item-btn-style"] > a:hover,
-.header-cta-btn:hover {
+#header-outer nav ul.buttons > li > a:hover,
+#header-outer nav .header-cta-buttons > li > a:hover,
+.header-cta-pill:hover {
   background-color: #e55349 !important;
   color: #ffffff !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 4px 14px rgba(255, 98, 87, 0.4) !important;
 }
 
-.sf-menu.buttons li a span.menu-title-text,
-#header-outer nav .buttons > li > a span.menu-title-text {
-  color: #ffffff !important;
-  font-family: 'Comfortaa', sans-serif !important;
-  font-weight: 700 !important;
-  font-size: 14px !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.3px !important;
-  text-align: center !important;
-  display: inline-block !important;
-  line-height: 1.2 !important;
-}
-
-/* Nectar Hover Text Reveal Effect */
-.sf-menu.buttons .nectar-text-reveal-button {
-  overflow: hidden !important;
-  display: inline-block !important;
-  position: relative !important;
-  line-height: 1.2 !important;
-  vertical-align: middle !important;
-  transform: translateZ(0) !important;
-}
-
-.sf-menu.buttons .nectar-text-reveal-button__text {
-  transition: transform 0.45s cubic-bezier(0.25, 1, 0.33, 1) !important;
-  display: block !important;
-  position: relative !important;
-  color: #ffffff !important;
-}
-
-.sf-menu.buttons .nectar-text-reveal-button__text::after {
-  transition: transform 0.45s cubic-bezier(0.25, 1, 0.33, 1) !important;
-  bottom: -130% !important;
-  content: attr(data-text) !important;
-  left: 0 !important;
-  position: absolute !important;
-  color: #ffffff !important;
-  white-space: nowrap !important;
-  text-transform: uppercase !important;
-}
-
-.sf-menu.buttons li:hover .nectar-text-reveal-button__text,
-.sf-menu.buttons li a:hover .nectar-text-reveal-button__text {
-  transform: translateY(-110%) !important;
-}
-
-.sf-menu.buttons li:hover .nectar-text-reveal-button__text::after,
-.sf-menu.buttons li a:hover .nectar-text-reveal-button__text::after {
-  transform: translateY(-20%) !important;
+#header-outer nav ul.buttons > li > a:active,
+#header-outer nav .header-cta-buttons > li > a:active,
+.header-cta-pill:active {
+  transform: translateY(0) !important;
 }
 
 /* ==========================================================================

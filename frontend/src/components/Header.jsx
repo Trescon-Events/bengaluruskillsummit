@@ -145,23 +145,15 @@ export default function Header() {
                     </li>
                   </ul>
 
-                  <ul className="buttons sf-menu" data-user-set-ocm="off">
-                    <li id="menu-item-347" className="menu-btn-2 konfhub-btn menu-item menu-item-type-custom menu-item-object-custom nectar-regular-menu-item menu-item-btn-style-button_extra-color-1 menu-item-hover-text-reveal menu-item-347">
-                      <Link to="/get-involved" data-discover="true">
-                        <span className="menu-title-text">
-                          <span className="nectar-text-reveal-button">
-                            <span className="nectar-text-reveal-button__text" data-text="Get Your Pass">Get Your Pass</span>
-                          </span>
-                        </span>
+                  <ul className="buttons header-cta-buttons" data-user-set-ocm="off">
+                    <li id="menu-item-347" className="menu-btn-2 konfhub-btn menu-item menu-item-347">
+                      <Link to="/get-involved" className="header-cta-pill" data-discover="true">
+                        GET YOUR PASS
                       </Link>
                     </li>
-                    <li id="menu-item-4157" className="menu-btn-2 konfhub-btn menu-item menu-item-type-custom menu-item-object-custom nectar-regular-menu-item menu-item-btn-style-button_extra-color-1 menu-item-hover-text-reveal menu-item-347 menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-4157">
-                      <Link to="/general-enquiry" data-discover="true">
-                        <span className="menu-title-text">
-                          <span className="nectar-text-reveal-button">
-                            <span className="nectar-text-reveal-button__text" data-text="Enquiry Now">Enquiry Now</span>
-                          </span>
-                        </span>
+                    <li id="menu-item-4157" className="menu-btn-2 konfhub-btn menu-item menu-item-4157">
+                      <Link to="/general-enquiry" className="header-cta-pill" data-discover="true">
+                        ENQUIRY NOW
                       </Link>
                     </li>
                   </ul>
@@ -234,32 +226,12 @@ export default function Header() {
                       <Link to="/kaushalya-karnataka-awards-2026" onClick={closeMobileMenu} style={{ color: isAwardsActive ? "#ff6257" : "#ffffff", fontWeight: 700, fontSize: "15px", textDecoration: "none" }}>AWARDS</Link>
                     </li>
                     <li style={{ paddingTop: "18px", display: "flex", gap: "12px", flexWrap: "wrap" }}>
-                      <Link to="/get-involved" onClick={closeMobileMenu} style={{
-                        backgroundColor: "#ff6257",
-                        color: "#fff",
-                        padding: "10px 20px",
-                        borderRadius: "12px",
-                        textDecoration: "none",
-                        fontWeight: 700,
-                        fontSize: "13px",
-                        fontFamily: "Comfortaa, sans-serif",
-                        letterSpacing: "0.3px",
-                        textTransform: "uppercase",
-                        display: "inline-block"
-                      }}>GET YOUR PASS</Link>
-                      <Link to="/general-enquiry" onClick={closeMobileMenu} style={{
-                        backgroundColor: "#ff6257",
-                        color: "#fff",
-                        padding: "10px 20px",
-                        borderRadius: "12px",
-                        textDecoration: "none",
-                        fontWeight: 700,
-                        fontSize: "13px",
-                        fontFamily: "Comfortaa, sans-serif",
-                        letterSpacing: "0.3px",
-                        textTransform: "uppercase",
-                        display: "inline-block"
-                      }}>ENQUIRY NOW</Link>
+                      <Link to="/get-involved" onClick={closeMobileMenu} className="header-cta-pill">
+                        GET YOUR PASS
+                      </Link>
+                      <Link to="/general-enquiry" onClick={closeMobileMenu} className="header-cta-pill">
+                        ENQUIRY NOW
+                      </Link>
                     </li>
                   </ul>
                 </div>
