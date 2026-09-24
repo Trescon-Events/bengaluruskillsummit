@@ -663,9 +663,9 @@ img.img-with-animation,
 #header-outer nav > ul.sf-menu > li {
   white-space: nowrap !important;
   flex-shrink: 0 !important;
-  display: inline-flex !important;
-  align-items: center !important;
+  display: inline-block !important;
   position: relative !important;
+  vertical-align: middle !important;
 }
 
 #header-outer nav > ul.sf-menu > li > a {
@@ -706,21 +706,27 @@ img.img-with-animation,
   white-space: nowrap !important;
 }
 
-/* Smooth CSS Dropdown Navigation for Header (Matches media_1790226425905.png) */
-.sf-menu > li {
+/* ==========================================================================
+   Smooth CSS Dropdown Navigation for Header (Matches media_1790226425905.png)
+   Strictly locked card widths prevent any horizontal stretching
+   ========================================================================== */
+#header-outer nav ul.sf-menu > li {
   position: relative !important;
 }
 
-.sf-menu > li > ul.sub-menu {
+/* Level 1 Sub-menu (ABOUT Dropdown) */
+#header-outer nav ul.sf-menu > li > ul.sub-menu {
   position: absolute !important;
   top: 100% !important;
   left: 0 !important;
-  width: max-content !important;
-  min-width: 260px !important;
+  right: auto !important;
+  width: 270px !important;
+  min-width: 270px !important;
+  max-width: 270px !important;
   background-color: #000000 !important;
   border: none !important;
   border-radius: 0 !important;
-  padding: 12px 0 !important;
+  padding: 10px 0 !important;
   margin: 0 !important;
   list-style: none !important;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.85) !important;
@@ -731,13 +737,16 @@ img.img-with-animation,
   pointer-events: none !important;
   z-index: 99999 !important;
   display: block !important;
+  box-sizing: border-box !important;
 }
 
-/* For GET INVOLVED (the rightmost menu item), align dropdown to its right edge so it extends leftward and never sits under the CTA buttons */
-#menu-item-get-involved > ul.sub-menu,
-.sf-menu > li:last-child > ul.sub-menu {
+/* GET INVOLVED Dropdown (Right-aligned to its trigger, extending leftward safely) */
+#header-outer nav ul.sf-menu > li#menu-item-get-involved > ul.sub-menu {
   left: auto !important;
   right: 0 !important;
+  width: 280px !important;
+  min-width: 280px !important;
+  max-width: 280px !important;
 }
 
 /* Completely remove dummy logo spacing to eliminate empty void on the right of CTA */
@@ -755,37 +764,39 @@ img.img-with-animation,
 }
 
 /* Invisible bridge so mouse hover is never lost when moving from top link down to dropdown */
-.sf-menu > li > ul.sub-menu::before {
+#header-outer nav ul.sf-menu > li > ul.sub-menu::before {
   content: '' !important;
   position: absolute !important;
   top: -20px !important;
   left: 0 !important;
+  right: 0 !important;
   width: 100% !important;
   height: 20px !important;
   background: transparent !important;
 }
 
-.sf-menu > li:hover > ul.sub-menu {
+#header-outer nav ul.sf-menu > li:hover > ul.sub-menu {
   opacity: 1 !important;
   visibility: visible !important;
   transform: translateY(0) !important;
   pointer-events: auto !important;
 }
 
-.sf-menu ul.sub-menu > li {
+#header-outer nav ul.sf-menu ul.sub-menu > li {
   position: relative !important;
   opacity: 1 !important;
   display: block !important;
   padding: 0 !important;
   margin: 0 !important;
   width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-.sf-menu ul.sub-menu > li > a {
+#header-outer nav ul.sf-menu ul.sub-menu > li > a {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  padding: 10px 24px !important;
+  padding: 10px 22px !important;
   color: #ffffff !important;
   font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   font-size: 13.5px !important;
@@ -798,37 +809,43 @@ img.img-with-animation,
   background-color: #000000 !important;
   box-sizing: border-box !important;
   line-height: 1.4 !important;
+  width: 100% !important;
 }
 
-.sf-menu ul.sub-menu > li > a:hover {
+#header-outer nav ul.sf-menu ul.sub-menu > li > a:hover {
   background-color: #000000 !important;
   color: #ff6257 !important;
 }
 
 /* Level 1 - 2025 HIGHLIGHTS link styling (Coral text and arrow) */
-.sf-menu ul.sub-menu > li > a.menu-highlights-link {
+#header-outer nav ul.sf-menu ul.sub-menu > li > a.menu-highlights-link {
   color: #ff6257 !important;
-  padding: 16px 24px !important;
-  gap: 24px !important;
+  padding: 16px 22px !important;
+  gap: 20px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-.sf-menu ul.sub-menu > li > a.menu-highlights-link .sub-arrow {
+#header-outer nav ul.sf-menu ul.sub-menu > li > a.menu-highlights-link .sub-arrow {
   color: #ff6257 !important;
   font-size: 12px !important;
   margin-left: auto !important;
 }
 
-/* Level 2 Sub-menu (Flyout to the right) - Flush with top edge of Level 1 card */
-.sf-menu ul.sub-menu > li > ul.sub-menu {
+/* Level 2 Sub-menu (Flyout to the right of 2025 Highlights) */
+#header-outer nav ul.sf-menu > li > ul.sub-menu > li > ul.sub-menu,
+#header-outer nav ul.sf-menu ul.sub-menu > li > ul.sub-menu {
   position: absolute !important;
-  top: -12px !important;
+  top: -10px !important;
   left: 100% !important;
-  min-width: 250px !important;
-  width: max-content !important;
+  right: auto !important;
+  width: 260px !important;
+  min-width: 260px !important;
+  max-width: 260px !important;
   background-color: #000000 !important;
   border: none !important;
   border-radius: 0 !important;
-  padding: 12px 0 !important;
+  padding: 10px 0 !important;
   margin: 0 !important;
   list-style: none !important;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.85) !important;
@@ -839,32 +856,34 @@ img.img-with-animation,
   pointer-events: none !important;
   z-index: 100000 !important;
   display: block !important;
+  box-sizing: border-box !important;
 }
 
 /* Invisible bridge between Level 1 and Level 2 flyout so cursor movement never closes menu */
-.sf-menu ul.sub-menu > li > ul.sub-menu::before {
+#header-outer nav ul.sf-menu ul.sub-menu > li > ul.sub-menu::before {
   content: '' !important;
   position: absolute !important;
   top: 0 !important;
   bottom: 0 !important;
-  left: -25px !important;
-  width: 30px !important;
+  left: -20px !important;
+  right: auto !important;
+  width: 25px !important;
   height: 100% !important;
   background: transparent !important;
 }
 
-.sf-menu ul.sub-menu > li:hover > ul.sub-menu {
+#header-outer nav ul.sf-menu ul.sub-menu > li:hover > ul.sub-menu {
   opacity: 1 !important;
   visibility: visible !important;
   transform: translateX(0) !important;
   pointer-events: auto !important;
 }
 
-.sf-menu > li:hover > a,
-.sf-menu > li.current-menu-item > a,
-.sf-menu > li:hover > a .menu-title-text,
-.sf-menu > li:hover > a .sf-sub-indicator,
-.sf-menu > li.current-menu-item > a .sf-sub-indicator {
+#header-outer nav ul.sf-menu > li:hover > a,
+#header-outer nav ul.sf-menu > li.current-menu-item > a,
+#header-outer nav ul.sf-menu > li:hover > a .menu-title-text,
+#header-outer nav ul.sf-menu > li:hover > a .sf-sub-indicator,
+#header-outer nav ul.sf-menu > li.current-menu-item > a .sf-sub-indicator {
   color: #ff6257 !important;
 }
 
