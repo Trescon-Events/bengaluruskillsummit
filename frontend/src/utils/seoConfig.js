@@ -51,6 +51,16 @@ export const SEO_CONFIG = {
     description: "Discover official sponsors, government bodies, knowledge partners, and academic institutions driving the Bengaluru Skill Summit 2026 forward.",
     canonical: "https://bengaluruskillsummit.com/partners-2026/"
   },
+  "/ecosystem-partners-2026": {
+    title: "Ecosystem Partners 2026 | Bengaluru Skill Summit",
+    description: "Explore the ecosystem partners, industry associations, and innovation collaborators for Bengaluru Skill Summit 2026.",
+    canonical: "https://bengaluruskillsummit.com/ecosystem-partners-2026/"
+  },
+  "/media-partners-2026": {
+    title: "Media Partners 2026 | Bengaluru Skill Summit Press Coverage",
+    description: "Meet the official media partners and global publications covering Bengaluru Skill Summit 2026.",
+    canonical: "https://bengaluruskillsummit.com/media-partners-2026/"
+  },
   "/skillathon-2026": {
     title: "Skillathon 2026 | National Youth Innovation Hackathon",
     description: "Participate in Skillathon 2026 at Bengaluru Skill Summit. Compete on real-world problem statements, build AI & tech solutions, and win cash prizes.",

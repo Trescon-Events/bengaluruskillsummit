@@ -38,6 +38,8 @@ const SkillathonRegistration = lazy(() => import('./pages/SkillathonRegistration
 const SponsorNow = lazy(() => import('./pages/SponsorNow'));
 const SponsorRegistration = lazy(() => import('./pages/SponsorRegistration'));
 const Partners2026 = lazy(() => import('./pages/Partners2026'));
+const EcosystemPartners2026 = lazy(() => import('./pages/EcosystemPartners2026'));
+const MediaPartners2026 = lazy(() => import('./pages/MediaPartners2026'));
 const Skillathon2026 = lazy(() => import('./pages/Skillathon2026'));
 const AssociationEnquiry = lazy(() => import('./pages/AssociationEnquiry'));
 
@@ -126,6 +128,10 @@ export default function App() {
             <Route path="partners-2025/" element={<EcosystemPartners />} />
             <Route path="partners-2026" element={<Partners2026 />} />
             <Route path="partners-2026/" element={<Partners2026 />} />
+            <Route path="ecosystem-partners-2026" element={<EcosystemPartners2026 />} />
+            <Route path="ecosystem-partners-2026/" element={<EcosystemPartners2026 />} />
+            <Route path="media-partners-2026" element={<MediaPartners2026 />} />
+            <Route path="media-partners-2026/" element={<MediaPartners2026 />} />
             
             {/* Media Partners */}
             <Route path="media-partners" element={<MediaPartners />} />

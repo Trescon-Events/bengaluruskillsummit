@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Partners2026() {
+export default function MediaPartners2026() {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    document.title = 'Partners 2026 | Bengaluru Skill Summit';
+    document.title = 'Media Partners 2026 | Bengaluru Skill Summit';
     window.scrollTo(0, 0);
 
     let isMounted = true;
@@ -22,18 +22,11 @@ export default function Partners2026() {
         if (!isMounted) return;
         let cats = [];
 
-        // Filter OUT Media Partners (only include general, association, and ecosystem partners)
+        // Filter ONLY categories containing "media"
         if (data && Array.isArray(data.categorized)) {
           cats = data.categorized.filter((cat) => {
             const isMedia = (cat.category_name || '').toLowerCase().includes('media');
-            return !isMedia && Array.isArray(cat.entity) && cat.entity.length > 0;
-          });
-        }
-
-        if (data && Array.isArray(data.uncategorized) && data.uncategorized.length > 0) {
-          cats.push({
-            category_name: 'Partners',
-            entity: data.uncategorized
+            return isMedia && Array.isArray(cat.entity) && cat.entity.length > 0;
           });
         }
 
@@ -43,7 +36,7 @@ export default function Partners2026() {
       .catch((err) => {
         if (!isMounted) return;
         console.error('KonfHub API Error:', err);
-        setError('Unable to load partners at this moment.');
+        setError('Unable to load media partners at this moment.');
         setLoading(false);
       });
 
@@ -53,12 +46,12 @@ export default function Partners2026() {
   }, []);
 
   return (
-    <div className="partners-2026-page">
+    <div className="media-partners-2026-page">
       <style>{`
         /* ==========================================
            Global & Container Settings
            ========================================== */
-        .partners-2026-page {
+        .media-partners-2026-page {
           background: #ffffff;
           color: #333333;
           font-family: 'Comfortaa', sans-serif;
@@ -66,9 +59,9 @@ export default function Partners2026() {
           overflow-x: hidden;
         }
 
-        .partners-2026-page *,
-        .partners-2026-page *::before,
-        .partners-2026-page *::after {
+        .media-partners-2026-page *,
+        .media-partners-2026-page *::before,
+        .media-partners-2026-page *::after {
           box-sizing: border-box;
         }
 
@@ -106,7 +99,7 @@ export default function Partners2026() {
 
         @media (max-width: 768px) {
           .partners-banner-heading h1 {
-            font-size: 34px;
+            font-size: 32px;
           }
           .partners-banner-strip {
             padding: 20px 24px;
@@ -210,17 +203,17 @@ export default function Partners2026() {
           }
         }
 
-        /* Logo Card */
+        /* Logo Card - Media Partners */
         .bss-logo-card {
           background: #ffffff;
           border: 1px solid #eeeeee;
           border-radius: 8px;
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-          height: 160px;
+          height: 140px;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 14px 20px;
+          padding: 22px 28px;
           text-decoration: none !important;
           position: relative;
           overflow: hidden;
@@ -230,8 +223,8 @@ export default function Partners2026() {
 
         @media (max-width: 768px) {
           .bss-logo-card {
-            height: 130px;
-            padding: 10px 16px;
+            height: 115px;
+            padding: 16px 20px;
           }
         }
 
@@ -254,38 +247,7 @@ export default function Partners2026() {
         }
 
         .bss-logo-card:hover .bss-logo-img {
-          transform: scale(1.05);
-        }
-
-        /* ========================================================
-           Ecosystem Partners Enhancement (Counters canvas whitespace)
-           ======================================================== */
-        .bss-category-ecosystem .bss-logo-card {
-          height: 165px;
-          padding: 10px 14px;
-        }
-
-        .bss-category-ecosystem .bss-logo-img {
-          max-width: 90%;
-          max-height: 88%;
-          transform: scale(1.35);
-          transform-origin: center center;
-        }
-
-        .bss-category-ecosystem .bss-logo-card:hover .bss-logo-img {
-          transform: scale(1.42);
-        }
-
-        @media (max-width: 768px) {
-          .bss-category-ecosystem .bss-logo-card {
-            height: 135px;
-          }
-          .bss-category-ecosystem .bss-logo-img {
-            transform: scale(1.25);
-          }
-          .bss-category-ecosystem .bss-logo-card:hover .bss-logo-img {
-            transform: scale(1.32);
-          }
+          transform: scale(1.03);
         }
 
         .bss-logo-fallback {
@@ -370,30 +332,30 @@ export default function Partners2026() {
       <section id="Partners-2026-Banner">
         <div className="partners-banner-strip">
           <div className="partners-banner-heading">
-            <h1>2026 Edition PARTNERS</h1>
+            <h1>2026 Edition MEDIA PARTNERS</h1>
           </div>
         </div>
       </section>
 
       {/* Quick Navigation Tabs */}
       <div className="bss-partner-tabs">
-        <Link to="/partners-2026" className="bss-partner-tab active">
+        <Link to="/partners-2026" className="bss-partner-tab">
           All Partners
         </Link>
         <Link to="/ecosystem-partners-2026" className="bss-partner-tab">
           Ecosystem Partners
         </Link>
-        <Link to="/media-partners-2026" className="bss-partner-tab">
+        <Link to="/media-partners-2026" className="bss-partner-tab active">
           Media Partners
         </Link>
       </div>
 
-      {/* Main Partners Wrapper */}
+      {/* Main Content Area */}
       <div className="bss-partners-wrapper">
         {loading && (
           <div className="bss-loading-wrap">
             <div className="bss-spinner" />
-            <div>Loading partners...</div>
+            <div>Loading media partners...</div>
           </div>
         )}
 
@@ -405,23 +367,21 @@ export default function Partners2026() {
 
         {!loading && !error && categories.length === 0 && (
           <div style={{ textAlign: 'center', padding: '50px 20px', color: '#64748b' }}>
-            <h3>No partner data found.</h3>
+            <h3>No media partner data found.</h3>
           </div>
         )}
 
         {!loading && !error && categories.length > 0 && (
           <div id="bss-sections-container">
             {categories.map((cat, cIdx) => {
-              const catName = cat.category_name || 'Partners';
-              const isEcosystem = (cat.category_name || '').toLowerCase().includes('ecosystem');
-              const sectionClass = `bss-category-section ${isEcosystem ? 'bss-category-ecosystem' : ''}`;
+              const catName = cat.category_name || 'Media Partner';
 
               return (
-                <div key={cIdx} className={sectionClass}>
+                <div key={cIdx} className="bss-category-section">
                   <h2 className="bss-category-heading">{catName}</h2>
                   <div className="bss-logo-grid">
                     {cat.entity.map((item, iIdx) => {
-                      const name = item.entity_name || 'Partner';
+                      const name = item.entity_name || 'Media Partner';
                       const imgUrl = item.image_url;
                       const website = item.website_url;
 
@@ -459,16 +419,16 @@ export default function Partners2026() {
 
             {/* Bottom Partner Call-To-Action */}
             <div className="bss-partner-bottom-cta">
-              <h3>Join Bengaluru Skill Summit 2026 as a Partner</h3>
+              <h3>Become an Official Media Partner</h3>
               <p>
-                Collaborate with industry pioneers, government stakeholders, and institutional leaders.
+                Partner with Bengaluru Skill Summit 2026 for extensive press coverage and global exposure.
               </p>
               <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link to="/sponsor-now" className="bss-partner-bottom-btn">
-                  Become a Partner
+                <Link to="/be-a-media-partner" className="bss-partner-bottom-btn">
+                  Media Partner Enquiry
                 </Link>
-                <Link to="/media-partners-2026" className="bss-partner-bottom-btn" style={{ backgroundColor: '#106cff', boxShadow: '0 4px 14px rgba(16, 108, 255, 0.3)' }}>
-                  View Media Partners
+                <Link to="/ecosystem-partners-2026" className="bss-partner-bottom-btn" style={{ backgroundColor: '#106cff', boxShadow: '0 4px 14px rgba(16, 108, 255, 0.3)' }}>
+                  View Ecosystem Partners
                 </Link>
               </div>
             </div>
