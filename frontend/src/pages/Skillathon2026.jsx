@@ -94,47 +94,53 @@ export default function Skillathon2026() {
           {/* =========================================================================
               1. Hero Banner (Matching media_1790157299086.png)
               ========================================================================= */}
+          {/* =========================================================================
+              1. Hero Banner (Matching media_1790230742750.png)
+              ========================================================================= */}
           <section id="Skillathon-Banner" style={{
             backgroundImage: 'url(/bengaluruskillsummit/wp-content/uploads/2025/09/banner-skillathon-05.png)',
             backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
-            paddingTop: '90px',
-            paddingBottom: '90px',
+            paddingTop: '80px',
+            paddingBottom: '80px',
+            paddingLeft: '20px',
+            paddingRight: '20px',
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            minHeight: '340px'
           }}>
             <div style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.95)',
-              padding: '45px 60px',
-              borderRadius: '16px',
-              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.06)',
+              backgroundColor: 'rgba(255, 255, 255, 0.92)',
+              padding: '40px 50px',
+              borderRadius: '8px',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
               textAlign: 'center',
-              maxWidth: '780px',
-              width: '90%',
+              maxWidth: '840px',
+              width: '100%',
               margin: '0 auto'
             }}>
               <h1 style={{
                 color: '#0066ff',
-                fontFamily: 'Comfortaa, sans-serif',
-                fontSize: '48px',
+                fontFamily: '"Comfortaa", sans-serif',
+                fontSize: '44px',
                 fontWeight: 700,
                 textTransform: 'uppercase',
                 letterSpacing: '2px',
-                margin: '0 0 12px 0',
+                margin: '0 0 10px 0',
                 lineHeight: 1.15
               }}>
                 SKILLATHON 2026
               </h1>
               <h4 style={{
-                color: '#0e1220',
-                fontFamily: 'Comfortaa, sans-serif',
-                fontSize: '24px',
+                color: '#1a1a1a',
+                fontFamily: '"Comfortaa", sans-serif',
+                fontSize: '22px',
                 fontWeight: 500,
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
-                margin: '0 0 28px 0',
+                margin: '0 0 24px 0',
                 lineHeight: 1.25
               }}>
                 YOUNG MINDS POWERING TOMORROW’S SKILLS
@@ -144,17 +150,19 @@ export default function Skillathon2026() {
                 style={{
                   backgroundColor: '#ff6257',
                   color: '#ffffff',
-                  padding: '12px 36px',
-                  borderRadius: '10px',
+                  padding: '15px 20px',
+                  minWidth: '180px',
+                  borderRadius: '12px',
                   display: 'inline-block',
                   fontWeight: 700,
                   fontSize: '14px',
-                  fontFamily: 'Comfortaa, sans-serif',
+                  fontFamily: '"Comfortaa", sans-serif',
                   textTransform: 'uppercase',
                   textDecoration: 'none',
                   letterSpacing: '0.5px',
                   boxShadow: '0 4px 14px rgba(255, 98, 87, 0.35)',
-                  transition: 'all 0.25s ease'
+                  transition: 'all 0.25s ease',
+                  textAlign: 'center'
                 }}
               >
                 APPLY NOW
@@ -163,33 +171,56 @@ export default function Skillathon2026() {
           </section>
 
           {/* =========================================================================
-              2. Organizers & Description (Matching media_1790157309403.png)
+              2. Organizers & Description (Using downloaded partner images)
               ========================================================================= */}
           <section id="Skillathon-About" style={{ paddingTop: '50px', paddingBottom: '50px', paddingLeft: '20px', paddingRight: '20px' }}>
             <div style={{ maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
               
-              {/* Organizers Strip */}
-              <div style={{ marginBottom: '45px' }}>
-                <img
-                  src="/bengaluruskillsummit/wp-content/uploads/2026/09/organizers-strip-2026.png"
-                  alt="Hosted by Crowd Product, MXR | In collaboration with KSDA | Knowledge Partner KDEM"
-                  style={{ maxWidth: '850px', width: '100%', height: 'auto', display: 'inline-block' }}
-                />
+              {/* Partner Logos Row */}
+              <div style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '50px',
+                marginBottom: '45px'
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <img
+                    src="/bengaluruskillsummit/images/skillathon/hosted-by.png"
+                    alt="Hosted by Crowd Product and MXR"
+                    style={{ maxHeight: '72px', maxWidth: '240px', width: 'auto', height: 'auto', objectFit: 'contain' }}
+                  />
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <img
+                    src="/bengaluruskillsummit/images/skillathon/collaboration-with.png"
+                    alt="In collaboration with Karnataka Skill Development Authority"
+                    style={{ maxHeight: '82px', maxWidth: '220px', width: 'auto', height: 'auto', objectFit: 'contain' }}
+                  />
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <img
+                    src="/bengaluruskillsummit/images/skillathon/knowledge-partner.png"
+                    alt="Knowledge Partner Karnataka Digital Economy Mission"
+                    style={{ maxHeight: '88px', maxWidth: '220px', width: 'auto', height: 'auto', objectFit: 'contain' }}
+                  />
+                </div>
               </div>
 
               {/* Description Text */}
               <div style={{
                 maxWidth: '960px',
                 margin: '0 auto',
-                fontSize: '17px',
+                fontSize: '16px',
                 lineHeight: '1.8',
                 color: '#0e1220',
                 textAlign: 'center'
               }}>
-                <p style={{ marginBottom: '18px' }}>
+                <p style={{ marginBottom: '16px' }}>
                   Skillathon 2026 brings together student and startup teams to build practical solutions for real-world challenges in Karnataka's skilling and employment ecosystem.
                 </p>
-                <p style={{ marginBottom: '18px' }}>
+                <p style={{ marginBottom: '16px' }}>
                   Teams will move beyond ideas to <strong>validate problems, build prototypes, test solutions and demonstrate measurable outcomes</strong>, working with Government, industry, academia, mentors and potential users.
                 </p>
                 <p style={{ margin: 0 }}>
@@ -200,13 +231,13 @@ export default function Skillathon2026() {
           </section>
 
           {/* =========================================================================
-              3. Objectives (Matching media_1790157317620.png)
+              3. Objectives (Matching media_1790230784833.png)
               ========================================================================= */}
           <section id="Skillathon-Objectives" style={{ paddingTop: '20px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
             <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
               <h2 style={{
                 color: '#0066ff',
-                fontFamily: 'Comfortaa, sans-serif',
+                fontFamily: '"Comfortaa", sans-serif',
                 fontSize: '44px',
                 fontWeight: 700,
                 textTransform: 'uppercase',
@@ -237,50 +268,36 @@ export default function Skillathon2026() {
                   />
                 </div>
 
-                {/* Right: Bullets */}
-                <div>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                    {[
-                      { strong: "Solve real-world challenges", text: " across Karnataka's skilling and employment ecosystem." },
-                      { strong: "Build practical solutions", text: " that move from problem identification to prototype and pilot." },
-                      { strong: "Connect innovators with stakeholders", text: " across Government, industry, academia and the wider ecosystem." },
-                      { strong: "Test and validate solutions", text: " through real-world users, institutions and workflows." },
-                      { strong: "Measure outcomes and impact", text: " to identify solutions with potential for scale." }
-                    ].map((item, idx) => (
-                      <li key={idx} style={{
-                        position: 'relative',
-                        paddingLeft: '22px',
-                        marginBottom: '18px',
-                        fontSize: '16px',
-                        lineHeight: '1.6',
-                        color: '#0e1220'
-                      }}>
-                        <span style={{
-                          position: 'absolute',
-                          left: 0,
-                          top: '10px',
-                          width: '6px',
-                          height: '6px',
-                          backgroundColor: '#0e1220',
-                          borderRadius: '50%'
-                        }} />
-                        <strong>{item.strong}</strong>{item.text}
-                      </li>
-                    ))}
-                  </ul>
+                {/* Right: Bullets - Single Clean Dot */}
+                <div className="skillathon-bullet-list">
+                  {[
+                    { strong: "Solve real-world challenges", text: "across Karnataka's skilling and employment ecosystem." },
+                    { strong: "Build practical solutions", text: "that move from problem identification to prototype and pilot." },
+                    { strong: "Connect innovators with stakeholders", text: "across Government, industry, academia and the wider ecosystem." },
+                    { strong: "Test and validate solutions", text: "through real-world users, institutions and workflows." },
+                    { strong: "Measure outcomes and impact", text: "to identify solutions with potential for scale." }
+                  ].map((item, idx) => (
+                    <div key={idx} className="skillathon-bullet-item">
+                      <span className="skillathon-bullet-dot" />
+                      <div style={{ fontSize: '16px', lineHeight: '1.6', color: '#0e1220' }}>
+                        <strong style={{ fontWeight: 700 }}>{item.strong} </strong>
+                        <span>{item.text}</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </section>
 
           {/* =========================================================================
-              4. Competition Structure (Matching media_1790157327607.png)
+              4. Competition Structure
               ========================================================================= */}
           <section id="competition-structure" style={{ paddingTop: '20px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
             <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
               <h2 style={{
                 color: '#0066ff',
-                fontFamily: 'Comfortaa, sans-serif',
+                fontFamily: '"Comfortaa", sans-serif',
                 fontSize: '44px',
                 fontWeight: 700,
                 textTransform: 'uppercase',
@@ -311,37 +328,22 @@ export default function Skillathon2026() {
                   />
                 </div>
 
-                {/* Right: Bullets */}
-                <div>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                    {[
-                      "Challenge Selection & Application",
-                      "Selection & Orientation",
-                      "Stakeholder Connect",
-                      "Final Evaluation",
-                      "Skillathon Finale"
-                    ].map((item, idx) => (
-                      <li key={idx} style={{
-                        position: 'relative',
-                        paddingLeft: '22px',
-                        marginBottom: '20px',
-                        fontSize: '18px',
-                        fontWeight: 500,
-                        color: '#0e1220'
-                      }}>
-                        <span style={{
-                          position: 'absolute',
-                          left: 0,
-                          top: '11px',
-                          width: '6px',
-                          height: '6px',
-                          backgroundColor: '#0e1220',
-                          borderRadius: '50%'
-                        }} />
+                {/* Right: Bullets - Single Clean Dot */}
+                <div className="skillathon-bullet-list">
+                  {[
+                    "Challenge Selection & Application",
+                    "Selection & Orientation",
+                    "Stakeholder Connect",
+                    "Final Evaluation",
+                    "Skillathon Finale"
+                  ].map((item, idx) => (
+                    <div key={idx} className="skillathon-bullet-item">
+                      <span className="skillathon-bullet-dot" />
+                      <div style={{ fontSize: '18px', fontWeight: 500, lineHeight: '1.6', color: '#0e1220' }}>
                         {item}
-                      </li>
-                    ))}
-                  </ul>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -357,7 +359,7 @@ export default function Skillathon2026() {
               <div style={{ marginBottom: '60px' }}>
                 <h3 style={{
                   color: '#000000',
-                  fontFamily: 'Comfortaa, sans-serif',
+                  fontFamily: '"Comfortaa", sans-serif',
                   fontSize: '32px',
                   fontWeight: 700,
                   marginBottom: '10px'
@@ -385,7 +387,7 @@ export default function Skillathon2026() {
               <div>
                 <h3 style={{
                   color: '#000000',
-                  fontFamily: 'Comfortaa, sans-serif',
+                  fontFamily: '"Comfortaa", sans-serif',
                   fontSize: '32px',
                   fontWeight: 700,
                   marginBottom: '35px'
@@ -406,13 +408,13 @@ export default function Skillathon2026() {
           </section>
 
           {/* =========================================================================
-              6. Choose Your Challenge (Matching media_1790157389912.png)
+              6. Choose Your Challenge (Matching media_1790230804491.png)
               ========================================================================= */}
           <section id="choose-challenge" style={{ paddingTop: '30px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
             <div style={{ maxWidth: '1150px', margin: '0 auto', textAlign: 'center' }}>
               <h2 style={{
                 color: '#0066ff',
-                fontFamily: 'Comfortaa, sans-serif',
+                fontFamily: '"Comfortaa", sans-serif',
                 fontSize: '44px',
                 fontWeight: 700,
                 textTransform: 'uppercase',
@@ -440,37 +442,34 @@ export default function Skillathon2026() {
               </p>
 
               {/* 6 Challenge Cards Grid: 6 equal cards in a single row on desktop */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-                gap: '12px',
-                alignItems: 'stretch',
-                marginBottom: '40px'
-              }}>
+              <div className="skillathon-challenges-grid">
                 {challengeList.map((item, idx) => (
                   <div
                     key={idx}
                     style={{
                       backgroundColor: '#ffffff',
-                      borderRadius: '8px',
-                      padding: '22px 12px',
-                      border: '1px solid #f0f2f5',
-                      boxShadow: '0 4px 14px rgba(0, 0, 0, 0.03)',
+                      borderRadius: '12px',
+                      padding: '24px 14px 20px 14px',
+                      border: '1px solid #eef0f3',
+                      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.04)',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'space-between',
                       textAlign: 'center',
-                      minHeight: '270px',
+                      minHeight: '290px',
+                      boxSizing: 'border-box',
                       transition: 'transform 0.25s ease, box-shadow 0.25s ease'
                     }}
                   >
                     <div>
                       <h4 style={{
                         color: '#0e1220',
-                        fontFamily: 'Comfortaa, sans-serif',
-                        fontSize: '13.5px',
+                        fontFamily: '"Comfortaa", sans-serif',
+                        fontSize: '13px',
                         fontWeight: 700,
-                        marginBottom: '10px',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.4px',
+                        marginBottom: '12px',
                         lineHeight: 1.3
                       }}>
                         {item.title}
@@ -478,13 +477,13 @@ export default function Skillathon2026() {
                       <p style={{
                         color: '#444444',
                         fontSize: '11.5px',
-                        lineHeight: '1.45',
+                        lineHeight: '1.5',
                         margin: 0
                       }}>
                         {item.desc}
                       </p>
                     </div>
-                    <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}>
+                    <div style={{ marginTop: 'auto', paddingTop: '20px', display: 'flex', justifyContent: 'center' }}>
                       <img
                         src={item.img}
                         alt={item.alt}
@@ -511,7 +510,7 @@ export default function Skillathon2026() {
           </section>
 
           {/* =========================================================================
-              7. In-Person Finals & Curated Format & Key Dates (Matching media_1790157409934.png)
+              7. In-Person Finals & Curated Format & Key Dates (Matching media_1790230813635.png)
               ========================================================================= */}
           <section id="phase-finals" style={{ paddingTop: '30px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
             <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
@@ -527,8 +526,8 @@ export default function Skillathon2026() {
                 <div>
                   <h3 style={{
                     color: '#0e1220',
-                    fontFamily: 'Comfortaa, sans-serif',
-                    fontSize: '20px',
+                    fontFamily: '"Comfortaa", sans-serif',
+                    fontSize: '22px',
                     fontWeight: 700,
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -536,36 +535,25 @@ export default function Skillathon2026() {
                   }}>
                     IN-PERSON FINALS
                   </h3>
-                  <div style={{ color: '#555555', fontSize: '16px', fontWeight: 600, marginBottom: '20px' }}>
+                  <div style={{ color: '#555555', fontSize: '16px', fontWeight: 600, marginBottom: '24px' }}>
                     (4th November 2026)
                   </div>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  
+                  {/* Clean Single Dot Bullets */}
+                  <div className="skillathon-bullet-list">
                     {[
                       "Finalists will participate in a full-day Skillathon (6–7 hours) at the Bengaluru Skill Summit.",
                       "Each team will make a 7-minute presentation followed by jury Q&A.",
                       "Jury will include policymakers, industry leaders, academics, and practitioners."
                     ].map((text, idx) => (
-                      <li key={idx} style={{
-                        position: 'relative',
-                        paddingLeft: '20px',
-                        marginBottom: '14px',
-                        fontSize: '15px',
-                        lineHeight: '1.6',
-                        color: '#0e1220'
-                      }}>
-                        <span style={{
-                          position: 'absolute',
-                          left: 0,
-                          top: '10px',
-                          width: '5px',
-                          height: '5px',
-                          backgroundColor: '#0e1220',
-                          borderRadius: '50%'
-                        }} />
-                        {text}
-                      </li>
+                      <div key={idx} className="skillathon-bullet-item">
+                        <span className="skillathon-bullet-dot" />
+                        <div style={{ fontSize: '15px', lineHeight: '1.6', color: '#0e1220' }}>
+                          {text}
+                        </div>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
                 <div style={{ textAlign: 'center' }}>
@@ -595,7 +583,7 @@ export default function Skillathon2026() {
               <div style={{ textAlign: 'center' }}>
                 <h2 style={{
                   color: '#0066ff',
-                  fontFamily: 'Comfortaa, sans-serif',
+                  fontFamily: '"Comfortaa", sans-serif',
                   fontSize: '44px',
                   fontWeight: 700,
                   textTransform: 'uppercase',
@@ -618,13 +606,13 @@ export default function Skillathon2026() {
           </section>
 
           {/* =========================================================================
-              8. Registration Details (Matching media_1790157421641.png)
+              8. Registration Details
               ========================================================================= */}
           <section id="registration-details" style={{ paddingTop: '30px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
             <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
               <h2 style={{
                 color: '#0066ff',
-                fontFamily: 'Comfortaa, sans-serif',
+                fontFamily: '"Comfortaa", sans-serif',
                 fontSize: '44px',
                 fontWeight: 700,
                 textTransform: 'uppercase',
@@ -645,14 +633,16 @@ export default function Skillathon2026() {
                 <div>
                   <h4 style={{
                     color: '#0e1220',
-                    fontFamily: 'Comfortaa, sans-serif',
+                    fontFamily: '"Comfortaa", sans-serif',
                     fontSize: '18px',
                     fontWeight: 700,
-                    marginBottom: '16px'
+                    marginBottom: '18px'
                   }}>
                     Rules &amp; Guidelines
                   </h4>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 28px 0' }}>
+
+                  {/* Clean Single Dot Bullets */}
+                  <div className="skillathon-bullet-list" style={{ marginBottom: '28px' }}>
                     {[
                       "Choose one challenge and develop a solution addressing the identified problem.",
                       "Build and demonstrate a working prototype, not just an idea.",
@@ -661,44 +651,33 @@ export default function Skillathon2026() {
                       "Present evidence and outcomes following the journey: Problem → Solution → Prototype → Pilot → Evidence → Impact → Scale.",
                       "Final evaluation will consider problem understanding, innovation, prototype, validation, feasibility, impact and scalability."
                     ].map((text, idx) => (
-                      <li key={idx} style={{
-                        position: 'relative',
-                        paddingLeft: '20px',
-                        marginBottom: '12px',
-                        fontSize: '14.5px',
-                        lineHeight: '1.6',
-                        color: '#0e1220'
-                      }}>
-                        <span style={{
-                          position: 'absolute',
-                          left: 0,
-                          top: '9px',
-                          width: '5px',
-                          height: '5px',
-                          backgroundColor: '#0e1220',
-                          borderRadius: '50%'
-                        }} />
-                        {text}
-                      </li>
+                      <div key={idx} className="skillathon-bullet-item">
+                        <span className="skillathon-bullet-dot" />
+                        <div style={{ fontSize: '14.5px', lineHeight: '1.6', color: '#0e1220' }}>
+                          {text}
+                        </div>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
 
                   <Link
                     to="/skillathon-registration"
                     style={{
                       backgroundColor: '#ff6257',
                       color: '#ffffff',
-                      padding: '12px 32px',
-                      borderRadius: '8px',
+                      padding: '15px 20px',
+                      minWidth: '180px',
+                      borderRadius: '12px',
                       display: 'inline-block',
                       fontWeight: 700,
-                      fontSize: '13.5px',
-                      fontFamily: 'Comfortaa, sans-serif',
+                      fontSize: '14px',
+                      fontFamily: '"Comfortaa", sans-serif',
                       textTransform: 'uppercase',
                       textDecoration: 'none',
                       letterSpacing: '0.5px',
                       boxShadow: '0 4px 14px rgba(255, 98, 87, 0.35)',
-                      transition: 'all 0.25s ease'
+                      transition: 'all 0.25s ease',
+                      textAlign: 'center'
                     }}
                   >
                     REGISTER NOW

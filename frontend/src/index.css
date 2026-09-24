@@ -2148,3 +2148,54 @@ img.img-with-animation[src*="header-image"],
   }
 }
 
+/* Skillathon Challenges 6-column Grid */
+.skillathon-challenges-grid {
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+  gap: 14px !important;
+  align-items: stretch !important;
+  margin-bottom: 40px !important;
+}
+
+@media (max-width: 1024px) {
+  .skillathon-challenges-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .skillathon-challenges-grid {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+
+/* Eliminate any accidental double bullets in Skillathon */
+.skillathon-bullet-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.skillathon-bullet-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.skillathon-bullet-dot {
+  width: 6px !important;
+  height: 6px !important;
+  min-width: 6px !important;
+  background-color: #0e1220 !important;
+  border-radius: 50% !important;
+  margin-top: 8px !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+}
+
+
