@@ -5,7 +5,6 @@ import { FaAngleDown, FaAngleUp, FaAngleRight } from 'react-icons/fa';
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openSubMenus, setOpenSubMenus] = useState({});
-  const [hoveredMenu, setHoveredMenu] = useState(null);
   const location = useLocation();
   const path = location.pathname;
 
@@ -15,8 +14,6 @@ export default function Header() {
   const isSpeakersActive = path.includes('/speakers-2026');
   const isAwardsActive = path.includes('/kaushalya-karnataka-awards-2026') || path.includes('/awards-2026');
   const isGetInvolvedActive = path.includes('/get-involved') || path.includes('/be-a-speaker') || path.includes('/sponsor-registration') || path.includes('/be-a-media-partner') || path.includes('/association-enquiry') || path.includes('/skillathon-registration');
-
-  const activeSubNav = hoveredMenu || (isGetInvolvedActive ? 'get-involved' : isAboutActive ? 'about' : null);
 
   const toggleSubMenu = (key, e) => {
     e.preventDefault();
@@ -30,7 +27,7 @@ export default function Header() {
   return (
     <>
       <div id="header-space" data-header-mobile-fixed={1} />
-      <div id="header-outer" onMouseLeave={() => setHoveredMenu(null)} data-has-menu="true" data-has-buttons="no" data-header-button_style={{}} data-using-pr-menu="true" data-mobile-fixed={1} data-ptnm="false" data-lhe="default" data-user-set-bg="#000000" data-format="centered-menu" data-permanent-transparent="false" data-megamenu-rt={0} data-remove-fixed={0} data-header-resize={0} data-cart="false" data-transparency-option={0} data-box-shadow="none" data-shrink-num={6} data-using-secondary={0} data-using-logo={1} data-logo-height={70} data-m-logo-height={50} data-padding={15} data-full-width="false" data-condense="false">
+      <div id="header-outer" data-has-menu="true" data-has-buttons="no" data-header-button_style={{}} data-using-pr-menu="true" data-mobile-fixed={1} data-ptnm="false" data-lhe="default" data-user-set-bg="#000000" data-format="centered-menu" data-permanent-transparent="false" data-megamenu-rt={0} data-remove-fixed={0} data-header-resize={0} data-cart="false" data-transparency-option={0} data-box-shadow="none" data-shrink-num={6} data-using-secondary={0} data-using-logo={1} data-logo-height={70} data-m-logo-height={50} data-padding={15} data-full-width="false" data-condense="false">
         <div id="search-outer" className="nectar">
           <div id="search">
             <div className="container">
@@ -85,12 +82,12 @@ export default function Header() {
                 <nav aria-label="Main Menu">
                   <ul className="sf-menu">
                     {/* HOME */}
-                    <li id="menu-item-3693" onMouseEnter={() => setHoveredMenu(null)} className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-home ${isHomeActive ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
+                    <li id="menu-item-3693" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-home ${isHomeActive ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
                       <Link to="/" aria-current={isHomeActive ? "page" : undefined}><span className="menu-title-text">HOME</span></Link>
                     </li>
 
                     {/* ABOUT with Sub-menu */}
-                    <li id="menu-item-2638" onMouseEnter={() => setHoveredMenu('about')} className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children ${isAboutActive ? 'current-menu-item' : ''} ${activeSubNav === 'about' ? 'has-active-subbar' : ''} nectar-regular-menu-item sf-with-ul`}>
+                    <li id="menu-item-2638" className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children ${isAboutActive ? 'current-menu-item' : ''} nectar-regular-menu-item sf-with-ul`}>
                       <Link to="/about-us" aria-haspopup="true" aria-expanded="false" className="nav-parent-link">
                         <span className="menu-title-text">ABOUT</span>
                         <span className="sf-sub-indicator">
@@ -99,9 +96,9 @@ export default function Header() {
                       </Link>
                       <ul className="sub-menu">
                         <li className="menu-item menu-item-has-children">
-                          <Link to="/2025-highlights" style={{ color: "#ff6257" }}>
+                          <Link to="/2025-highlights" className="menu-highlights-link">
                             <span>2025 HIGHLIGHTS</span>
-                            <FaAngleRight style={{ fontSize: "14px", marginLeft: "14px" }} />
+                            <FaAngleRight className="sub-arrow" />
                           </Link>
                           <ul className="sub-menu">
                             <li className="menu-item">
@@ -134,22 +131,22 @@ export default function Header() {
                     </li>
 
                     {/* AGENDA */}
-                    <li id="menu-item-agenda" onMouseEnter={() => setHoveredMenu(null)} className={`menu-item menu-item-type-post_type menu-item-object-page ${isAgendaActive ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
+                    <li id="menu-item-agenda" className={`menu-item menu-item-type-post_type menu-item-object-page ${isAgendaActive ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
                       <Link to="/agenda-2026"><span className="menu-title-text">AGENDA</span></Link>
                     </li>
 
                     {/* SPEAKERS */}
-                    <li id="menu-item-speakers" onMouseEnter={() => setHoveredMenu(null)} className={`menu-item menu-item-type-post_type menu-item-object-page ${isSpeakersActive ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
+                    <li id="menu-item-speakers" className={`menu-item menu-item-type-post_type menu-item-object-page ${isSpeakersActive ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
                       <Link to="/speakers-2026"><span className="menu-title-text">SPEAKERS</span></Link>
                     </li>
 
                     {/* AWARDS */}
-                    <li id="menu-item-awards" onMouseEnter={() => setHoveredMenu(null)} className={`menu-item menu-item-type-post_type menu-item-object-page ${isAwardsActive ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
+                    <li id="menu-item-awards" className={`menu-item menu-item-type-post_type menu-item-object-page ${isAwardsActive ? 'current-menu-item' : ''} nectar-regular-menu-item`}>
                       <Link to="/kaushalya-karnataka-awards-2026"><span className="menu-title-text">AWARDS</span></Link>
                     </li>
 
-                    {/* GET INVOLVED with Horizontal Sub-bar */}
-                    <li id="menu-item-get-involved" onMouseEnter={() => setHoveredMenu('get-involved')} className={`menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ${isGetInvolvedActive ? 'current-menu-item' : ''} ${activeSubNav === 'get-involved' ? 'has-active-subbar' : ''} nectar-regular-menu-item sf-with-ul`}>
+                    {/* GET INVOLVED */}
+                    <li id="menu-item-get-involved" className={`menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ${isGetInvolvedActive ? 'current-menu-item' : ''} nectar-regular-menu-item sf-with-ul`}>
                       <Link to="/get-involved" aria-haspopup="true" aria-expanded="false" className="nav-parent-link">
                         <span className="menu-title-text">GET INVOLVED</span>
                         <span className="sf-sub-indicator">
@@ -176,7 +173,7 @@ export default function Header() {
                     </li>
                   </ul>
 
-                  <ul className="buttons header-cta-buttons" data-user-set-ocm="off" onMouseEnter={() => setHoveredMenu(null)}>
+                  <ul className="buttons header-cta-buttons" data-user-set-ocm="off">
                     <li className="header-cta-item header-cta-pass">
                       <Link to="/get-involved" className="header-cta-pill" data-discover="true">
                         <span className="nectar-text-reveal-button">
