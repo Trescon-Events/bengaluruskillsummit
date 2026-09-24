@@ -1065,6 +1065,166 @@ ul.buttons.header-cta-buttons {
 }
 
 /* ==========================================================================
+   Global Unified CTA Button Styling
+   Ensures ALL CTAs (Header, Hero, Body, Forms, Tickets) look identical
+   Matches media_1790228670572.png
+   ========================================================================== */
+.header-cta-pill,
+.nectar-button,
+a.nectar-button,
+button.nectar-button,
+#ajax-content-wrap .nectar-button,
+#ajax-content-wrap a.nectar-button,
+#ajax-content-wrap button.nectar-button,
+.bengaluru-skill-summit-2025-btn-banner,
+.bengaluru-skill-summit-2025-btn,
+#ajax-content-wrap .bengaluru-skill-summit-2025-btn-banner,
+#ajax-content-wrap .bengaluru-skill-summit-2025-btn,
+.cta-btn,
+#vision-b,
+#ajax-content-wrap #vision-b,
+.hbspt-form input[type="submit"],
+.hs-form input[type="submit"],
+.hs-form .hs-button.primary,
+#hubspot-guest-invite-form input[type="submit"] {
+  background: #ff6257 !important;
+  background-color: #ff6257 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  border-radius: 12px !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 4px 14px rgba(255, 98, 87, 0.35) !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  box-sizing: border-box !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  vertical-align: middle !important;
+}
+
+/* Ensure inner text / spans inherit font and stay crisp pure white */
+.header-cta-pill *,
+.nectar-button *,
+.nectar-button span,
+.nectar-button > span,
+.bengaluru-skill-summit-2025-btn-banner *,
+.bengaluru-skill-summit-2025-btn-banner span,
+.bengaluru-skill-summit-2025-btn-banner > span,
+.bengaluru-skill-summit-2025-btn *,
+.bengaluru-skill-summit-2025-btn span,
+.bengaluru-skill-summit-2025-btn > span,
+.cta-btn *,
+#vision-b * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  background: transparent !important;
+}
+
+/* Remove Salient pseudo elements, ghost arrows, and default 3D bottom border */
+.nectar-button:before,
+.nectar-button:after,
+a.nectar-button:before,
+a.nectar-button:after,
+.bengaluru-skill-summit-2025-btn-banner:before,
+.bengaluru-skill-summit-2025-btn-banner:after,
+.bengaluru-skill-summit-2025-btn:before,
+.bengaluru-skill-summit-2025-btn:after {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Specific paddings for header vs body vs large */
+.header-cta-pill {
+  padding: 9px 18px !important;
+  height: auto !important;
+}
+
+.bengaluru-skill-summit-2025-btn-banner,
+.bengaluru-skill-summit-2025-btn,
+.nectar-button.medium,
+.cta-btn {
+  padding: 13px 26px !important;
+  height: auto !important;
+}
+
+.nectar-button.large,
+#vision-b {
+  padding: 15px 32px !important;
+  font-size: 14px !important;
+}
+
+/* Unified Hover State - Solid deeper coral, smooth lift, glowing shadow */
+.header-cta-pill:hover,
+.nectar-button:hover,
+a.nectar-button:hover,
+button.nectar-button:hover,
+.bengaluru-skill-summit-2025-btn-banner:hover,
+.bengaluru-skill-summit-2025-btn:hover,
+.cta-btn:hover,
+#vision-b:hover,
+.hbspt-form input[type="submit"]:hover,
+.hs-form input[type="submit"]:hover,
+.hs-form .hs-button.primary:hover,
+#hubspot-guest-invite-form input[type="submit"]:hover {
+  background: #e55349 !important;
+  background-color: #e55349 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(255, 98, 87, 0.45) !important;
+}
+
+.header-cta-pill:hover *,
+.nectar-button:hover *,
+.nectar-button:hover span,
+.bengaluru-skill-summit-2025-btn-banner:hover *,
+.bengaluru-skill-summit-2025-btn-banner:hover span,
+.bengaluru-skill-summit-2025-btn:hover *,
+.bengaluru-skill-summit-2025-btn:hover span,
+.cta-btn:hover *,
+#vision-b:hover * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Unified Active State - Press effect */
+.header-cta-pill:active,
+.nectar-button:active,
+a.nectar-button:active,
+button.nectar-button:active,
+.bengaluru-skill-summit-2025-btn-banner:active,
+.bengaluru-skill-summit-2025-btn:active,
+.cta-btn:active,
+#vision-b:active,
+.hbspt-form input[type="submit"]:active,
+.hs-form input[type="submit"]:active,
+.hs-form .hs-button.primary:active,
+#hubspot-guest-invite-form input[type="submit"]:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(255, 98, 87, 0.3) !important;
+}
+
+
+/* ==========================================================================
    Fixed Header Solid Background on Scroll
    ========================================================================== */
 #header-outer {
