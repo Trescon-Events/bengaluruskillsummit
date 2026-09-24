@@ -184,7 +184,7 @@ export default function Header() {
                     <li className="header-cta-item header-cta-enquiry">
                       <Link to="/general-enquiry" className="header-cta-pill" data-discover="true">
                         <span className="nectar-text-reveal-button">
-                          <span className="nectar-text-reveal-button__text" data-text="ENQUIRY NOW">ENQUIRY NOW</span>
+                          <span className="nectar-text-reveal-button__text" data-text="ENQUIRE NOW">ENQUIRE NOW</span>
                         </span>
                       </Link>
                     </li>
@@ -283,7 +283,7 @@ export default function Header() {
                         GET YOUR PASS
                       </Link>
                       <Link to="/general-enquiry" onClick={closeMobileMenu} className="header-cta-pill">
-                        ENQUIRY NOW
+                        ENQUIRE NOW
                       </Link>
                     </li>
                   </ul>
