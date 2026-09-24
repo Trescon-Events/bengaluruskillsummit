@@ -122,26 +122,22 @@ export default function Skillathon2026() {
               margin: '0 auto'
             }}>
               <h1 style={{
-                color: '#0066ff',
-                fontFamily: '"Comfortaa", sans-serif',
-                fontSize: '44px',
+                color: '#106cff',
+                fontFamily: '"Joost", "Jost", sans-serif',
+                fontSize: '60px',
                 fontWeight: 700,
-                textTransform: 'uppercase',
-                letterSpacing: '2px',
-                margin: '0 0 10px 0',
-                lineHeight: 1.15
+                lineHeight: '66px',
+                margin: '0 0 10px 0'
               }}>
-                SKILLATHON 2026
+                Skillathon 2026
               </h1>
               <h4 style={{
-                color: '#1a1a1a',
-                fontFamily: '"Comfortaa", sans-serif',
-                fontSize: '22px',
-                fontWeight: 500,
-                textTransform: 'uppercase',
-                letterSpacing: '1px',
-                margin: '0 0 24px 0',
-                lineHeight: 1.25
+                color: '#0e1220',
+                fontFamily: '"Joost", "Jost", sans-serif',
+                fontSize: '36px',
+                fontWeight: 400,
+                lineHeight: '40px',
+                margin: '0 0 24px 0'
               }}>
                 YOUNG MINDS POWERING TOMORROW’S SKILLS
               </h4>
@@ -231,18 +227,18 @@ export default function Skillathon2026() {
           </section>
 
           {/* =========================================================================
-              3. Objectives (Matching media_1790230784833.png)
+              3. Objectives (Matching media_1790233613822.png)
               ========================================================================= */}
           <section id="Skillathon-Objectives" style={{ paddingTop: '20px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
             <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
               <h2 style={{
-                color: '#0066ff',
-                fontFamily: '"Comfortaa", sans-serif',
+                color: '#0d53c7',
+                fontFamily: '"Joost", "Jost", sans-serif',
                 fontSize: '44px',
                 fontWeight: 700,
-                textTransform: 'uppercase',
                 textAlign: 'center',
-                letterSpacing: '2px',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
                 marginBottom: '40px'
               }}>
                 OBJECTIVES
@@ -254,11 +250,11 @@ export default function Skillathon2026() {
                 gap: '40px',
                 alignItems: 'center'
               }}>
-                {/* Left: Stage Photo */}
+                {/* Left: Official Objectives Image */}
                 <div style={{ textAlign: 'center' }}>
                   <img
-                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/objectives-stage-photo.png"
-                    alt="Skillathon 2025 Congratulations Stage Award Ceremony"
+                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/objectives.png"
+                    alt="objectives"
                     style={{
                       maxWidth: '100%',
                       height: 'auto',
@@ -291,18 +287,18 @@ export default function Skillathon2026() {
           </section>
 
           {/* =========================================================================
-              4. Competition Structure
+              4. Competition Structure (Matching media_1790233627041.png)
               ========================================================================= */}
           <section id="competition-structure" style={{ paddingTop: '20px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
             <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
               <h2 style={{
-                color: '#0066ff',
-                fontFamily: '"Comfortaa", sans-serif',
+                color: '#0d53c7',
+                fontFamily: '"Joost", "Jost", sans-serif',
                 fontSize: '44px',
                 fontWeight: 700,
-                textTransform: 'uppercase',
                 textAlign: 'center',
-                letterSpacing: '2px',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
                 marginBottom: '40px'
               }}>
                 COMPETITION STRUCTURE
@@ -314,11 +310,11 @@ export default function Skillathon2026() {
                 gap: '40px',
                 alignItems: 'center'
               }}>
-                {/* Left: Students Table Photo */}
+                {/* Left: Official Virtual Round Image */}
                 <div style={{ textAlign: 'center' }}>
                   <img
-                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/competition-students-photo.png"
-                    alt="Participants at Skillathon round table"
+                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/virtual-round.png"
+                    alt="virtual round"
                     style={{
                       maxWidth: '100%',
                       height: 'auto',
@@ -413,12 +409,13 @@ export default function Skillathon2026() {
           <section id="choose-challenge" style={{ paddingTop: '30px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
             <div style={{ maxWidth: '1150px', margin: '0 auto', textAlign: 'center' }}>
               <h2 style={{
-                color: '#0066ff',
-                fontFamily: '"Comfortaa", sans-serif',
+                color: '#0d53c7',
+                fontFamily: '"Joost", "Jost", sans-serif',
                 fontSize: '44px',
                 fontWeight: 700,
+                textAlign: 'center',
                 textTransform: 'uppercase',
-                letterSpacing: '2px',
+                letterSpacing: '1px',
                 marginBottom: '10px'
               }}>
                 CHOOSE YOUR CHALLENGE
@@ -462,18 +459,16 @@ export default function Skillathon2026() {
                     }}
                   >
                     <div>
-                      <h4 style={{
+                      <div className="skillathon-card-title" style={{
                         color: '#0e1220',
-                        fontFamily: '"Comfortaa", sans-serif',
-                        fontSize: '13px',
+                        fontSize: '15px',
                         fontWeight: 700,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.4px',
+                        letterSpacing: '-0.2px',
                         marginBottom: '12px',
                         lineHeight: 1.3
                       }}>
                         {item.title}
-                      </h4>
+                      </div>
                       <p style={{
                         color: '#444444',
                         fontSize: '11.5px',
@@ -558,8 +553,8 @@ export default function Skillathon2026() {
 
                 <div style={{ textAlign: 'center' }}>
                   <img
-                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/in-person-finals-stage-photo.png"
-                    alt="Gamified Challenges and Community Tool Vaults Final Presentation"
+                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/in-personal-finals.png"
+                    alt="in personal finals"
                     style={{
                       maxWidth: '100%',
                       height: 'auto',
@@ -571,7 +566,7 @@ export default function Skillathon2026() {
               </div>
 
               {/* Curated Format 5 Stages Graphic */}
-              <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <div style={{ textAlign: 'center' }}>
                 <img
                   src="/bengaluruskillsummit/wp-content/uploads/2026/09/curated-format-2026.png"
                   alt="The curated format will take teams through five stages of problem-solving: 1 Empathise, 2 Define, 3 Ideate, 4 Consolidate, 5 Pitch"
@@ -579,45 +574,194 @@ export default function Skillathon2026() {
                 />
               </div>
 
-              {/* Key Dates Section */}
-              <div style={{ textAlign: 'center' }}>
-                <h2 style={{
-                  color: '#0066ff',
-                  fontFamily: '"Comfortaa", sans-serif',
-                  fontSize: '44px',
+            </div>
+          </section>
+
+          {/* =========================================================================
+              8. Prizes & Recognition (Matching live site #prizes-recognition)
+              ========================================================================= */}
+          <section id="prizes-recognition" style={{
+            backgroundImage: 'url(/bengaluruskillsummit/wp-content/uploads/2025/09/bg-prize-recognition.webp)',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            paddingTop: '60px',
+            paddingBottom: '60px',
+            paddingLeft: '20px',
+            paddingRight: '20px'
+          }}>
+            <div style={{ maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
+              <h2 style={{
+                color: '#ffffff',
+                fontFamily: '"Joost", "Jost", sans-serif',
+                fontSize: '48px',
+                fontWeight: 700,
+                textAlign: 'center',
+                letterSpacing: '1px',
+                marginBottom: '28px'
+              }}>
+                Prizes &amp; Recognition
+              </h2>
+
+              {/* Prize Pool Pill Badge */}
+              <div style={{
+                display: 'inline-block',
+                backgroundColor: '#ffc933',
+                borderRadius: '10px',
+                padding: '10px 32px',
+                marginBottom: '35px',
+                boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+              }}>
+                <h4 style={{
+                  color: '#0e1220',
+                  fontFamily: '"Joost", "Jost", sans-serif',
+                  fontSize: '36px',
                   fontWeight: 700,
-                  textTransform: 'uppercase',
-                  letterSpacing: '2px',
-                  marginBottom: '35px'
+                  margin: 0,
+                  lineHeight: '40px'
                 }}>
-                  KEY DATES
-                </h2>
-                <picture>
-                  <source media="(max-width: 768px)" srcSet="/bengaluruskillsummit/wp-content/uploads/2026/09/Key-Dates-Mobile-2026.png" />
-                  <img
-                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/Key-Dates-Desktop-2026.png"
-                    alt="Key Dates: Applications Open 22 Sep 2026, Application Deadline 2 Oct 2026, Final Evaluation 3-4 Nov 2026, Skillathon Finale 5 Nov 2026"
-                    style={{ width: '100%', maxWidth: '920px', height: 'auto', display: 'inline-block' }}
-                  />
-                </picture>
+                  ₹50,000 Prize Pool
+                </h4>
+              </div>
+
+              {/* 3 Prize Cards */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                gap: '24px',
+                maxWidth: '900px',
+                margin: '0 auto 40px auto'
+              }}>
+                <div style={{
+                  backgroundColor: '#ffffff',
+                  borderRadius: '15px',
+                  padding: '16px 20px',
+                  textAlign: 'center',
+                  boxShadow: '0 4px 15px rgba(0,0,0,0.06)'
+                }}>
+                  <p style={{
+                    color: '#0e1220',
+                    fontFamily: '"Joost", "Jost", sans-serif',
+                    fontSize: '22px',
+                    fontWeight: 700,
+                    margin: 0
+                  }}>
+                    1st Prize: ₹25,000
+                  </p>
+                </div>
+                <div style={{
+                  backgroundColor: '#ffffff',
+                  borderRadius: '15px',
+                  padding: '16px 20px',
+                  textAlign: 'center',
+                  boxShadow: '0 4px 15px rgba(0,0,0,0.06)'
+                }}>
+                  <p style={{
+                    color: '#0e1220',
+                    fontFamily: '"Joost", "Jost", sans-serif',
+                    fontSize: '22px',
+                    fontWeight: 700,
+                    margin: 0
+                  }}>
+                    2nd Prize: ₹15,000
+                  </p>
+                </div>
+                <div style={{
+                  backgroundColor: '#ffffff',
+                  borderRadius: '15px',
+                  padding: '16px 20px',
+                  textAlign: 'center',
+                  boxShadow: '0 4px 15px rgba(0,0,0,0.06)'
+                }}>
+                  <p style={{
+                    color: '#0e1220',
+                    fontFamily: '"Joost", "Jost", sans-serif',
+                    fontSize: '22px',
+                    fontWeight: 700,
+                    margin: 0
+                  }}>
+                    3rd Prize: ₹10,000
+                  </p>
+                </div>
+              </div>
+
+              {/* 4 Perks Columns with #FFC933 separators */}
+              <div className="skillathon-prizes-perks" style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(4, 1fr)',
+                gap: '16px',
+                alignItems: 'center',
+                paddingTop: '10px'
+              }}>
+                {[
+                  "Certificates and mentorship opportunities for winners.",
+                  "Finalists get delegate passes to Bengaluru Skill Summit.",
+                  "Winning solutions showcased in the Bengaluru Skill Summit Knowledge Compendium.",
+                  "Felicitation during the Closing Ceremony before global delegates."
+                ].map((perk, idx) => (
+                  <div
+                    key={idx}
+                    className={idx < 3 ? "skillathon-perk-item has-border" : "skillathon-perk-item"}
+                    style={{
+                      padding: '0 16px',
+                      textAlign: 'center'
+                    }}
+                  >
+                    <p style={{
+                      color: '#ffffff',
+                      fontSize: '18px',
+                      lineHeight: '28px',
+                      margin: 0,
+                      fontWeight: 500
+                    }}>
+                      {perk}
+                    </p>
+                  </div>
+                ))}
               </div>
 
             </div>
           </section>
 
           {/* =========================================================================
-              8. Registration Details
+              9. Key Dates Section
+              ========================================================================= */}
+          <section id="key-dates" style={{ paddingTop: '50px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
+            <div style={{ maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
+              <h2 style={{
+                color: '#0d53c7',
+                fontFamily: '"Joost", "Jost", sans-serif',
+                fontSize: '44px',
+                fontWeight: 700,
+                letterSpacing: '1px',
+                marginBottom: '35px'
+              }}>
+                Key Dates
+              </h2>
+              <picture>
+                <source media="(max-width: 768px)" srcSet="/bengaluruskillsummit/wp-content/uploads/2026/09/Key-Dates-Mobile-2026.png" />
+                <img
+                  src="/bengaluruskillsummit/wp-content/uploads/2026/09/Key-Dates-Desktop-2026.png"
+                  alt="Key Dates: Applications Open 22 Sep 2026, Application Deadline 2 Oct 2026, Final Evaluation 3-4 Nov 2026, Skillathon Finale 5 Nov 2026"
+                  style={{ width: '100%', maxWidth: '920px', height: 'auto', display: 'inline-block' }}
+                />
+              </picture>
+            </div>
+          </section>
+
+          {/* =========================================================================
+              10. Registration Details (Matching media_1790233655795.png)
               ========================================================================= */}
           <section id="registration-details" style={{ paddingTop: '30px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
             <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
               <h2 style={{
-                color: '#0066ff',
-                fontFamily: '"Comfortaa", sans-serif',
+                color: '#0d53c7',
+                fontFamily: '"Joost", "Jost", sans-serif',
                 fontSize: '44px',
                 fontWeight: 700,
-                textTransform: 'uppercase',
                 textAlign: 'center',
-                letterSpacing: '2px',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
                 marginBottom: '40px'
               }}>
                 REGISTRATION DETAILS
@@ -684,11 +828,11 @@ export default function Skillathon2026() {
                   </Link>
                 </div>
 
-                {/* Right: Participants Group Photo */}
+                {/* Right: Official Registration Details Image */}
                 <div style={{ textAlign: 'center' }}>
                   <img
-                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/registration-group-photo.png"
-                    alt="Participants with Summit badges at Bengaluru Skill Summit"
+                    src="/bengaluruskillsummit/wp-content/uploads/2026/09/registration-details-1.png"
+                    alt="registration details 1"
                     style={{
                       maxWidth: '100%',
                       height: 'auto',
@@ -703,18 +847,18 @@ export default function Skillathon2026() {
           </section>
 
           {/* =========================================================================
-              9. FAQs (Matching media_1790157421641.png)
+              11. FAQs (Matching media_1790157421641.png)
               ========================================================================= */}
           <section id="faqs" style={{ paddingTop: '20px', paddingBottom: '80px', paddingLeft: '20px', paddingRight: '20px' }}>
             <div style={{ maxWidth: '850px', margin: '0 auto' }}>
               <h2 style={{
-                color: '#0066ff',
-                fontFamily: 'Comfortaa, sans-serif',
+                color: '#0d53c7',
+                fontFamily: '"Joost", "Jost", sans-serif',
                 fontSize: '44px',
                 fontWeight: 700,
-                textTransform: 'uppercase',
                 textAlign: 'center',
-                letterSpacing: '2px',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
                 marginBottom: '40px'
               }}>
                 FAQS

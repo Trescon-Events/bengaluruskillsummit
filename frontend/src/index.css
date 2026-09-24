@@ -1,4 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
+@font-face {
+  font-family: 'Joost';
+  font-style: normal;
+  font-weight: 100 900;
+  src: local('Jost'), url('https://fonts.gstatic.com/s/jost/v15/92zPtBh3BpXs40ctPtqcERK.woff2') format('woff2');
+}
 /* Overrides */
 #root {
   width: 100%;
@@ -2196,6 +2203,28 @@ img.img-with-animation[src*="header-image"],
   margin-top: 8px !important;
   flex-shrink: 0 !important;
   display: inline-block !important;
+}
+
+/* Prizes & Recognition Perks */
+.skillathon-perk-item.has-border {
+  border-right: 1px solid #FFC933;
+}
+
+.skillathon-card-title {
+  font-family: 'Comfortaa', sans-serif !important;
+  text-transform: none !important;
+}
+
+@media (max-width: 768px) {
+  .skillathon-prizes-perks {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .skillathon-perk-item.has-border {
+    border-right: none !important;
+    border-bottom: 1px solid #FFC933 !important;
+    padding-bottom: 20px !important;
+  }
 }
 
 
