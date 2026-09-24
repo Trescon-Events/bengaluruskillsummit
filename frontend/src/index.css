@@ -2139,6 +2139,18 @@ img.img-with-animation[src*="header-image"],
   margin: 0 auto;
 }
 
+.curated-format-heading {
+  color: #000000;
+  font-family: "Comfortaa", sans-serif !important;
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: 700;
+  text-transform: none !important;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
 @media (max-width: 768px) {
   #competition-structure .submission-guide-desk-img,
   #competition-structure .evaluation-criteria-img,
@@ -2152,6 +2164,13 @@ img.img-with-animation[src*="header-image"],
   #phase-finals .curated-format-img-mob,
   #key-dates .key-dates-img-mob {
     display: block !important;
+  }
+
+  .curated-format-heading {
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 35px;
+    margin-bottom: 20px;
   }
 }
 

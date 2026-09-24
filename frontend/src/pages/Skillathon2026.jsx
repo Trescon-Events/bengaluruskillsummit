@@ -571,10 +571,20 @@ export default function Skillathon2026() {
 
               {/* Curated Format 5 Stages Graphic */}
               <div style={{ textAlign: 'center' }}>
+                <h4 className="curated-format-heading">
+                  The curated format will take teams through five stages of problem-solving
+                </h4>
                 <img
-                  src="/bengaluruskillsummit/wp-content/uploads/2026/09/curated-format-2026.png"
+                  src="/bengaluruskillsummit/wp-content/uploads/2025/09/curated-format.png"
                   alt="The curated format will take teams through five stages of problem-solving: 1 Empathise, 2 Define, 3 Ideate, 4 Consolidate, 5 Pitch"
-                  style={{ width: '100%', maxWidth: '980px', height: 'auto', display: 'inline-block' }}
+                  className="curated-format-img"
+                  style={{ width: '100%', maxWidth: '1000px', height: 'auto', margin: '0 auto' }}
+                />
+                <img
+                  src="/bengaluruskillsummit/wp-content/uploads/2025/09/in-person-finals-mobile-scaled.png"
+                  alt="The curated format will take teams through five stages of problem-solving: 1 Empathise, 2 Define, 3 Ideate, 4 Consolidate, 5 Pitch"
+                  className="curated-format-img-mob"
+                  style={{ width: '100%', maxWidth: '450px', height: 'auto', margin: '0 auto' }}
                 />
               </div>
 
