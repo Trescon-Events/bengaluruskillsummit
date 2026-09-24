@@ -1,9 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { STATIC_PARTNERS_DATA_2026 } from '../data/partners2026Fallback';
+
+function getAllCategories(data) {
+  let cats = [];
+  if (data && Array.isArray(data.categorized)) {
+    cats = data.categorized.filter((cat) => {
+      const isMedia = (cat.category_name || '').toLowerCase().includes('media');
+      return !isMedia && Array.isArray(cat.entity) && cat.entity.length > 0;
+    });
+  }
+  if (data && Array.isArray(data.uncategorized) && data.uncategorized.length > 0) {
+    cats.push({
+      category_name: 'Partners',
+      entity: data.uncategorized
+    });
+  }
+  return cats;
+}
 
 export default function Partners2026() {
-  const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [categories, setCategories] = useState(() => getAllCategories(STATIC_PARTNERS_DATA_2026));
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -20,30 +38,15 @@ export default function Partners2026() {
       })
       .then((data) => {
         if (!isMounted) return;
-        let cats = [];
-
-        // Filter OUT Media Partners (only include general, association, and ecosystem partners)
-        if (data && Array.isArray(data.categorized)) {
-          cats = data.categorized.filter((cat) => {
-            const isMedia = (cat.category_name || '').toLowerCase().includes('media');
-            return !isMedia && Array.isArray(cat.entity) && cat.entity.length > 0;
-          });
+        const cats = getAllCategories(data);
+        if (cats.length > 0) {
+          setCategories(cats);
         }
-
-        if (data && Array.isArray(data.uncategorized) && data.uncategorized.length > 0) {
-          cats.push({
-            category_name: 'Partners',
-            entity: data.uncategorized
-          });
-        }
-
-        setCategories(cats);
         setLoading(false);
       })
       .catch((err) => {
         if (!isMounted) return;
-        console.error('KonfHub API Error:', err);
-        setError('Unable to load partners at this moment.');
+        console.warn('KonfHub API warning, using static fallback:', err);
         setLoading(false);
       });
 
