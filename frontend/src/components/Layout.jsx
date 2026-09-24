@@ -3,6 +3,7 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import FloatingSocialShare from './FloatingSocialShare';
+import { getSEOForPath, DEFAULT_SEO } from '../utils/seoConfig';
 
 export default function Layout() {
   const location = useLocation();
@@ -81,6 +82,51 @@ export default function Layout() {
   // Scroll to top when actual route changes
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  // Dynamic SEO Metadata Management (Updates title, description, OG, Twitter, canonical)
+  useEffect(() => {
+    const seo = getSEOForPath(location.pathname);
+
+    // 1. Update Document Title
+    document.title = seo.title || DEFAULT_SEO.title;
+
+    // 2. Helper to set or create meta tag
+    const setMetaTag = (attrName, attrValue, content) => {
+      if (!content) return;
+      let el = document.querySelector(`meta[${attrName}="${attrValue}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attrName, attrValue);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    };
+
+    // 3. Set standard meta description
+    setMetaTag('name', 'description', seo.description || DEFAULT_SEO.description);
+
+    // 4. Set Open Graph tags
+    setMetaTag('property', 'og:title', seo.title || DEFAULT_SEO.title);
+    setMetaTag('property', 'og:description', seo.description || DEFAULT_SEO.description);
+    setMetaTag('property', 'og:url', seo.canonical || DEFAULT_SEO.canonical);
+    setMetaTag('property', 'og:type', seo.ogType || DEFAULT_SEO.ogType);
+
+    // 5. Set Twitter tags
+    setMetaTag('name', 'twitter:title', seo.title || DEFAULT_SEO.title);
+    setMetaTag('name', 'twitter:description', seo.description || DEFAULT_SEO.description);
+
+    // 6. Update Canonical Link
+    const targetCanonical = seo.canonical || DEFAULT_SEO.canonical;
+    if (targetCanonical) {
+      let canonicalEl = document.querySelector('link[rel="canonical"]');
+      if (!canonicalEl) {
+        canonicalEl = document.createElement('link');
+        canonicalEl.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonicalEl);
+      }
+      canonicalEl.setAttribute('href', targetCanonical);
+    }
   }, [location.pathname]);
 
   // Hydrate lazy images and background images on route change or dynamic DOM update
