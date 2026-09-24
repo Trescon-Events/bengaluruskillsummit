@@ -208,18 +208,20 @@ export default function Skillathon2026() {
               <div style={{
                 maxWidth: '960px',
                 margin: '0 auto',
-                fontSize: '16px',
-                lineHeight: '1.8',
+                fontFamily: '"Comfortaa", sans-serif',
+                fontSize: '18px',
+                fontWeight: 400,
+                lineHeight: '30px',
                 color: '#0e1220',
                 textAlign: 'center'
               }}>
-                <p style={{ marginBottom: '16px' }}>
+                <p style={{ marginBottom: '16px', fontFamily: '"Comfortaa", sans-serif', fontSize: '18px', lineHeight: '30px', color: '#0e1220' }}>
                   Skillathon 2026 brings together student and startup teams to build practical solutions for real-world challenges in Karnataka's skilling and employment ecosystem.
                 </p>
-                <p style={{ marginBottom: '16px' }}>
+                <p style={{ marginBottom: '16px', fontFamily: '"Comfortaa", sans-serif', fontSize: '18px', lineHeight: '30px', color: '#0e1220' }}>
                   Teams will move beyond ideas to <strong>validate problems, build prototypes, test solutions and demonstrate measurable outcomes</strong>, working with Government, industry, academia, mentors and potential users.
                 </p>
-                <p style={{ margin: 0 }}>
+                <p style={{ margin: 0, fontFamily: '"Comfortaa", sans-serif', fontSize: '18px', lineHeight: '30px', color: '#0e1220' }}>
                   The programme features six Government-defined challenges spanning AI-enabled skilling, rural employment, women returning to work, green jobs, inclusion and training-to-employment outcomes.
                 </p>
               </div>
@@ -461,18 +463,20 @@ export default function Skillathon2026() {
                     <div>
                       <div className="skillathon-card-title" style={{
                         color: '#0e1220',
-                        fontSize: '15px',
+                        fontFamily: '"Plus Jakarta Sans", sans-serif',
+                        fontSize: '16px',
                         fontWeight: 700,
-                        letterSpacing: '-0.2px',
-                        marginBottom: '12px',
-                        lineHeight: 1.3
+                        lineHeight: '20px',
+                        marginBottom: '12px'
                       }}>
                         {item.title}
                       </div>
-                      <p style={{
-                        color: '#444444',
-                        fontSize: '11.5px',
-                        lineHeight: '1.5',
+                      <p className="skillathon-card-desc" style={{
+                        color: '#0e1220',
+                        fontFamily: '"Comfortaa", sans-serif',
+                        fontSize: '16px',
+                        fontWeight: 400,
+                        lineHeight: '24px',
                         margin: 0
                       }}>
                         {item.desc}
@@ -578,9 +582,10 @@ export default function Skillathon2026() {
           </section>
 
           {/* =========================================================================
-              8. Prizes & Recognition (Matching live site #prizes-recognition)
+              8. Prizes & Recognition (Hidden as requested)
               ========================================================================= */}
           <section id="prizes-recognition" style={{
+            display: 'none',
             backgroundImage: 'url(/bengaluruskillsummit/wp-content/uploads/2025/09/bg-prize-recognition.webp)',
             backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',
@@ -883,42 +888,47 @@ export default function Skillathon2026() {
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'space-between',
-                          padding: '14px 18px',
+                          padding: '12px 20px',
                           background: 'none',
                           border: 'none',
                           outline: 'none',
                           textAlign: 'left',
                           cursor: 'pointer',
-                          fontFamily: 'Comfortaa, sans-serif',
-                          fontSize: '15px',
+                          fontFamily: '"Comfortaa", sans-serif',
+                          fontSize: '20px',
                           fontWeight: 700,
-                          color: '#0e1220'
+                          lineHeight: '38px',
+                          color: '#000000'
                         }}
                       >
-                        <span>{faq.question}</span>
+                        <span style={{ fontFamily: '"Comfortaa", sans-serif', fontSize: '20px', fontWeight: 700, lineHeight: '38px', color: '#000000' }}>
+                          {faq.question}
+                        </span>
                         <span style={{
-                          width: '22px',
-                          height: '22px',
+                          width: '24px',
+                          height: '24px',
                           borderRadius: '50%',
-                          border: '1.5px solid #0e1220',
+                          border: '1.5px solid #000000',
                           display: 'inline-flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          fontSize: '14px',
+                          fontSize: '15px',
                           fontWeight: 'bold',
                           flexShrink: 0,
                           marginLeft: '14px',
-                          color: '#0e1220'
+                          color: '#000000'
                         }}>
                           {isOpen ? '—' : '+'}
                         </span>
                       </button>
                       {isOpen && (
                         <div style={{
-                          padding: '0 18px 16px 18px',
-                          fontSize: '14px',
-                          lineHeight: '1.6',
-                          color: '#333333'
+                          padding: '0 20px 20px 20px',
+                          fontFamily: '"Comfortaa", sans-serif',
+                          fontSize: '16px',
+                          fontWeight: 500,
+                          lineHeight: '23px',
+                          color: '#000000'
                         }}>
                           {faq.answer}
                         </div>
