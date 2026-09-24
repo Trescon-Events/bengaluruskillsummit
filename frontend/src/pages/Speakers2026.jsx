@@ -127,9 +127,9 @@ export default function Speakers2026() {
             background-position: center center !important;
             background-repeat: no-repeat !important;
             background-size: cover !important;
-            padding-top: 100px !important;
-            padding-bottom: 100px !important;
-            min-height: 420px !important;
+            padding-top: 50px !important;
+            padding-bottom: 40px !important;
+            min-height: auto !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
@@ -137,31 +137,31 @@ export default function Speakers2026() {
           }
 
           .Skillathon-Strip {
-            background-color: rgba(255, 255, 255, 0.88) !important;
+            background-color: rgba(255, 255, 255, 0.9) !important;
             border-radius: 14px !important;
-            padding: 40px 30px !important;
+            padding: 26px 30px !important;
             max-width: 820px !important;
             width: 90% !important;
             margin: 0 auto !important;
             text-align: center !important;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
             backdrop-filter: blur(4px) !important;
           }
 
           .Skillathon-Heading h1 {
             font-family: 'Joost', sans-serif !important;
-            font-size: 58px !important;
+            font-size: 52px !important;
             font-weight: 700 !important;
             color: #106cff !important;
             line-height: 1.15 !important;
-            margin: 0 0 10px 0 !important;
+            margin: 0 0 8px 0 !important;
             text-transform: uppercase !important;
             letter-spacing: 1px !important;
           }
 
           .Skillathon-Sub h4 {
             font-family: 'Joost', sans-serif !important;
-            font-size: 30px !important;
+            font-size: 26px !important;
             font-weight: 600 !important;
             color: #0e1220 !important;
             line-height: 1.25 !important;
@@ -170,41 +170,44 @@ export default function Speakers2026() {
 
           @media (max-width: 768px) {
             #Skillathon-Banner {
-              padding-top: 60px !important;
-              padding-bottom: 60px !important;
-              min-height: 300px !important;
+              padding-top: 35px !important;
+              padding-bottom: 30px !important;
+              min-height: auto !important;
+            }
+            .Skillathon-Strip {
+              padding: 18px 16px !important;
             }
             .Skillathon-Heading h1 {
-              font-size: 38px !important;
+              font-size: 34px !important;
             }
             .Skillathon-Sub h4 {
-              font-size: 22px !important;
+              font-size: 18px !important;
             }
           }
 
           /* ==========================================
-             Speakers Grid Layout (User's Exact Design)
+             Speakers Grid Layout (Matching Live Site)
              ========================================== */
           .speakers-container {
-            position: relative;
             width: 100%;
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto;
-            padding: 50px 15px 70px;
+            padding: 20px 15px 60px !important;
             box-sizing: border-box;
           }
 
           .speakers-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 60px 20px !important;
+            gap: 50px 20px !important;
             padding: 0px !important;
             margin: 0px !important;
-            align-items: stretch;
+            align-items: flex-start;
           }
 
           .speaker-card-wrapper {
             position: relative;
+            overflow: hidden;
           }
 
           .speaker-card {
@@ -218,6 +221,7 @@ export default function Speakers2026() {
           .speaker-photo-wrapper {
             position: relative;
             overflow: hidden;
+            margin-bottom: 12px;
           }
 
           .speaker-photo {
@@ -238,7 +242,7 @@ export default function Speakers2026() {
             height: 100%;
             width: 100%;
             opacity: 0;
-            transition: .4s ease;
+            transition: .3s ease;
             background-color: rgba(13, 45, 60, 0.45);
             display: flex;
             align-items: center;
@@ -256,34 +260,45 @@ export default function Speakers2026() {
           }
 
           .speaker-name {
-            margin-top: 15px !important;
-            margin-bottom: 0px !important;
-            line-height: 1.2 !important;
-            padding-bottom: 8px;
-            font-size: 20px !important;
+            margin-top: 12px !important;
+            margin-bottom: 6px !important;
+            padding-bottom: 0px !important;
+            font-size: 16px !important;
+            line-height: 1.25 !important;
             text-transform: uppercase;
-            font-weight: bold;
-            color: #000;
-            font-family: 'Joost', sans-serif !important;
+            font-weight: 700 !important;
+            color: #000000 !important;
+            letter-spacing: -0.02em;
+            overflow-wrap: break-word !important;
+            word-break: break-word !important;
+            hyphens: auto;
+            font-family: 'Comfortaa', cursive, sans-serif !important;
           }
 
-          .speaker-title, 
+          .speaker-title,
           .speaker-org,
           .speaker-country {
-            line-height: 140%;
+            line-height: 140% !important;
             color: #000 !important;
             padding-bottom: 4px;
-            font-size: 14px;
-            margin: 0;
-            font-family: 'Comfortaa', sans-serif !important;
+            font-size: 13.5px !important;
+            margin: 0 !important;
+            overflow-wrap: break-word !important;
+            word-break: break-word !important;
+            font-family: 'Comfortaa', cursive, sans-serif !important;
           }
 
           .speaker-title {
-            font-weight: bold;
+            font-weight: 700 !important;
+          }
+
+          .speaker-org {
+            font-weight: 400 !important;
           }
 
           .speaker-country {
-            font-style: italic;
+            font-style: italic !important;
+            font-weight: 400 !important;
           }
 
           /* Responsive Grid Breakpoints */
@@ -301,174 +316,222 @@ export default function Speakers2026() {
             }
           }
 
-          /* 1 Speaker per row on mobile */
           @media (max-width: 767px) {
             .speakers-grid {
-              gap: 40px 0px !important;
+              gap: 35px 15px !important;
             }
             .speaker-card-wrapper {
-              flex: 0 0 100% !important;
-              max-width: 100% !important;
-              width: 100% !important;
-            }
-            .speaker-card {
-              max-width: 320px;
-              margin: 0 auto;
+              flex: 1 1 calc(50% - 10px) !important;
+              max-width: calc(50% - 10px) !important;
             }
           }
 
           /* ==========================================
-             Anchored Floating Modal (No Background Dim)
+             Speaker Modal Styles (Exact Match from Live Site)
              ========================================== */
-          .inline-speaker-popup {
+          .speaker-modal {
             display: none;
-            position: absolute;
+            position: fixed;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 580px;
-            max-width: 90vw;
-            z-index: 9999;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 999999;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: rgba(0, 0, 0, 0.65);
+            padding: 100px 0px 30px 0px !important;
+            box-sizing: border-box;
+          }
+
+          .speaker-modal.active {
+            display: block !important;
+            animation: fadeIn 0.2s ease-out;
+          }
+
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+
+          .modal-dialog {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+          }
+
+          .modal-content {
             background: #ffffff;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
-            border-radius: 4px;
+            position: relative;
+            width: 100%;
+            max-width: 620px !important;
+            padding: 0px !important;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+            border: none !important;
+            border-radius: 4px !important;
             overflow: hidden;
             text-align: left;
           }
 
-          .inline-speaker-popup.active {
-            display: block;
-            animation: popIn 0.2s ease-out;
+          @media (max-width: 1024px) {
+            .modal-content {
+              max-width: 90% !important;
+            }
           }
 
-          @keyframes popIn {
-            from { opacity: 0; transform: translate(-50%, -10px); }
-            to { opacity: 1; transform: translate(-50%, 0); }
-          }
-
-          .popup-header {
+          .modal-header {
             background: #106cff;
             display: flex;
             align-items: center;
-            padding: 20px;
             position: relative;
-            gap: 15px;
+            padding: 22px 24px;
+            gap: 20px;
           }
 
-          .popup-image {
-            flex: 0 0 110px;
-            max-width: 110px;
-            width: 110px;
-            height: 110px;
+          .modal-image {
+            width: 120px !important;
+            height: 120px !important;
+            max-width: 120px;
+            border-radius: 2px !important;
+            margin-bottom: 0px !important;
             object-fit: cover;
-            border-radius: 2px;
+            background: #fff;
+            flex-shrink: 0;
           }
 
-          .popup-header-info {
+          .modal-header-info {
             flex: 1;
             color: #fff;
-            padding-right: 25px;
+            padding-right: 20px;
           }
 
-          .popup-name {
-            margin: 0 0 5px 0;
-            color: #fff;
-            font-size: 20px;
-            font-weight: bold;
+          .modal-name {
+            margin-top: 0 !important;
+            margin-bottom: 6px !important;
+            color: #ffffff !important;
+            line-height: 1.2 !important;
+            font-size: 21px !important;
+            font-weight: 700 !important;
             text-transform: uppercase;
-            line-height: 1.2;
-            font-family: 'Joost', sans-serif !important;
+            font-family: 'Comfortaa', cursive, sans-serif !important;
           }
 
-          .popup-role {
-            color: #fff;
-            font-weight: 600;
-            font-size: 13px;
-            margin: 0 0 2px 0;
-            font-family: 'Comfortaa', sans-serif !important;
+          .modal-role {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            margin-top: 0 !important;
+            margin-bottom: 3px !important;
+            line-height: 1.35 !important;
+            font-size: 13.5px !important;
+            font-family: 'Comfortaa', cursive, sans-serif !important;
           }
 
-          .popup-org, .popup-country {
-            color: #e8f0fe;
-            font-size: 13px;
-            margin: 0 0 2px 0;
-            font-family: 'Comfortaa', sans-serif !important;
+          .modal-org {
+            color: #ffffff !important;
+            font-size: 13px !important;
+            font-weight: 400 !important;
+            margin: 0 0 3px 0 !important;
+            line-height: 1.35 !important;
+            font-family: 'Comfortaa', cursive, sans-serif !important;
           }
 
-          .popup-country {
-            font-style: italic;
+          .modal-country {
+            color: #ffffff !important;
+            font-style: italic !important;
+            font-size: 13px !important;
+            margin: 0 !important;
+            line-height: 1.35 !important;
+            font-family: 'Comfortaa', cursive, sans-serif !important;
           }
 
-          .popup-close {
+          .close-modal {
             position: absolute;
-            top: 10px;
-            right: 15px;
+            top: 12px;
+            right: 18px;
             background: transparent;
             border: none;
-            color: #ffffff;
-            font-size: 28px;
-            cursor: pointer;
+            color: #ffffff !important;
+            font-size: 30px;
             line-height: 1;
-            opacity: 0.85;
+            cursor: pointer;
+            font-weight: bold;
+            opacity: 0.9;
+            padding: 0;
           }
 
-          .popup-close:hover {
+          .close-modal:hover {
             opacity: 1;
           }
 
-          .popup-body {
+          .modal-body {
+            padding: 20px 24px 16px 24px !important;
+            font-size: 14px !important;
             max-height: 380px;
             overflow-y: auto;
-            padding: 20px;
-            font-size: 14px;
-            line-height: 1.6;
-            color: #333333;
-            font-family: 'Comfortaa', sans-serif !important;
+            color: #333;
+            line-height: 1.6 !important;
+            font-family: 'Comfortaa', cursive, sans-serif !important;
           }
 
-          .popup-sessions-heading {
-            font-size: 16px;
-            font-weight: bold;
+          .modal-body p {
+            margin: 0 0 12px 0 !important;
+            font-size: 14px !important;
+            line-height: 1.6 !important;
+          }
+
+          .modal-body div {
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+
+          .modal-body p:last-child {
+            margin-bottom: 0 !important;
+          }
+
+          .modal-sessions-heading {
+            font-size: 16px !important;
+            padding: 10px 24px 0px 24px !important;
+            margin: 0 0 8px 0 !important;
             color: #106cff;
-            margin: 15px 0 10px 0;
-            font-family: 'Joost', sans-serif !important;
+            font-weight: 700;
+            font-family: 'Comfortaa', cursive, sans-serif !important;
           }
 
-          .popup-sessions {
-            padding: 0;
-            margin: 0;
-            list-style: none;
+          .modal-sessions {
+            margin-bottom: 0px;
+            padding-bottom: 20px;
+            padding-right: 24px;
+            padding-left: 0px !important;
+            margin-left: 24px !important;
           }
 
-          .popup-sessions li {
-            background: #f6faff;
-            border: 1px solid #d4ebf8;
+          .modal-sessions li {
+            font-size: 13.5px !important;
+            color: #333;
+            border: 1px solid #106cff;
             padding: 10px 14px;
+            list-style-type: none;
             margin-bottom: 8px;
             border-radius: 4px;
-            font-size: 13px;
+            line-height: 1.4 !important;
           }
 
-          /* Mobile adjustments for 1-column layout */
           @media (max-width: 767px) {
-            .inline-speaker-popup {
-              width: 100%;
-              max-width: 320px;
-              left: 50% !important;
-              right: auto !important;
-              transform: translateX(-50%) !important;
+            .speaker-modal {
+              padding: 60px 10px 20px 10px !important;
             }
-            .popup-header {
-              flex-direction: column;
+            .modal-header {
+              flex-direction: column !important;
               text-align: center;
               padding: 18px 14px;
             }
-            .popup-header-info {
+            .modal-header-info {
               padding-right: 0;
             }
-            .popup-body {
-              padding: 16px 14px;
-              font-size: 13px;
+            .modal-image {
+              width: 100px !important;
+              height: 100px !important;
             }
           }
         `}</style>
@@ -532,73 +595,90 @@ export default function Speakers2026() {
                           {speaker.location && <p className="speaker-country">{speaker.location}</p>}
                         </div>
 
-                        {/* Floating Popup Box */}
-                        {isPopupOpen && (
-                          <div
-                            ref={(el) => (popupRefs.current[index] = el)}
-                            className="inline-speaker-popup active"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <div className="popup-header">
-                              <button
-                                type="button"
-                                className="popup-close"
-                                onClick={closePopup}
-                                aria-label="Close"
-                              >
-                                &times;
-                              </button>
-
-                              {speaker.image_url && (
-                                <img src={speaker.image_url}
-                                  className="popup-image"
-                                  alt={speaker.name}
-                                  decoding="async"
-                                  loading="lazy"
-                                  width={100}
-                                  height={100} />
-                              )}
-
-                              <div className="popup-header-info">
-                                <h4 className="popup-name">{speaker.name}</h4>
-                                {speaker.designation && <p className="popup-role">{speaker.designation}</p>}
-                                {speaker.organisation && <p className="popup-org">{speaker.organisation}</p>}
-                                {speaker.location && <p className="popup-country">{speaker.location}</p>}
-                              </div>
-                            </div>
-
-                            <div className="popup-body">
-                              {speaker.about ? (
-                                <div dangerouslySetInnerHTML={{ __html: speaker.about }} />
-                              ) : (
-                                <p>No bio available.</p>
-                              )}
-
-                              {speaker.sessions && Array.isArray(speaker.sessions) && speaker.sessions.length > 0 && (
-                                <>
-                                  <h5 className="popup-sessions-heading">Sessions</h5>
-                                  <ul className="popup-sessions">
-                                    {[...speaker.sessions]
-                                      .sort((a, b) => new Date(a.start_timestamp) - new Date(b.start_timestamp))
-                                      .map((session, sIdx) => (
-                                        <li key={session.session_id || sIdx}>
-                                          <strong>{session.session_title}</strong>
-                                          <br />
-                                          <span>🕒 {formatSessionTime(session.start_timestamp, session.end_timestamp)}</span>
-                                        </li>
-                                      ))}
-                                  </ul>
-                                </>
-                              )}
-                            </div>
-                          </div>
-                        )}
-                      </div>
+                        </div>
                     );
                   })}
                 </div>
               )}
             </div>
+
+            {/* Single Centered Speaker Modal (Matching Live Site) */}
+            {activePopupIndex !== null && speakers[activePopupIndex] && (
+              <div
+                className="speaker-modal active"
+                onClick={closePopup}
+              >
+                <div className="modal-dialog">
+                  <div
+                    className="modal-content"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <div className="modal-header">
+                      <button
+                        type="button"
+                        className="close-modal"
+                        onClick={closePopup}
+                        aria-label="Close"
+                      >
+                        &times;
+                      </button>
+
+                      {speakers[activePopupIndex].image_url && (
+                        <img
+                          src={speakers[activePopupIndex].image_url}
+                          className="modal-image"
+                          alt={speakers[activePopupIndex].name}
+                          decoding="async"
+                          loading="lazy"
+                          width={120}
+                          height={120}
+                        />
+                      )}
+
+                      <div className="modal-header-info">
+                        <h3 className="modal-name">{speakers[activePopupIndex].name}</h3>
+                        {speakers[activePopupIndex].designation && (
+                          <p className="modal-role">{speakers[activePopupIndex].designation}</p>
+                        )}
+                        {speakers[activePopupIndex].organisation && (
+                          <p className="modal-org">{speakers[activePopupIndex].organisation}</p>
+                        )}
+                        {speakers[activePopupIndex].location && (
+                          <p className="modal-country">{speakers[activePopupIndex].location}</p>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="modal-body">
+                      {speakers[activePopupIndex].about ? (
+                        <div dangerouslySetInnerHTML={{ __html: speakers[activePopupIndex].about }} />
+                      ) : (
+                        <p>No bio available.</p>
+                      )}
+                    </div>
+
+                    {speakers[activePopupIndex].sessions &&
+                      Array.isArray(speakers[activePopupIndex].sessions) &&
+                      speakers[activePopupIndex].sessions.length > 0 && (
+                        <>
+                          <h5 className="modal-sessions-heading">Sessions</h5>
+                          <ul className="modal-sessions">
+                            {[...speakers[activePopupIndex].sessions]
+                              .sort((a, b) => new Date(a.start_timestamp) - new Date(b.start_timestamp))
+                              .map((session, sIdx) => (
+                                <li key={session.session_id || sIdx}>
+                                  <strong>{session.session_title}</strong>
+                                  <br />
+                                  <span>🕒 {formatSessionTime(session.start_timestamp, session.end_timestamp)}</span>
+                                </li>
+                              ))}
+                          </ul>
+                        </>
+                      )}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
