@@ -966,7 +966,7 @@ ul.buttons.header-cta-buttons {
   background-color: #ff6257 !important;
   color: #ffffff !important;
   border-radius: 12px !important;
-  padding: 9px 18px !important;
+  padding: 15px 20px !important;
   font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   font-weight: 700 !important;
   font-size: 13px !important;
@@ -1154,7 +1154,7 @@ a.nectar-button:after,
 
 /* Specific paddings for header vs body vs large */
 .header-cta-pill {
-  padding: 9px 18px !important;
+  padding: 15px 20px !important;
   height: auto !important;
 }
 
