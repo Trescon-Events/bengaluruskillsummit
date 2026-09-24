@@ -404,13 +404,20 @@ export default function Speakers2026() {
             flex: 1;
             color: #fff;
             padding-right: 20px;
+            margin: 0 !important;
+          }
+
+          .modal-header-info h3,
+          .modal-header-info p {
+            margin: 0 !important;
+            padding: 0 !important;
           }
 
           .modal-name {
-            margin-top: 0 !important;
-            margin-bottom: 6px !important;
+            margin: 0 0 6px 0 !important;
+            padding: 0 !important;
             color: #ffffff !important;
-            line-height: 1.2 !important;
+            line-height: 1.25 !important;
             font-size: 21px !important;
             font-weight: 700 !important;
             text-transform: uppercase;
@@ -420,8 +427,8 @@ export default function Speakers2026() {
           .modal-role {
             color: #ffffff !important;
             font-weight: 700 !important;
-            margin-top: 0 !important;
-            margin-bottom: 3px !important;
+            margin: 0 0 3px 0 !important;
+            padding: 0 !important;
             line-height: 1.35 !important;
             font-size: 13.5px !important;
             font-family: 'Comfortaa', cursive, sans-serif !important;
@@ -432,6 +439,7 @@ export default function Speakers2026() {
             font-size: 13px !important;
             font-weight: 400 !important;
             margin: 0 0 3px 0 !important;
+            padding: 0 !important;
             line-height: 1.35 !important;
             font-family: 'Comfortaa', cursive, sans-serif !important;
           }
@@ -441,6 +449,7 @@ export default function Speakers2026() {
             font-style: italic !important;
             font-size: 13px !important;
             margin: 0 !important;
+            padding: 0 !important;
             line-height: 1.35 !important;
             font-family: 'Comfortaa', cursive, sans-serif !important;
           }
