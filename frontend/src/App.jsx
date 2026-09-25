@@ -44,8 +44,12 @@ const Skillathon2026 = lazy(() => import('./pages/Skillathon2026'));
 const AssociationEnquiry = lazy(() => import('./pages/AssociationEnquiry'));
 
 export default function App() {
+  const basename = typeof window !== 'undefined' && window.location.pathname.startsWith('/bengaluruskillsummit')
+    ? '/bengaluruskillsummit'
+    : '';
+
   return (
-    <BrowserRouter basename="/bengaluruskillsummit">
+    <BrowserRouter basename={basename}>
       <Suspense fallback={<div style={{ minHeight: '60vh' }} />}>
         <Routes>
           <Route path="/" element={<Layout />}>
