@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import FloatingSocialShare from './FloatingSocialShare';
 import { getSEOForPath, DEFAULT_SEO } from '../utils/seoConfig';
 
 export default function Layout() {
@@ -183,7 +182,6 @@ export default function Layout() {
     <>
       <Header />
       <Outlet />
-      <FloatingSocialShare />
       <Footer />
     </>
   );
