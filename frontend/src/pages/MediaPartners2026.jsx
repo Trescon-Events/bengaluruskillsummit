@@ -357,19 +357,6 @@ export default function MediaPartners2026() {
         </div>
       </section>
 
-      {/* Quick Navigation Tabs */}
-      <div className="bss-partner-tabs">
-        <Link to="/partners-2026" className="bss-partner-tab">
-          All Partners
-        </Link>
-        <Link to="/ecosystem-partners-2026" className="bss-partner-tab">
-          Ecosystem Partners
-        </Link>
-        <Link to="/media-partners-2026" className="bss-partner-tab active">
-          Media Partners
-        </Link>
-      </div>
-
       {/* Main Content Area */}
       <div className="bss-partners-wrapper">
         {loading && (
@@ -437,21 +424,6 @@ export default function MediaPartners2026() {
               );
             })}
 
-            {/* Bottom Partner Call-To-Action */}
-            <div className="bss-partner-bottom-cta">
-              <h3>Become an Official Media Partner</h3>
-              <p>
-                Partner with Bengaluru Skill Summit 2026 for extensive press coverage and global exposure.
-              </p>
-              <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link to="/be-a-media-partner" className="bss-partner-bottom-btn">
-                  Media Partner Enquiry
-                </Link>
-                <Link to="/ecosystem-partners-2026" className="bss-partner-bottom-btn" style={{ backgroundColor: '#106cff', boxShadow: '0 4px 14px rgba(16, 108, 255, 0.3)' }}>
-                  View Ecosystem Partners
-                </Link>
-              </div>
-            </div>
           </div>
         )}
       </div>

@@ -375,19 +375,6 @@ export default function EcosystemPartners2026() {
         </div>
       </section>
 
-      {/* Quick Navigation Tabs */}
-      <div className="bss-partner-tabs">
-        <Link to="/partners-2026" className="bss-partner-tab">
-          All Partners
-        </Link>
-        <Link to="/ecosystem-partners-2026" className="bss-partner-tab active">
-          Ecosystem Partners
-        </Link>
-        <Link to="/media-partners-2026" className="bss-partner-tab">
-          Media Partners
-        </Link>
-      </div>
-
       {/* Main Content Area */}
       <div className="bss-partners-wrapper">
         {loading && (
@@ -455,21 +442,6 @@ export default function EcosystemPartners2026() {
               );
             })}
 
-            {/* Bottom Partner Call-To-Action */}
-            <div className="bss-partner-bottom-cta">
-              <h3>Become an Ecosystem Partner</h3>
-              <p>
-                Join our ecosystem and contribute to transforming India’s skill development roadmap.
-              </p>
-              <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link to="/association-enquiry" className="bss-partner-bottom-btn">
-                  Partner Enquiry
-                </Link>
-                <Link to="/media-partners-2026" className="bss-partner-bottom-btn" style={{ backgroundColor: '#106cff', boxShadow: '0 4px 14px rgba(16, 108, 255, 0.3)' }}>
-                  View Media Partners
-                </Link>
-              </div>
-            </div>
           </div>
         )}
       </div>
