@@ -5,61 +5,66 @@ export default function BeAMediaPartner() {
     document.title = 'Be a Media Partner | Collaborate with Bengaluru Skill Summit 2025';
     window.scrollTo(0, 0);
 
-    let intervalId = null;
+    let isMounted = true;
+    let timer = null;
+    let attempts = 0;
 
     const renderHubspot = () => {
       const container = document.getElementById('hubspot-media-partner-form');
-      if (window.hbspt && container) {
-        if (container.querySelector('form') || container.querySelector('.hbspt-form')) {
-          return;
-        }
+      if (!container || !isMounted) return false;
 
+      // If form already exists inside container, we're done
+      if (container.querySelector('form') || container.querySelector('.hbspt-form') || container.querySelector('iframe')) {
+        return true;
+      }
+
+      if (window.hbspt && window.hbspt.forms && typeof window.hbspt.forms.create === 'function') {
         container.innerHTML = '';
-        window.hbspt.forms.create({
-          portalId: "2953901",
-          formId: "61c72a0c-d238-4738-92c3-5abf5653f887",
-          region: "na1",
-          target: "#hubspot-media-partner-form",
-          onFormSubmitted: function() {
-            window.location.href = "/thank-you";
-          }
-        });
-      }
-    };
-
-    // Guardian: Ensure form stays in the container if mis-targeted
-    const guardian = () => {
-      const container = document.getElementById('hubspot-media-partner-form');
-      if (!container) return;
-      const misplacedForms = document.querySelectorAll('body > .hbspt-form, body > div > .hbspt-form');
-      misplacedForms.forEach(form => {
-        if (!container.contains(form)) {
-          container.appendChild(form);
+        try {
+          window.hbspt.forms.create({
+            portalId: "2953901",
+            formId: "61c72a0c-d238-4738-92c3-5abf5653f887",
+            region: "na1",
+            target: "#hubspot-media-partner-form",
+            onFormSubmitted: function() {
+              window.location.href = "/thank-you";
+            }
+          });
+          return true;
+        } catch (err) {
+          console.error("HubSpot form creation error:", err);
         }
-      });
+      }
+      return false;
     };
 
-    if (window.hbspt) {
-      renderHubspot();
-    } else {
-      const existingScript = document.querySelector('script[src*="hsforms.net"]');
-      if (!existingScript) {
-        const script = document.createElement('script');
-        script.src = 'https://js.hsforms.net/forms/embed/v2.js';
-        script.charset = 'utf-8';
-        script.type = 'text/javascript';
-        script.async = true;
-        script.onload = renderHubspot;
-        document.body.appendChild(script);
-      } else {
-        existingScript.addEventListener('load', renderHubspot);
-      }
+    // Ensure the script tag is present in the DOM
+    let script = document.querySelector('script[src*="hsforms.net"]');
+    if (!script) {
+      script = document.createElement('script');
+      script.src = 'https://js.hsforms.net/forms/embed/v2.js';
+      script.charset = 'utf-8';
+      script.type = 'text/javascript';
+      script.async = true;
+      script.onload = () => {
+        if (isMounted) renderHubspot();
+      };
+      document.body.appendChild(script);
     }
 
-    intervalId = setInterval(guardian, 500);
+    // Poll until hbspt is loaded and form is created (up to 30 attempts = 9s)
+    if (!renderHubspot()) {
+      timer = setInterval(() => {
+        attempts++;
+        if (renderHubspot() || attempts >= 30) {
+          clearInterval(timer);
+        }
+      }, 300);
+    }
 
     return () => {
-      if (intervalId) clearInterval(intervalId);
+      isMounted = false;
+      if (timer) clearInterval(timer);
     };
   }, []);
 
@@ -103,7 +108,7 @@ export default function BeAMediaPartner() {
         }
 
         .bss-media-partner-hero__title {
-          font-family: 'Oswald', 'Comfortaa', sans-serif !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
           font-size: 60px !important;
           color: #ffffff !important;
           font-weight: 700 !important;
@@ -140,10 +145,10 @@ export default function BeAMediaPartner() {
         /* ---------------- HUBSPOT FORM SECTION ---------------- */
         .bss-media-partner-form-section {
           width: 100%;
-          padding: 60px 10%;
+          padding: 60px 10% 80px;
           box-sizing: border-box;
           background-color: #ffffff;
-          min-height: 450px;
+          min-height: 500px;
         }
 
         .bss-media-partner-form-container {
@@ -152,33 +157,69 @@ export default function BeAMediaPartner() {
           box-sizing: border-box;
         }
 
-        /* HubSpot Native Form Styles matching live site */
         .hbspt-form,
         .hs-form {
           width: 100% !important;
           max-width: 100% !important;
-          margin: 20px auto;
-          font-family: 'Comfortaa', sans-serif;
-          font-size: 14px;
-          color: #000000;
+          margin: 0 auto !important;
+          font-family: 'Jost', 'Comfortaa', sans-serif !important;
         }
 
+        .hs-form fieldset,
+        .hbspt-form fieldset {
+          max-width: 100% !important;
+          border: none !important;
+          padding: 0 !important;
+          margin: 0 0 20px 0 !important;
+        }
+
+        .hs-form .form-columns-1 {
+          width: 100% !important;
+        }
+
+        .hs-form .form-columns-2,
+        .hbspt-form fieldset.form-columns-2 {
+          display: flex !important;
+          gap: 24px !important;
+          width: 100% !important;
+        }
+
+        .hs-form .form-columns-2 > .hs-form-field,
+        .hbspt-form .form-columns-2 > .hs-form-field,
+        .hs-form .form-columns-2 > div {
+          flex: 1 1 50% !important;
+          width: 50% !important;
+          min-width: 0 !important;
+          float: none !important;
+        }
+
+        .hs-form .hs-form-field {
+          margin-bottom: 20px !important;
+          width: 100% !important;
+        }
+
+        /* Labels */
         .hbspt-form label,
         .hs-form label {
-          font-weight: 500;
-          font-size: 18px;
-          text-transform: uppercase;
-          margin-bottom: 8px;
-          display: block;
-          color: #000000;
-          line-height: 150%;
+          display: block !important;
+          font-size: 14px !important;
+          font-weight: 700 !important;
+          color: #0e1220 !important;
+          text-transform: uppercase !important;
+          letter-spacing: 0.5px !important;
+          margin-bottom: 8px !important;
+          line-height: 1.4 !important;
+          font-family: 'Jost', 'Comfortaa', sans-serif !important;
         }
 
-        span.hs-form-required,
-        .hs-form label .hs-form-required {
-          color: #FF0000 !important;
+        .hs-form label .hs-form-required,
+        .hs-form label span.hs-form-required,
+        span.hs-form-required {
+          color: #ff0000 !important;
+          margin-left: 2px !important;
         }
 
+        /* Inputs & Selects & Textareas */
         .hbspt-form input[type="text"],
         .hbspt-form input[type="email"],
         .hbspt-form input[type="tel"],
@@ -190,115 +231,219 @@ export default function BeAMediaPartner() {
         .hs-form select,
         .hs-form textarea {
           width: 100% !important;
-          background: transparent !important;
+          height: 50px !important;
+          background: #ffffff !important;
           border: 1px solid #00A8B2 !important;
-          color: #616161 !important;
-          font-family: 'Comfortaa', sans-serif !important;
-          font-size: 17px !important;
-          font-weight: 300 !important;
-          line-height: 100% !important;
-          padding: 16px 18px !important;
-          border-radius: 0px !important;
+          border-radius: 4px !important;
+          color: #333333 !important;
+          font-size: 15px !important;
+          font-family: 'Comfortaa', 'Jost', sans-serif !important;
+          padding: 12px 16px !important;
           box-sizing: border-box !important;
-          margin-bottom: 20px !important;
           outline: none !important;
+          margin-bottom: 0 !important;
+          transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
         }
 
         .hbspt-form textarea,
         .hs-form textarea {
+          height: 120px !important;
           min-height: 120px !important;
-          line-height: 1.4 !important;
+          resize: vertical !important;
+          line-height: 1.5 !important;
         }
 
         .hbspt-form select,
         .hs-form select {
-          cursor: pointer;
-          padding-right: 30px !important;
+          cursor: pointer !important;
+          padding-right: 32px !important;
         }
 
         .hbspt-form input:focus,
         .hs-form input:focus,
         .hs-form select:focus,
         .hs-form textarea:focus {
-          border-color: #106cff !important;
-          box-shadow: 0 0 6px rgba(16, 108, 255, 0.3) !important;
+          border-color: #ff6257 !important;
+          box-shadow: 0 0 8px rgba(255, 98, 87, 0.3) !important;
         }
 
-        /* Checkbox */
-        .hbspt-form input[type="checkbox"],
-        .hs-form input[type="checkbox"] {
-          margin-right: 10px;
-          transform: scale(1.2);
-          cursor: pointer;
+        /* International Phone Field Alignment */
+        .hs-fieldtype-intl-phone .hs-input,
+        .hs-form-field.hs-fieldtype-intl-phone .input > .hs-input {
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: center !important;
+          gap: 10px !important;
         }
 
-        .hbspt-form input[type="checkbox"] + label,
-        .hs-form input[type="checkbox"] + label {
-          font-size: 14px;
-          font-weight: normal;
-          text-transform: none;
-          display: inline;
+        .hs-fieldtype-intl-phone select.hs-input,
+        .hs-fieldtype-intl-phone-country {
+          width: 135px !important;
+          min-width: 120px !important;
+          max-width: 145px !important;
+          flex: 0 0 135px !important;
+          height: 50px !important;
+          padding: 10px 12px !important;
+          margin-bottom: 0 !important;
+        }
+
+        .hs-fieldtype-intl-phone input[type="tel"].hs-input {
+          flex: 1 1 auto !important;
+          width: auto !important;
+          height: 50px !important;
+          margin-bottom: 0 !important;
+        }
+
+        /* Checkbox & Radio - Remove ugly bullet points completely */
+        .hbspt-form ul.inputs-list,
+        .hs-form ul.inputs-list,
+        .hbspt-form ul.inputs-list[class],
+        .hs-form ul.inputs-list[class],
+        .bss-media-partner-form-section ul,
+        .bss-media-partner-form-section ul[class] {
+          list-style: none !important;
+          list-style-type: none !important;
+          padding: 0 !important;
+          padding-left: 0 !important;
+          margin: 10px 0 !important;
+          display: flex !important;
+          flex-wrap: wrap !important;
+          gap: 10px 24px !important;
+        }
+
+        .hbspt-form ul.inputs-list li,
+        .hs-form ul.inputs-list li,
+        .hbspt-form ul.inputs-list[class] li,
+        .hs-form ul.inputs-list[class] li,
+        .bss-media-partner-form-section ul li,
+        .bss-media-partner-form-section ul[class] li {
+          list-style: none !important;
+          list-style-type: none !important;
+          padding: 0 !important;
+          margin: 0 0 6px 0 !important;
+          display: flex !important;
+          align-items: flex-start !important;
+          flex: 0 0 calc(50% - 12px) !important;
+          box-sizing: border-box !important;
+        }
+
+        .hbspt-form ul.inputs-list li::before,
+        .hs-form ul.inputs-list li::before,
+        .bss-media-partner-form-section ul li::before {
+          content: none !important;
+          display: none !important;
+        }
+
+        .hbspt-form ul.inputs-list input[type="checkbox"],
+        .hbspt-form ul.inputs-list input[type="radio"],
+        .hs-form ul.inputs-list input[type="checkbox"],
+        .hs-form ul.inputs-list input[type="radio"] {
+          width: 18px !important;
+          height: 18px !important;
+          min-width: 18px !important;
+          max-width: 18px !important;
+          margin: 3px 10px 0 0 !important;
+          padding: 0 !important;
+          cursor: pointer !important;
+          flex-shrink: 0 !important;
+          accent-color: #ff6257 !important;
+        }
+
+        .hbspt-form ul.inputs-list label,
+        .hs-form ul.inputs-list label {
+          font-size: 14px !important;
+          font-weight: 500 !important;
+          text-transform: none !important;
+          color: #333333 !important;
+          line-height: 1.5 !important;
+          cursor: pointer !important;
+          display: flex !important;
+          align-items: flex-start !important;
+          margin-bottom: 0 !important;
+          font-family: 'Comfortaa', 'Jost', sans-serif !important;
+        }
+
+        /* Consent / Legal Section Full-Width (No bullets) */
+        .legal-consent-container ul.inputs-list li,
+        .hs-dependent-field ul.inputs-list li,
+        .hs-form-booleancheckbox ul.inputs-list li {
+          flex: 0 0 100% !important;
+          width: 100% !important;
+        }
+
+        .legal-consent-container p {
+          font-size: 13px !important;
+          line-height: 1.6 !important;
+          color: #666666 !important;
+          font-style: italic !important;
+          margin: 12px 0 !important;
+        }
+
+        /* Error Messages */
+        .hs-error-msgs {
+          list-style: none !important;
+          padding: 0 !important;
+          margin: 6px 0 0 0 !important;
+          color: #ff3333 !important;
+          font-size: 13px !important;
         }
 
         /* Submit Button */
         .hbspt-form .actions,
         .hs-form .actions {
-          padding-top: 30px;
-          text-align: center;
+          padding-top: 25px !important;
+          text-align: center !important;
         }
 
+        .hbspt-form .hs-button,
+        .hs-form .hs-button,
         .hbspt-form input[type="submit"],
         .hs-form input[type="submit"],
         .hs-form .hs-button.primary {
-          background-color: #ff6257 !important;
+          background-color: #ff5252 !important;
+          border: none !important;
           color: #ffffff !important;
-          font-family: 'Comfortaa', sans-serif !important;
+          font-family: 'Jost', 'Joost', sans-serif !important;
           font-size: 16px !important;
           font-weight: 700 !important;
           text-transform: uppercase !important;
-          letter-spacing: 1px !important;
-          padding: 14px 45px !important;
-          border: none !important;
-          border-radius: 4px !important;
+          letter-spacing: 1.5px !important;
+          padding: 16px 50px !important;
+          border-radius: 6px !important;
           cursor: pointer !important;
-          transition: all 0.25s ease !important;
-          margin-top: 15px !important;
           display: inline-block !important;
+          box-shadow: 0 4px 15px rgba(255, 82, 82, 0.4) !important;
+          transition: all 0.3s ease !important;
         }
 
+        .hbspt-form .hs-button:hover,
+        .hs-form .hs-button:hover,
         .hbspt-form input[type="submit"]:hover,
         .hs-form input[type="submit"]:hover,
         .hs-form .hs-button.primary:hover {
-          background-color: #f74d41 !important;
+          background-color: #e04545 !important;
           transform: translateY(-2px) !important;
-          box-shadow: 0 6px 18px rgba(255, 98, 87, 0.35) !important;
-        }
-
-        .hbspt-form fieldset.form-columns-2,
-        .hs-form .form-columns-2 {
-          display: flex !important;
-          gap: 20px !important;
-          max-width: 100% !important;
-          margin-bottom: 20px !important;
-          border: none !important;
-          padding: 0 !important;
-        }
-
-        .hs-form .form-columns-2 .hs-form-field {
-          flex: 1 1 50% !important;
-          width: 50% !important;
+          box-shadow: 0 6px 20px rgba(255, 82, 82, 0.5) !important;
         }
 
         @media (max-width: 768px) {
           .bss-media-partner-form-section {
-            padding: 40px 5% 50px;
+            padding: 40px 5% 50px !important;
           }
-          .hs-form .form-columns-2 {
+          .hs-form .form-columns-2,
+          .hbspt-form fieldset.form-columns-2 {
             flex-direction: column !important;
-            gap: 10px !important;
+            gap: 0 !important;
           }
-          .hs-form .form-columns-2 .hs-form-field {
+          .hs-form .form-columns-2 > .hs-form-field,
+          .hbspt-form .form-columns-2 > .hs-form-field,
+          .hs-form .form-columns-2 > div {
+            flex: 1 1 100% !important;
             width: 100% !important;
+          }
+          .hbspt-form ul.inputs-list li,
+          .hs-form ul.inputs-list li {
+            flex: 0 0 100% !important;
           }
         }
 
@@ -337,6 +482,7 @@ export default function BeAMediaPartner() {
         }
 
         #contact-info .contact-title {
+          font-family: 'Jost', 'Joost', sans-serif !important;
           font-size: 15px;
           line-height: 1.3;
           color: #eaeaea;
@@ -366,13 +512,16 @@ export default function BeAMediaPartner() {
           line-height: 1.3;
           color: #ffc933;
           text-decoration: none;
-          overflow-wrap: normal ;
-          word-break: normal ; white-space: nowrap ;
-          white-space: nowrap ;
+          overflow-wrap: normal;
+          word-break: normal;
+          white-space: nowrap;
           display: inline-block;
         }
 
-        #contact-info .contact-email a:hover { text-decoration: none !important; color: #ffd766 !important; }
+        #contact-info .contact-email a:hover {
+          text-decoration: none !important;
+          color: #ffd766 !important;
+        }
       `}</style>
 
       {/* Hero Banner */}
@@ -391,8 +540,7 @@ export default function BeAMediaPartner() {
         </div>
       </section>
 
-      {/* Contact Info */}
-            {/* Contact Cards Section */}
+      {/* Contact Cards Section */}
       <section id="contact-info">
         <div className="contact-info-wrap">
           {/* Card 1: Sponsor and Exhibitor Queries */}
