@@ -765,6 +765,15 @@ img.img-with-animation,
   max-width: 280px !important;
 }
 
+/* PARTNERS Dropdown */
+#header-outer nav ul.sf-menu > li#menu-item-partners > ul.sub-menu {
+  left: 0 !important;
+  right: auto !important;
+  width: 250px !important;
+  min-width: 250px !important;
+  max-width: 250px !important;
+}
+
 /* Completely remove dummy logo spacing to eliminate empty void on the right of CTA */
 .logo-spacing,
 #header-outer .logo-spacing,

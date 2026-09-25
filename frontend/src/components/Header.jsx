@@ -9,10 +9,11 @@ export default function Header() {
   const path = location.pathname;
 
   const isHomeActive = path === '/' || path === '/bengaluruskillsummit' || path === '/bengaluruskillsummit/';
-  const isAboutActive = path.includes('/about-us') || path.includes('/about') || path.includes('2025') || (path.includes('/agenda') && !path.includes('2026')) || path.includes('/snapshot-agenda') || path.includes('/exhibitors') || path.includes('/ecosystem-partners') || path.includes('/media-partners') || path.includes('/curtain-raiser') || path.includes('/kaushalya-karnataka-awards-2025');
+  const isAboutActive = path.includes('/about-us') || path.includes('/about') || path.includes('2025') || (path.includes('/agenda') && !path.includes('2026')) || path.includes('/snapshot-agenda') || path.includes('/exhibitors') || (path.includes('/ecosystem-partners') && !path.includes('2026')) || (path.includes('/media-partners') && !path.includes('2026')) || path.includes('/curtain-raiser') || path.includes('/kaushalya-karnataka-awards-2025');
   const isAgendaActive = path.includes('/agenda-2026');
   const isSpeakersActive = path.includes('/speakers-2026');
   const isAwardsActive = path.includes('/kaushalya-karnataka-awards-2026') || path.includes('/awards-2026');
+  const isPartnersActive = path.includes('/partners-2026') || path.includes('/ecosystem-partners-2026') || path.includes('/media-partners-2026') || path === '/partners' || path === '/partners/';
   const isGetInvolvedActive = path.includes('/get-involved') || path.includes('/be-a-speaker') || path.includes('/sponsor-registration') || path.includes('/be-a-media-partner') || path.includes('/association-enquiry') || path.includes('/skillathon-registration');
 
   const toggleSubMenu = (key, e) => {
@@ -145,6 +146,24 @@ export default function Header() {
                       <Link to="/kaushalya-karnataka-awards-2026"><span className="menu-title-text">AWARDS</span></Link>
                     </li>
 
+                    {/* PARTNERS */}
+                    <li id="menu-item-partners" className={`menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ${isPartnersActive ? 'current-menu-item' : ''} nectar-regular-menu-item sf-with-ul`}>
+                      <Link to="/partners-2026" aria-haspopup="true" aria-expanded="false" className="nav-parent-link">
+                        <span className="menu-title-text">PARTNERS</span>
+                        <span className="sf-sub-indicator">
+                          <FaAngleDown style={{ fontSize: "11px", verticalAlign: "middle" }} />
+                        </span>
+                      </Link>
+                      <ul className="sub-menu">
+                        <li className="menu-item">
+                          <Link to="/ecosystem-partners-2026"><span>ECOSYSTEM PARTNERS</span></Link>
+                        </li>
+                        <li className="menu-item">
+                          <Link to="/media-partners-2026"><span>MEDIA PARTNERS</span></Link>
+                        </li>
+                      </ul>
+                    </li>
+
                     {/* GET INVOLVED */}
                     <li id="menu-item-get-involved" className={`menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ${isGetInvolvedActive ? 'current-menu-item' : ''} nectar-regular-menu-item sf-with-ul`}>
                       <Link to="/get-involved" aria-haspopup="true" aria-expanded="false" className="nav-parent-link">
@@ -252,6 +271,22 @@ export default function Header() {
                     </li>
                     <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
                       <Link to="/kaushalya-karnataka-awards-2026" onClick={closeMobileMenu} style={{ color: isAwardsActive ? "#ff6257" : "#ffffff", fontWeight: 700, fontSize: "15px", textDecoration: "none" }}>AWARDS</Link>
+                    </li>
+                    <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer" }} onClick={(e) => toggleSubMenu('partners', e)}>
+                        <span style={{ color: isPartnersActive ? "#ff6257" : "#ffffff", fontWeight: 700, fontSize: "15px" }}>PARTNERS</span>
+                        {openSubMenus.partners ? <FaAngleUp style={{ fontSize: "18px", color: "#ff6257" }} /> : <FaAngleDown style={{ fontSize: "18px", color: "#ff6257" }} />}
+                      </div>
+                      {openSubMenus.partners && (
+                        <ul style={{ listStyle: "none", paddingLeft: "16px", marginTop: "10px", margin: 0 }}>
+                          <li style={{ padding: "6px 0" }}>
+                            <Link to="/ecosystem-partners-2026" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>ECOSYSTEM PARTNERS</Link>
+                          </li>
+                          <li style={{ padding: "6px 0" }}>
+                            <Link to="/media-partners-2026" onClick={closeMobileMenu} style={{ color: "#ffffff", textDecoration: "none", fontSize: "14px", fontWeight: 600 }}>MEDIA PARTNERS</Link>
+                          </li>
+                        </ul>
+                      )}
                     </li>
                     <li style={{ borderBottom: "1px solid #222222", padding: "12px 0" }}>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer" }} onClick={(e) => toggleSubMenu('getInvolved', e)}>
