@@ -57,13 +57,13 @@ export default function Header() {
         <header id="top">
           <div className="container">
             <div className="row">
-              <div className="col span_3">
-                <Link id="logo" to="/" data-supplied-ml-starting-dark="false" data-supplied-ml-starting="false" data-supplied-ml="false">
-                  <img className="stnd default-logo dark-version" width={492} height={157} alt="Bengaluru Skill Summit" src="/bengaluruskillsummit/wp-content/uploads/2025/09/bss-logo-white.svg" decoding="async" fetchpriority="high" loading="eager" />
+              <div className="col span_3 mobile-logo-col">
+                <Link id="logo" className="bss-header-logo-link" to="/" data-supplied-ml-starting-dark="false" data-supplied-ml-starting="false" data-supplied-ml="false">
+                  <img className="stnd default-logo dark-version bss-header-logo-img" width={492} height={157} alt="Bengaluru Skill Summit" src="/bengaluruskillsummit/wp-content/uploads/2025/09/bss-logo-white.svg" decoding="async" fetchpriority="high" loading="eager" />
                 </Link>
               </div>
 
-              <div className="col span_9 col_last">
+              <div className="col span_9 col_last mobile-nav-col">
                 <div className="mobile-header-controls">
                   <Link to="/general-enquiry" className="mobile-header-quick-cta" onClick={closeMobileMenu}>
                     ENQUIRE NOW

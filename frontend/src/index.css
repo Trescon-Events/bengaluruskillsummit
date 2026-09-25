@@ -2473,37 +2473,60 @@ img.img-with-animation[src*="header-image"],
    Mobile Header Responsive Styling (screens <= 1000px)
    ======================================================== */
 @media (max-width: 1000px) {
-  #header-outer {
+  #header-outer,
+  body #header-outer,
+  body[data-slide-out-widget-area="true"] #header-outer,
+  #header-outer[data-format="centered-menu"] {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
+    right: 0 !important;
     width: 100% !important;
     background-color: #000000 !important;
     z-index: 999999 !important;
-    height: auto !important;
-    min-height: 60px !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    max-height: 64px !important;
     padding: 0 !important;
+    margin: 0 !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
-  #header-space {
-    height: 60px !important;
-    min-height: 60px !important;
+  #header-space,
+  body #header-space {
+    height: 64px !important;
+    min-height: 64px !important;
+    max-height: 64px !important;
     display: block !important;
   }
 
-  #header-outer #top {
-    padding: 10px 0 !important;
+  #header-outer #top,
+  body #header-outer #top {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
   }
 
-  #header-outer #top .container {
+  #header-outer #top .container,
+  body #header-outer #top .container {
     width: 100% !important;
     max-width: 100% !important;
     padding: 0 16px !important;
+    margin: 0 auto !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
   }
 
-  #header-outer #top .row {
+  #header-outer #top .row,
+  #header-outer[data-format="centered-menu"] #top .row,
+  body[data-slide-out-widget-area="true"] #header-outer #top .row {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
@@ -2511,41 +2534,115 @@ img.img-with-animation[src*="header-image"],
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
+    position: relative !important;
   }
 
-  #header-outer #top .col.span_3 {
+  /* Left Logo Column - strictly left-aligned in normal flex flow */
+  #header-outer #top .col.span_3,
+  #header-outer #top .span_3,
+  #header-outer[data-format="centered-menu"] #top .col.span_3,
+  #header-outer[data-format="centered-menu"] #top .span_3,
+  body[data-slide-out-widget-area="true"] #header-outer #top .col.span_3,
+  body[data-slide-out-widget-area="true"] #header-outer #top .span_3,
+  body #header-outer #top .col.span_3,
+  body #header-outer #top .mobile-logo-col,
+  .mobile-logo-col {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: auto !important;
+    max-width: none !important;
     flex: 0 0 auto !important;
-    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    float: none !important;
+    line-height: normal !important;
+    height: auto !important;
+    z-index: 10 !important;
+  }
+
+  /* Logo Link */
+  #header-outer #top #logo,
+  #header-outer #top .col.span_3 #logo,
+  #header-outer[data-format="centered-menu"] #top #logo,
+  body #header-outer #top #logo,
+  body[data-slide-out-widget-area="true"] #header-outer #top #logo,
+  .bss-header-logo-link {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
     margin: 0 !important;
     padding: 0 !important;
     display: flex !important;
     align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    line-height: normal !important;
+    height: auto !important;
+    width: auto !important;
   }
 
-  #header-outer #top .col.span_3 #logo {
-    display: flex !important;
-    align-items: center !important;
+  /* Logo Image - cleanly proportioned, vertically centered, strictly left-aligned */
+  #header-outer #top #logo img,
+  #header-outer #top .col.span_3 #logo img,
+  body #header-outer #top #logo img,
+  body #top #logo img,
+  #header-outer[data-permanent-transparent=false] #logo .dark-version,
+  .bss-header-logo-img {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
     margin: 0 !important;
     padding: 0 !important;
-  }
-
-  #header-outer #top .col.span_3 #logo img {
-    height: 38px !important;
-    max-height: 38px !important;
+    height: 34px !important;
+    max-height: 34px !important;
     width: auto !important;
-    max-width: 160px !important;
+    max-width: 140px !important;
     object-fit: contain !important;
     display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
-  #header-outer #top .col.span_9 {
-    flex: 0 0 auto !important;
+  /* Right Controls Column */
+  #header-outer #top .col.span_9,
+  #header-outer #top .span_9,
+  #header-outer[data-format="centered-menu"] #top .col.span_9,
+  #header-outer[data-format="centered-menu"] #top .span_9,
+  body[data-slide-out-widget-area="true"] #header-outer #top .col.span_9,
+  body[data-slide-out-widget-area="true"] #header-outer #top .span_9,
+  body #header-outer #top .col.span_9,
+  body #header-outer #top .mobile-nav-col,
+  .mobile-nav-col {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
     width: auto !important;
+    flex: 0 0 auto !important;
     margin: 0 !important;
     padding: 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: flex-end !important;
+    float: none !important;
+    height: auto !important;
+    z-index: 20 !important;
   }
 
   /* Completely suppress desktop navigation and desktop CTA buttons on mobile */
@@ -2558,65 +2655,111 @@ img.img-with-animation[src*="header-image"],
     display: none !important;
   }
 
-  /* Mobile Controls Container */
+  /* Mobile Controls Container: Flex with proper gap and alignment */
   .mobile-header-controls {
     display: flex !important;
     align-items: center !important;
     gap: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* Quick CTA button on mobile header */
+  /* Quick CTA button on mobile header: polished, sleek, vertically centered */
   .mobile-header-quick-cta {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     background: #ff6257 !important;
     color: #ffffff !important;
-    font-family: 'Comfortaa', sans-serif !important;
+    font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
     font-weight: 700 !important;
     font-size: 11px !important;
-    letter-spacing: 0.5px !important;
+    letter-spacing: 0.6px !important;
     text-transform: uppercase !important;
     text-decoration: none !important;
-    padding: 7px 14px !important;
+    padding: 8px 16px !important;
     border-radius: 50px !important;
     white-space: nowrap !important;
-    box-shadow: 0 2px 8px rgba(255, 98, 87, 0.4) !important;
-    transition: transform 0.2s ease, background 0.2s ease !important;
+    line-height: 1 !important;
+    box-shadow: 0 2px 10px rgba(255, 98, 87, 0.45) !important;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease !important;
+    cursor: pointer !important;
+    border: none !important;
   }
 
   .mobile-header-quick-cta:hover,
   .mobile-header-quick-cta:active {
     background: #e85348 !important;
-    transform: translateY(-1px) !important;
     color: #ffffff !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(255, 98, 87, 0.6) !important;
   }
 
-  /* Hamburger Toggle Button */
+  /* Hamburger Toggle Button: modern rounded icon button */
   .mobile-nav-toggle {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    background: transparent !important;
-    border: none !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
     color: #ffffff !important;
     cursor: pointer !important;
-    padding: 6px !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    padding: 0 !important;
     margin: 0 !important;
-    border-radius: 6px !important;
-    font-size: 22px !important;
+    border-radius: 8px !important;
+    font-size: 18px !important;
     line-height: 1 !important;
-    transition: background-color 0.2s ease !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease !important;
   }
 
   .mobile-nav-toggle:hover,
   .mobile-nav-toggle:active {
-    background: rgba(255, 255, 255, 0.12) !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
   }
 
   /* Old Salient icon hiding */
   .slide-out-widget-area-toggle.mobile-icon {
     display: none !important;
+  }
+}
+
+/* Extra fine-tuning for narrower screens (<= 420px) */
+@media (max-width: 420px) {
+  #header-outer #top .container,
+  body #header-outer #top .container {
+    padding: 0 12px !important;
+  }
+
+  #header-outer #top #logo img,
+  #header-outer #top .col.span_3 #logo img,
+  body #header-outer #top #logo img,
+  .bss-header-logo-img {
+    height: 30px !important;
+    max-height: 30px !important;
+    max-width: 125px !important;
+  }
+
+  .mobile-header-controls {
+    gap: 8px !important;
+  }
+
+  .mobile-header-quick-cta {
+    font-size: 10px !important;
+    padding: 7px 12px !important;
+    letter-spacing: 0.4px !important;
+  }
+
+  .mobile-nav-toggle {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+    font-size: 16px !important;
   }
 }
 
@@ -2627,6 +2770,3 @@ img.img-with-animation[src*="header-image"],
     display: none !important;
   }
 }
-
-
-
