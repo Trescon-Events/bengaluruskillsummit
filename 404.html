@@ -1,24 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bengaluru Skill Summit</title>
+    <title>Page Not Found - 404 | Bengaluru Skill Summit 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Jost:wght@700;800;900&display=swap" rel="stylesheet">
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
-      // MIT License
       // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 1;
+      (function() {
+        var l = window.location;
+        
+        // Prevent redirect loop if the URL is already corrupted or already in SPA redirect format
+        if (l.search && (l.search.indexOf('~and~') !== -1 || l.search.slice(0, 3) === '/?/' || l.search.slice(0, 2) === '/?')) {
+          return;
+        }
 
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+        var isSubpath = l.pathname.indexOf('/bengaluruskillsummit') === 0;
+        var pathSegmentsToKeep = isSubpath ? 1 : 0;
+
+        var pathParts = l.pathname.split('/');
+        var repoBase = pathParts.slice(0, 1 + pathSegmentsToKeep).join('/');
+        var routePath = l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~');
+        var query = (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '');
+
+        var targetUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          repoBase + '/?/' + routePath + query + l.hash;
+
+        l.replace(targetUrl);
+      })();
     </script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 40px 20px;
+        font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #f8fafc;
+        color: #0f172a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+      .bss-card {
+        max-width: 620px;
+        width: 100%;
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 50px 30px;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e2e8f0;
+      }
+      .bss-badge {
+        display: inline-block;
+        background: #fee2e2;
+        color: #ef4444;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 5px 16px;
+        border-radius: 20px;
+        margin-bottom: 16px;
+      }
+      .bss-code {
+        font-family: 'Jost', 'Joost', sans-serif;
+        font-size: 96px;
+        font-weight: 900;
+        line-height: 1;
+        margin: 0 0 10px 0;
+        background: linear-gradient(135deg, #106cff 0%, #ff6257 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      h1 {
+        font-family: 'Jost', 'Joost', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0 0 12px 0;
+        text-transform: uppercase;
+        color: #0f172a;
+      }
+      p {
+        font-size: 15px;
+        color: #64748b;
+        line-height: 1.7;
+        margin: 0 0 28px 0;
+      }
+      .bss-btn {
+        display: inline-block;
+        background: #ff6257;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 13px 32px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 14px;
+        transition: transform 0.2s, background 0.2s;
+        box-shadow: 0 4px 14px rgba(255, 98, 87, 0.35);
+      }
+      .bss-btn:hover {
+        background: #e5554b;
+        transform: translateY(-2px);
+      }
+    </style>
   </head>
   <body>
+    <div class="bss-card">
+      <span class="bss-badge">Error 404</span>
+      <div class="bss-code">404</div>
+      <h1>Page Not Found</h1>
+      <p>The page you are looking for doesn't exist, has been moved, or the link may be broken.</p>
+      <a href="/" class="bss-btn">Back to Homepage</a>
+    </div>
   </body>
 </html>
