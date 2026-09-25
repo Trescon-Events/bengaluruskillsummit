@@ -24,6 +24,13 @@ if (fs.existsSync(public404)) {
   console.log('[postbuild] Copied 404.html to dist/404.html');
 }
 
+// 2b. Copy CNAME if available
+const publicCNAME = path.resolve(__dirname, '../public/CNAME');
+if (fs.existsSync(publicCNAME)) {
+  fs.copyFileSync(publicCNAME, path.join(distDir, 'CNAME'));
+  console.log('[postbuild] Copied CNAME to dist/CNAME');
+}
+
 // 3. Pre-create route directories with index.html for instant HTTP 200 on GitHub Pages
 const routes = [
   'about-us',
