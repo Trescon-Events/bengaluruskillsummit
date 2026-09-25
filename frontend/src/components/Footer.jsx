@@ -29,7 +29,7 @@ export default function Footer() {
 </div>
 <div className="nectar_icon_wrap" data-padding="10px" data-color="extra-color-2">
   <div className="nectar_icon">
-    <a href="https://www.facebook.com/profile.php?id=61579109280936" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "100%", color: "#0d53c7" }}>
+    <a href="https://www.facebook.com/bengaluruskillsummit/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "100%", color: "#0d53c7" }}>
       <FaFacebook style={{ fontSize: "25px", height: "25px", width: "25px", color: "#0d53c7", fill: "#0d53c7" }} />
     </a>
   </div>
