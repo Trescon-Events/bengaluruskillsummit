@@ -179,17 +179,17 @@ export default function MediaPartners2026() {
           line-height: 1.2;
         }
 
-        /* 3-Column Logo Grid */
+        /* Center-Aligned Logo Grid */
         .bss-logo-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 25px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
           align-items: stretch;
+          gap: 25px;
         }
 
         @media (max-width: 992px) {
           .bss-logo-grid {
-            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
           }
           .bss-category-heading {
@@ -199,7 +199,6 @@ export default function MediaPartners2026() {
 
         @media (max-width: 576px) {
           .bss-logo-grid {
-            grid-template-columns: 1fr;
             gap: 16px;
           }
           .bss-category-heading {
@@ -209,6 +208,10 @@ export default function MediaPartners2026() {
 
         /* Logo Card - Media Partners */
         .bss-logo-card {
+          flex: 0 1 calc(33.333% - 17px);
+          min-width: 280px;
+          max-width: 360px;
+          width: 100%;
           background: #ffffff;
           border: 1px solid #eeeeee;
           border-radius: 8px;
@@ -225,8 +228,19 @@ export default function MediaPartners2026() {
           cursor: pointer;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
           .bss-logo-card {
+            flex: 0 1 calc(50% - 15px);
+            min-width: 240px;
+            max-width: 340px;
+          }
+        }
+
+        @media (max-width: 576px) {
+          .bss-logo-card {
+            flex: 0 1 100%;
+            min-width: 100%;
+            max-width: 100%;
             height: 115px;
             padding: 16px 20px;
           }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaAngleDown, FaAngleUp, FaAngleRight } from 'react-icons/fa';
+import { FaAngleDown, FaAngleUp, FaAngleRight, FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -64,20 +64,19 @@ export default function Header() {
               </div>
 
               <div className="col span_9 col_last">
-                <div className="nectar-mobile-only mobile-header">
-                  <div className="inner" />
-                </div>
-                <div className="slide-out-widget-area-toggle mobile-icon simple" data-custom-color="false" data-icon-animation="simple-transform">
-                  <div>
-                    <a href="#mobile-menu" role="button" aria-label="Navigation Menu" aria-expanded={mobileMenuOpen} className={mobileMenuOpen ? "open" : "closed"} onClick={(e) => { e.preventDefault(); setMobileMenuOpen(!mobileMenuOpen); }}>
-                      <span className="screen-reader-text">Menu</span>
-                      <span aria-hidden="true">
-                        <i className={`lines-button x2 ${mobileMenuOpen ? 'close' : ''}`}>
-                          <i className="lines" />
-                        </i>
-                      </span>
-                    </a>
-                  </div>
+                <div className="mobile-header-controls">
+                  <Link to="/general-enquiry" className="mobile-header-quick-cta" onClick={closeMobileMenu}>
+                    ENQUIRE NOW
+                  </Link>
+                  <button
+                    type="button"
+                    className="mobile-nav-toggle"
+                    aria-label="Navigation Menu"
+                    aria-expanded={mobileMenuOpen}
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  >
+                    {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+                  </button>
                 </div>
 
                 <nav aria-label="Main Menu">
@@ -219,11 +218,13 @@ export default function Header() {
               top: "100%",
               left: 0,
               width: "100%",
+              maxHeight: "calc(100vh - 65px)",
+              overflowY: "auto",
               backgroundColor: "#0d0d0d",
-              boxShadow: "0 14px 35px rgba(0,0,0,0.75)",
-              borderBottom: "1px solid rgba(255,255,255,0.1)",
-              padding: "20px 24px",
-              zIndex: 99999,
+              boxShadow: "0 16px 40px rgba(0,0,0,0.9)",
+              borderBottom: "2px solid #ff6257",
+              padding: "16px 20px 32px 20px",
+              zIndex: 999999,
               boxSizing: "border-box"
             }}>
               <div className="inner">
