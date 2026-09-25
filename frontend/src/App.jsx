@@ -42,6 +42,7 @@ const EcosystemPartners2026 = lazy(() => import('./pages/EcosystemPartners2026')
 const MediaPartners2026 = lazy(() => import('./pages/MediaPartners2026'));
 const Skillathon2026 = lazy(() => import('./pages/Skillathon2026'));
 const AssociationEnquiry = lazy(() => import('./pages/AssociationEnquiry'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 export default function App() {
   const basename = typeof window !== 'undefined' && window.location.pathname.startsWith('/bengaluruskillsummit')
@@ -188,6 +189,9 @@ export default function App() {
             <Route path="sponsor-registration/" element={<SponsorRegistration />} />
             <Route path="association-enquiry" element={<AssociationEnquiry />} />
             <Route path="association-enquiry/" element={<AssociationEnquiry />} />
+
+            {/* 404 Catch-All */}
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Suspense>
