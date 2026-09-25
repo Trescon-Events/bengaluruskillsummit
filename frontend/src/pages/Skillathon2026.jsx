@@ -450,7 +450,7 @@ export default function Skillathon2026() {
           {/* =========================================================================
               6. Choose Your Challenge (Matching media_1790230804491.png)
               ========================================================================= */}
-          <section id="choose-challenge" style={{ paddingTop: '30px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px' }}>
+          <section id="choose-challenge" style={{ paddingTop: '30px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px', scrollMarginTop: '100px' }}>
             <div style={{ maxWidth: '1150px', margin: '0 auto', textAlign: 'center' }}>
               <h2 style={{
                 color: '#0d53c7',
@@ -487,6 +487,7 @@ export default function Skillathon2026() {
                 {challengeList.map((item, idx) => (
                   <div
                     key={idx}
+                    id={item.title === 'Women Returning to Work' ? 'women-returning-to-work' : undefined}
                     className="skillathon-challenge-card"
                     style={{
                       position: 'relative',

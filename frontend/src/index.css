@@ -6,6 +6,15 @@
   font-weight: 100 900;
   src: local('Jost'), url('https://fonts.gstatic.com/s/jost/v15/92zPtBh3BpXs40ctPtqcERK.woff2') format('woff2');
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+section[id], div[id] {
+  scroll-margin-top: 100px;
+}
+
 /* Overrides */
 #root {
   width: 100%;
