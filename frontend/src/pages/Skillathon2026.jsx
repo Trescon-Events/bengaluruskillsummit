@@ -496,6 +496,20 @@ export default function Skillathon2026() {
                   );
                 })}
               </div>
+
+              {/* Challenge Brief Link */}
+              <p style={{
+                fontSize: '16px',
+                color: '#0e1220',
+                lineHeight: '1.6',
+                marginTop: '25px',
+                marginBottom: 0,
+                fontFamily: '"Plus Jakarta Sans", "Comfortaa", sans-serif',
+                textAlign: 'center'
+              }}>
+                Explore the complete challenge statements, expected outcomes and pilot<br />
+                approach in the <a style={{ color: '#106cff', textDecoration: 'underline' }} href="https://bengaluruskillsummit.com/wp-content/uploads/2026/09/Skillathon-2026-BengaluruSkillSummit.pdf" target="_blank" rel="noopener noreferrer" className="accessed">Skillathon 2026 Challenge Brief.</a>
+              </p>
             </div>
           </section>
 
