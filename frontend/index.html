@@ -14,9 +14,15 @@
           var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&') 
           }).join('?');
+          if (decoded.indexOf('~and~') !== -1 || decoded.startsWith('&') || decoded.startsWith('/&')) {
+            window.history.replaceState(null, null, '/');
+            return;
+          }
           window.history.replaceState(null, null,
               l.pathname.slice(0, -1) + decoded + l.hash
           );
+        } else if (l.search && l.search.indexOf('~and~') !== -1) {
+          window.history.replaceState(null, null, '/');
         }
       }(window.location))
     </script>

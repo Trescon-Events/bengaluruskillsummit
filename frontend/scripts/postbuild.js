@@ -31,6 +31,19 @@ if (fs.existsSync(publicCNAME)) {
   console.log('[postbuild] Copied CNAME to dist/CNAME');
 }
 
+// 2c. Ensure llms.txt, llms-full.txt, robots.txt exist at root and subpath
+const subDir = path.join(distDir, 'bengaluruskillsummit');
+fs.mkdirSync(subDir, { recursive: true });
+
+['llms.txt', 'llms-full.txt', 'robots.txt'].forEach(file => {
+  const src = path.resolve(__dirname, '../public', file);
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, path.join(distDir, file));
+    fs.copyFileSync(src, path.join(subDir, file));
+    console.log(`[postbuild] Copied ${file} to dist/ and dist/bengaluruskillsummit/`);
+  }
+});
+
 // 3. Pre-create route directories with index.html for instant HTTP 200 on GitHub Pages
 const routes = [
   'about-us',

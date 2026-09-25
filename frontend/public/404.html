@@ -14,8 +14,14 @@
       (function() {
         var l = window.location;
         
+        // Never redirect static assets or files with extensions (.txt, .png, .jpg, .svg, .json, .pdf, etc.)
+        var cleanPath = l.pathname.replace(/\/+$/, '');
+        if (/\.[a-zA-Z0-9]+$/i.test(cleanPath)) {
+          return;
+        }
+
         // Prevent redirect loop if the URL is already corrupted or already in SPA redirect format
-        if (l.search && (l.search.indexOf('~and~') !== -1 || l.search.slice(0, 3) === '/?/' || l.search.slice(0, 2) === '/?')) {
+        if (l.search && (l.search.indexOf('~and~') !== -1 || l.search.slice(0, 3) === '/?/' || l.search.slice(0, 2) === '/?' || l.search.indexOf('/&') !== -1)) {
           return;
         }
 
