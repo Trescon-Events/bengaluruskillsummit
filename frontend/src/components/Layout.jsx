@@ -48,19 +48,28 @@ export default function Layout() {
         return;
       }
 
-      // If it starts with /
-      if (href.startsWith('/')) {
-        // Handle hash navigation on the same page like /#faq
-        if (href.startsWith('/#')) {
-          const hash = href.substring(2);
-          const target = document.getElementById(hash);
+      // If it starts with / or is a hash link
+      if (href.startsWith('/#') || (href.startsWith('#') && href.length > 1)) {
+        e.preventDefault();
+        const hash = href.startsWith('/#') ? href.substring(2) : href.substring(1);
+        if (!hash) return;
+        const currentNormalized = location.pathname.toLowerCase().replace(/\/+$/, '') || '/';
+        if (currentNormalized === '/') {
+          const target = document.getElementById(hash) || (hash === 'faq' ? document.getElementById('hodl-faq-section') : null);
           if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth' });
+            const y = target.getBoundingClientRect().top + window.pageYOffset - 90;
+            window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+            try {
+              window.history.pushState(null, '', `/#${hash}`);
+            } catch (_) {}
           }
-          return;
+        } else {
+          navigate(`/#${hash}`);
         }
+        return;
+      }
 
+      if (href.startsWith('/')) {
         e.preventDefault();
         // Strip subdirectory prefix if already present (both with and without .com)
         let cleanRoute = href.replace(/^\/bengaluruskillsummit(?:\.com)?/i, '');
@@ -76,12 +85,24 @@ export default function Layout() {
 
     document.addEventListener('click', handleAnchorClick);
     return () => document.removeEventListener('click', handleAnchorClick);
-  }, [navigate, location.pathname]);
+  }, [navigate, location.pathname, location.hash]);
 
-  // Scroll to top when actual route changes
+  // Scroll to hash or top when actual route changes
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+    if (location.hash) {
+      const hashId = location.hash.replace('#', '');
+      const timer = setTimeout(() => {
+        const el = document.getElementById(hashId) || (hashId === 'faq' ? document.getElementById('hodl-faq-section') : null);
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.pageYOffset - 90;
+          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+        }
+      }, 150);
+      return () => clearTimeout(timer);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname, location.hash]);
 
   // Dynamic SEO Metadata Management (Updates title, description, OG, Twitter, canonical)
   useEffect(() => {
