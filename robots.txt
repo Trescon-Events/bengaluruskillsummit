@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# LLM Context Files
+# https://llmstxt.org/
+# https://bengaluruskillsummit.com/llms.txt
+# https://bengaluruskillsummit.com/llms-full.txt
