@@ -2192,23 +2192,30 @@ img.img-with-animation[src*="header-image"],
   }
 }
 
-/* Skillathon Challenges Grid: 3-column on desktop, 2 on tablet, 1 on mobile */
+/* Skillathon Challenges Grid: 5-column on desktop, 3 on tablet, 2 on small tablet, 1 on mobile */
 .skillathon-challenges-grid {
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 24px !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 16px !important;
   align-items: stretch !important;
-  margin-bottom: 40px !important;
+  margin-bottom: 30px !important;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1100px) {
   .skillathon-challenges-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 20px !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .skillathon-challenges-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+}
+
+@media (max-width: 520px) {
   .skillathon-challenges-grid {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
@@ -2216,17 +2223,48 @@ img.img-with-animation[src*="header-image"],
 }
 
 .skillathon-challenge-card {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  border: 1px solid #f0f2f5 !important;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.05) !important;
+  padding: 28px 16px 22px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease !important;
 }
 
 .skillathon-challenge-card:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08) !important;
-  border-color: #dbe4ef !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08) !important;
+  border-color: #cbd5e1 !important;
 }
 
-.skillathon-challenge-card:hover a span {
-  transform: translateX(4px) !important;
+.skillathon-challenge-title {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  text-transform: none !important;
+  font-size: 15.5px !important;
+  font-weight: 700 !important;
+  color: #0e1220 !important;
+  line-height: 1.35 !important;
+  margin: 0 0 14px 0 !important;
+  text-align: center !important;
+  letter-spacing: normal !important;
+}
+
+.skillathon-challenge-desc {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  text-transform: none !important;
+  font-size: 13.5px !important;
+  font-weight: 400 !important;
+  color: #334155 !important;
+  line-height: 1.55 !important;
+  margin: 0 0 24px 0 !important;
+  text-align: center !important;
+  letter-spacing: normal !important;
 }
 
 /* Eliminate any accidental double bullets in Skillathon */

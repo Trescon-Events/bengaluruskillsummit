@@ -8,7 +8,7 @@ const faqsData = [
   },
   {
     question: "What are the challenge areas?",
-    answer: "There are six challenge areas: AI Skills Coach, Rural Youth: Skills-to-Jobs, Women Returning to Work, Green Jobs & Future Skills, Skills Passport & Inclusive Pathways, and Training-to-Employment Outcomes."
+    answer: "There are key challenge areas including: AI Skills Coach, Rural Youth: Skills-to-Jobs, Green Jobs & Future Skills, Skills Passport & Inclusive Pathways, and Training-to-Employment Outcomes."
   },
   {
     question: "When do applications open?",
@@ -42,82 +42,35 @@ const faqsData = [
 
 const challengeList = [
   {
-    tag: "Challenge 01",
     title: "AI Skills Coach",
     desc: "Can AI assess skills against a target job and create a personalised pathway to job readiness?",
     img: "/bengaluruskillsummit/wp-content/uploads/2026/09/AI-Skills-Coach-1.png",
-    alt: "AI Skills Coach",
-    color: "#0066ff",
-    gradient: "linear-gradient(135deg, #0066ff 0%, #38bdf8 100%)",
-    bgSoft: "#f0f6ff",
-    badgeBg: "#e0edff",
-    borderColor: "rgba(0, 102, 255, 0.15)",
-    glowColor: "rgba(0, 102, 255, 0.12)"
+    alt: "AI Skills Coach"
   },
   {
-    tag: "Challenge 02",
     title: "Rural Youth: Skills-to-Jobs",
     desc: "How can rural youth discover and match with relevant training, apprenticeships and entry-level jobs?",
     img: "/bengaluruskillsummit/wp-content/uploads/2026/09/Rural-Youth-1.png",
-    alt: "Rural Youth",
-    color: "#059669",
-    gradient: "linear-gradient(135deg, #059669 0%, #10b981 100%)",
-    bgSoft: "#f0fdf4",
-    badgeBg: "#dcfce7",
-    borderColor: "rgba(5, 150, 105, 0.15)",
-    glowColor: "rgba(5, 150, 105, 0.12)"
+    alt: "Rural Youth: Skills-to-Jobs"
   },
   {
-    tag: "Challenge 03",
-    title: "Women Returning to Work",
-    desc: "How can women returning after a career break identify their skills, bridge gaps and find suitable opportunities?",
-    img: "/bengaluruskillsummit/wp-content/uploads/2026/09/women-to-work-1.png",
-    alt: "Women Returning to Work",
-    color: "#ff6257",
-    gradient: "linear-gradient(135deg, #ff6257 0%, #ff8a80 100%)",
-    bgSoft: "#fff5f5",
-    badgeBg: "#ffe5e3",
-    borderColor: "rgba(255, 98, 87, 0.15)",
-    glowColor: "rgba(255, 98, 87, 0.12)"
-  },
-  {
-    tag: "Challenge 04",
     title: "Green Jobs & Future Skills",
     desc: "How can youth identify emerging green jobs and the skills, training and certifications needed for them?",
     img: "/bengaluruskillsummit/wp-content/uploads/2026/09/Green-Jobs-Future-Skills-1.png",
-    alt: "Green Jobs Future Skills",
-    color: "#0d9488",
-    gradient: "linear-gradient(135deg, #0d9488 0%, #2dd4bf 100%)",
-    bgSoft: "#f0fdfa",
-    badgeBg: "#ccfbf1",
-    borderColor: "rgba(13, 148, 136, 0.15)",
-    glowColor: "rgba(13, 148, 136, 0.12)"
+    alt: "Green Jobs & Future Skills"
   },
   {
-    tag: "Challenge 05",
     title: "Skills Passport & Inclusive Pathways",
     desc: "How can we recognise existing skills and create personalised pathways to training and employment for underserved groups?",
     img: "/bengaluruskillsummit/wp-content/uploads/2026/09/Skills-Passport-Inclusive-Pathways-1.png",
-    alt: "Skills Passport Inclusive Pathways",
-    color: "#7c3aed",
-    gradient: "linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%)",
-    bgSoft: "#faf5ff",
-    badgeBg: "#ede9fe",
-    borderColor: "rgba(124, 58, 237, 0.15)",
-    glowColor: "rgba(124, 58, 237, 0.12)"
+    alt: "Skills Passport & Inclusive Pathways"
   },
   {
-    tag: "Challenge 06",
     title: "Training-to-Employment Outcomes",
-    desc: "How can we track and guarantee measurable, high-retention employment and placement outcomes from training programmes?",
+    desc: "Explore the complete challenge statements, expected outcomes and pilot approach in the Skillathon 2026 Challenge Brief.",
     img: "/bengaluruskillsummit/wp-content/uploads/2026/09/Training-to-Employment-Outcomes-1.png",
-    alt: "Training to Employment Outcomes",
-    color: "#d97706",
-    gradient: "linear-gradient(135deg, #d97706 0%, #f59e0b 100%)",
-    bgSoft: "#fffbeb",
-    badgeBg: "#fef3c7",
-    borderColor: "rgba(217, 119, 6, 0.15)",
-    glowColor: "rgba(217, 119, 6, 0.12)"
+    alt: "Training-to-Employment Outcomes",
+    link: "/bengaluruskillsummit/wp-content/uploads/2026/09/Skillathon-2026-BengaluruSkillSummit.pdf"
   }
 ];
 
@@ -264,7 +217,7 @@ export default function Skillathon2026() {
                   Teams will move beyond ideas to <strong>validate problems, build prototypes, test solutions and demonstrate measurable outcomes</strong>, working with Government, industry, academia, mentors and potential users.
                 </p>
                 <p style={{ margin: 0, fontFamily: '"Comfortaa", sans-serif', fontSize: '18px', lineHeight: '30px', color: '#0e1220' }}>
-                  The programme features six Government-defined challenges spanning AI-enabled skilling, rural employment, women returning to work, green jobs, inclusion and training-to-employment outcomes.
+                  The programme features Government-defined challenges spanning AI-enabled skilling, rural employment, green jobs, inclusion and training-to-employment outcomes.
                 </p>
               </div>
             </div>
@@ -451,7 +404,8 @@ export default function Skillathon2026() {
               6. Choose Your Challenge (Matching media_1790230804491.png)
               ========================================================================= */}
           <section id="choose-challenge" style={{ paddingTop: '30px', paddingBottom: '60px', paddingLeft: '20px', paddingRight: '20px', scrollMarginTop: '100px' }}>
-            <div style={{ maxWidth: '1150px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+              <span id="women-returning-to-work" style={{ scrollMarginTop: '100px' }} />
               <h2 style={{
                 color: '#0d53c7',
                 fontFamily: '"Joost", "Jost", sans-serif',
@@ -482,163 +436,66 @@ export default function Skillathon2026() {
                 We invite you to tackle real-world challenges that shape the future of education, employment, and innovation. Your ideas should align with the global goals and empower communities across India and beyond.
               </p>
 
-              {/* 6 Challenge Cards Grid: 3x2 grid with colors, icon badges, and tags */}
+              {/* 5 Challenge Cards Grid matching screenshot */}
               <div className="skillathon-challenges-grid">
-                {challengeList.map((item, idx) => (
-                  <div
-                    key={idx}
-                    id={item.title === 'Women Returning to Work' ? 'women-returning-to-work' : undefined}
-                    className="skillathon-challenge-card"
-                    style={{
-                      position: 'relative',
-                      overflow: 'hidden',
-                      backgroundColor: '#ffffff',
-                      borderRadius: '16px',
-                      padding: '28px 24px 22px 24px',
-                      border: '1px solid #edf0f5',
-                      boxShadow: '0 4px 18px rgba(0, 0, 0, 0.04)',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'space-between',
-                      textAlign: 'left',
-                      boxSizing: 'border-box'
-                    }}
-                  >
-                    {/* Top Accent Gradient Bar */}
-                    <div
-                      style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        height: '4px',
-                        background: item.gradient
-                      }}
-                    />
-
-                    <div>
-                      {/* Top Header: Icon & Challenge Badge */}
-                      <div
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'space-between',
-                          marginBottom: '20px'
-                        }}
-                      >
-                        <div
-                          style={{
-                            width: '52px',
-                            height: '52px',
-                            borderRadius: '12px',
-                            backgroundColor: item.bgSoft,
-                            border: `1px solid ${item.borderColor}`,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            boxShadow: `0 4px 12px ${item.glowColor}`
-                          }}
-                        >
-                          <img
-                            src={item.img}
-                            alt={item.alt}
-                            style={{ width: '30px', height: '30px', objectFit: 'contain' }}
-                          />
+                {challengeList.map((item, idx) => {
+                  const cardInner = (
+                    <>
+                      <div style={{ width: '100%' }}>
+                        <div className="skillathon-challenge-title">
+                          {item.title}
                         </div>
-
-                        <span
-                          style={{
-                            fontFamily: '"Plus Jakarta Sans", sans-serif',
-                            fontSize: '12px',
-                            fontWeight: 700,
-                            letterSpacing: '0.8px',
-                            textTransform: 'uppercase',
-                            padding: '5px 12px',
-                            borderRadius: '20px',
-                            backgroundColor: item.badgeBg,
-                            color: item.color
-                          }}
-                        >
-                          {item.tag}
-                        </span>
+                        <div className="skillathon-challenge-desc">
+                          {item.desc}
+                        </div>
                       </div>
 
-                      {/* Card Title */}
-                      <h3
+                      <div
                         style={{
-                          color: '#0e1220',
-                          fontFamily: '"Plus Jakarta Sans", sans-serif',
-                          fontSize: '19px',
-                          fontWeight: 700,
-                          lineHeight: '26px',
-                          marginBottom: '12px',
-                          marginTop: 0
-                        }}
-                      >
-                        {item.title}
-                      </h3>
-
-                      {/* Card Question/Description */}
-                      <p
-                        style={{
-                          color: '#4a5568',
-                          fontFamily: '"Comfortaa", sans-serif',
-                          fontSize: '15px',
-                          fontWeight: 400,
-                          lineHeight: '24px',
-                          margin: 0
-                        }}
-                      >
-                        {item.desc}
-                      </p>
-                    </div>
-
-                    {/* Card Footer: Explore Link to Brief */}
-                    <div
-                      style={{
-                        marginTop: '22px',
-                        paddingTop: '16px',
-                        borderTop: '1px solid #f1f5f9',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between'
-                      }}
-                    >
-                      <a
-                        href="/bengaluruskillsummit/wp-content/uploads/2026/09/Skillathon-2026-BengaluruSkillSummit.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          fontSize: '13px',
-                          fontWeight: 700,
-                          color: item.color,
-                          fontFamily: '"Plus Jakarta Sans", sans-serif',
-                          textDecoration: 'none',
-                          display: 'inline-flex',
+                          marginTop: 'auto',
+                          display: 'flex',
                           alignItems: 'center',
-                          gap: '6px'
+                          justifyContent: 'center',
+                          width: '100%',
+                          paddingTop: '6px'
                         }}
                       >
-                        Explore Problem Statement
-                        <span style={{ fontSize: '15px' }}>→</span>
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                        <img
+                          src={item.img}
+                          alt={item.alt}
+                          style={{ width: '50px', height: '50px', objectFit: 'contain' }}
+                          loading="lazy"
+                        />
+                      </div>
+                    </>
+                  );
 
-              {/* Download Brief Link */}
-              <p style={{ fontSize: '16px', color: '#0e1220' }}>
-                Explore the complete challenge statements, expected outcomes and pilot approach in the{' '}
-                <a
-                  href="/bengaluruskillsummit/wp-content/uploads/2026/09/Skillathon-2026-BengaluruSkillSummit.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#0066ff', textDecoration: 'underline', fontWeight: 600 }}
-                >
-                  Skillathon 2026 Challenge Brief.
-                </a>
-              </p>
+                  return item.link ? (
+                    <a
+                      key={idx}
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="skillathon-challenge-card"
+                      style={{
+                        textDecoration: 'none',
+                        color: 'inherit',
+                        cursor: 'pointer'
+                      }}
+                      title="View Skillathon 2026 Challenge Brief"
+                    >
+                      {cardInner}
+                    </a>
+                  ) : (
+                    <div
+                      key={idx}
+                      className="skillathon-challenge-card"
+                    >
+                      {cardInner}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </section>
 
