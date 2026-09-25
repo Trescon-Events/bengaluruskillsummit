@@ -17,7 +17,7 @@ export default function BeAMediaPartner() {
         container.innerHTML = '';
         window.hbspt.forms.create({
           portalId: "2953901",
-          formId: "4f17e2bc-d5ac-4424-97fc-50a1dc04e1b5",
+          formId: "61c72a0c-d238-4738-92c3-5abf5653f887",
           region: "na1",
           target: "#hubspot-media-partner-form",
           onFormSubmitted: function() {
