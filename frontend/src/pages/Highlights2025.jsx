@@ -109,7 +109,9 @@ export default function Highlights2025() {
   [id="2025-highlights"] p.vc_custom_heading,
   [id="2025-highlights"] .vc_custom_heading p,
   [id="2025-highlights"] .vc_custom_heading,
-  .bss-highlights-hero-subtext {
+  [id="2025-highlights"] .bss-highlights-hero-subtext,
+  .bss-highlights-hero-subtext,
+  .vc_custom_1485550874781 p {
     font-family: 'Comfortaa', cursive, sans-serif !important;
     font-size: 20px !important;
     font-weight: 500 !important;
@@ -154,11 +156,12 @@ export default function Highlights2025() {
     box-shadow: 0 6px 20px rgba(255, 95, 88, 0.5) !important;
   }
 
-  /* ---------------- MILESTONES ---------------- */
-  .vc_custom_1485550874781 .wpb_wrapper p {
+  /* ---------------- INTRO PARAGRAPHS ---------------- */
+  #fws_6a9fa59629c1f .wpb_text_column p,
+  #fws_6a9fa59629c1f .wpb_wrapper p {
     text-align: center !important;
     font-family: 'Joost', sans-serif !important;
-    color: #333 !important;
+    color: #333333 !important;
     font-size: 18px !important;
     line-height: 1.6 !important;
     max-width: 900px !important;
@@ -444,8 +447,10 @@ export default function Highlights2025() {
     [id="2025-highlights"] p,
     [id="2025-highlights"] p.vc_custom_heading,
     [id="2025-highlights"] .vc_custom_heading p,
+    [id="2025-highlights"] .bss-highlights-hero-subtext,
     .bss-highlights-hero-subtext {
       font-size: 18px !important;
+      color: #ffffff !important;
     }
     #fws_6a9fa5962b435 .vc_col-sm-3 {
       flex: 1 1 calc(50% - 20px) !important;
@@ -467,8 +472,10 @@ export default function Highlights2025() {
     [id="2025-highlights"] p,
     [id="2025-highlights"] p.vc_custom_heading,
     [id="2025-highlights"] .vc_custom_heading p,
+    [id="2025-highlights"] .bss-highlights-hero-subtext,
     .bss-highlights-hero-subtext {
       font-size: 16px !important;
+      color: #ffffff !important;
     }
     [id="2025-highlights"] .highligts-btn {
       width: 100% !important;
