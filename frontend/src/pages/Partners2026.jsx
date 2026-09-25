@@ -73,6 +73,7 @@ export default function Partners2026() {
         .partners-2026-page *::before,
         .partners-2026-page *::after {
           box-sizing: border-box;
+          font-family: 'Comfortaa', sans-serif;
         }
 
         /* Banner */
@@ -99,6 +100,7 @@ export default function Partners2026() {
 
         .partners-banner-heading h1 {
           color: #106cff;
+          font-family: 'Joost', sans-serif !important;
           font-size: 52px;
           font-weight: 700;
           line-height: 1.15;
@@ -173,16 +175,16 @@ export default function Partners2026() {
 
         /* Category Heading */
         .bss-category-heading {
-          font-family: 'Bebas Neue', 'Comfortaa', sans-serif !important;
+          font-family: 'Joost', sans-serif !important;
           text-align: center;
-          font-size: 32px !important;
-          font-weight: 400 !important;
+          font-size: 34px !important;
+          font-weight: 700 !important;
           color: #111111;
           text-transform: uppercase;
-          letter-spacing: 2px;
+          letter-spacing: -0.5px;
           margin: 0 auto 30px auto !important;
           padding: 0 !important;
-          line-height: 1.2;
+          line-height: 1.25;
         }
 
         /* Center-Aligned Logo Grid */

@@ -60,6 +60,7 @@ export default function EcosystemPartners({ isScreen = false }) {
 
         .Skillathon-Heading h1 {
           color: #106cff;
+          font-family: 'Joost', sans-serif !important;
           font-size: 56px;
           font-weight: 700;
           line-height: 1.15;
@@ -82,6 +83,7 @@ export default function EcosystemPartners({ isScreen = false }) {
         }
 
         .exhibitor-category {
+          font-family: 'Joost', sans-serif !important;
           text-align: center;
           margin-top: 70px;
           margin-bottom: 32px;
