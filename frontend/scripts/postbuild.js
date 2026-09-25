@@ -108,3 +108,19 @@ for (const route of routes) {
 }
 
 console.log(`[postbuild] Successfully pre-rendered ${createdCount} static route entrypoints in dist/ for GitHub Pages.`);
+
+// 4. Prune unused legacy WordPress PHP files from dist to stay under Cloudflare Pages 20,000 file limit
+const pluginsDist = path.join(distDir, 'wp-content/plugins');
+if (fs.existsSync(pluginsDist)) {
+  fs.rmSync(pluginsDist, { recursive: true, force: true });
+  console.log('[postbuild] Pruned unused wp-content/plugins from dist to comply with Cloudflare Pages 20,000 file limit');
+}
+
+const unusedThemes = ['twentytwentythree', 'twentytwentyfour', 'twentytwentyfive'];
+for (const theme of unusedThemes) {
+  const themeDir = path.join(distDir, 'wp-content/themes', theme);
+  if (fs.existsSync(themeDir)) {
+    fs.rmSync(themeDir, { recursive: true, force: true });
+    console.log(`[postbuild] Pruned unused theme ${theme} from dist`);
+  }
+}
